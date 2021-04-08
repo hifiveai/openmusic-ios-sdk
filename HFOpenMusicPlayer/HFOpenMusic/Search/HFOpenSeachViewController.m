@@ -43,9 +43,7 @@
     [self.historyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
         make.top.mas_equalTo(KScale(10));
-        //make.height.mas_equalTo(KScale(100));
     }];
-    //self.historyView.backgroundColor = UIColor.redColor;
     [self.hotSearchView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.historyView.mas_bottom).offset(KScale(14));
         make.left.right.bottom.equalTo(self.view);
@@ -106,7 +104,8 @@
 
 -(void)requestData {
     __weak typeof(self) weakSelf = self;
-    [[HFOpenApiManager shared] searchMusicWithTagIds:nil priceFromCent:nil priceToCent:nil bpmFrom:nil bpmTo:nil durationFrom:nil durationTo:nil keyword:self.searchBar.text language:nil page:[NSString stringWithFormat:@"%lu",(unsigned long)weakSelf.page] pageSize:@"20" success:^(id  _Nullable response) {
+    [[HFOpenApiManager shared] searchMusicWithTagIds:nil priceFromCent:nil priceToCent:nil bpmFrom:nil bpmTo:nil durationFrom:nil durationTo:nil keyword:self.searchBar.text language:nil searchFiled:nil
+                                         searchSmart:nil page:[NSString stringWithFormat:@"%lu",(unsigned long)weakSelf.page] pageSize:@"20" success:^(id  _Nullable response) {
         [weakSelf endRefresh];
         NSArray *musicArray = [HFOpenMusicModel mj_objectArrayWithKeyValuesArray: [response hfv_objectForKey_Safe:@"record"]];
         if (musicArray && musicArray.count>0) {

@@ -181,7 +181,7 @@ static HFOpenApiManager *manager = nil;
     }];
 }
 
--(void)searchMusicWithTagIds:(NSString *)tagIds priceFromCent:(NSString *)priceFromCent priceToCent:(NSString *)priceToCent bpmFrom:(NSString *)bpmFrom bpmTo:(NSString *)bpmTo durationFrom:(NSString *)durationFrom durationTo:(NSString *)durationTo keyword:(NSString *)keyword language:(NSString *)language page:(NSString *)page pageSize:(NSString *)pageSize success:(void (^)(id _Nullable))success fail:(void (^)(NSError * _Nullable))fail {
+-(void)searchMusicWithTagIds:(NSString *)tagIds priceFromCent:(NSString *)priceFromCent priceToCent:(NSString *)priceToCent bpmFrom:(NSString *)bpmFrom bpmTo:(NSString *)bpmTo durationFrom:(NSString *)durationFrom durationTo:(NSString *)durationTo keyword:(NSString *)keyword language:(NSString *)language searchFiled:(NSString *)searchFiled searchSmart:(NSString *)searchSmart page:(NSString *)page pageSize:(NSString *)pageSize success:(void (^)(id _Nullable))success fail:(void (^)(NSError * _Nullable))fail {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:0];
     [params hfv_setObject_Safe:tagIds forKey:@"TagIds"];
     [params hfv_setObject_Safe:priceFromCent forKey:@"PriceFromCent"];
@@ -192,6 +192,8 @@ static HFOpenApiManager *manager = nil;
     [params hfv_setObject_Safe:durationTo forKey:@"DurationTo"];
     [params hfv_setObject_Safe:keyword forKey:@"Keyword"];
     [params hfv_setObject_Safe:language forKey:@"Language"];
+    [params hfv_setObject_Safe:language forKey:@"SearchFiled"];
+    [params hfv_setObject_Safe:language forKey:@"SearchSmart"];
     [params hfv_setObject_Safe:page forKey:@"Page"];
     [params hfv_setObject_Safe:pageSize forKey:@"PageSize"];
     
@@ -205,6 +207,7 @@ static HFOpenApiManager *manager = nil;
         }
     }];
 }
+
 
 -(void)musicConfigWithSuccess:(void (^)(id _Nullable))success fail:(void (^)(NSError * _Nullable))fail {
     [self.netWork getRequestWithAction:Action_MusicConfig queryParams:nil needToken:NO success:^(id  _Nullable response) {

@@ -95,6 +95,8 @@ typedef NS_ENUM(NSUInteger, HFAPISDK_CODE) {
 /// @param durationTo 时长区间的最高值,单位秒
 /// @param keyword 搜索关键词，搜索条件歌名、专辑名、艺人名、标签名
 /// @param language 语言版本，英文版本数据可能空, 0-中文,1-英文
+/// @param searchFiled Keywords参数指定搜索条件，不传时默认搜索条件歌名、专辑名、艺人名、标签名
+/// @param searchSmart 是否启用分词, 0｜1
 /// @param page 当前页码，默认为1,大于0的整数
 /// @param pageSize 每页显示条数，默认为10, 1~100
 /// @param success 成功回调
@@ -108,6 +110,8 @@ typedef NS_ENUM(NSUInteger, HFAPISDK_CODE) {
                   durationTo:(NSString *_Nullable)durationTo
                      keyword:(NSString *_Nullable)keyword
                     language:(NSString *_Nullable)language
+                 searchFiled:(NSString *_Nullable)searchFiled
+                 searchSmart:(NSString *_Nullable)searchSmart
                         page:(NSString *_Nullable)page
                     pageSize:(NSString *_Nullable)pageSize
                      success:(void (^_Nullable)(id  _Nullable response))success
