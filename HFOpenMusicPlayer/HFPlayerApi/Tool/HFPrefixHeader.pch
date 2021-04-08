@@ -1,0 +1,34 @@
+//
+//  HFPrefixHeader.pch
+//  HFPlayer
+//
+//  Created by 郭亮 on 2021/1/19.
+//
+
+#ifndef HFPrefixHeader_pch
+#define HFPrefixHeader_pch
+
+#import "NSDictionary+SafeAccess.h"
+#import "NSMutableDictionary+SafeAccess.h"
+#import "NSMutableArray+SafeAccess.h"
+
+
+//通知
+#define KNotification_playProgress @"KNotification_playProgress"
+#define KNotification_loadingProgress @"KNotification_loadingProgress"
+#define KNotification_pauseBuffering @"KNotification_pauseBuffering"
+#define KNotification_resumeBuffering @"KNotification_resumeBuffering"
+#define KNotification_cacheCompleted @"KNotification_cacheCompleted"
+#define KNotification_Seeking @"KNotification_Seeking"
+#define KNotification_rateChanged @"KNotification_rateChanged"
+#define KNotification_seekComplete @"KNotification_seekComplete"
+#define KNotification_loadMediaData @"KNotification_loadMediaData"
+#define KNotification_singleDataLoadComplete @"KNotification_singleDataLoadComplete"
+
+#define KNotification_needMoreData @"KNotification_needMoreData"
+
+
+
+
+
+#endif /* HFPrefixHeader_pch */
