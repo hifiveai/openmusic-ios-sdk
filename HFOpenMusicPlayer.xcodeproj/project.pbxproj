@@ -1,0 +1,1860 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA20D07C261CC10D00DBB34F /* HFPlayerApiConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D060261CC10D00DBB34F /* HFPlayerApiConfiguration.m */; };
+		CA20D07D261CC10D00DBB34F /* HFPlayerCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D062261CC10D00DBB34F /* HFPlayerCacheManager.m */; };
+		CA20D07E261CC10D00DBB34F /* HFPlayerCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D063261CC10D00DBB34F /* HFPlayerCacheManager.h */; };
+		CA20D07F261CC10D00DBB34F /* HFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D065261CC10D00DBB34F /* HFReachability.m */; };
+		CA20D080261CC10D00DBB34F /* HFNetworkReachAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D066261CC10D00DBB34F /* HFNetworkReachAbility.m */; };
+		CA20D081261CC10D00DBB34F /* HFNetworkReachAbility.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D067261CC10D00DBB34F /* HFNetworkReachAbility.h */; };
+		CA20D082261CC10D00DBB34F /* HFReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D068261CC10D00DBB34F /* HFReachability.h */; };
+		CA20D083261CC10D00DBB34F /* HFPlayerApi.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D069261CC10D00DBB34F /* HFPlayerApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA20D084261CC10D00DBB34F /* HFSourceDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D06B261CC10D00DBB34F /* HFSourceDownLoader.h */; };
+		CA20D085261CC10D00DBB34F /* HFSourceDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D06C261CC10D00DBB34F /* HFSourceDownLoader.m */; };
+		CA20D086261CC10D00DBB34F /* HFPlayerApiConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D06D261CC10D00DBB34F /* HFPlayerApiConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA20D087261CC10D00DBB34F /* HFResourceLoaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D06F261CC10D00DBB34F /* HFResourceLoaderManager.h */; };
+		CA20D088261CC10D00DBB34F /* HFResourceLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D070261CC10D00DBB34F /* HFResourceLoaderManager.m */; };
+		CA20D08B261CC10D00DBB34F /* HFPlayerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D073261CC10D00DBB34F /* HFPlayerApi.m */; };
+		CA20D08C261CC10D00DBB34F /* NSMutableArray+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D075261CC10D00DBB34F /* NSMutableArray+SafeAccess.m */; };
+		CA20D08D261CC10D00DBB34F /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D076261CC10D00DBB34F /* NSDictionary+SafeAccess.m */; };
+		CA20D08E261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D077261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.m */; };
+		CA20D08F261CC10D00DBB34F /* NSMutableArray+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D078261CC10D00DBB34F /* NSMutableArray+SafeAccess.h */; };
+		CA20D090261CC10D00DBB34F /* HFPrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = CA20D079261CC10D00DBB34F /* HFPrefixHeader.pch */; };
+		CA20D091261CC10D00DBB34F /* NSDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D07A261CC10D00DBB34F /* NSDictionary+SafeAccess.h */; };
+		CA20D092261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D07B261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.h */; };
+		CA20D0F6261CC48B00DBB34F /* HIFPlayerBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D09B261CC48B00DBB34F /* HIFPlayerBarView.m */; };
+		CA20D0F7261CC48B00DBB34F /* HFPlayerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D09C261CC48B00DBB34F /* HFPlayerConfiguration.m */; };
+		CA20D102261CC48B00DBB34F /* HFVSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D0A8261CC48B00DBB34F /* HFVSlider.m */; };
+		CA20D103261CC48B00DBB34F /* HFPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0A9261CC48B00DBB34F /* HFPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA20D135261CC48B00DBB34F /* HFPlayerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0E8261CC48B00DBB34F /* HFPlayerConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA20D136261CC48B00DBB34F /* HIFPlayerBarView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0E9261CC48B00DBB34F /* HIFPlayerBarView.h */; };
+		CA20D137261CC48B00DBB34F /* HFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D0EA261CC48B00DBB34F /* HFPlayer.m */; };
+		CA20D138261CC48B00DBB34F /* HFPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D0EC261CC48B00DBB34F /* HFPlayerModel.m */; };
+		CA20D139261CC48B00DBB34F /* HFPlayerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0ED261CC48B00DBB34F /* HFPlayerModel.h */; };
+		CA20D13A261CC48B00DBB34F /* HFVSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0EE261CC48B00DBB34F /* HFVSlider.h */; };
+		CA20D13C261CC48B00DBB34F /* HFPlayerUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0F1261CC48B00DBB34F /* HFPlayerUtils.h */; };
+		CA20D13D261CC48B00DBB34F /* HIFPlayerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0F2261CC48B00DBB34F /* HIFPlayerHeader.h */; };
+		CA20D13F261CC48B00DBB34F /* HFVMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0F4261CC48B00DBB34F /* HFVMacro.h */; };
+		CA20D140261CC48B00DBB34F /* HFPlayerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D0F5261CC48B00DBB34F /* HFPlayerUtils.m */; };
+		CA20D208261CC8DE00DBB34F /* LPCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D149261CC8DE00DBB34F /* LPCategoryView.m */; };
+		CA20D209261CC8DE00DBB34F /* LPSegmentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D14A261CC8DE00DBB34F /* LPSegmentViewController.h */; };
+		CA20D20A261CC8DE00DBB34F /* HFVCategoryFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D14B261CC8DE00DBB34F /* HFVCategoryFlowLayout.m */; };
+		CA20D20B261CC8DE00DBB34F /* LPSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D14C261CC8DE00DBB34F /* LPSegmentViewController.m */; };
+		CA20D20C261CC8DE00DBB34F /* LPCategoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D14D261CC8DE00DBB34F /* LPCategoryView.h */; };
+		CA20D20D261CC8DE00DBB34F /* HFVCategoryFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D14E261CC8DE00DBB34F /* HFVCategoryFlowLayout.h */; };
+		CA20D20E261CC8DE00DBB34F /* HFOpenRadioDetailHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D150261CC8DE00DBB34F /* HFOpenRadioDetailHeader.h */; };
+		CA20D20F261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D151261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.h */; };
+		CA20D210261CC8DE00DBB34F /* HFOpenRadioDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D152261CC8DE00DBB34F /* HFOpenRadioDetailView.m */; };
+		CA20D211261CC8DE00DBB34F /* HFOpenRadioSegmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D153261CC8DE00DBB34F /* HFOpenRadioSegmentView.h */; };
+		CA20D212261CC8DE00DBB34F /* HFOpenRadioListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D154261CC8DE00DBB34F /* HFOpenRadioListViewController.m */; };
+		CA20D213261CC8DE00DBB34F /* HFOpenRadioDetailHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D155261CC8DE00DBB34F /* HFOpenRadioDetailHeader.m */; };
+		CA20D214261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D156261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.m */; };
+		CA20D215261CC8DE00DBB34F /* HFOpenRadioListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D157261CC8DE00DBB34F /* HFOpenRadioListViewController.h */; };
+		CA20D216261CC8DE00DBB34F /* HFOpenRadioSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D158261CC8DE00DBB34F /* HFOpenRadioSegmentView.m */; };
+		CA20D217261CC8DE00DBB34F /* HFOpenRadioDetailView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D159261CC8DE00DBB34F /* HFOpenRadioDetailView.h */; };
+		CA20D218261CC8DE00DBB34F /* YYKVStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D15D261CC8DE00DBB34F /* YYKVStorage.h */; };
+		CA20D219261CC8DE00DBB34F /* YYMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D15E261CC8DE00DBB34F /* YYMemoryCache.h */; };
+		CA20D21A261CC8DE00DBB34F /* YYDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D15F261CC8DE00DBB34F /* YYDiskCache.h */; };
+		CA20D21B261CC8DE00DBB34F /* YYCache.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D160261CC8DE00DBB34F /* YYCache.h */; };
+		CA20D21C261CC8DE00DBB34F /* MJPropertyKey.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D162261CC8DE00DBB34F /* MJPropertyKey.h */; };
+		CA20D21D261CC8DE00DBB34F /* NSObject+MJClass.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D163261CC8DE00DBB34F /* NSObject+MJClass.h */; };
+		CA20D21E261CC8DE00DBB34F /* NSString+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D164261CC8DE00DBB34F /* NSString+MJExtension.h */; };
+		CA20D21F261CC8DE00DBB34F /* NSObject+MJProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D165261CC8DE00DBB34F /* NSObject+MJProperty.h */; };
+		CA20D220261CC8DE00DBB34F /* MJExtensionConst.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D166261CC8DE00DBB34F /* MJExtensionConst.h */; };
+		CA20D221261CC8DE00DBB34F /* MJFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D167261CC8DE00DBB34F /* MJFoundation.h */; };
+		CA20D222261CC8DE00DBB34F /* MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D168261CC8DE00DBB34F /* MJExtension.h */; };
+		CA20D223261CC8DE00DBB34F /* MJPropertyType.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D169261CC8DE00DBB34F /* MJPropertyType.h */; };
+		CA20D224261CC8DE00DBB34F /* MJProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D16A261CC8DE00DBB34F /* MJProperty.h */; };
+		CA20D225261CC8DE00DBB34F /* NSObject+MJKeyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D16B261CC8DE00DBB34F /* NSObject+MJKeyValue.h */; };
+		CA20D226261CC8DE00DBB34F /* NSObject+MJCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D16C261CC8DE00DBB34F /* NSObject+MJCoding.h */; };
+		CA20D227261CC8DE00DBB34F /* FLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D16F261CC8DE00DBB34F /* FLAnimatedImage.h */; };
+		CA20D228261CC8DE00DBB34F /* FLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D170261CC8DE00DBB34F /* FLAnimatedImageView.h */; };
+		CA20D229261CC8DE00DBB34F /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D173261CC8DE00DBB34F /* UIScrollView+MJExtension.h */; };
+		CA20D22A261CC8DE00DBB34F /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D174261CC8DE00DBB34F /* MJRefresh.h */; };
+		CA20D22B261CC8DE00DBB34F /* NSBundle+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D175261CC8DE00DBB34F /* NSBundle+MJRefresh.h */; };
+		CA20D22C261CC8DE00DBB34F /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D176261CC8DE00DBB34F /* MJRefresh.bundle */; };
+		CA20D22D261CC8DE00DBB34F /* UIView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D177261CC8DE00DBB34F /* UIView+MJExtension.h */; };
+		CA20D22E261CC8DE00DBB34F /* MJRefreshConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D178261CC8DE00DBB34F /* MJRefreshConfig.h */; };
+		CA20D22F261CC8DE00DBB34F /* MJRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D179261CC8DE00DBB34F /* MJRefreshConst.h */; };
+		CA20D230261CC8DE00DBB34F /* UIScrollView+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D17A261CC8DE00DBB34F /* UIScrollView+MJRefresh.h */; };
+		CA20D231261CC8DE00DBB34F /* MJRefreshBackGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D17E261CC8DE00DBB34F /* MJRefreshBackGifFooter.h */; };
+		CA20D232261CC8DE00DBB34F /* MJRefreshBackStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D17F261CC8DE00DBB34F /* MJRefreshBackStateFooter.h */; };
+		CA20D233261CC8DE00DBB34F /* MJRefreshBackNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D180261CC8DE00DBB34F /* MJRefreshBackNormalFooter.h */; };
+		CA20D234261CC8DE00DBB34F /* MJRefreshAutoStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D182261CC8DE00DBB34F /* MJRefreshAutoStateFooter.h */; };
+		CA20D235261CC8DE00DBB34F /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D183261CC8DE00DBB34F /* MJRefreshAutoNormalFooter.h */; };
+		CA20D236261CC8DE00DBB34F /* MJRefreshAutoGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D184261CC8DE00DBB34F /* MJRefreshAutoGifFooter.h */; };
+		CA20D237261CC8DE00DBB34F /* MJRefreshNormalTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D186261CC8DE00DBB34F /* MJRefreshNormalTrailer.h */; };
+		CA20D238261CC8DE00DBB34F /* MJRefreshStateTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D187261CC8DE00DBB34F /* MJRefreshStateTrailer.h */; };
+		CA20D239261CC8DE00DBB34F /* MJRefreshStateHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D189261CC8DE00DBB34F /* MJRefreshStateHeader.h */; };
+		CA20D23A261CC8DE00DBB34F /* MJRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D18A261CC8DE00DBB34F /* MJRefreshGifHeader.h */; };
+		CA20D23B261CC8DE00DBB34F /* MJRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D18B261CC8DE00DBB34F /* MJRefreshNormalHeader.h */; };
+		CA20D23C261CC8DE00DBB34F /* MJRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D18D261CC8DE00DBB34F /* MJRefreshComponent.h */; };
+		CA20D23D261CC8DE00DBB34F /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D18E261CC8DE00DBB34F /* MJRefreshAutoFooter.h */; };
+		CA20D23E261CC8DE00DBB34F /* MJRefreshTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D18F261CC8DE00DBB34F /* MJRefreshTrailer.h */; };
+		CA20D23F261CC8DE00DBB34F /* MJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D190261CC8DE00DBB34F /* MJRefreshHeader.h */; };
+		CA20D240261CC8DE00DBB34F /* MJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D191261CC8DE00DBB34F /* MJRefreshFooter.h */; };
+		CA20D241261CC8DE00DBB34F /* MJRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D192261CC8DE00DBB34F /* MJRefreshBackFooter.h */; };
+		CA20D242261CC8DE00DBB34F /* YYImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D195261CC8DE00DBB34F /* YYImage.h */; };
+		CA20D243261CC8DE00DBB34F /* YYImageCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D196261CC8DE00DBB34F /* YYImageCoder.h */; };
+		CA20D244261CC8DE00DBB34F /* YYFrameImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D197261CC8DE00DBB34F /* YYFrameImage.h */; };
+		CA20D245261CC8DE00DBB34F /* YYAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D198261CC8DE00DBB34F /* YYAnimatedImageView.h */; };
+		CA20D246261CC8DE00DBB34F /* YYSpriteSheetImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D199261CC8DE00DBB34F /* YYSpriteSheetImage.h */; };
+		CA20D247261CC8DE00DBB34F /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D19C261CC8DE00DBB34F /* MASCompositeConstraint.h */; };
+		CA20D248261CC8DE00DBB34F /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D19D261CC8DE00DBB34F /* MASConstraint+Private.h */; };
+		CA20D249261CC8DE00DBB34F /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D19E261CC8DE00DBB34F /* MASLayoutConstraint.h */; };
+		CA20D24A261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D19F261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.h */; };
+		CA20D24B261CC8DE00DBB34F /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1A0261CC8DE00DBB34F /* MASConstraintMaker.h */; };
+		CA20D24C261CC8DE00DBB34F /* View+MASShorthandAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1A1261CC8DE00DBB34F /* View+MASShorthandAdditions.m */; };
+		CA20D24D261CC8DE00DBB34F /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1A2261CC8DE00DBB34F /* View+MASAdditions.h */; };
+		CA20D24E261CC8DE00DBB34F /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1A3261CC8DE00DBB34F /* NSArray+MASAdditions.h */; };
+		CA20D24F261CC8DE00DBB34F /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1A4261CC8DE00DBB34F /* MASUtilities.h */; };
+		CA20D250261CC8DE00DBB34F /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1A5261CC8DE00DBB34F /* MASViewAttribute.h */; };
+		CA20D251261CC8DE00DBB34F /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1A6261CC8DE00DBB34F /* MASViewConstraint.h */; };
+		CA20D252261CC8DE00DBB34F /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1A7261CC8DE00DBB34F /* MASConstraint.h */; };
+		CA20D253261CC8DE00DBB34F /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1A8261CC8DE00DBB34F /* NSLayoutConstraint+MASDebugAdditions.h */; };
+		CA20D254261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1A9261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.m */; };
+		CA20D255261CC8DE00DBB34F /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1AA261CC8DE00DBB34F /* View+MASShorthandAdditions.h */; };
+		CA20D256261CC8DE00DBB34F /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1AB261CC8DE00DBB34F /* Masonry.h */; };
+		CA20D257261CC8DE00DBB34F /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1AC261CC8DE00DBB34F /* ViewController+MASAdditions.h */; };
+		CA20D258261CC8DE00DBB34F /* HFSVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1AF261CC8DE00DBB34F /* HFSVIndefiniteAnimatedView.h */; };
+		CA20D259261CC8DF00DBB34F /* HFSVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1B0261CC8DE00DBB34F /* HFSVProgressAnimatedView.h */; };
+		CA20D25A261CC8DF00DBB34F /* HFSVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1B1261CC8DE00DBB34F /* HFSVRadialGradientLayer.m */; };
+		CA20D25B261CC8DF00DBB34F /* HFSVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1B2261CC8DE00DBB34F /* HFSVProgressHUD.h */; };
+		CA20D25C261CC8DF00DBB34F /* HFSVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1B3261CC8DE00DBB34F /* HFSVIndefiniteAnimatedView.m */; };
+		CA20D25D261CC8DF00DBB34F /* HFSVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1B4261CC8DE00DBB34F /* HFSVProgressAnimatedView.m */; };
+		CA20D25E261CC8DF00DBB34F /* HFSVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1B5261CC8DE00DBB34F /* HFSVProgressHUD.m */; };
+		CA20D25F261CC8DF00DBB34F /* HFSVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1B6261CC8DE00DBB34F /* HFSVRadialGradientLayer.h */; };
+		CA20D260261CC8DF00DBB34F /* YYWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1B9261CC8DE00DBB34F /* YYWebImageOperation.h */; };
+		CA20D261261CC8DF00DBB34F /* YYImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1BA261CC8DE00DBB34F /* YYImageCache.h */; };
+		CA20D262261CC8DF00DBB34F /* YYWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1BB261CC8DE00DBB34F /* YYWebImageManager.h */; };
+		CA20D263261CC8DF00DBB34F /* UIButton+YYWebImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1BD261CC8DE00DBB34F /* UIButton+YYWebImage.h */; };
+		CA20D264261CC8DF00DBB34F /* UIImageView+YYWebImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1BE261CC8DE00DBB34F /* UIImageView+YYWebImage.h */; };
+		CA20D265261CC8DF00DBB34F /* CALayer+YYWebImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1BF261CC8DE00DBB34F /* CALayer+YYWebImage.h */; };
+		CA20D266261CC8DF00DBB34F /* UIImage+YYWebImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1C0261CC8DE00DBB34F /* UIImage+YYWebImage.h */; };
+		CA20D267261CC8DF00DBB34F /* MKAnnotationView+YYWebImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1C1261CC8DE00DBB34F /* MKAnnotationView+YYWebImage.h */; };
+		CA20D268261CC8DF00DBB34F /* _YYWebImageSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1C2261CC8DE00DBB34F /* _YYWebImageSetter.h */; };
+		CA20D269261CC8DF00DBB34F /* YYWebImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1C3261CC8DE00DBB34F /* YYWebImage.h */; };
+		CA20D26A261CC8DF00DBB34F /* HFOpenMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1C4261CC8DE00DBB34F /* HFOpenMusic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA20D26B261CC8DF00DBB34F /* HFOpenHotSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1C6261CC8DE00DBB34F /* HFOpenHotSearchView.m */; };
+		CA20D26C261CC8DF00DBB34F /* HFOpenSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1C7261CC8DE00DBB34F /* HFOpenSearchResultCell.m */; };
+		CA20D26D261CC8DF00DBB34F /* UIView+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1C9261CC8DE00DBB34F /* UIView+PYExtension.m */; };
+		CA20D26E261CC8DF00DBB34F /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1CA261CC8DE00DBB34F /* UIView+Utils.m */; };
+		CA20D26F261CC8DF00DBB34F /* NSObject+LPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1CB261CC8DE00DBB34F /* NSObject+LPUtils.m */; };
+		CA20D270261CC8DF00DBB34F /* NSArray+GLSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1CC261CC8DE00DBB34F /* NSArray+GLSafe.m */; };
+		CA20D271261CC8DF00DBB34F /* UIColor+PYExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1CD261CC8DE00DBB34F /* UIColor+PYExtension.h */; };
+		CA20D272261CC8DF00DBB34F /* UIView+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1CE261CC8DE00DBB34F /* UIView+Utils.h */; };
+		CA20D273261CC8DF00DBB34F /* UIView+PYExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1CF261CC8DE00DBB34F /* UIView+PYExtension.h */; };
+		CA20D274261CC8DF00DBB34F /* NSObject+LPUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D0261CC8DE00DBB34F /* NSObject+LPUtils.h */; };
+		CA20D275261CC8DF00DBB34F /* UIColor+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1D1261CC8DE00DBB34F /* UIColor+PYExtension.m */; };
+		CA20D276261CC8DF00DBB34F /* NSArray+GLSafe.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D2261CC8DE00DBB34F /* NSArray+GLSafe.h */; };
+		CA20D277261CC8DF00DBB34F /* LPSearchHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1D3261CC8DE00DBB34F /* LPSearchHistoryView.m */; };
+		CA20D278261CC8DF00DBB34F /* HFOpenHotSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1D4261CC8DE00DBB34F /* HFOpenHotSearchCell.m */; };
+		CA20D279261CC8DF00DBB34F /* HFAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D5261CC8DE00DBB34F /* HFAlertView.h */; };
+		CA20D27A261CC8DF00DBB34F /* HFOpenSeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1D6261CC8DE00DBB34F /* HFOpenSeachViewController.m */; };
+		CA20D27B261CC8DF00DBB34F /* HFOpenHotSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D7261CC8DE00DBB34F /* HFOpenHotSearchView.h */; };
+		CA20D27C261CC8DF00DBB34F /* HFOpenHotSearchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D8261CC8DE00DBB34F /* HFOpenHotSearchCell.h */; };
+		CA20D27D261CC8DF00DBB34F /* LPSearchHistoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D9261CC8DE00DBB34F /* LPSearchHistoryView.h */; };
+		CA20D27E261CC8DF00DBB34F /* HFOpenSearchResultCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1DA261CC8DE00DBB34F /* HFOpenSearchResultCell.h */; };
+		CA20D27F261CC8DF00DBB34F /* HFOpenSeachViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1DB261CC8DE00DBB34F /* HFOpenSeachViewController.h */; };
+		CA20D280261CC8DF00DBB34F /* HFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1DC261CC8DE00DBB34F /* HFAlertView.m */; };
+		CA20D281261CC8DF00DBB34F /* HFOpenCurrentPlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1DE261CC8DE00DBB34F /* HFOpenCurrentPlayListViewController.m */; };
+		CA20D282261CC8DF00DBB34F /* HFOpenMusicListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1DF261CC8DE00DBB34F /* HFOpenMusicListCell.h */; };
+		CA20D283261CC8DF00DBB34F /* HFVMusicListPlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1E0261CC8DE00DBB34F /* HFVMusicListPlaceholder.h */; };
+		CA20D284261CC8DF00DBB34F /* HFOpenMusicSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1E1261CC8DE00DBB34F /* HFOpenMusicSegmentView.m */; };
+		CA20D285261CC8DF00DBB34F /* HFOpenMusicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1E2261CC8DE00DBB34F /* HFOpenMusicListCell.m */; };
+		CA20D286261CC8DF00DBB34F /* HFOpenCurrentPlayListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1E3261CC8DE00DBB34F /* HFOpenCurrentPlayListViewController.h */; };
+		CA20D287261CC8DF00DBB34F /* HFOpenMusicSegmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1E4261CC8DE00DBB34F /* HFOpenMusicSegmentView.h */; };
+		CA20D288261CC8DF00DBB34F /* HFVMusicListPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1E5261CC8DE00DBB34F /* HFVMusicListPlaceholder.m */; };
+		CA20D289261CC8DF00DBB34F /* HFOpenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1E7261CC8DE00DBB34F /* HFOpenModel.m */; };
+		CA20D28A261CC8DF00DBB34F /* HFOpenModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1E8261CC8DE00DBB34F /* HFOpenModel.h */; };
+		CA20D28B261CC8DF00DBB34F /* HFOpenMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1E9261CC8DE00DBB34F /* HFOpenMusic.m */; };
+		CA20D28D261CC8DF00DBB34F /* LPBaseListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1EC261CC8DE00DBB34F /* LPBaseListViewController.h */; };
+		CA20D28E261CC8DF00DBB34F /* LPBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1ED261CC8DE00DBB34F /* LPBaseCollectionViewController.m */; };
+		CA20D28F261CC8DF00DBB34F /* LPBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1EE261CC8DE00DBB34F /* LPBaseListViewController.m */; };
+		CA20D290261CC8DF00DBB34F /* LPBaseCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1EF261CC8DE00DBB34F /* LPBaseCollectionViewController.h */; };
+		CA20D291261CC8DF00DBB34F /* HFVProgressHud.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1F1261CC8DE00DBB34F /* HFVProgressHud.h */; };
+		CA20D292261CC8DF00DBB34F /* LPMJGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1F2261CC8DE00DBB34F /* LPMJGifFooter.h */; };
+		CA20D293261CC8DF00DBB34F /* HIFParseLyricTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1F3261CC8DE00DBB34F /* HIFParseLyricTool.m */; };
+		CA20D294261CC8DF00DBB34F /* LPMJGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1F4261CC8DE00DBB34F /* LPMJGifHeader.h */; };
+		CA20D295261CC8DF00DBB34F /* NSMutableArray+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1F5261CC8DE00DBB34F /* NSMutableArray+SafeAccess.m */; };
+		CA20D296261CC8DF00DBB34F /* HFVKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1F6261CC8DE00DBB34F /* HFVKitUtils.h */; };
+		CA20D297261CC8DF00DBB34F /* NSObject+LPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1F7261CC8DE00DBB34F /* NSObject+LPUtils.m */; };
+		CA20D298261CC8DF00DBB34F /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1F8261CC8DE00DBB34F /* NSDictionary+SafeAccess.m */; };
+		CA20D299261CC8DF00DBB34F /* HIFPlayerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1F9261CC8DE00DBB34F /* HIFPlayerHeader.h */; };
+		CA20D29B261CC8DF00DBB34F /* HFVMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1FB261CC8DE00DBB34F /* HFVMacro.h */; };
+		CA20D29C261CC8DF00DBB34F /* HFVGlobalTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1FC261CC8DE00DBB34F /* HFVGlobalTool.m */; };
+		CA20D29D261CC8DF00DBB34F /* NSMutableDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1FD261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.m */; };
+		CA20D29E261CC8DF00DBB34F /* LPMJGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1FE261CC8DE00DBB34F /* LPMJGifHeader.m */; };
+		CA20D29F261CC8DF00DBB34F /* HIFParseLyricTool.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1FF261CC8DE00DBB34F /* HIFParseLyricTool.h */; };
+		CA20D2A0261CC8DF00DBB34F /* LPMJGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D200261CC8DE00DBB34F /* LPMJGifFooter.m */; };
+		CA20D2A1261CC8DF00DBB34F /* HFVProgressHud.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D201261CC8DE00DBB34F /* HFVProgressHud.m */; };
+		CA20D2A2261CC8DF00DBB34F /* NSObject+LPUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D202261CC8DE00DBB34F /* NSObject+LPUtils.h */; };
+		CA20D2A3261CC8DF00DBB34F /* HFVKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D203261CC8DE00DBB34F /* HFVKitUtils.m */; };
+		CA20D2A4261CC8DF00DBB34F /* NSMutableArray+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D204261CC8DE00DBB34F /* NSMutableArray+SafeAccess.h */; };
+		CA20D2A5261CC8DF00DBB34F /* NSDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D205261CC8DE00DBB34F /* NSDictionary+SafeAccess.h */; };
+		CA20D2A6261CC8DF00DBB34F /* NSMutableDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D206261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.h */; };
+		CA20D2A7261CC8DF00DBB34F /* HFVGlobalTool.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D207261CC8DE00DBB34F /* HFVGlobalTool.h */; };
+		CA20D2BD261CD31E00DBB34F /* bkg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BA261CD31C00DBB34F /* bkg.jpg */; };
+		CA20D2BE261CD31E00DBB34F /* HFOpenMusic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */; };
+		CA20D2BF261CD31E00DBB34F /* HFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */; };
+		CA3DBEA1261C768F008A8A42 /* HFOpenMusicPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA3DBEB0261C76CB008A8A42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */; };
+		CA3DBEB3261C76CB008A8A42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEB2261C76CB008A8A42 /* SceneDelegate.m */; };
+		CA3DBEB6261C76CB008A8A42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEB5261C76CB008A8A42 /* ViewController.m */; };
+		CA3DBEB9261C76CB008A8A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3DBEB7261C76CB008A8A42 /* Main.storyboard */; };
+		CA3DBEBB261C76CF008A8A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3DBEBA261C76CF008A8A42 /* Assets.xcassets */; };
+		CA3DBEBE261C76CF008A8A42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3DBEBC261C76CF008A8A42 /* LaunchScreen.storyboard */; };
+		CA3DBEC1261C76CF008A8A42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEC0261C76CF008A8A42 /* main.m */; };
+		CA3DBECC261C7935008A8A42 /* HFOpenMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBECB261C7935008A8A42 /* HFOpenMusicPlayer.m */; };
+		CA3DBEF5261C7AD2008A8A42 /* HFOpenAction.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEDB261C7AD2008A8A42 /* HFOpenAction.h */; };
+		CA3DBEF7261C7AD2008A8A42 /* HFVNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEDD261C7AD2008A8A42 /* HFVNetWork.m */; };
+		CA3DBEF8261C7AD2008A8A42 /* HFVLibInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEDF261C7AD2008A8A42 /* HFVLibInfo.m */; };
+		CA3DBEF9261C7AD2008A8A42 /* HFVLibUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEE0261C7AD2008A8A42 /* HFVLibUtils.h */; };
+		CA3DBEFA261C7AD2008A8A42 /* HFVLibInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEE1261C7AD2008A8A42 /* HFVLibInfo.h */; };
+		CA3DBEFB261C7AD2008A8A42 /* HFVLibUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEE2261C7AD2008A8A42 /* HFVLibUtils.m */; };
+		CA3DBEFC261C7AD2008A8A42 /* LYKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEE4261C7AD2008A8A42 /* LYKeychainQuery.m */; };
+		CA3DBEFD261C7AD2008A8A42 /* LYKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEE5261C7AD2008A8A42 /* LYKeychain.m */; };
+		CA3DBEFE261C7AD2008A8A42 /* LYKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEE6261C7AD2008A8A42 /* LYKeychain.h */; };
+		CA3DBEFF261C7AD2008A8A42 /* LYKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEE7261C7AD2008A8A42 /* LYKeychainQuery.h */; };
+		CA3DBF01261C7AD2008A8A42 /* HFOpenAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEE9261C7AD2008A8A42 /* HFOpenAction.m */; };
+		CA3DBF02261C7AD2008A8A42 /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEEA261C7AD2008A8A42 /* PrefixHeader.pch */; };
+		CA3DBF03261C7AD2008A8A42 /* HFOpenApi.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEEB261C7AD2008A8A42 /* HFOpenApi.h */; };
+		CA3DBF05261C7AD2008A8A42 /* NSMutableArray+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEEE261C7AD2008A8A42 /* NSMutableArray+SafeAccess.m */; };
+		CA3DBF06261C7AD2008A8A42 /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEEF261C7AD2008A8A42 /* NSDictionary+SafeAccess.m */; };
+		CA3DBF07261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEF0261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.m */; };
+		CA3DBF08261C7AD2008A8A42 /* NSMutableArray+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEF1261C7AD2008A8A42 /* NSMutableArray+SafeAccess.h */; };
+		CA3DBF09261C7AD2008A8A42 /* NSDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEF2261C7AD2008A8A42 /* NSDictionary+SafeAccess.h */; };
+		CA3DBF0A261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEF3261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.h */; };
+		CA3DBF0B261C7AD2008A8A42 /* HFVNetWork.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEF4261C7AD2008A8A42 /* HFVNetWork.h */; };
+		CA3DBF16261C7D52008A8A42 /* HFOpenMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3DBE9C261C768F008A8A42 /* HFOpenMusicPlayer.framework */; };
+		CAA15D374661E73224E37E09 /* libPods-HFOpenMusicPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */; };
+		CAC777A5261EA70000B973F9 /* HFOpenApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */; };
+		CAC777A6261EA70000B973F9 /* HFOpenApiManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC777A4261EA70000B973F9 /* HFOpenApiManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAC7A9A7261D5A2B0082FCA3 /* TestConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7A9A6261D5A2B0082FCA3 /* TestConfigViewController.m */; };
+		CAC7A9AC261D5D130082FCA3 /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC7A9AA261D5D130082FCA3 /* selected.png */; };
+		CAC7A9AD261D5D130082FCA3 /* normol.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC7A9AB261D5D130082FCA3 /* normol.png */; };
+		CAC7A9B2261D5FF10082FCA3 /* CheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7A9B1261D5FF10082FCA3 /* CheckBoxView.m */; };
+		CAC7A9B7261D7ECF0082FCA3 /* HFInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7A9B6261D7ECF0082FCA3 /* HFInputView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA3DBF18261C7D52008A8A42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA3DBE93261C768F008A8A42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA3DBE9B261C768F008A8A42;
+			remoteInfo = HFOpenMusicPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0166652064B6D723C3EDA077 /* Pods-HFOpenMusicPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayerDemo.release.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		1CD1EE15EC7425335ADADACB /* Pods-HFOpenMusicPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HFOpenMusicPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA20D060261CC10D00DBB34F /* HFPlayerApiConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerApiConfiguration.m; sourceTree = "<group>"; };
+		CA20D062261CC10D00DBB34F /* HFPlayerCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerCacheManager.m; sourceTree = "<group>"; };
+		CA20D063261CC10D00DBB34F /* HFPlayerCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerCacheManager.h; sourceTree = "<group>"; };
+		CA20D065261CC10D00DBB34F /* HFReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFReachability.m; sourceTree = "<group>"; };
+		CA20D066261CC10D00DBB34F /* HFNetworkReachAbility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFNetworkReachAbility.m; sourceTree = "<group>"; };
+		CA20D067261CC10D00DBB34F /* HFNetworkReachAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFNetworkReachAbility.h; sourceTree = "<group>"; };
+		CA20D068261CC10D00DBB34F /* HFReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFReachability.h; sourceTree = "<group>"; };
+		CA20D069261CC10D00DBB34F /* HFPlayerApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerApi.h; sourceTree = "<group>"; };
+		CA20D06B261CC10D00DBB34F /* HFSourceDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSourceDownLoader.h; sourceTree = "<group>"; };
+		CA20D06C261CC10D00DBB34F /* HFSourceDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSourceDownLoader.m; sourceTree = "<group>"; };
+		CA20D06D261CC10D00DBB34F /* HFPlayerApiConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerApiConfiguration.h; sourceTree = "<group>"; };
+		CA20D06F261CC10D00DBB34F /* HFResourceLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFResourceLoaderManager.h; sourceTree = "<group>"; };
+		CA20D070261CC10D00DBB34F /* HFResourceLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFResourceLoaderManager.m; sourceTree = "<group>"; };
+		CA20D073261CC10D00DBB34F /* HFPlayerApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerApi.m; sourceTree = "<group>"; };
+		CA20D075261CC10D00DBB34F /* NSMutableArray+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SafeAccess.m"; sourceTree = "<group>"; };
+		CA20D076261CC10D00DBB34F /* NSDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeAccess.m"; sourceTree = "<group>"; };
+		CA20D077261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SafeAccess.m"; sourceTree = "<group>"; };
+		CA20D078261CC10D00DBB34F /* NSMutableArray+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SafeAccess.h"; sourceTree = "<group>"; };
+		CA20D079261CC10D00DBB34F /* HFPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPrefixHeader.pch; sourceTree = "<group>"; };
+		CA20D07A261CC10D00DBB34F /* NSDictionary+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		CA20D07B261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		CA20D09B261CC48B00DBB34F /* HIFPlayerBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIFPlayerBarView.m; sourceTree = "<group>"; };
+		CA20D09C261CC48B00DBB34F /* HFPlayerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerConfiguration.m; sourceTree = "<group>"; };
+		CA20D0A8261CC48B00DBB34F /* HFVSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVSlider.m; sourceTree = "<group>"; };
+		CA20D0A9261CC48B00DBB34F /* HFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayer.h; sourceTree = "<group>"; };
+		CA20D0E8261CC48B00DBB34F /* HFPlayerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerConfiguration.h; sourceTree = "<group>"; };
+		CA20D0E9261CC48B00DBB34F /* HIFPlayerBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFPlayerBarView.h; sourceTree = "<group>"; };
+		CA20D0EA261CC48B00DBB34F /* HFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayer.m; sourceTree = "<group>"; };
+		CA20D0EC261CC48B00DBB34F /* HFPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerModel.m; sourceTree = "<group>"; };
+		CA20D0ED261CC48B00DBB34F /* HFPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerModel.h; sourceTree = "<group>"; };
+		CA20D0EE261CC48B00DBB34F /* HFVSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVSlider.h; sourceTree = "<group>"; };
+		CA20D0F1261CC48B00DBB34F /* HFPlayerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerUtils.h; sourceTree = "<group>"; };
+		CA20D0F2261CC48B00DBB34F /* HIFPlayerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFPlayerHeader.h; sourceTree = "<group>"; };
+		CA20D0F4261CC48B00DBB34F /* HFVMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVMacro.h; sourceTree = "<group>"; };
+		CA20D0F5261CC48B00DBB34F /* HFPlayerUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerUtils.m; sourceTree = "<group>"; };
+		CA20D149261CC8DE00DBB34F /* LPCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPCategoryView.m; sourceTree = "<group>"; };
+		CA20D14A261CC8DE00DBB34F /* LPSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPSegmentViewController.h; sourceTree = "<group>"; };
+		CA20D14B261CC8DE00DBB34F /* HFVCategoryFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVCategoryFlowLayout.m; sourceTree = "<group>"; };
+		CA20D14C261CC8DE00DBB34F /* LPSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPSegmentViewController.m; sourceTree = "<group>"; };
+		CA20D14D261CC8DE00DBB34F /* LPCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPCategoryView.h; sourceTree = "<group>"; };
+		CA20D14E261CC8DE00DBB34F /* HFVCategoryFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVCategoryFlowLayout.h; sourceTree = "<group>"; };
+		CA20D150261CC8DE00DBB34F /* HFOpenRadioDetailHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenRadioDetailHeader.h; sourceTree = "<group>"; };
+		CA20D151261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenRadioCollectionViewCell.h; sourceTree = "<group>"; };
+		CA20D152261CC8DE00DBB34F /* HFOpenRadioDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenRadioDetailView.m; sourceTree = "<group>"; };
+		CA20D153261CC8DE00DBB34F /* HFOpenRadioSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenRadioSegmentView.h; sourceTree = "<group>"; };
+		CA20D154261CC8DE00DBB34F /* HFOpenRadioListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenRadioListViewController.m; sourceTree = "<group>"; };
+		CA20D155261CC8DE00DBB34F /* HFOpenRadioDetailHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenRadioDetailHeader.m; sourceTree = "<group>"; };
+		CA20D156261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenRadioCollectionViewCell.m; sourceTree = "<group>"; };
+		CA20D157261CC8DE00DBB34F /* HFOpenRadioListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenRadioListViewController.h; sourceTree = "<group>"; };
+		CA20D158261CC8DE00DBB34F /* HFOpenRadioSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenRadioSegmentView.m; sourceTree = "<group>"; };
+		CA20D159261CC8DE00DBB34F /* HFOpenRadioDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenRadioDetailView.h; sourceTree = "<group>"; };
+		CA20D15D261CC8DE00DBB34F /* YYKVStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYKVStorage.h; sourceTree = "<group>"; };
+		CA20D15E261CC8DE00DBB34F /* YYMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMemoryCache.h; sourceTree = "<group>"; };
+		CA20D15F261CC8DE00DBB34F /* YYDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDiskCache.h; sourceTree = "<group>"; };
+		CA20D160261CC8DE00DBB34F /* YYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCache.h; sourceTree = "<group>"; };
+		CA20D162261CC8DE00DBB34F /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
+		CA20D163261CC8DE00DBB34F /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
+		CA20D164261CC8DE00DBB34F /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		CA20D165261CC8DE00DBB34F /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		CA20D166261CC8DE00DBB34F /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
+		CA20D167261CC8DE00DBB34F /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		CA20D168261CC8DE00DBB34F /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		CA20D169261CC8DE00DBB34F /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
+		CA20D16A261CC8DE00DBB34F /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		CA20D16B261CC8DE00DBB34F /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		CA20D16C261CC8DE00DBB34F /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		CA20D16F261CC8DE00DBB34F /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		CA20D170261CC8DE00DBB34F /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		CA20D173261CC8DE00DBB34F /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		CA20D174261CC8DE00DBB34F /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		CA20D175261CC8DE00DBB34F /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
+		CA20D176261CC8DE00DBB34F /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		CA20D177261CC8DE00DBB34F /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		CA20D178261CC8DE00DBB34F /* MJRefreshConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConfig.h; sourceTree = "<group>"; };
+		CA20D179261CC8DE00DBB34F /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		CA20D17A261CC8DE00DBB34F /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		CA20D17E261CC8DE00DBB34F /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
+		CA20D17F261CC8DE00DBB34F /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
+		CA20D180261CC8DE00DBB34F /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
+		CA20D182261CC8DE00DBB34F /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
+		CA20D183261CC8DE00DBB34F /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
+		CA20D184261CC8DE00DBB34F /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
+		CA20D186261CC8DE00DBB34F /* MJRefreshNormalTrailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshNormalTrailer.h; sourceTree = "<group>"; };
+		CA20D187261CC8DE00DBB34F /* MJRefreshStateTrailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshStateTrailer.h; sourceTree = "<group>"; };
+		CA20D189261CC8DE00DBB34F /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshStateHeader.h; sourceTree = "<group>"; };
+		CA20D18A261CC8DE00DBB34F /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshGifHeader.h; sourceTree = "<group>"; };
+		CA20D18B261CC8DE00DBB34F /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshNormalHeader.h; sourceTree = "<group>"; };
+		CA20D18D261CC8DE00DBB34F /* MJRefreshComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshComponent.h; sourceTree = "<group>"; };
+		CA20D18E261CC8DE00DBB34F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
+		CA20D18F261CC8DE00DBB34F /* MJRefreshTrailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshTrailer.h; sourceTree = "<group>"; };
+		CA20D190261CC8DE00DBB34F /* MJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeader.h; sourceTree = "<group>"; };
+		CA20D191261CC8DE00DBB34F /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
+		CA20D192261CC8DE00DBB34F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		CA20D195261CC8DE00DBB34F /* YYImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYImage.h; sourceTree = "<group>"; };
+		CA20D196261CC8DE00DBB34F /* YYImageCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYImageCoder.h; sourceTree = "<group>"; };
+		CA20D197261CC8DE00DBB34F /* YYFrameImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFrameImage.h; sourceTree = "<group>"; };
+		CA20D198261CC8DE00DBB34F /* YYAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAnimatedImageView.h; sourceTree = "<group>"; };
+		CA20D199261CC8DE00DBB34F /* YYSpriteSheetImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSpriteSheetImage.h; sourceTree = "<group>"; };
+		CA20D19C261CC8DE00DBB34F /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		CA20D19D261CC8DE00DBB34F /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		CA20D19E261CC8DE00DBB34F /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		CA20D19F261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		CA20D1A0261CC8DE00DBB34F /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		CA20D1A1261CC8DE00DBB34F /* View+MASShorthandAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASShorthandAdditions.m"; sourceTree = "<group>"; };
+		CA20D1A2261CC8DE00DBB34F /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		CA20D1A3261CC8DE00DBB34F /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		CA20D1A4261CC8DE00DBB34F /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		CA20D1A5261CC8DE00DBB34F /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		CA20D1A6261CC8DE00DBB34F /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		CA20D1A7261CC8DE00DBB34F /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		CA20D1A8261CC8DE00DBB34F /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		CA20D1A9261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASShorthandAdditions.m"; sourceTree = "<group>"; };
+		CA20D1AA261CC8DE00DBB34F /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		CA20D1AB261CC8DE00DBB34F /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		CA20D1AC261CC8DE00DBB34F /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		CA20D1AF261CC8DE00DBB34F /* HFSVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		CA20D1B0261CC8DE00DBB34F /* HFSVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSVProgressAnimatedView.h; sourceTree = "<group>"; };
+		CA20D1B1261CC8DE00DBB34F /* HFSVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSVRadialGradientLayer.m; sourceTree = "<group>"; };
+		CA20D1B2261CC8DE00DBB34F /* HFSVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSVProgressHUD.h; sourceTree = "<group>"; };
+		CA20D1B3261CC8DE00DBB34F /* HFSVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		CA20D1B4261CC8DE00DBB34F /* HFSVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSVProgressAnimatedView.m; sourceTree = "<group>"; };
+		CA20D1B5261CC8DE00DBB34F /* HFSVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSVProgressHUD.m; sourceTree = "<group>"; };
+		CA20D1B6261CC8DE00DBB34F /* HFSVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSVRadialGradientLayer.h; sourceTree = "<group>"; };
+		CA20D1B9261CC8DE00DBB34F /* YYWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWebImageOperation.h; sourceTree = "<group>"; };
+		CA20D1BA261CC8DE00DBB34F /* YYImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYImageCache.h; sourceTree = "<group>"; };
+		CA20D1BB261CC8DE00DBB34F /* YYWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWebImageManager.h; sourceTree = "<group>"; };
+		CA20D1BD261CC8DE00DBB34F /* UIButton+YYWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+YYWebImage.h"; sourceTree = "<group>"; };
+		CA20D1BE261CC8DE00DBB34F /* UIImageView+YYWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YYWebImage.h"; sourceTree = "<group>"; };
+		CA20D1BF261CC8DE00DBB34F /* CALayer+YYWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+YYWebImage.h"; sourceTree = "<group>"; };
+		CA20D1C0261CC8DE00DBB34F /* UIImage+YYWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YYWebImage.h"; sourceTree = "<group>"; };
+		CA20D1C1261CC8DE00DBB34F /* MKAnnotationView+YYWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+YYWebImage.h"; sourceTree = "<group>"; };
+		CA20D1C2261CC8DE00DBB34F /* _YYWebImageSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _YYWebImageSetter.h; sourceTree = "<group>"; };
+		CA20D1C3261CC8DE00DBB34F /* YYWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWebImage.h; sourceTree = "<group>"; };
+		CA20D1C4261CC8DE00DBB34F /* HFOpenMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenMusic.h; sourceTree = "<group>"; };
+		CA20D1C6261CC8DE00DBB34F /* HFOpenHotSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenHotSearchView.m; sourceTree = "<group>"; };
+		CA20D1C7261CC8DE00DBB34F /* HFOpenSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenSearchResultCell.m; sourceTree = "<group>"; };
+		CA20D1C9261CC8DE00DBB34F /* UIView+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYExtension.m"; sourceTree = "<group>"; };
+		CA20D1CA261CC8DE00DBB34F /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		CA20D1CB261CC8DE00DBB34F /* NSObject+LPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LPUtils.m"; sourceTree = "<group>"; };
+		CA20D1CC261CC8DE00DBB34F /* NSArray+GLSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+GLSafe.m"; sourceTree = "<group>"; };
+		CA20D1CD261CC8DE00DBB34F /* UIColor+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYExtension.h"; sourceTree = "<group>"; };
+		CA20D1CE261CC8DE00DBB34F /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		CA20D1CF261CC8DE00DBB34F /* UIView+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYExtension.h"; sourceTree = "<group>"; };
+		CA20D1D0261CC8DE00DBB34F /* NSObject+LPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LPUtils.h"; sourceTree = "<group>"; };
+		CA20D1D1261CC8DE00DBB34F /* UIColor+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYExtension.m"; sourceTree = "<group>"; };
+		CA20D1D2261CC8DE00DBB34F /* NSArray+GLSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+GLSafe.h"; sourceTree = "<group>"; };
+		CA20D1D3261CC8DE00DBB34F /* LPSearchHistoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPSearchHistoryView.m; sourceTree = "<group>"; };
+		CA20D1D4261CC8DE00DBB34F /* HFOpenHotSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenHotSearchCell.m; sourceTree = "<group>"; };
+		CA20D1D5261CC8DE00DBB34F /* HFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFAlertView.h; sourceTree = "<group>"; };
+		CA20D1D6261CC8DE00DBB34F /* HFOpenSeachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenSeachViewController.m; sourceTree = "<group>"; };
+		CA20D1D7261CC8DE00DBB34F /* HFOpenHotSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenHotSearchView.h; sourceTree = "<group>"; };
+		CA20D1D8261CC8DE00DBB34F /* HFOpenHotSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenHotSearchCell.h; sourceTree = "<group>"; };
+		CA20D1D9261CC8DE00DBB34F /* LPSearchHistoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPSearchHistoryView.h; sourceTree = "<group>"; };
+		CA20D1DA261CC8DE00DBB34F /* HFOpenSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenSearchResultCell.h; sourceTree = "<group>"; };
+		CA20D1DB261CC8DE00DBB34F /* HFOpenSeachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenSeachViewController.h; sourceTree = "<group>"; };
+		CA20D1DC261CC8DE00DBB34F /* HFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFAlertView.m; sourceTree = "<group>"; };
+		CA20D1DE261CC8DE00DBB34F /* HFOpenCurrentPlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenCurrentPlayListViewController.m; sourceTree = "<group>"; };
+		CA20D1DF261CC8DE00DBB34F /* HFOpenMusicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenMusicListCell.h; sourceTree = "<group>"; };
+		CA20D1E0261CC8DE00DBB34F /* HFVMusicListPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVMusicListPlaceholder.h; sourceTree = "<group>"; };
+		CA20D1E1261CC8DE00DBB34F /* HFOpenMusicSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenMusicSegmentView.m; sourceTree = "<group>"; };
+		CA20D1E2261CC8DE00DBB34F /* HFOpenMusicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenMusicListCell.m; sourceTree = "<group>"; };
+		CA20D1E3261CC8DE00DBB34F /* HFOpenCurrentPlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenCurrentPlayListViewController.h; sourceTree = "<group>"; };
+		CA20D1E4261CC8DE00DBB34F /* HFOpenMusicSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenMusicSegmentView.h; sourceTree = "<group>"; };
+		CA20D1E5261CC8DE00DBB34F /* HFVMusicListPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVMusicListPlaceholder.m; sourceTree = "<group>"; };
+		CA20D1E7261CC8DE00DBB34F /* HFOpenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenModel.m; sourceTree = "<group>"; };
+		CA20D1E8261CC8DE00DBB34F /* HFOpenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenModel.h; sourceTree = "<group>"; };
+		CA20D1E9261CC8DE00DBB34F /* HFOpenMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenMusic.m; sourceTree = "<group>"; };
+		CA20D1EC261CC8DE00DBB34F /* LPBaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPBaseListViewController.h; sourceTree = "<group>"; };
+		CA20D1ED261CC8DE00DBB34F /* LPBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPBaseCollectionViewController.m; sourceTree = "<group>"; };
+		CA20D1EE261CC8DE00DBB34F /* LPBaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPBaseListViewController.m; sourceTree = "<group>"; };
+		CA20D1EF261CC8DE00DBB34F /* LPBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPBaseCollectionViewController.h; sourceTree = "<group>"; };
+		CA20D1F1261CC8DE00DBB34F /* HFVProgressHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVProgressHud.h; sourceTree = "<group>"; };
+		CA20D1F2261CC8DE00DBB34F /* LPMJGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMJGifFooter.h; sourceTree = "<group>"; };
+		CA20D1F3261CC8DE00DBB34F /* HIFParseLyricTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIFParseLyricTool.m; sourceTree = "<group>"; };
+		CA20D1F4261CC8DE00DBB34F /* LPMJGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMJGifHeader.h; sourceTree = "<group>"; };
+		CA20D1F5261CC8DE00DBB34F /* NSMutableArray+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SafeAccess.m"; sourceTree = "<group>"; };
+		CA20D1F6261CC8DE00DBB34F /* HFVKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVKitUtils.h; sourceTree = "<group>"; };
+		CA20D1F7261CC8DE00DBB34F /* NSObject+LPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LPUtils.m"; sourceTree = "<group>"; };
+		CA20D1F8261CC8DE00DBB34F /* NSDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeAccess.m"; sourceTree = "<group>"; };
+		CA20D1F9261CC8DE00DBB34F /* HIFPlayerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFPlayerHeader.h; sourceTree = "<group>"; };
+		CA20D1FB261CC8DE00DBB34F /* HFVMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVMacro.h; sourceTree = "<group>"; };
+		CA20D1FC261CC8DE00DBB34F /* HFVGlobalTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVGlobalTool.m; sourceTree = "<group>"; };
+		CA20D1FD261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SafeAccess.m"; sourceTree = "<group>"; };
+		CA20D1FE261CC8DE00DBB34F /* LPMJGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPMJGifHeader.m; sourceTree = "<group>"; };
+		CA20D1FF261CC8DE00DBB34F /* HIFParseLyricTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFParseLyricTool.h; sourceTree = "<group>"; };
+		CA20D200261CC8DE00DBB34F /* LPMJGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPMJGifFooter.m; sourceTree = "<group>"; };
+		CA20D201261CC8DE00DBB34F /* HFVProgressHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVProgressHud.m; sourceTree = "<group>"; };
+		CA20D202261CC8DE00DBB34F /* NSObject+LPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LPUtils.h"; sourceTree = "<group>"; };
+		CA20D203261CC8DE00DBB34F /* HFVKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVKitUtils.m; sourceTree = "<group>"; };
+		CA20D204261CC8DE00DBB34F /* NSMutableArray+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SafeAccess.h"; sourceTree = "<group>"; };
+		CA20D205261CC8DE00DBB34F /* NSDictionary+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		CA20D206261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		CA20D207261CC8DE00DBB34F /* HFVGlobalTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVGlobalTool.h; sourceTree = "<group>"; };
+		CA20D2BA261CD31C00DBB34F /* bkg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bkg.jpg; sourceTree = "<group>"; };
+		CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HFOpenMusic.bundle; sourceTree = "<group>"; };
+		CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HFPlayer.bundle; sourceTree = "<group>"; };
+		CA3DBE9C261C768F008A8A42 /* HFOpenMusicPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HFOpenMusicPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFOpenMusicPlayer.h; sourceTree = "<group>"; };
+		CA3DBEA0261C768F008A8A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA3DBEAC261C76CB008A8A42 /* HFOpenMusicPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HFOpenMusicPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3DBEAE261C76CB008A8A42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CA3DBEB1261C76CB008A8A42 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		CA3DBEB2261C76CB008A8A42 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		CA3DBEB4261C76CB008A8A42 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CA3DBEB5261C76CB008A8A42 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CA3DBEB8261C76CB008A8A42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA3DBEBA261C76CF008A8A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA3DBEBD261C76CF008A8A42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA3DBEBF261C76CF008A8A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA3DBEC0261C76CF008A8A42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA3DBECB261C7935008A8A42 /* HFOpenMusicPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFOpenMusicPlayer.m; sourceTree = "<group>"; };
+		CA3DBEDB261C7AD2008A8A42 /* HFOpenAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenAction.h; sourceTree = "<group>"; };
+		CA3DBEDD261C7AD2008A8A42 /* HFVNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVNetWork.m; sourceTree = "<group>"; };
+		CA3DBEDF261C7AD2008A8A42 /* HFVLibInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVLibInfo.m; sourceTree = "<group>"; };
+		CA3DBEE0261C7AD2008A8A42 /* HFVLibUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVLibUtils.h; sourceTree = "<group>"; };
+		CA3DBEE1261C7AD2008A8A42 /* HFVLibInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVLibInfo.h; sourceTree = "<group>"; };
+		CA3DBEE2261C7AD2008A8A42 /* HFVLibUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVLibUtils.m; sourceTree = "<group>"; };
+		CA3DBEE4261C7AD2008A8A42 /* LYKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYKeychainQuery.m; sourceTree = "<group>"; };
+		CA3DBEE5261C7AD2008A8A42 /* LYKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYKeychain.m; sourceTree = "<group>"; };
+		CA3DBEE6261C7AD2008A8A42 /* LYKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYKeychain.h; sourceTree = "<group>"; };
+		CA3DBEE7261C7AD2008A8A42 /* LYKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYKeychainQuery.h; sourceTree = "<group>"; };
+		CA3DBEE9261C7AD2008A8A42 /* HFOpenAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenAction.m; sourceTree = "<group>"; };
+		CA3DBEEA261C7AD2008A8A42 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CA3DBEEB261C7AD2008A8A42 /* HFOpenApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenApi.h; sourceTree = "<group>"; };
+		CA3DBEEE261C7AD2008A8A42 /* NSMutableArray+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SafeAccess.m"; sourceTree = "<group>"; };
+		CA3DBEEF261C7AD2008A8A42 /* NSDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeAccess.m"; sourceTree = "<group>"; };
+		CA3DBEF0261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SafeAccess.m"; sourceTree = "<group>"; };
+		CA3DBEF1261C7AD2008A8A42 /* NSMutableArray+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SafeAccess.h"; sourceTree = "<group>"; };
+		CA3DBEF2261C7AD2008A8A42 /* NSDictionary+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		CA3DBEF3261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		CA3DBEF4261C7AD2008A8A42 /* HFVNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVNetWork.h; sourceTree = "<group>"; };
+		CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenApiManager.m; sourceTree = "<group>"; };
+		CAC777A4261EA70000B973F9 /* HFOpenApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenApiManager.h; sourceTree = "<group>"; };
+		CAC7A9A5261D5A2B0082FCA3 /* TestConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestConfigViewController.h; sourceTree = "<group>"; };
+		CAC7A9A6261D5A2B0082FCA3 /* TestConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestConfigViewController.m; sourceTree = "<group>"; };
+		CAC7A9AA261D5D130082FCA3 /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
+		CAC7A9AB261D5D130082FCA3 /* normol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normol.png; sourceTree = "<group>"; };
+		CAC7A9B0261D5FF10082FCA3 /* CheckBoxView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBoxView.h; sourceTree = "<group>"; };
+		CAC7A9B1261D5FF10082FCA3 /* CheckBoxView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBoxView.m; sourceTree = "<group>"; };
+		CAC7A9B5261D7ECF0082FCA3 /* HFInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFInputView.h; sourceTree = "<group>"; };
+		CAC7A9B6261D7ECF0082FCA3 /* HFInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFInputView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA3DBE99261C768F008A8A42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA3DBEA9261C76CB008A8A42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3DBF16261C7D52008A8A42 /* HFOpenMusicPlayer.framework in Frameworks */,
+				CAA15D374661E73224E37E09 /* libPods-HFOpenMusicPlayerDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB44E0BFAD16A5726879EEBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CD1EE15EC7425335ADADACB /* Pods-HFOpenMusicPlayerDemo.debug.xcconfig */,
+				0166652064B6D723C3EDA077 /* Pods-HFOpenMusicPlayerDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CA20D05F261CC10D00DBB34F /* HFPlayerApi */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D069261CC10D00DBB34F /* HFPlayerApi.h */,
+				CA20D073261CC10D00DBB34F /* HFPlayerApi.m */,
+				CA20D06D261CC10D00DBB34F /* HFPlayerApiConfiguration.h */,
+				CA20D060261CC10D00DBB34F /* HFPlayerApiConfiguration.m */,
+				CA20D06E261CC10D00DBB34F /* ResourceLoader */,
+				CA20D06A261CC10D00DBB34F /* DownLoader */,
+				CA20D061261CC10D00DBB34F /* Cache */,
+				CA20D064261CC10D00DBB34F /* NetworkReachAbility */,
+				CA20D074261CC10D00DBB34F /* Tool */,
+			);
+			path = HFPlayerApi;
+			sourceTree = "<group>";
+		};
+		CA20D061261CC10D00DBB34F /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D062261CC10D00DBB34F /* HFPlayerCacheManager.m */,
+				CA20D063261CC10D00DBB34F /* HFPlayerCacheManager.h */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		CA20D064261CC10D00DBB34F /* NetworkReachAbility */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D065261CC10D00DBB34F /* HFReachability.m */,
+				CA20D066261CC10D00DBB34F /* HFNetworkReachAbility.m */,
+				CA20D067261CC10D00DBB34F /* HFNetworkReachAbility.h */,
+				CA20D068261CC10D00DBB34F /* HFReachability.h */,
+			);
+			path = NetworkReachAbility;
+			sourceTree = "<group>";
+		};
+		CA20D06A261CC10D00DBB34F /* DownLoader */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D06B261CC10D00DBB34F /* HFSourceDownLoader.h */,
+				CA20D06C261CC10D00DBB34F /* HFSourceDownLoader.m */,
+			);
+			path = DownLoader;
+			sourceTree = "<group>";
+		};
+		CA20D06E261CC10D00DBB34F /* ResourceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D06F261CC10D00DBB34F /* HFResourceLoaderManager.h */,
+				CA20D070261CC10D00DBB34F /* HFResourceLoaderManager.m */,
+			);
+			path = ResourceLoader;
+			sourceTree = "<group>";
+		};
+		CA20D074261CC10D00DBB34F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D075261CC10D00DBB34F /* NSMutableArray+SafeAccess.m */,
+				CA20D076261CC10D00DBB34F /* NSDictionary+SafeAccess.m */,
+				CA20D077261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.m */,
+				CA20D078261CC10D00DBB34F /* NSMutableArray+SafeAccess.h */,
+				CA20D079261CC10D00DBB34F /* HFPrefixHeader.pch */,
+				CA20D07A261CC10D00DBB34F /* NSDictionary+SafeAccess.h */,
+				CA20D07B261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.h */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		CA20D09A261CC48B00DBB34F /* HFPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D0A9261CC48B00DBB34F /* HFPlayer.h */,
+				CA20D0EA261CC48B00DBB34F /* HFPlayer.m */,
+				CA20D0E9261CC48B00DBB34F /* HIFPlayerBarView.h */,
+				CA20D09B261CC48B00DBB34F /* HIFPlayerBarView.m */,
+				CA20D0E8261CC48B00DBB34F /* HFPlayerConfiguration.h */,
+				CA20D09C261CC48B00DBB34F /* HFPlayerConfiguration.m */,
+				CA20D0EE261CC48B00DBB34F /* HFVSlider.h */,
+				CA20D0A8261CC48B00DBB34F /* HFVSlider.m */,
+				CA20D0EB261CC48B00DBB34F /* Model */,
+				CA20D0F0261CC48B00DBB34F /* Tool */,
+			);
+			path = HFPlayer;
+			sourceTree = "<group>";
+		};
+		CA20D0EB261CC48B00DBB34F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D0EC261CC48B00DBB34F /* HFPlayerModel.m */,
+				CA20D0ED261CC48B00DBB34F /* HFPlayerModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA20D0F0261CC48B00DBB34F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D0F1261CC48B00DBB34F /* HFPlayerUtils.h */,
+				CA20D0F2261CC48B00DBB34F /* HIFPlayerHeader.h */,
+				CA20D0F4261CC48B00DBB34F /* HFVMacro.h */,
+				CA20D0F5261CC48B00DBB34F /* HFPlayerUtils.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		CA20D147261CC8DE00DBB34F /* HFOpenMusic */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1C4261CC8DE00DBB34F /* HFOpenMusic.h */,
+				CA20D1E9261CC8DE00DBB34F /* HFOpenMusic.m */,
+				CA20D148261CC8DE00DBB34F /* LPSegmentedView */,
+				CA20D14F261CC8DE00DBB34F /* Radio */,
+				CA20D15A261CC8DE00DBB34F /* ThirdLibs */,
+				CA20D1C5261CC8DE00DBB34F /* Search */,
+				CA20D1DD261CC8DE00DBB34F /* MusicList */,
+				CA20D1E6261CC8DE00DBB34F /* Model */,
+				CA20D1EB261CC8DE00DBB34F /* Base */,
+				CA20D1F0261CC8DE00DBB34F /* Tool */,
+			);
+			path = HFOpenMusic;
+			sourceTree = "<group>";
+		};
+		CA20D148261CC8DE00DBB34F /* LPSegmentedView */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D149261CC8DE00DBB34F /* LPCategoryView.m */,
+				CA20D14A261CC8DE00DBB34F /* LPSegmentViewController.h */,
+				CA20D14B261CC8DE00DBB34F /* HFVCategoryFlowLayout.m */,
+				CA20D14C261CC8DE00DBB34F /* LPSegmentViewController.m */,
+				CA20D14D261CC8DE00DBB34F /* LPCategoryView.h */,
+				CA20D14E261CC8DE00DBB34F /* HFVCategoryFlowLayout.h */,
+			);
+			path = LPSegmentedView;
+			sourceTree = "<group>";
+		};
+		CA20D14F261CC8DE00DBB34F /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D150261CC8DE00DBB34F /* HFOpenRadioDetailHeader.h */,
+				CA20D151261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.h */,
+				CA20D152261CC8DE00DBB34F /* HFOpenRadioDetailView.m */,
+				CA20D153261CC8DE00DBB34F /* HFOpenRadioSegmentView.h */,
+				CA20D154261CC8DE00DBB34F /* HFOpenRadioListViewController.m */,
+				CA20D155261CC8DE00DBB34F /* HFOpenRadioDetailHeader.m */,
+				CA20D156261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.m */,
+				CA20D157261CC8DE00DBB34F /* HFOpenRadioListViewController.h */,
+				CA20D158261CC8DE00DBB34F /* HFOpenRadioSegmentView.m */,
+				CA20D159261CC8DE00DBB34F /* HFOpenRadioDetailView.h */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		CA20D15A261CC8DE00DBB34F /* ThirdLibs */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D15B261CC8DE00DBB34F /* YYCache */,
+				CA20D161261CC8DE00DBB34F /* MJExtension */,
+				CA20D16D261CC8DE00DBB34F /* FLAnimatedImage */,
+				CA20D171261CC8DE00DBB34F /* MJRefresh */,
+				CA20D193261CC8DE00DBB34F /* YYImage */,
+				CA20D19A261CC8DE00DBB34F /* Masonry */,
+				CA20D1AD261CC8DE00DBB34F /* SVProgressHUD */,
+				CA20D1B7261CC8DE00DBB34F /* YYWebImage */,
+			);
+			path = ThirdLibs;
+			sourceTree = "<group>";
+		};
+		CA20D15B261CC8DE00DBB34F /* YYCache */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D15C261CC8DE00DBB34F /* YYCache */,
+			);
+			path = YYCache;
+			sourceTree = "<group>";
+		};
+		CA20D15C261CC8DE00DBB34F /* YYCache */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D15D261CC8DE00DBB34F /* YYKVStorage.h */,
+				CA20D15E261CC8DE00DBB34F /* YYMemoryCache.h */,
+				CA20D15F261CC8DE00DBB34F /* YYDiskCache.h */,
+				CA20D160261CC8DE00DBB34F /* YYCache.h */,
+			);
+			path = YYCache;
+			sourceTree = "<group>";
+		};
+		CA20D161261CC8DE00DBB34F /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D162261CC8DE00DBB34F /* MJPropertyKey.h */,
+				CA20D163261CC8DE00DBB34F /* NSObject+MJClass.h */,
+				CA20D164261CC8DE00DBB34F /* NSString+MJExtension.h */,
+				CA20D165261CC8DE00DBB34F /* NSObject+MJProperty.h */,
+				CA20D166261CC8DE00DBB34F /* MJExtensionConst.h */,
+				CA20D167261CC8DE00DBB34F /* MJFoundation.h */,
+				CA20D168261CC8DE00DBB34F /* MJExtension.h */,
+				CA20D169261CC8DE00DBB34F /* MJPropertyType.h */,
+				CA20D16A261CC8DE00DBB34F /* MJProperty.h */,
+				CA20D16B261CC8DE00DBB34F /* NSObject+MJKeyValue.h */,
+				CA20D16C261CC8DE00DBB34F /* NSObject+MJCoding.h */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		CA20D16D261CC8DE00DBB34F /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D16E261CC8DE00DBB34F /* FLAnimatedImage */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		CA20D16E261CC8DE00DBB34F /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D16F261CC8DE00DBB34F /* FLAnimatedImage.h */,
+				CA20D170261CC8DE00DBB34F /* FLAnimatedImageView.h */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		CA20D171261CC8DE00DBB34F /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D172261CC8DE00DBB34F /* MJRefresh */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		CA20D172261CC8DE00DBB34F /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D173261CC8DE00DBB34F /* UIScrollView+MJExtension.h */,
+				CA20D174261CC8DE00DBB34F /* MJRefresh.h */,
+				CA20D175261CC8DE00DBB34F /* NSBundle+MJRefresh.h */,
+				CA20D176261CC8DE00DBB34F /* MJRefresh.bundle */,
+				CA20D177261CC8DE00DBB34F /* UIView+MJExtension.h */,
+				CA20D178261CC8DE00DBB34F /* MJRefreshConfig.h */,
+				CA20D179261CC8DE00DBB34F /* MJRefreshConst.h */,
+				CA20D17A261CC8DE00DBB34F /* UIScrollView+MJRefresh.h */,
+				CA20D17B261CC8DE00DBB34F /* Custom */,
+				CA20D18C261CC8DE00DBB34F /* Base */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		CA20D17B261CC8DE00DBB34F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D17C261CC8DE00DBB34F /* Footer */,
+				CA20D185261CC8DE00DBB34F /* Trailer */,
+				CA20D188261CC8DE00DBB34F /* Header */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		CA20D17C261CC8DE00DBB34F /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D17D261CC8DE00DBB34F /* Back */,
+				CA20D181261CC8DE00DBB34F /* Auto */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		CA20D17D261CC8DE00DBB34F /* Back */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D17E261CC8DE00DBB34F /* MJRefreshBackGifFooter.h */,
+				CA20D17F261CC8DE00DBB34F /* MJRefreshBackStateFooter.h */,
+				CA20D180261CC8DE00DBB34F /* MJRefreshBackNormalFooter.h */,
+			);
+			path = Back;
+			sourceTree = "<group>";
+		};
+		CA20D181261CC8DE00DBB34F /* Auto */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D182261CC8DE00DBB34F /* MJRefreshAutoStateFooter.h */,
+				CA20D183261CC8DE00DBB34F /* MJRefreshAutoNormalFooter.h */,
+				CA20D184261CC8DE00DBB34F /* MJRefreshAutoGifFooter.h */,
+			);
+			path = Auto;
+			sourceTree = "<group>";
+		};
+		CA20D185261CC8DE00DBB34F /* Trailer */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D186261CC8DE00DBB34F /* MJRefreshNormalTrailer.h */,
+				CA20D187261CC8DE00DBB34F /* MJRefreshStateTrailer.h */,
+			);
+			path = Trailer;
+			sourceTree = "<group>";
+		};
+		CA20D188261CC8DE00DBB34F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D189261CC8DE00DBB34F /* MJRefreshStateHeader.h */,
+				CA20D18A261CC8DE00DBB34F /* MJRefreshGifHeader.h */,
+				CA20D18B261CC8DE00DBB34F /* MJRefreshNormalHeader.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		CA20D18C261CC8DE00DBB34F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D18D261CC8DE00DBB34F /* MJRefreshComponent.h */,
+				CA20D18E261CC8DE00DBB34F /* MJRefreshAutoFooter.h */,
+				CA20D18F261CC8DE00DBB34F /* MJRefreshTrailer.h */,
+				CA20D190261CC8DE00DBB34F /* MJRefreshHeader.h */,
+				CA20D191261CC8DE00DBB34F /* MJRefreshFooter.h */,
+				CA20D192261CC8DE00DBB34F /* MJRefreshBackFooter.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CA20D193261CC8DE00DBB34F /* YYImage */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D194261CC8DE00DBB34F /* YYImage */,
+			);
+			path = YYImage;
+			sourceTree = "<group>";
+		};
+		CA20D194261CC8DE00DBB34F /* YYImage */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D195261CC8DE00DBB34F /* YYImage.h */,
+				CA20D196261CC8DE00DBB34F /* YYImageCoder.h */,
+				CA20D197261CC8DE00DBB34F /* YYFrameImage.h */,
+				CA20D198261CC8DE00DBB34F /* YYAnimatedImageView.h */,
+				CA20D199261CC8DE00DBB34F /* YYSpriteSheetImage.h */,
+			);
+			path = YYImage;
+			sourceTree = "<group>";
+		};
+		CA20D19A261CC8DE00DBB34F /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D19B261CC8DE00DBB34F /* Masonry */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		CA20D19B261CC8DE00DBB34F /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D19C261CC8DE00DBB34F /* MASCompositeConstraint.h */,
+				CA20D19D261CC8DE00DBB34F /* MASConstraint+Private.h */,
+				CA20D19E261CC8DE00DBB34F /* MASLayoutConstraint.h */,
+				CA20D19F261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.h */,
+				CA20D1A0261CC8DE00DBB34F /* MASConstraintMaker.h */,
+				CA20D1A1261CC8DE00DBB34F /* View+MASShorthandAdditions.m */,
+				CA20D1A2261CC8DE00DBB34F /* View+MASAdditions.h */,
+				CA20D1A3261CC8DE00DBB34F /* NSArray+MASAdditions.h */,
+				CA20D1A4261CC8DE00DBB34F /* MASUtilities.h */,
+				CA20D1A5261CC8DE00DBB34F /* MASViewAttribute.h */,
+				CA20D1A6261CC8DE00DBB34F /* MASViewConstraint.h */,
+				CA20D1A7261CC8DE00DBB34F /* MASConstraint.h */,
+				CA20D1A8261CC8DE00DBB34F /* NSLayoutConstraint+MASDebugAdditions.h */,
+				CA20D1A9261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.m */,
+				CA20D1AA261CC8DE00DBB34F /* View+MASShorthandAdditions.h */,
+				CA20D1AB261CC8DE00DBB34F /* Masonry.h */,
+				CA20D1AC261CC8DE00DBB34F /* ViewController+MASAdditions.h */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		CA20D1AD261CC8DE00DBB34F /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1AE261CC8DE00DBB34F /* SVProgressHUD */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		CA20D1AE261CC8DE00DBB34F /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1AF261CC8DE00DBB34F /* HFSVIndefiniteAnimatedView.h */,
+				CA20D1B0261CC8DE00DBB34F /* HFSVProgressAnimatedView.h */,
+				CA20D1B1261CC8DE00DBB34F /* HFSVRadialGradientLayer.m */,
+				CA20D1B2261CC8DE00DBB34F /* HFSVProgressHUD.h */,
+				CA20D1B3261CC8DE00DBB34F /* HFSVIndefiniteAnimatedView.m */,
+				CA20D1B4261CC8DE00DBB34F /* HFSVProgressAnimatedView.m */,
+				CA20D1B5261CC8DE00DBB34F /* HFSVProgressHUD.m */,
+				CA20D1B6261CC8DE00DBB34F /* HFSVRadialGradientLayer.h */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		CA20D1B7261CC8DE00DBB34F /* YYWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1B8261CC8DE00DBB34F /* YYWebImage */,
+			);
+			path = YYWebImage;
+			sourceTree = "<group>";
+		};
+		CA20D1B8261CC8DE00DBB34F /* YYWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1B9261CC8DE00DBB34F /* YYWebImageOperation.h */,
+				CA20D1BA261CC8DE00DBB34F /* YYImageCache.h */,
+				CA20D1BB261CC8DE00DBB34F /* YYWebImageManager.h */,
+				CA20D1BC261CC8DE00DBB34F /* Categories */,
+				CA20D1C3261CC8DE00DBB34F /* YYWebImage.h */,
+			);
+			path = YYWebImage;
+			sourceTree = "<group>";
+		};
+		CA20D1BC261CC8DE00DBB34F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1BD261CC8DE00DBB34F /* UIButton+YYWebImage.h */,
+				CA20D1BE261CC8DE00DBB34F /* UIImageView+YYWebImage.h */,
+				CA20D1BF261CC8DE00DBB34F /* CALayer+YYWebImage.h */,
+				CA20D1C0261CC8DE00DBB34F /* UIImage+YYWebImage.h */,
+				CA20D1C1261CC8DE00DBB34F /* MKAnnotationView+YYWebImage.h */,
+				CA20D1C2261CC8DE00DBB34F /* _YYWebImageSetter.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		CA20D1C5261CC8DE00DBB34F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1C8261CC8DE00DBB34F /* Extension */,
+				CA20D1C6261CC8DE00DBB34F /* HFOpenHotSearchView.m */,
+				CA20D1C7261CC8DE00DBB34F /* HFOpenSearchResultCell.m */,
+				CA20D1D3261CC8DE00DBB34F /* LPSearchHistoryView.m */,
+				CA20D1D4261CC8DE00DBB34F /* HFOpenHotSearchCell.m */,
+				CA20D1D5261CC8DE00DBB34F /* HFAlertView.h */,
+				CA20D1D6261CC8DE00DBB34F /* HFOpenSeachViewController.m */,
+				CA20D1D7261CC8DE00DBB34F /* HFOpenHotSearchView.h */,
+				CA20D1D8261CC8DE00DBB34F /* HFOpenHotSearchCell.h */,
+				CA20D1D9261CC8DE00DBB34F /* LPSearchHistoryView.h */,
+				CA20D1DA261CC8DE00DBB34F /* HFOpenSearchResultCell.h */,
+				CA20D1DB261CC8DE00DBB34F /* HFOpenSeachViewController.h */,
+				CA20D1DC261CC8DE00DBB34F /* HFAlertView.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CA20D1C8261CC8DE00DBB34F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1C9261CC8DE00DBB34F /* UIView+PYExtension.m */,
+				CA20D1CA261CC8DE00DBB34F /* UIView+Utils.m */,
+				CA20D1CB261CC8DE00DBB34F /* NSObject+LPUtils.m */,
+				CA20D1CC261CC8DE00DBB34F /* NSArray+GLSafe.m */,
+				CA20D1CD261CC8DE00DBB34F /* UIColor+PYExtension.h */,
+				CA20D1CE261CC8DE00DBB34F /* UIView+Utils.h */,
+				CA20D1CF261CC8DE00DBB34F /* UIView+PYExtension.h */,
+				CA20D1D0261CC8DE00DBB34F /* NSObject+LPUtils.h */,
+				CA20D1D1261CC8DE00DBB34F /* UIColor+PYExtension.m */,
+				CA20D1D2261CC8DE00DBB34F /* NSArray+GLSafe.h */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CA20D1DD261CC8DE00DBB34F /* MusicList */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1E4261CC8DE00DBB34F /* HFOpenMusicSegmentView.h */,
+				CA20D1E1261CC8DE00DBB34F /* HFOpenMusicSegmentView.m */,
+				CA20D1E3261CC8DE00DBB34F /* HFOpenCurrentPlayListViewController.h */,
+				CA20D1DE261CC8DE00DBB34F /* HFOpenCurrentPlayListViewController.m */,
+				CA20D1DF261CC8DE00DBB34F /* HFOpenMusicListCell.h */,
+				CA20D1E0261CC8DE00DBB34F /* HFVMusicListPlaceholder.h */,
+				CA20D1E2261CC8DE00DBB34F /* HFOpenMusicListCell.m */,
+				CA20D1E5261CC8DE00DBB34F /* HFVMusicListPlaceholder.m */,
+			);
+			path = MusicList;
+			sourceTree = "<group>";
+		};
+		CA20D1E6261CC8DE00DBB34F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1E8261CC8DE00DBB34F /* HFOpenModel.h */,
+				CA20D1E7261CC8DE00DBB34F /* HFOpenModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA20D1EB261CC8DE00DBB34F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1EC261CC8DE00DBB34F /* LPBaseListViewController.h */,
+				CA20D1ED261CC8DE00DBB34F /* LPBaseCollectionViewController.m */,
+				CA20D1EE261CC8DE00DBB34F /* LPBaseListViewController.m */,
+				CA20D1EF261CC8DE00DBB34F /* LPBaseCollectionViewController.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CA20D1F0261CC8DE00DBB34F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D1F1261CC8DE00DBB34F /* HFVProgressHud.h */,
+				CA20D1F2261CC8DE00DBB34F /* LPMJGifFooter.h */,
+				CA20D1F3261CC8DE00DBB34F /* HIFParseLyricTool.m */,
+				CA20D1F4261CC8DE00DBB34F /* LPMJGifHeader.h */,
+				CA20D1F5261CC8DE00DBB34F /* NSMutableArray+SafeAccess.m */,
+				CA20D1F6261CC8DE00DBB34F /* HFVKitUtils.h */,
+				CA20D1F7261CC8DE00DBB34F /* NSObject+LPUtils.m */,
+				CA20D1F8261CC8DE00DBB34F /* NSDictionary+SafeAccess.m */,
+				CA20D1F9261CC8DE00DBB34F /* HIFPlayerHeader.h */,
+				CA20D1FB261CC8DE00DBB34F /* HFVMacro.h */,
+				CA20D1FC261CC8DE00DBB34F /* HFVGlobalTool.m */,
+				CA20D1FD261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.m */,
+				CA20D1FE261CC8DE00DBB34F /* LPMJGifHeader.m */,
+				CA20D1FF261CC8DE00DBB34F /* HIFParseLyricTool.h */,
+				CA20D200261CC8DE00DBB34F /* LPMJGifFooter.m */,
+				CA20D201261CC8DE00DBB34F /* HFVProgressHud.m */,
+				CA20D202261CC8DE00DBB34F /* NSObject+LPUtils.h */,
+				CA20D203261CC8DE00DBB34F /* HFVKitUtils.m */,
+				CA20D204261CC8DE00DBB34F /* NSMutableArray+SafeAccess.h */,
+				CA20D205261CC8DE00DBB34F /* NSDictionary+SafeAccess.h */,
+				CA20D206261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.h */,
+				CA20D207261CC8DE00DBB34F /* HFVGlobalTool.h */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		CA3DBE92261C768F008A8A42 = {
+			isa = PBXGroup;
+			children = (
+				CA3DBE9E261C768F008A8A42 /* HFOpenMusicPlayer */,
+				CA3DBEAD261C76CB008A8A42 /* HFOpenMusicPlayerDemo */,
+				CA3DBE9D261C768F008A8A42 /* Products */,
+				CA3DBED1261C79E1008A8A42 /* Frameworks */,
+				BB44E0BFAD16A5726879EEBA /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		CA3DBE9D261C768F008A8A42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DBE9C261C768F008A8A42 /* HFOpenMusicPlayer.framework */,
+				CA3DBEAC261C76CB008A8A42 /* HFOpenMusicPlayerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA3DBE9E261C768F008A8A42 /* HFOpenMusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */,
+				CA3DBECB261C7935008A8A42 /* HFOpenMusicPlayer.m */,
+				CA3DBEA0261C768F008A8A42 /* Info.plist */,
+				CA3DBEEA261C7AD2008A8A42 /* PrefixHeader.pch */,
+				CA20D147261CC8DE00DBB34F /* HFOpenMusic */,
+				CA20D09A261CC48B00DBB34F /* HFPlayer */,
+				CA20D05F261CC10D00DBB34F /* HFPlayerApi */,
+				CA3DBEDA261C7AD2008A8A42 /* HFOpenApi */,
+			);
+			path = HFOpenMusicPlayer;
+			sourceTree = "<group>";
+		};
+		CA3DBEAD261C76CB008A8A42 /* HFOpenMusicPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CA20D2BA261CD31C00DBB34F /* bkg.jpg */,
+				CAC7A9AA261D5D130082FCA3 /* selected.png */,
+				CAC7A9AB261D5D130082FCA3 /* normol.png */,
+				CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */,
+				CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */,
+				CA3DBEAE261C76CB008A8A42 /* AppDelegate.h */,
+				CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */,
+				CA3DBEB1261C76CB008A8A42 /* SceneDelegate.h */,
+				CA3DBEB2261C76CB008A8A42 /* SceneDelegate.m */,
+				CAC7A9B5261D7ECF0082FCA3 /* HFInputView.h */,
+				CAC7A9B6261D7ECF0082FCA3 /* HFInputView.m */,
+				CAC7A9B0261D5FF10082FCA3 /* CheckBoxView.h */,
+				CAC7A9B1261D5FF10082FCA3 /* CheckBoxView.m */,
+				CAC7A9A5261D5A2B0082FCA3 /* TestConfigViewController.h */,
+				CAC7A9A6261D5A2B0082FCA3 /* TestConfigViewController.m */,
+				CA3DBEB4261C76CB008A8A42 /* ViewController.h */,
+				CA3DBEB5261C76CB008A8A42 /* ViewController.m */,
+				CA3DBEB7261C76CB008A8A42 /* Main.storyboard */,
+				CA3DBEBA261C76CF008A8A42 /* Assets.xcassets */,
+				CA3DBEBC261C76CF008A8A42 /* LaunchScreen.storyboard */,
+				CA3DBEBF261C76CF008A8A42 /* Info.plist */,
+				CA3DBEC0261C76CF008A8A42 /* main.m */,
+			);
+			path = HFOpenMusicPlayerDemo;
+			sourceTree = "<group>";
+		};
+		CA3DBED1261C79E1008A8A42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA3DBEDA261C7AD2008A8A42 /* HFOpenApi */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DBEEB261C7AD2008A8A42 /* HFOpenApi.h */,
+				CAC777A4261EA70000B973F9 /* HFOpenApiManager.h */,
+				CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */,
+				CA3DBEDB261C7AD2008A8A42 /* HFOpenAction.h */,
+				CA3DBEE9261C7AD2008A8A42 /* HFOpenAction.m */,
+				CA3DBEF4261C7AD2008A8A42 /* HFVNetWork.h */,
+				CA3DBEDD261C7AD2008A8A42 /* HFVNetWork.m */,
+				CA3DBEDE261C7AD2008A8A42 /* Utils */,
+				CA3DBEE3261C7AD2008A8A42 /* SAMKeychain */,
+				CA3DBEED261C7AD2008A8A42 /* Tool */,
+			);
+			path = HFOpenApi;
+			sourceTree = "<group>";
+		};
+		CA3DBEDE261C7AD2008A8A42 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DBEDF261C7AD2008A8A42 /* HFVLibInfo.m */,
+				CA3DBEE0261C7AD2008A8A42 /* HFVLibUtils.h */,
+				CA3DBEE1261C7AD2008A8A42 /* HFVLibInfo.h */,
+				CA3DBEE2261C7AD2008A8A42 /* HFVLibUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CA3DBEE3261C7AD2008A8A42 /* SAMKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DBEE4261C7AD2008A8A42 /* LYKeychainQuery.m */,
+				CA3DBEE5261C7AD2008A8A42 /* LYKeychain.m */,
+				CA3DBEE6261C7AD2008A8A42 /* LYKeychain.h */,
+				CA3DBEE7261C7AD2008A8A42 /* LYKeychainQuery.h */,
+			);
+			path = SAMKeychain;
+			sourceTree = "<group>";
+		};
+		CA3DBEED261C7AD2008A8A42 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DBEEE261C7AD2008A8A42 /* NSMutableArray+SafeAccess.m */,
+				CA3DBEEF261C7AD2008A8A42 /* NSDictionary+SafeAccess.m */,
+				CA3DBEF0261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.m */,
+				CA3DBEF1261C7AD2008A8A42 /* NSMutableArray+SafeAccess.h */,
+				CA3DBEF2261C7AD2008A8A42 /* NSDictionary+SafeAccess.h */,
+				CA3DBEF3261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.h */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CA3DBE97261C768F008A8A42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAC777A6261EA70000B973F9 /* HFOpenApiManager.h in Headers */,
+				CA20D287261CC8DF00DBB34F /* HFOpenMusicSegmentView.h in Headers */,
+				CA20D084261CC10D00DBB34F /* HFSourceDownLoader.h in Headers */,
+				CA20D26A261CC8DF00DBB34F /* HFOpenMusic.h in Headers */,
+				CA20D230261CC8DE00DBB34F /* UIScrollView+MJRefresh.h in Headers */,
+				CA20D103261CC48B00DBB34F /* HFPlayer.h in Headers */,
+				CA20D21B261CC8DE00DBB34F /* YYCache.h in Headers */,
+				CA20D234261CC8DE00DBB34F /* MJRefreshAutoStateFooter.h in Headers */,
+				CA20D22D261CC8DE00DBB34F /* UIView+MJExtension.h in Headers */,
+				CA20D237261CC8DE00DBB34F /* MJRefreshNormalTrailer.h in Headers */,
+				CA20D24B261CC8DE00DBB34F /* MASConstraintMaker.h in Headers */,
+				CA20D247261CC8DE00DBB34F /* MASCompositeConstraint.h in Headers */,
+				CA20D283261CC8DF00DBB34F /* HFVMusicListPlaceholder.h in Headers */,
+				CA20D135261CC48B00DBB34F /* HFPlayerConfiguration.h in Headers */,
+				CA20D20F261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.h in Headers */,
+				CA20D233261CC8DE00DBB34F /* MJRefreshBackNormalFooter.h in Headers */,
+				CA20D25F261CC8DF00DBB34F /* HFSVRadialGradientLayer.h in Headers */,
+				CA20D22E261CC8DE00DBB34F /* MJRefreshConfig.h in Headers */,
+				CA20D27E261CC8DF00DBB34F /* HFOpenSearchResultCell.h in Headers */,
+				CA20D257261CC8DE00DBB34F /* ViewController+MASAdditions.h in Headers */,
+				CA20D136261CC48B00DBB34F /* HIFPlayerBarView.h in Headers */,
+				CA20D262261CC8DF00DBB34F /* YYWebImageManager.h in Headers */,
+				CA20D238261CC8DE00DBB34F /* MJRefreshStateTrailer.h in Headers */,
+				CA20D221261CC8DE00DBB34F /* MJFoundation.h in Headers */,
+				CA20D273261CC8DF00DBB34F /* UIView+PYExtension.h in Headers */,
+				CA20D242261CC8DE00DBB34F /* YYImage.h in Headers */,
+				CA20D268261CC8DF00DBB34F /* _YYWebImageSetter.h in Headers */,
+				CA20D220261CC8DE00DBB34F /* MJExtensionConst.h in Headers */,
+				CA20D211261CC8DE00DBB34F /* HFOpenRadioSegmentView.h in Headers */,
+				CA20D215261CC8DE00DBB34F /* HFOpenRadioListViewController.h in Headers */,
+				CA20D232261CC8DE00DBB34F /* MJRefreshBackStateFooter.h in Headers */,
+				CA20D246261CC8DE00DBB34F /* YYSpriteSheetImage.h in Headers */,
+				CA20D271261CC8DF00DBB34F /* UIColor+PYExtension.h in Headers */,
+				CA20D21F261CC8DE00DBB34F /* NSObject+MJProperty.h in Headers */,
+				CA20D272261CC8DF00DBB34F /* UIView+Utils.h in Headers */,
+				CA20D22A261CC8DE00DBB34F /* MJRefresh.h in Headers */,
+				CA20D236261CC8DE00DBB34F /* MJRefreshAutoGifFooter.h in Headers */,
+				CA20D259261CC8DF00DBB34F /* HFSVProgressAnimatedView.h in Headers */,
+				CA20D2A6261CC8DF00DBB34F /* NSMutableDictionary+SafeAccess.h in Headers */,
+				CA20D269261CC8DF00DBB34F /* YYWebImage.h in Headers */,
+				CA20D28D261CC8DF00DBB34F /* LPBaseListViewController.h in Headers */,
+				CA20D27F261CC8DF00DBB34F /* HFOpenSeachViewController.h in Headers */,
+				CA20D267261CC8DF00DBB34F /* MKAnnotationView+YYWebImage.h in Headers */,
+				CA20D249261CC8DE00DBB34F /* MASLayoutConstraint.h in Headers */,
+				CA20D28A261CC8DF00DBB34F /* HFOpenModel.h in Headers */,
+				CA20D086261CC10D00DBB34F /* HFPlayerApiConfiguration.h in Headers */,
+				CA20D24D261CC8DE00DBB34F /* View+MASAdditions.h in Headers */,
+				CA20D083261CC10D00DBB34F /* HFPlayerApi.h in Headers */,
+				CA20D25B261CC8DF00DBB34F /* HFSVProgressHUD.h in Headers */,
+				CA20D251261CC8DE00DBB34F /* MASViewConstraint.h in Headers */,
+				CA20D21E261CC8DE00DBB34F /* NSString+MJExtension.h in Headers */,
+				CA3DBF09261C7AD2008A8A42 /* NSDictionary+SafeAccess.h in Headers */,
+				CA20D209261CC8DE00DBB34F /* LPSegmentViewController.h in Headers */,
+				CA20D260261CC8DF00DBB34F /* YYWebImageOperation.h in Headers */,
+				CA20D258261CC8DE00DBB34F /* HFSVIndefiniteAnimatedView.h in Headers */,
+				CA20D292261CC8DF00DBB34F /* LPMJGifFooter.h in Headers */,
+				CA20D274261CC8DF00DBB34F /* NSObject+LPUtils.h in Headers */,
+				CA20D235261CC8DE00DBB34F /* MJRefreshAutoNormalFooter.h in Headers */,
+				CA3DBF02261C7AD2008A8A42 /* PrefixHeader.pch in Headers */,
+				CA20D299261CC8DF00DBB34F /* HIFPlayerHeader.h in Headers */,
+				CA20D239261CC8DE00DBB34F /* MJRefreshStateHeader.h in Headers */,
+				CA20D27D261CC8DF00DBB34F /* LPSearchHistoryView.h in Headers */,
+				CA20D231261CC8DE00DBB34F /* MJRefreshBackGifFooter.h in Headers */,
+				CA20D13F261CC48B00DBB34F /* HFVMacro.h in Headers */,
+				CA20D22F261CC8DE00DBB34F /* MJRefreshConst.h in Headers */,
+				CA20D13C261CC48B00DBB34F /* HFPlayerUtils.h in Headers */,
+				CA20D21C261CC8DE00DBB34F /* MJPropertyKey.h in Headers */,
+				CA20D224261CC8DE00DBB34F /* MJProperty.h in Headers */,
+				CA20D23C261CC8DE00DBB34F /* MJRefreshComponent.h in Headers */,
+				CA20D08F261CC10D00DBB34F /* NSMutableArray+SafeAccess.h in Headers */,
+				CA20D27C261CC8DF00DBB34F /* HFOpenHotSearchCell.h in Headers */,
+				CA20D24A261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.h in Headers */,
+				CA3DBF0A261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.h in Headers */,
+				CA20D13A261CC48B00DBB34F /* HFVSlider.h in Headers */,
+				CA20D2A7261CC8DF00DBB34F /* HFVGlobalTool.h in Headers */,
+				CA3DBF08261C7AD2008A8A42 /* NSMutableArray+SafeAccess.h in Headers */,
+				CA20D250261CC8DE00DBB34F /* MASViewAttribute.h in Headers */,
+				CA3DBEFA261C7AD2008A8A42 /* HFVLibInfo.h in Headers */,
+				CA20D276261CC8DF00DBB34F /* NSArray+GLSafe.h in Headers */,
+				CA20D082261CC10D00DBB34F /* HFReachability.h in Headers */,
+				CA3DBF0B261C7AD2008A8A42 /* HFVNetWork.h in Headers */,
+				CA3DBF03261C7AD2008A8A42 /* HFOpenApi.h in Headers */,
+				CA3DBEFE261C7AD2008A8A42 /* LYKeychain.h in Headers */,
+				CA20D07E261CC10D00DBB34F /* HFPlayerCacheManager.h in Headers */,
+				CA20D244261CC8DE00DBB34F /* YYFrameImage.h in Headers */,
+				CA20D20E261CC8DE00DBB34F /* HFOpenRadioDetailHeader.h in Headers */,
+				CA20D228261CC8DE00DBB34F /* FLAnimatedImageView.h in Headers */,
+				CA20D090261CC10D00DBB34F /* HFPrefixHeader.pch in Headers */,
+				CA20D23E261CC8DE00DBB34F /* MJRefreshTrailer.h in Headers */,
+				CA20D286261CC8DF00DBB34F /* HFOpenCurrentPlayListViewController.h in Headers */,
+				CA20D279261CC8DF00DBB34F /* HFAlertView.h in Headers */,
+				CA20D290261CC8DF00DBB34F /* LPBaseCollectionViewController.h in Headers */,
+				CA20D218261CC8DE00DBB34F /* YYKVStorage.h in Headers */,
+				CA20D24F261CC8DE00DBB34F /* MASUtilities.h in Headers */,
+				CA20D23B261CC8DE00DBB34F /* MJRefreshNormalHeader.h in Headers */,
+				CA20D294261CC8DF00DBB34F /* LPMJGifHeader.h in Headers */,
+				CA20D23D261CC8DE00DBB34F /* MJRefreshAutoFooter.h in Headers */,
+				CA20D256261CC8DE00DBB34F /* Masonry.h in Headers */,
+				CA20D226261CC8DE00DBB34F /* NSObject+MJCoding.h in Headers */,
+				CA20D225261CC8DE00DBB34F /* NSObject+MJKeyValue.h in Headers */,
+				CA20D29B261CC8DF00DBB34F /* HFVMacro.h in Headers */,
+				CA20D229261CC8DE00DBB34F /* UIScrollView+MJExtension.h in Headers */,
+				CA20D266261CC8DF00DBB34F /* UIImage+YYWebImage.h in Headers */,
+				CA20D23F261CC8DE00DBB34F /* MJRefreshHeader.h in Headers */,
+				CA3DBEF5261C7AD2008A8A42 /* HFOpenAction.h in Headers */,
+				CA20D264261CC8DF00DBB34F /* UIImageView+YYWebImage.h in Headers */,
+				CA3DBEA1261C768F008A8A42 /* HFOpenMusicPlayer.h in Headers */,
+				CA20D241261CC8DE00DBB34F /* MJRefreshBackFooter.h in Headers */,
+				CA20D081261CC10D00DBB34F /* HFNetworkReachAbility.h in Headers */,
+				CA20D240261CC8DE00DBB34F /* MJRefreshFooter.h in Headers */,
+				CA20D255261CC8DE00DBB34F /* View+MASShorthandAdditions.h in Headers */,
+				CA20D253261CC8DE00DBB34F /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				CA20D139261CC48B00DBB34F /* HFPlayerModel.h in Headers */,
+				CA20D222261CC8DE00DBB34F /* MJExtension.h in Headers */,
+				CA20D20C261CC8DE00DBB34F /* LPCategoryView.h in Headers */,
+				CA20D223261CC8DE00DBB34F /* MJPropertyType.h in Headers */,
+				CA20D21A261CC8DE00DBB34F /* YYDiskCache.h in Headers */,
+				CA20D2A5261CC8DF00DBB34F /* NSDictionary+SafeAccess.h in Headers */,
+				CA20D13D261CC48B00DBB34F /* HIFPlayerHeader.h in Headers */,
+				CA20D27B261CC8DF00DBB34F /* HFOpenHotSearchView.h in Headers */,
+				CA20D24E261CC8DE00DBB34F /* NSArray+MASAdditions.h in Headers */,
+				CA20D217261CC8DE00DBB34F /* HFOpenRadioDetailView.h in Headers */,
+				CA20D219261CC8DE00DBB34F /* YYMemoryCache.h in Headers */,
+				CA20D091261CC10D00DBB34F /* NSDictionary+SafeAccess.h in Headers */,
+				CA20D29F261CC8DF00DBB34F /* HIFParseLyricTool.h in Headers */,
+				CA20D2A2261CC8DF00DBB34F /* NSObject+LPUtils.h in Headers */,
+				CA20D252261CC8DE00DBB34F /* MASConstraint.h in Headers */,
+				CA20D265261CC8DF00DBB34F /* CALayer+YYWebImage.h in Headers */,
+				CA20D227261CC8DE00DBB34F /* FLAnimatedImage.h in Headers */,
+				CA20D282261CC8DF00DBB34F /* HFOpenMusicListCell.h in Headers */,
+				CA20D21D261CC8DE00DBB34F /* NSObject+MJClass.h in Headers */,
+				CA20D296261CC8DF00DBB34F /* HFVKitUtils.h in Headers */,
+				CA20D291261CC8DF00DBB34F /* HFVProgressHud.h in Headers */,
+				CA20D087261CC10D00DBB34F /* HFResourceLoaderManager.h in Headers */,
+				CA20D248261CC8DE00DBB34F /* MASConstraint+Private.h in Headers */,
+				CA20D245261CC8DE00DBB34F /* YYAnimatedImageView.h in Headers */,
+				CA20D261261CC8DF00DBB34F /* YYImageCache.h in Headers */,
+				CA20D22B261CC8DE00DBB34F /* NSBundle+MJRefresh.h in Headers */,
+				CA3DBEFF261C7AD2008A8A42 /* LYKeychainQuery.h in Headers */,
+				CA20D092261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.h in Headers */,
+				CA3DBEF9261C7AD2008A8A42 /* HFVLibUtils.h in Headers */,
+				CA20D20D261CC8DE00DBB34F /* HFVCategoryFlowLayout.h in Headers */,
+				CA20D263261CC8DF00DBB34F /* UIButton+YYWebImage.h in Headers */,
+				CA20D23A261CC8DE00DBB34F /* MJRefreshGifHeader.h in Headers */,
+				CA20D243261CC8DE00DBB34F /* YYImageCoder.h in Headers */,
+				CA20D2A4261CC8DF00DBB34F /* NSMutableArray+SafeAccess.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CA3DBE9B261C768F008A8A42 /* HFOpenMusicPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA3DBEA4261C768F008A8A42 /* Build configuration list for PBXNativeTarget "HFOpenMusicPlayer" */;
+			buildPhases = (
+				CA3DBE97261C768F008A8A42 /* Headers */,
+				CA3DBE98261C768F008A8A42 /* Sources */,
+				CA3DBE99261C768F008A8A42 /* Frameworks */,
+				CA3DBE9A261C768F008A8A42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HFOpenMusicPlayer;
+			productName = HFOpenMusicPlayer;
+			productReference = CA3DBE9C261C768F008A8A42 /* HFOpenMusicPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CA3DBEAB261C76CB008A8A42 /* HFOpenMusicPlayerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA3DBEC2261C76CF008A8A42 /* Build configuration list for PBXNativeTarget "HFOpenMusicPlayerDemo" */;
+			buildPhases = (
+				56997FE20649A541ACA8AE13 /* [CP] Check Pods Manifest.lock */,
+				CA3DBEA8261C76CB008A8A42 /* Sources */,
+				CA3DBEA9261C76CB008A8A42 /* Frameworks */,
+				CA3DBEAA261C76CB008A8A42 /* Resources */,
+				3DEEFD32C91C360769E5DF9E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA3DBF19261C7D52008A8A42 /* PBXTargetDependency */,
+			);
+			name = HFOpenMusicPlayerDemo;
+			productName = HFOpenMusicPlayerDemo;
+			productReference = CA3DBEAC261C76CB008A8A42 /* HFOpenMusicPlayerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA3DBE93261C768F008A8A42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					CA3DBE9B261C768F008A8A42 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					CA3DBEAB261C76CB008A8A42 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+				};
+			};
+			buildConfigurationList = CA3DBE96261C768F008A8A42 /* Build configuration list for PBXProject "HFOpenMusicPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA3DBE92261C768F008A8A42;
+			productRefGroup = CA3DBE9D261C768F008A8A42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA3DBE9B261C768F008A8A42 /* HFOpenMusicPlayer */,
+				CA3DBEAB261C76CB008A8A42 /* HFOpenMusicPlayerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA3DBE9A261C768F008A8A42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA20D22C261CC8DE00DBB34F /* MJRefresh.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA3DBEAA261C76CB008A8A42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3DBEBE261C76CF008A8A42 /* LaunchScreen.storyboard in Resources */,
+				CAC7A9AC261D5D130082FCA3 /* selected.png in Resources */,
+				CA20D2BE261CD31E00DBB34F /* HFOpenMusic.bundle in Resources */,
+				CA20D2BF261CD31E00DBB34F /* HFPlayer.bundle in Resources */,
+				CA3DBEBB261C76CF008A8A42 /* Assets.xcassets in Resources */,
+				CA20D2BD261CD31E00DBB34F /* bkg.jpg in Resources */,
+				CA3DBEB9261C76CB008A8A42 /* Main.storyboard in Resources */,
+				CAC7A9AD261D5D130082FCA3 /* normol.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DEEFD32C91C360769E5DF9E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56997FE20649A541ACA8AE13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HFOpenMusicPlayerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA3DBE98261C768F008A8A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA20D137261CC48B00DBB34F /* HFPlayer.m in Sources */,
+				CA3DBF07261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.m in Sources */,
+				CA3DBEFB261C7AD2008A8A42 /* HFVLibUtils.m in Sources */,
+				CA20D28E261CC8DF00DBB34F /* LPBaseCollectionViewController.m in Sources */,
+				CA20D0F7261CC48B00DBB34F /* HFPlayerConfiguration.m in Sources */,
+				CA20D08D261CC10D00DBB34F /* NSDictionary+SafeAccess.m in Sources */,
+				CA20D285261CC8DF00DBB34F /* HFOpenMusicListCell.m in Sources */,
+				CA3DBF05261C7AD2008A8A42 /* NSMutableArray+SafeAccess.m in Sources */,
+				CA20D281261CC8DF00DBB34F /* HFOpenCurrentPlayListViewController.m in Sources */,
+				CA20D254261CC8DE00DBB34F /* NSArray+MASShorthandAdditions.m in Sources */,
+				CA20D208261CC8DE00DBB34F /* LPCategoryView.m in Sources */,
+				CA20D07F261CC10D00DBB34F /* HFReachability.m in Sources */,
+				CA20D212261CC8DE00DBB34F /* HFOpenRadioListViewController.m in Sources */,
+				CA3DBF06261C7AD2008A8A42 /* NSDictionary+SafeAccess.m in Sources */,
+				CA20D25A261CC8DF00DBB34F /* HFSVRadialGradientLayer.m in Sources */,
+				CA20D140261CC48B00DBB34F /* HFPlayerUtils.m in Sources */,
+				CA20D28F261CC8DF00DBB34F /* LPBaseListViewController.m in Sources */,
+				CA20D20A261CC8DE00DBB34F /* HFVCategoryFlowLayout.m in Sources */,
+				CA20D280261CC8DF00DBB34F /* HFAlertView.m in Sources */,
+				CA3DBECC261C7935008A8A42 /* HFOpenMusicPlayer.m in Sources */,
+				CA3DBEFD261C7AD2008A8A42 /* LYKeychain.m in Sources */,
+				CA20D26F261CC8DF00DBB34F /* NSObject+LPUtils.m in Sources */,
+				CAC777A5261EA70000B973F9 /* HFOpenApiManager.m in Sources */,
+				CA20D26C261CC8DF00DBB34F /* HFOpenSearchResultCell.m in Sources */,
+				CA3DBEFC261C7AD2008A8A42 /* LYKeychainQuery.m in Sources */,
+				CA20D295261CC8DF00DBB34F /* NSMutableArray+SafeAccess.m in Sources */,
+				CA20D08B261CC10D00DBB34F /* HFPlayerApi.m in Sources */,
+				CA20D138261CC48B00DBB34F /* HFPlayerModel.m in Sources */,
+				CA20D216261CC8DE00DBB34F /* HFOpenRadioSegmentView.m in Sources */,
+				CA20D26E261CC8DF00DBB34F /* UIView+Utils.m in Sources */,
+				CA20D25E261CC8DF00DBB34F /* HFSVProgressHUD.m in Sources */,
+				CA20D0F6261CC48B00DBB34F /* HIFPlayerBarView.m in Sources */,
+				CA3DBEF8261C7AD2008A8A42 /* HFVLibInfo.m in Sources */,
+				CA20D08E261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.m in Sources */,
+				CA3DBEF7261C7AD2008A8A42 /* HFVNetWork.m in Sources */,
+				CA20D29D261CC8DF00DBB34F /* NSMutableDictionary+SafeAccess.m in Sources */,
+				CA20D288261CC8DF00DBB34F /* HFVMusicListPlaceholder.m in Sources */,
+				CA20D088261CC10D00DBB34F /* HFResourceLoaderManager.m in Sources */,
+				CA20D20B261CC8DE00DBB34F /* LPSegmentViewController.m in Sources */,
+				CA20D102261CC48B00DBB34F /* HFVSlider.m in Sources */,
+				CA20D275261CC8DF00DBB34F /* UIColor+PYExtension.m in Sources */,
+				CA20D278261CC8DF00DBB34F /* HFOpenHotSearchCell.m in Sources */,
+				CA20D29C261CC8DF00DBB34F /* HFVGlobalTool.m in Sources */,
+				CA20D080261CC10D00DBB34F /* HFNetworkReachAbility.m in Sources */,
+				CA20D07C261CC10D00DBB34F /* HFPlayerApiConfiguration.m in Sources */,
+				CA20D214261CC8DE00DBB34F /* HFOpenRadioCollectionViewCell.m in Sources */,
+				CA20D2A3261CC8DF00DBB34F /* HFVKitUtils.m in Sources */,
+				CA20D27A261CC8DF00DBB34F /* HFOpenSeachViewController.m in Sources */,
+				CA20D297261CC8DF00DBB34F /* NSObject+LPUtils.m in Sources */,
+				CA20D2A0261CC8DF00DBB34F /* LPMJGifFooter.m in Sources */,
+				CA20D213261CC8DE00DBB34F /* HFOpenRadioDetailHeader.m in Sources */,
+				CA20D284261CC8DF00DBB34F /* HFOpenMusicSegmentView.m in Sources */,
+				CA20D085261CC10D00DBB34F /* HFSourceDownLoader.m in Sources */,
+				CA20D210261CC8DE00DBB34F /* HFOpenRadioDetailView.m in Sources */,
+				CA20D24C261CC8DE00DBB34F /* View+MASShorthandAdditions.m in Sources */,
+				CA20D26D261CC8DF00DBB34F /* UIView+PYExtension.m in Sources */,
+				CA20D277261CC8DF00DBB34F /* LPSearchHistoryView.m in Sources */,
+				CA20D293261CC8DF00DBB34F /* HIFParseLyricTool.m in Sources */,
+				CA20D25C261CC8DF00DBB34F /* HFSVIndefiniteAnimatedView.m in Sources */,
+				CA20D07D261CC10D00DBB34F /* HFPlayerCacheManager.m in Sources */,
+				CA20D2A1261CC8DF00DBB34F /* HFVProgressHud.m in Sources */,
+				CA20D289261CC8DF00DBB34F /* HFOpenModel.m in Sources */,
+				CA20D08C261CC10D00DBB34F /* NSMutableArray+SafeAccess.m in Sources */,
+				CA20D28B261CC8DF00DBB34F /* HFOpenMusic.m in Sources */,
+				CA20D298261CC8DF00DBB34F /* NSDictionary+SafeAccess.m in Sources */,
+				CA20D26B261CC8DF00DBB34F /* HFOpenHotSearchView.m in Sources */,
+				CA20D270261CC8DF00DBB34F /* NSArray+GLSafe.m in Sources */,
+				CA20D29E261CC8DF00DBB34F /* LPMJGifHeader.m in Sources */,
+				CA20D25D261CC8DF00DBB34F /* HFSVProgressAnimatedView.m in Sources */,
+				CA3DBF01261C7AD2008A8A42 /* HFOpenAction.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA3DBEA8261C76CB008A8A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAC7A9A7261D5A2B0082FCA3 /* TestConfigViewController.m in Sources */,
+				CAC7A9B7261D7ECF0082FCA3 /* HFInputView.m in Sources */,
+				CAC7A9B2261D5FF10082FCA3 /* CheckBoxView.m in Sources */,
+				CA3DBEB6261C76CB008A8A42 /* ViewController.m in Sources */,
+				CA3DBEB0261C76CB008A8A42 /* AppDelegate.m in Sources */,
+				CA3DBEC1261C76CF008A8A42 /* main.m in Sources */,
+				CA3DBEB3261C76CB008A8A42 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA3DBF19261C7D52008A8A42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA3DBE9B261C768F008A8A42 /* HFOpenMusicPlayer */;
+			targetProxy = CA3DBF18261C7D52008A8A42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA3DBEB7261C76CB008A8A42 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA3DBEB8261C76CB008A8A42 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CA3DBEBC261C76CF008A8A42 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA3DBEBD261C76CF008A8A42 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA3DBEA2261C768F008A8A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA3DBEA3261C768F008A8A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CA3DBEA5261C768F008A8A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HFOpenMusicPlayer",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HFOpenMusicPlayer/PrefixHeader.pch";
+				INFOPLIST_FILE = HFOpenMusicPlayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hifiveai.HFOpenMusicPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA3DBEA6261C768F008A8A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HFOpenMusicPlayer",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HFOpenMusicPlayer/PrefixHeader.pch";
+				INFOPLIST_FILE = HFOpenMusicPlayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hifiveai.HFOpenMusicPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA3DBEC3261C76CF008A8A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CD1EE15EC7425335ADADACB /* Pods-HFOpenMusicPlayerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = N24P8B6R5C;
+				INFOPLIST_FILE = HFOpenMusicPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hifiveai.HFOpenMusicPlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = HFOpenMusicPlayerDemo_Hoc;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA3DBEC4261C76CF008A8A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0166652064B6D723C3EDA077 /* Pods-HFOpenMusicPlayerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = N24P8B6R5C;
+				INFOPLIST_FILE = HFOpenMusicPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hifiveai.HFOpenMusicPlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = HFOpenMusicPlayerDemo_Hoc;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA3DBE96261C768F008A8A42 /* Build configuration list for PBXProject "HFOpenMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3DBEA2261C768F008A8A42 /* Debug */,
+				CA3DBEA3261C768F008A8A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA3DBEA4261C768F008A8A42 /* Build configuration list for PBXNativeTarget "HFOpenMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3DBEA5261C768F008A8A42 /* Debug */,
+				CA3DBEA6261C768F008A8A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA3DBEC2261C76CF008A8A42 /* Build configuration list for PBXNativeTarget "HFOpenMusicPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3DBEC3261C76CF008A8A42 /* Debug */,
+				CA3DBEC4261C76CF008A8A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA3DBE93261C768F008A8A42 /* Project object */;
+}
