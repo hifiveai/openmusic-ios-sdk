@@ -1,4 +1,6 @@
-#### 初始化UI视图
+# 《音乐列表UI》接口文档
+[TOC]
+## 初始化UI视图
 ```objc
 -(instancetype)initWithListenType:(HFOpenMusicListenType) type;
 ```
@@ -14,30 +16,30 @@
 | 音视频作品BGM音乐播放 | TYPE_UGC     |      |
 | K歌音乐播放           | KTYPE_K      |      |
 
-#### 设置代理
+## 设置代理
 遵循协议 `HFOpenMusicDelegate`
 ```objc
 -(void)setDelegate:(id<HFOpenMusicDelegate>)delegate;
 ```
-#### 上一首
+## 上一首
 ```objc
 -(void)previousPlay;
 ```
 
-#### 下一曲
+## 下一曲
 ```objc
 -(void)nextPlay;
 ```
-#### 上移显示列表
+## 显示音乐列表
 ```objc
 -(void)showMusicSegmentView;
 ```
 
-#### 下移隐藏列表
+## 关闭音乐列表
 ```objc
 -(void)dismissView;
 ```
-#### 当前播放发生切换回调
+## 当前播放发生切换回调
 ```objc
 -(void)currentPlayChangedMusic:(HFOpenMusicModel *)musicModel detail:(HFOpenMusicDetailInfoModel *)detailModel canCutSong:(BOOL)canCutSong;
 ```
@@ -48,7 +50,7 @@
 | canCutSong | 上/下切歌按钮能否被点击 |
 
 
-#### 上/下切歌按钮能否被点击，需要更新回调
+## 上/下切歌按钮能否被点击，需要更新回调
 ```objc
 -(void)canCutSongChanged:(BOOL)canCutSong;
 ```

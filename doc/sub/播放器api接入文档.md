@@ -1,4 +1,7 @@
-#### 初始化
+# 《播放器API》接口文档
+
+[TOC]
+## 初始化SDK
 遵循协议 `<HFPlayerStatusProtocol>`
 
 ```objc
@@ -7,7 +10,7 @@ HFPlayerApi *playerApi = [[HFPlayerApi alloc] initPlayerWtihUrl:[NSURL URLWithSt
 playerApi.delegate = self;
 ```
 
-#### 初始化播放器
+## 初始化播放器
 ```objc
 -(instancetype)initPlayerWtihUrl:(NSURL *_Nonnull)url 
                    configuration:(HFPlayerConfiguration * _Nonnull)config;
@@ -35,7 +38,7 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 | rate | 播放速率 | 默认1.0 |
 | autoLoad | 播放器自动缓冲数据 | 默认开启 |
 
-#### 切换播放音频资源地址
+## 切换播放音频资源地址
 ```objc
 -(void)replaceCurrentUrlWithUrl:(NSURL *_Nonnull)url 
                   configuration:(HFPlayerConfiguration * _Nullable )config;
@@ -48,40 +51,40 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
   | url | 是 | 音频资源地址，支持网络和本地地址 | |
   | config | 是 | 播放器配置 | 详见[配置] |
 
-#### 手动加载媒体资源数据
+## 手动加载媒体资源数据
 在config配置里面将自动加载数据（autoLoad）设置为false时，需要调用此接口来加载数据
 ```objc
 -(void)loadMediaData;
 ```
 
-#### 播放器播放
+## 播放器播放
 ```objc
 -(void)play;
 ```
 
-#### 暂停播放
+## 暂停播放
 可继续播放
 ```objc
 -(void)pause;
 ```
 
-#### 恢复播放
+## 恢复播放
 ```objc
 -(void)resume;
 ```
 
-#### 停止播放
+## 停止播放
 不可继续播放。若需再次播放此资源，需要重新初始化播放器加载url进行播放
 ```objc
 -(void)stop;
 ```
 
-#### 清除缓存
+## 清除缓存
 ```objc
 -(void)clearCache;
 ```
 
-#### 跳转播放位置
+## 跳转播放位置
 按时间
 ```objc
 -(void)seekToDuration:(float)Duration;
@@ -101,7 +104,7 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 |---|---|---|
 | progress | 是 | 播放进度（百分比） |
 
-#### 设置播放速率
+## 设置播放速率
 ```objc
 -(void)configPlayRate:(float)rate;
 ```
@@ -111,7 +114,7 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 |---|---|---|
 | rate | 是 | 播放速率 0.0～2.0，0.0代表暂停播放，2.0代表两倍速播放 |
 
-#### 音量控制
+## 音量控制
 ```objc
 -(void)configVolume:(float)volume;
 ```
@@ -121,12 +124,12 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 |---|---|---|
 | volume | 是 | 音量  0.0～1.0，0.0代表播放器静音, 1.0 代表播放器音量最大 |
 
-#### 销毁播放器
+## 销毁播放器
 ```objc
 -(void)destroy;
 ````
 
-#### 播放器状态更新回调
+## 播放器状态更新回调
 
 ```objc
 -(void)pllayerStatusChanged:(HFPlayerStatus) status;
@@ -138,7 +141,7 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 |---|---|
 | status | 播放器状态 |
 
-#### 播放进度回调
+## 播放进度回调
 
 ```objc
 -(void)playerPlayProgress:(float)progress currentDuration:(float)currentDuration totalDuration:(float)totalDuration;
@@ -152,7 +155,7 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 | currentDuration | 当前播放时长，秒 |
 | totalDuration | 资源总播放时长 ，秒|
 
-#### 数据缓冲进度回调
+## 数据缓冲进度回调
 
 ```objc
 -(void)playerLoadingProgress:(float)progress timeRange:(CMTimeRange) timeRange;
@@ -165,31 +168,31 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 | progress | 当前缓冲进度 |
 | timeRange | 本次缓冲时间段 |
 
-#### 播放器遇到缓冲
+## 播放器遇到缓冲
 
 ```objc
 -(void)playerLoadingBegin;
 ```
 
-#### 播放器缓冲结束
+## 播放器缓冲结束
 
 ```objc
 -(void)playerLoadingEnd;
 ```
 
-#### 播放器播放完毕
+## 播放器播放完毕
 
 ```objc
 -(void)playerPlayToEnd;
 ```
 
-#### 播放资源Token过期
+## 播放资源Token过期
 用户可在此回调中进行重新获取新的资源地址，播放等处理
 ```objc
 -(void)sourceAccessTokenDisabled;
 ```
 
-#### 播放器状态码
+## 播放器状态码
 
 | 状态 | 状态码 | 状态描述 |
 |----------|:--------|:-------- |

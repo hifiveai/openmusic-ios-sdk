@@ -1,4 +1,6 @@
-#### 初始化
+# 《播放器UI》接口文档
+[TOC]
+## 初始化
 ```objc
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
 ```
@@ -6,7 +8,7 @@
 |---|---|---|---|
 | config | 是 | 配置 | 详见[配置] |
 
-**配置**
+### 配置
 
 - 创建默认配置
 ```objc
@@ -29,31 +31,31 @@ HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
 | rate | 播放速率 | 默认1.0 |
 | autoLoad | 播放器自动缓冲数据 | 默认开启 |
 
-#### 展开播放条
+## 展开播放条
 ```objc
 -(void)unfoldPlayerBar;
 ```
 
-#### 收起播放条
+## 收起播放条
 ```objc
 -(void)shrinkPlayerBar;
 ```
 
-#### 设置代理
+## 设置代理
 遵循协议`HFPlayerDelegat`
 ```objc
 -(void)setDelegate:(id<HFPlayerDelegate>)delegate
 ```
 
-#### 上一曲按钮点击回调
+## 上一曲按钮点击回调
 ```objc
 -(void)previousClick;
 ```
-#### 下一曲按钮点击回调
+## 下一曲按钮点击回调
 ```objc
 -(void)nextClick;
 ```
-#### 头像点击回调
+## 头像点击回调
 ```objc
 -(void)headerClick;
 ```
