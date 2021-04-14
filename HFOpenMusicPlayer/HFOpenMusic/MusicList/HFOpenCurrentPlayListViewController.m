@@ -91,7 +91,8 @@
 
 -(void)configUI {
     self.myTableView.backgroundColor = KColorHex(0x282828);
-    self.myTableView.separatorInset = UIEdgeInsetsMake(0, KScale(20), 0, 0);
+    self.myTableView.separatorInset = UIEdgeInsetsMake(0, KScale(15), 0, 0);
+    self.myTableView.separatorColor = [UIColor.whiteColor colorWithAlphaComponent:0.1];
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     //self.myTableView.tableFooterView = UIView.new;
@@ -130,7 +131,7 @@
     return self.dataArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return KScale(38);//58
+    return KScale(42);//58
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

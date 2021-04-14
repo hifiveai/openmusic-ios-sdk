@@ -9,7 +9,7 @@
 #import "HFOpenMusic.h"
 #import "HFOpenMusicSegmentView.h"
 
-@interface HFOpenMusic () <HFOpenMusicPlayDelegate ,HFPlayerDele>
+@interface HFOpenMusic () <HFOpenMusicPlayDelegate ,HFPlayerDelegate>
 
 @property(nonatomic ,strong)HFPlayer                                          *player;
 @property(nonatomic ,assign)HFOpenMusicListenType                             listenType;
@@ -51,6 +51,9 @@
     [self.segment showMusicSegmentView];
 }
 
+-(void)dismissView {
+    [self.segment dismissView];
+}
 #pragma mark - Segment Delegate
 //播放的歌曲发生改变
 -(void)currentPlayChangedMusic:(HFOpenMusicModel *)musicModel detail:(HFOpenMusicDetailInfoModel *)detailModel canCutSong:(BOOL)canCutSong {

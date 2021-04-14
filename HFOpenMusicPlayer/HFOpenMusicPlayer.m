@@ -13,7 +13,7 @@
 #import "HFOpenMusic.h"
 //#import "HFOpenApiManager.h"
 
-@interface HFOpenMusicPlayer () <HFPlayerDele, HFOpenMusicDelegate>
+@interface HFOpenMusicPlayer () <HFPlayerDelegate, HFOpenMusicDelegate>
 
 @property(nonatomic ,strong)HFPlayer                                             *player;
 @property(nonatomic ,strong)HFOpenMusic                                          *listView;
@@ -22,7 +22,7 @@
 @end
 
 @implementation HFOpenMusicPlayer
--(instancetype)initWithListenType:(NSUInteger)type config:(HFPlayerConfiguration *)config {
+-(instancetype)initWithListenType:(NSUInteger)type config:(HFOpenMusicPlayerConfiguration *)config {
     if (self = [super init]) {
         self.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
         
@@ -35,13 +35,30 @@
         
         //播放器
         _config = config;
-        HFPlayer *player = [[HFPlayer alloc] initWithConfiguration:config];
+        HFPlayerConfiguration *playerConfig = [self changeToPlayerConfig:config];
+        HFPlayer *player = [[HFPlayer alloc] initWithConfiguration:playerConfig];
         player.frame = CGRectMake(0, KScreenHeight-KScale(500), KScreenWidth, KScale(50));
         _player = player;
         _player.delegate = self;
         [self addSubview:player];
     }
     return self;
+}
+
+-(HFPlayerConfiguration *)changeToPlayerConfig:(HFOpenMusicPlayerConfiguration *)config {
+    HFPlayerConfiguration *playerConfig = [HFPlayerConfiguration defaultConfiguration];
+    playerConfig.autoNext = config.autoNext;
+    playerConfig.panTopLimit = config.panTopLimit;
+    playerConfig.panBottomLimit = config.panBottomLimit;
+    playerConfig.cacheEnable = config.cacheEnable;
+    playerConfig.bufferCacheSize = config.bufferCacheSize;
+    playerConfig.advanceBufferCacheSize = config.advanceBufferCacheSize;
+    playerConfig.repeatPlay = config.repeatPlay;
+    playerConfig.networkAbilityEable = config.networkAbilityEable;
+    playerConfig.rate = config.rate;
+    playerConfig.bkgLoadingEnable = config.bkgLoadingEnable;
+    playerConfig.autoLoad = config.autoLoad;
+    return playerConfig;
 }
 
 #pragma mark - Player Delegate

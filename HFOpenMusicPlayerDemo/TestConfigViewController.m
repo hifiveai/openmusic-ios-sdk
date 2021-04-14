@@ -53,7 +53,7 @@
     }];
     
     self.inpitView1 = [[HFInputView alloc] initWithTitle:@"缓冲区(kb)"];
-    self.inpitView1.field.text = @"100";
+    self.inpitView1.field.text = @"500";
     [self.view addSubview:_inpitView1];
     [_inpitView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
@@ -90,8 +90,10 @@
     UIButton *submitBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-50, self.view.frame.size.width, 50)];
     [submitBtn setBackgroundColor:UIColor.grayColor];
     [submitBtn setTitle:@"保存" forState:UIControlStateNormal];
+    submitBtn.layer.cornerRadius = 10;
     [submitBtn addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:submitBtn];
+    self.view.backgroundColor = UIColor.whiteColor;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

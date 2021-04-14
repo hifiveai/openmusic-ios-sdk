@@ -6,11 +6,8 @@
 //
 
 #import "HIFPlayerBarView.h"
-//#import <HFPlayerApi/HFPlayerApi.h>
 #import "HFPlayerApi.h"
-//#import <HFOpenApi/HFOpenApi.h>
 #import "HFOpenApi.h"
-//#import <HFPlayerApi/HFPlayerApiConfiguration.h>
 #import "HFPlayerApiConfiguration.h"
 #import "Masonry.h"
 #import "HFPlayerModel.h"
@@ -59,7 +56,6 @@
         [self configPlayer];
         [self configDefaultData];
         [self configNotification];
-        //[self configKVO];
     }
     return self;
 }
@@ -439,21 +435,25 @@
 /// 播放器状态更新
 -(void)playerStatusChanged:(HFPlayerStatus)status {
         switch (status) {
+            case HFPlayerStatusLoading:
+            {
+                [self startLoadingAnimate];
+            }
             case HFPlayerStatusReadyToPlay:
             {
+                [self stopLoadingAnimate];
                 [self.playerApi play];
             }
                 break;
             case HFPlayerStatusPlaying:
             {
-                NSLog(@"又在播放了!!!");
-                [self startHeadRotationAnimate];
-                self.playBtn.selected = YES;
+                if (!self.playBtn.selected) {
+                    self.playBtn.selected = true;
+                }
             }
                 break;
             case HFPlayerStatusPasue:
             {
-                NSLog(@"------pppppp-----暂停了！！！！！！");
                 [self endHeadRotationAnimate];
                 self.playBtn.selected = NO;
             }
@@ -466,7 +466,6 @@
                 break;
             case HFPlayerStatusBufferKeepUp:
             {
-                
                 [self stopLoadingAnimate];
             }
                 break;
@@ -475,7 +474,6 @@
                 [self endHeadRotationAnimate];
                 self.playBtn.selected = NO;
                 self.slider.value = 0.f;
-                NSLog(@"------pppppp-------stop!!!!!!!!!!");
             }
             default:
                 break;
@@ -498,16 +496,11 @@
 
 /// 播放器数据缓冲
 -(void)playerLoadingBegin {
-    NSLog(@"数据遇到缓冲ing！！！");
-    //[_ActivityIndicator startAnimating];
     [self startLoadingAnimate];
 }
 
 /// 播放器数据缓冲结束，继续播放
 -(void)playerLoadingEnd {
-    NSLog(@"数据缓冲end！！！");
-    //菊花停止旋转
-    //[_ActivityIndicator stopAnimating];
     [self stopLoadingAnimate];
 }
 
@@ -516,9 +509,6 @@
     if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
         [self.delegate playerPlayToEnd];
     }
-//    if ([self.delegate respondsToSelector:@selector(cutSongDuration:musicId:)]) {
-//        [self.delegate cutSongDuration:_currentDuration musicId:_config.musicId];
-//    }
     _currentDuration = 0;
 }
 
@@ -544,28 +534,6 @@
 -(void)dealloc {
     LPLog(@"^^^^dealloc^^^^^^^^^^^^^^^%@",self.class);
 }
-
-//-(HFPlayerApi *)playerApi {
-//    if (!_playerApi) {
-//        if (_config && _config.urlAry && _config.urlAry.count>0) {
-//            HFPlayerApiConfiguration *config = [HFPlayerApiConfiguration defaultConfiguration];
-//            config.cacheEnable = _config.cacheEnable;
-//            config.bufferCacheSize = _config.bufferCacheSize;//270Kb
-//            config.advanceBufferCacheSize = _config.advanceBufferCacheSize;
-//
-//            config.repeatPlay = _config.autoNext?false:_config.repeatPlay;
-//            config.networkAbilityEable = _config.networkAbilityEable;
-//            config.rate = _config.rate;
-//            config.bkgLoadingEnable = _config.bkgLoadingEnable;
-//            config.autoLoad = _config.autoLoad;
-//            _playerConfig = config;
-//            _playerApi = [[HFPlayerApi alloc] initPlayerWtihUrl:_config.urlAry[0] configuration:config];
-//            _currentIndex = 0;
-//            _playerApi.delegate = self;
-//        }
-//    }
-//    return _playerApi;
-//}
 
 -(void)initPlayerApi:(NSURL *)url {
     if (!_playerApi) {

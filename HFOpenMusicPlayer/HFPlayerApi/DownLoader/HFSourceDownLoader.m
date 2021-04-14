@@ -185,9 +185,6 @@ didReceiveResponse:(NSURLResponse *)response
         [self.fileHandle seekToEndOfFile];
         [self.fileHandle writeData:data];
         //如果文件下载完整了，发出缓存完成的通知
-        if (_config.cacheEnable) {
-            NSLog(@"可以缓存");
-        }
         NSLog(@"XXXXXXXXXXX_downLoadingOffset:%lu,_videoLength:%lu",_downLoadingOffset,_videoLength);
         if (_config.cacheEnable && _downLoadingOffset>=_videoLength) {
             NSLog(@"XXXXXX我已经发出了通知了的哟");

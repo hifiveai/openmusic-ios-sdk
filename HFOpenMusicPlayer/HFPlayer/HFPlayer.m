@@ -17,7 +17,7 @@
 
 @implementation HFPlayer
 
-
+#pragma mark - Public Method
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config {
     if (self = [super init]) {
         _config = config;
@@ -32,19 +32,27 @@
     _config = config;
 }
 
+-(void)unfoldPlayerBar {
+    if (_barView) {
+        [_barView unfoldAnimation];
+    }
+}
+
+-(void)shrinkPlayerBar {
+    if (_barView) {
+        [_barView shrinkAnimation];
+    }
+}
+
+#pragma mark - Private Method
 -(void)configUI {
     self.frame = CGRectMake(0, KScreenHeight-KScale(440+50+10), KScreenWidth, KScale(50));
     _barView = [[HIFPlayerBarView alloc] initWithConfiguration:[_config copy]];
     _barView.delegate = self;
     [self addSubview: _barView];
     [_barView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(self).offset(15);
-//        make.right.mas_equalTo(self).offset(-15);
-//        make.top.bottom.mas_equalTo(self);
         make.left.equalTo(self).offset(KScale(20));
         make.right.equalTo(self).offset(-KScreenWidth+KScale(70));//20 305
-//        make.bottom.equalTo(self).offset(-[HFVGlobalTool shareTool].songListHeight-KScale(30));
-//        make.height.mas_equalTo(KScale(50));
         make.top.bottom.mas_equalTo(self);
     }];
 }
@@ -95,14 +103,14 @@
 
 -(void)previousBtnClick:(UIButton *)sender {
     
-    if ([self.delegate respondsToSelector:@selector(previousPlay)]) {
-        [self.delegate previousPlay];
+    if ([self.delegate respondsToSelector:@selector(previousClick)]) {
+        [self.delegate previousClick];
     }
 }
 
 -(void)nextBtnClick:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(nextPlay)]) {
-        [self.delegate nextPlay];
+    if ([self.delegate respondsToSelector:@selector(nextClick)]) {
+        [self.delegate nextClick];
     }
 }
 
@@ -112,13 +120,13 @@
 
 -(void)playerPlayToEnd {
     if (self.config.autoNext) {
-        if ([self.delegate respondsToSelector:@selector(nextPlay)]) {
-            [self.delegate nextPlay];
+        if ([self.delegate respondsToSelector:@selector(nextClick)]) {
+            [self.delegate nextClick];
         }
     }
-    if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
-        [self.delegate playerPlayToEnd];
-    }
+//    if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
+//        [self.delegate playerPlayToEnd];
+//    }
 }
 
 -(void)cutSongDuration:(float)duration musicId:(NSString *)musicId {
@@ -126,5 +134,6 @@
         [self.delegate cutSongDuration:duration musicId:musicId];
     }
 }
+
 
 @end

@@ -29,6 +29,10 @@
 
 @property(nonatomic ,assign)float                                       currentSeekProgress;
 
+@property(nonatomic ,assign)float                                       currentPlayProgress;
+
+@property(nonatomic ,assign)float                                       currentLoadProgress;
+
 @property(nonatomic ,assign)BOOL                                        isPlaying;
 
 @end
@@ -38,7 +42,6 @@
 #pragma mark - 🐠初始化播放🐠
 -(void)setStatus:(HFPlayerStatus)status {
     if (status != _status) {
-        NSLog(@"444");
         _status = status;
         if ([self.delegate respondsToSelector:@selector(playerStatusChanged:)]) {
             [self.delegate playerStatusChanged:status];
@@ -52,8 +55,8 @@
         self.config = config?config:[HFPlayerApiConfiguration defaultConfiguration];
         //初始化播放器
         AVPlayerItem *playerItem;
-//        [[HFPlayerCacheManager shared] cleanSongCache];
         if (!self.hfPlayer) {
+            self.status = HFPlayerStatusLoading;
             [self.resourceLoaderManager cleanNotCompleteSongCache];
             if ([[HFPlayerCacheManager shared] isExistCacheWithUrl:url]) {
                 //有缓存，播放本地
@@ -70,7 +73,7 @@
             self.url = url;
             self.hfPlayer = [AVPlayer playerWithPlayerItem:playerItem];
             if (@available(iOS 10.0, *)) {
-            [_hfPlayer setAutomaticallyWaitsToMinimizeStalling:NO]; // 禁止缓冲完成再播放
+            [_hfPlayer setAutomaticallyWaitsToMinimizeStalling:false]; // 禁止缓冲完成再播放
             }
             //播放进度监听
             [self configPlayerObserve];
@@ -85,10 +88,10 @@
 }
 
 -(void)replaceCurrentUrlWithUrl:(NSURL *)url configuration:(HFPlayerApiConfiguration *)config {
-    NSLog(@"hasdgasdasdjkljklkjdasjkladsjadsjkladsjklasdlkjasdljkadsjlk");
+    LPLog(@"-----playerApiReplaceUrl:%@-----",url.absoluteString);
     [self.resourceLoaderManager cleanNotCompleteSongCache];
     if (self.hfPlayer) {
-        NSLog(@"kkdldkslkdjf");
+        self.status = HFPlayerStatusLoading;
         AVPlayerItem *playerItem;
         if (config) {
             _config = config;
@@ -100,14 +103,14 @@
         
         if ([[HFPlayerCacheManager shared] isExistCacheWithUrl:url]) {
             //有缓存，播放本地
-            NSLog(@"kkdldkslkdjf---you");
+            LPLog(@"-----replaceHasCache-----");
             NSString *localPath = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
             NSURL *url = [NSURL fileURLWithPath:localPath];
             playerItem = [AVPlayerItem playerItemWithURL:url];
             [self.hfPlayer replaceCurrentItemWithPlayerItem:playerItem];
         } else {
             //无缓存，需要请求
-            NSLog(@"kkdldkslkdjf---");
+            LPLog(@"-----replaceNoCache-----");
             HFResourceLoaderManager *resourceLoaderManager = [HFResourceLoaderManager new];
             resourceLoaderManager.config = _config;
             self.resourceLoaderManager = resourceLoaderManager;
@@ -142,6 +145,9 @@
 //开始播放
 -(void)play {
     if (self.hfPlayer) {
+        if (self.status == HFPlayerStatusUnknow || self.status == HFPlayerStatusFailed) {
+            return;
+        }
         [self.hfPlayer play];
         [self.hfPlayer setRate:_config.rate];
         self.status = HFPlayerStatusPlaying;
@@ -152,7 +158,6 @@
 -(void)pause {
     if (self.hfPlayer) {
         [self.hfPlayer pause];
-        NSLog(@"1111");
         self.status = HFPlayerStatusPasue;
     }
 }
@@ -161,7 +166,6 @@
 -(void)resume {
     if (self.hfPlayer) {
         [self.hfPlayer play];
-        self.status = HFPlayerStatusPlaying;
     }
 }
 
@@ -179,15 +183,22 @@
     if (duration<0) {
         return;
     }
+    if (self.status == HFPlayerStatusFailed) {
+        return;
+    }
     [self pause];
     _resourceLoaderManager.seeking = YES;
     _resourceLoaderManager.requestRecord = YES;
     __weak typeof(self) weakSelf = self;
     //CMTimeMakeWithSeconds(duration, NSEC_PER_SEC)
+    //进入缓冲状态
+    self.status = HFPlayerStatusBufferEmpty;
+    if ([self.delegate respondsToSelector:@selector(playerLoadingBegin)]) {
+        [self.delegate playerLoadingBegin];
+    }
     int timescale = _hfPlayer.currentItem.duration.timescale;
     [self.hfPlayer.currentItem seekToTime:CMTimeMake(duration*timescale, timescale) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
         if (finished) {
-            NSLog(@"seek完成了：%i",weakSelf.hfPlayer.currentItem.isPlaybackLikelyToKeepUp);
             [weakSelf play];
         }
     }];
@@ -195,7 +206,6 @@
 
 //拖动播放（进度）
 -(void)seekToProgress:(float)progress {
-    NSLog(@"playerSeek:%f",progress);
     _currentSeekProgress = progress;
     float targetSecond = _totalSeconds*progress;
     [self seekToDuration:targetSecond];
@@ -237,7 +247,7 @@
         [self.hfPlayer removeTimeObserver:_playerObserver];
         //移除kvo
         [self removeKvo];
-        //移除通知（iOS9.0之后可以不用移除）
+        //移除通知
         [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:self.hfPlayer.currentItem];
         self.hfPlayer = nil;
     }
@@ -253,13 +263,12 @@
         }
         float current = CMTimeGetSeconds(time);
         float total = CMTimeGetSeconds(weakSelf.hfPlayer.currentItem.duration);
-        weakSelf.totalSeconds = total;
         float progress = current/total;
-        //weakSelf.status = HFPlayerStatusPlaying;
+        weakSelf.totalSeconds = total;
+        weakSelf.currentPlayProgress = progress;
         if ([weakSelf.delegate respondsToSelector:@selector(playerPlayProgress:currentDuration:totalDuration:)]) {
             [weakSelf.delegate playerPlayProgress:progress currentDuration:current totalDuration:total];
         }
-        //NSLog(@"播放进度:%f",progress);
         //通知Downloader播放进度
         [[NSNotificationCenter defaultCenter] postNotificationName:KNotification_playProgress object:nil userInfo:@{@"progress": [NSString stringWithFormat:@"%f",progress]}];
     }];
@@ -273,8 +282,6 @@
     [playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
     //播放缓冲
     [playerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
-    //播放缓冲结束
-    [playerItem addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 //KVO回调
@@ -283,19 +290,16 @@
     if ([keyPath isEqualToString:@"status"]) {
         switch (playerItem.status) {
             case AVPlayerItemStatusUnknown:
-                //KVO：未知状态，此时不能播放
-                NSLog(@"未知状态，此时不能播放");
+                LPLog(@"未知状态，此时不能播放");
                 self.status = HFPlayerStatusUnknow;
                 break;
             case AVPlayerItemStatusReadyToPlay:
-                //KVO：准备完毕，可以播放
-                NSLog(@"准备完毕，可以播放");
+                LPLog(@"准备完毕，可以播放");
                 self.status = HFPlayerStatusReadyToPlay;
                 //[self.hfPlayer play];
                 break;
             case AVPlayerItemStatusFailed:
-                //KVO：main 加载失败，网络或者服务器出现问题
-                NSLog(@"加载失败，网络或者服务器出现问题");
+                LPLog(@"加载失败，网络或者服务器出现问题");
                 self.status = HFPlayerStatusFailed;
                 break;
             default:
@@ -304,21 +308,10 @@
     } else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) {
         if (playerItem.isPlaybackBufferEmpty) {
             //缓冲ing
-            NSLog(@"--jjkkjjkk----缓冲了-------");
-            NSLog(@"playbackBufferEmpty");
+            LPLog(@"playbackBufferEmpty");
             self.status = HFPlayerStatusBufferEmpty;
             if ([self.delegate respondsToSelector:@selector(playerLoadingBegin)]) {
                 [self.delegate playerLoadingBegin];
-            }
-        }
-    } else if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
-        if (playerItem.isPlaybackLikelyToKeepUp) {
-            //缓冲end
-            //[_hfPlayer play];
-            NSLog(@"playbackLikelyToKeepUp");
-            self.status = HFPlayerStatusBufferKeepUp;
-            if ([self.delegate respondsToSelector:@selector(playerLoadingEnd)]) {
-                [self.delegate playerLoadingEnd];
             }
         }
     } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
@@ -328,6 +321,13 @@
         float durationSeconds = CMTimeGetSeconds(timeRange.duration);
         NSTimeInterval totalBuffer = startSeconds + durationSeconds;//缓冲总长度
         float progressF = totalBuffer/CMTimeGetSeconds(playerItem.duration);
+        self.currentLoadProgress = progressF;
+        if (self.currentLoadProgress>self.currentPlayProgress) {
+            self.status = HFPlayerStatusBufferKeepUp;
+            if ([self.delegate respondsToSelector:@selector(playerLoadingEnd)]) {
+                [self.delegate playerLoadingEnd];
+            }
+        }
         //向上取整数 ceil
         if (!isnan(progressF)) {
             if ([self.delegate respondsToSelector:@selector(playerLoadingProgress:timeRange:)]) {
@@ -344,7 +344,6 @@
     [self.hfPlayer.currentItem removeObserver:self forKeyPath:@"status"];
     [self.hfPlayer.currentItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
     [self.hfPlayer.currentItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
-    [self.hfPlayer.currentItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
 }
 
 #pragma mark - 🐠通知🐠
@@ -383,7 +382,7 @@
 }
 
 - (void)playbackFinished:(NSNotification *)notif {
-    NSLog(@"--------------播放完成了--------------");
+    LPLog(@"-----播放完成了-----");
     self.status = HFPlayerStatusFinished;
     //播放完成
     if (_config.repeatPlay) {
@@ -405,7 +404,6 @@
 }
 
 -(void)cacheDidCompleted:(NSNotification *)notif {
-    
     NSDictionary *userInfo = notif.userInfo;
     NSString *path = [userInfo hfv_objectForKey_Safe:@"path"];
     if (path) {
@@ -417,7 +415,39 @@
 
 #pragma mark 🐠dealloc🐠
 -(void)dealloc {
-    NSLog(@"yyyyyyyyyyyyyyyyyyyyy----播放器释放了");
+    LPLog(@"-----播放器释放了-----");
 }
 
 @end
+
+
+
+
+
+
+
+//    else if ([keyPath isEqualToString:@"timeControlStatus"]) {
+//        AVPlayer *player = object;
+//                    switch (player.timeControlStatus) {
+//                        case AVPlayerTimeControlStatusPaused:
+//                        {
+//                            NSLog(@"kjkjkjseek,,,1111");
+//                            self.status = HFPlayerStatusPasue;
+//                        }
+//                            break;
+//                        case AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate:
+//                        {
+//                            NSLog(@"kjkjkjseek,,,2222");
+//                            self.status = HFPlayerStatusBufferEmpty;
+//                        }
+//                            break;
+//                        case AVPlayerTimeControlStatusPlaying:
+//                        {
+//                            self.status = HFPlayerStatusPlaying;
+//                            NSLog(@"kjkjkjseek,,,3333");
+//                        }
+//                            break;
+//                        default:
+//                            break;
+//                    }
+//    }

@@ -6,8 +6,8 @@
 //
 
 #import "AppDelegate.h"
-#import "TestConfigViewController.h"
-#import <HFOpenMusicPlayer/HFOpenApiManager.h>
+#import "LoginViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -18,19 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //注册
-    [[HFOpenApiManager shared] registerAppWithAppId:@"300a44d050c942eebeae8765a878b0ee" serverCode:@"0e31fe11b31247fca8" clientId:@"hf7no8v6o7t2ve3r90" version:@"V4.0.1" success:^(id  _Nullable response) {
-        NSLog(@"注册成功");
-    } fail:^(NSError * _Nullable error) {
-        NSLog(@"注册失败");
-    }];
+    
     
     if (@available(iOS 13.0,*)) {
         
     } else {
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         self.window.backgroundColor = [UIColor whiteColor];
-        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[TestConfigViewController new]];
+        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
         [self.window makeKeyAndVisible];
     }
     return YES;

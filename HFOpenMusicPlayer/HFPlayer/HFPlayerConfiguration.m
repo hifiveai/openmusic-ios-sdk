@@ -35,7 +35,7 @@
     self.cacheEnable = true;
     
     self.autoNext = YES;
-    self.panTopLimit = 44;
+    self.panTopLimit = 0;
     self.panBottomLimit = 0;
 }
 

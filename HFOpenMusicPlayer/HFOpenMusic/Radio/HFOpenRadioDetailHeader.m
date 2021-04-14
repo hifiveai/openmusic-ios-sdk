@@ -40,7 +40,9 @@
             [tagStr appendString:tagModel.tagName];
         }
     }
-    [tagStr deleteCharactersInRange:NSMakeRange(0, 1)];
+    if (tagStr && tagStr.length>0) {
+        [tagStr deleteCharactersInRange:NSMakeRange(0, 1)];
+    }
     self.tagLabel.text = tagStr;
 }
 

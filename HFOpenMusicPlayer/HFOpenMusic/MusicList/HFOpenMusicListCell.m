@@ -142,22 +142,44 @@
     }
 }
 
-
 -(void)cellReloadData:(HFOpenMusicModel *)item rank:(NSInteger)rank {
     HFOpenMusicModel *model = item;
     _model = model;
     _nameLabel.text = model.musicName;
     NSMutableString *detailStr = [NSMutableString stringWithCapacity:0];
+    //歌手或者作曲者
     NSArray *artistAry = model.artist;
     if (artistAry && artistAry.count>0) {
         for (NSDictionary *dic in artistAry) {
-            [detailStr appendString:@"，"];
-            [detailStr appendString:[dic hfv_objectForKey_Safe:@"name"]];
+            NSString *artName = [dic hfv_objectForKey_Safe:@"name"];
+            if (artName && artName.length>0) {
+                [detailStr appendString:@"，"];
+                [detailStr appendString:artName];
+            }
         }
-        [detailStr deleteCharactersInRange:NSMakeRange(0, 1)];
-        [detailStr appendString:@"-"];
     }
-    [detailStr appendString:model.albumName];
+    if (detailStr && detailStr.length==0) {
+        NSArray *composerAry = model.composer;
+        if (composerAry && composerAry.count>0) {
+            for (HFOpenMusicComposerModel *model in composerAry) {
+                NSString *composerName = model.name;
+                if (composerName && composerName.length>0) {
+                    [detailStr appendString:@"，"];
+                    [detailStr appendString:composerName];
+                }
+            }
+        }
+    }
+    if (detailStr && detailStr.length>0) {
+        [detailStr deleteCharactersInRange:NSMakeRange(0, 1)];
+    }
+    //专辑名称
+    if (model.albumName && model.albumName.length>0) {
+        if(detailStr && detailStr.length>0) {
+            [detailStr appendString:@"-"];
+        }
+        [detailStr appendString:model.albumName];
+    }
     _detailLabel.text = detailStr;
     if (item.isPlaying) {
         self.nameLabel.textColor = KColorHex(0xD34747);

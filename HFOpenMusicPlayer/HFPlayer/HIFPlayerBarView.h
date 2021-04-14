@@ -26,6 +26,9 @@
 @property(nonatomic ,strong)HFPlayerConfiguration                                   *config;
 
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
+-(void)unfoldAnimation;
+-(void)shrinkAnimation;
+
 @end
 
 

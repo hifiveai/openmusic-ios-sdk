@@ -26,10 +26,9 @@
     imageView.image = [UIImage imageNamed:@"bkg.jpg"];
     [self.view addSubview:imageView];
     
-    HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
+    HFOpenMusicPlayerConfiguration *config = [HFOpenMusicPlayerConfiguration defaultConfiguration];
     config.networkAbilityEable = self.networkAbilityEable;
     config.cacheEnable = self.cacheEnable;
-    //config.cacheEnable = true;
     config.bufferCacheSize = self.bufferCacheSize*1024;
     config.panTopLimit = self.topLimit;
     config.panBottomLimit = self.bottomLimit;

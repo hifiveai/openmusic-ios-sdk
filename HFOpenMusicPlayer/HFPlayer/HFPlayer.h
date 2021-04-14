@@ -18,23 +18,23 @@ FOUNDATION_EXPORT const unsigned char HFPlayerVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <HFPlayer/PublicHeader.h>
 
-@protocol HFPlayerDele <NSObject>
+@protocol HFPlayerDelegate <NSObject>
 
 @optional
--(void)previousPlay;
--(void)nextPlay;
--(void)playerPlayToEnd;
--(void)cutSongDuration:(float)duration musicId:(NSString *)musicId;
+-(void)previousClick;
+-(void)nextClick;
 -(void)headerClick;
+-(void)cutSongDuration:(float)duration musicId:(NSString *)musicId;
 @end
 
 @interface HFPlayer : UIView
 
-@property(nonatomic ,weak)id <HFPlayerDele>                        delegate;
-@property(nonatomic ,strong)HFPlayerConfiguration                  *config;
+@property(nonatomic ,weak)id <HFPlayerDelegate>                        delegate;
+@property(nonatomic ,strong)HFPlayerConfiguration                      *config;
 
 
 
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
-
+-(void)unfoldPlayerBar;
+-(void)shrinkPlayerBar;
 @end

@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "TestConfigViewController.h"
+#import "LoginViewController.h"
 
 @interface SceneDelegate ()
 
@@ -20,7 +21,7 @@
         UIWindowScene *windowSence = (UIWindowScene*) scene;
         UIWindow *window = [[UIWindow alloc] initWithWindowScene:windowSence];
         window.backgroundColor = [UIColor whiteColor];
-        window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[TestConfigViewController new]];
+        window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
         [window makeKeyAndVisible];
         self.window = window;
     }

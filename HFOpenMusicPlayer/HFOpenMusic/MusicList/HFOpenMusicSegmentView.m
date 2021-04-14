@@ -34,6 +34,9 @@ static NSString *audioRate = @"320";
     //参数 MusicId  Duration  AudioFormat  AudioRate  Timestamp
     //根据不同计费方式，调用不同上报接口
     //获取13位时间戳
+    if (playDuration <= 0) {
+        return;
+    }
     NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
     NSString *timeStr = [NSString stringWithFormat:@"%0.f",time*1000];
     
@@ -415,7 +418,16 @@ static NSString *audioRate = @"320";
     switch (_listenType) {
         case 0:
         {
-            [[HFOpenApiManager shared] trafficTrialWithMusicId:model.musicId success:^(id  _Nullable response) {
+//            [[HFOpenApiManager shared] trafficTrialWithMusicId:model.musicId success:^(id  _Nullable response) {
+//                HFOpenCurrentPlayListViewController *vc = self.controllerArray[0];
+//                HFOpenMusicDetailInfoModel *detailModel = [HFOpenMusicDetailInfoModel mj_objectWithKeyValues:response];
+//                if ([self.deleagte respondsToSelector:@selector(currentPlayChangedMusic:detail:canCutSong:)]) {
+//                    [self.deleagte currentPlayChangedMusic:model detail:detailModel canCutSong:vc.dataArray.count>1?true:false];
+//                }
+//            } fail:^(NSError * _Nullable error) {
+//                [HFVProgressHud showErrorWithError:error];
+//            }];
+            [[HFOpenApiManager shared] trafficHQListenWithMusicId:model.musicId audioFormat:audioFormat audioRate:audioRate success:^(id  _Nullable response) {
                 HFOpenCurrentPlayListViewController *vc = self.controllerArray[0];
                 HFOpenMusicDetailInfoModel *detailModel = [HFOpenMusicDetailInfoModel mj_objectWithKeyValues:response];
                 if ([self.deleagte respondsToSelector:@selector(currentPlayChangedMusic:detail:canCutSong:)]) {
@@ -428,7 +440,17 @@ static NSString *audioRate = @"320";
             break;
         case 1:
         {
-            [[HFOpenApiManager shared] ugcTrialWithMusicId:model.musicId success:^(id  _Nullable response) {
+//            [[HFOpenApiManager shared] ugcTrialWithMusicId:model.musicId success:^(id  _Nullable response) {
+//                HFOpenCurrentPlayListViewController *vc = self.controllerArray[0];
+//                HFOpenMusicDetailInfoModel *detailModel = [HFOpenMusicDetailInfoModel mj_objectWithKeyValues:response];
+//                if ([self.deleagte respondsToSelector:@selector(currentPlayChangedMusic:detail:canCutSong:)]) {
+//                    [self.deleagte currentPlayChangedMusic:model detail:detailModel canCutSong:vc.dataArray.count>1?true:false];
+//                }
+//            } fail:^(NSError * _Nullable error) {
+//                [HFVProgressHud showErrorWithError:error];
+//            }];
+            
+            [[HFOpenApiManager shared] ugcHQListenWithMusicId:model.musicId audioFormat:audioFormat audioRate:audioRate success:^(id  _Nullable response) {
                 HFOpenCurrentPlayListViewController *vc = self.controllerArray[0];
                 HFOpenMusicDetailInfoModel *detailModel = [HFOpenMusicDetailInfoModel mj_objectWithKeyValues:response];
                 if ([self.deleagte respondsToSelector:@selector(currentPlayChangedMusic:detail:canCutSong:)]) {
@@ -441,7 +463,16 @@ static NSString *audioRate = @"320";
             break;
         case 2:
         {
-            [[HFOpenApiManager shared] kTrialWithMusicId:model.musicId success:^(id  _Nullable response) {
+//            [[HFOpenApiManager shared] kTrialWithMusicId:model.musicId success:^(id  _Nullable response) {
+//                HFOpenCurrentPlayListViewController *vc = self.controllerArray[0];
+//                HFOpenMusicDetailInfoModel *detailModel = [HFOpenMusicDetailInfoModel mj_objectWithKeyValues:response];
+//                if ([self.deleagte respondsToSelector:@selector(currentPlayChangedMusic:detail:canCutSong:)]) {
+//                    [self.deleagte currentPlayChangedMusic:model detail:detailModel canCutSong:vc.dataArray.count>1?true:false];
+//                }
+//            } fail:^(NSError * _Nullable error) {
+//                [HFVProgressHud showErrorWithError:error];
+//            }];
+            [[HFOpenApiManager shared] kHQListenWithMusicId:model.musicId audioFormat:audioFormat audioRate:audioRate success:^(id  _Nullable response) {
                 HFOpenCurrentPlayListViewController *vc = self.controllerArray[0];
                 HFOpenMusicDetailInfoModel *detailModel = [HFOpenMusicDetailInfoModel mj_objectWithKeyValues:response];
                 if ([self.deleagte respondsToSelector:@selector(currentPlayChangedMusic:detail:canCutSong:)]) {

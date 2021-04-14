@@ -11,8 +11,13 @@
 //#import <HFOpenMusicPlayer/HFPlayerApi.h>
 //#import <HFOpenMusicPlayer/HFOpenApiManager.h>
 #import <HFOpenMusicPlayer/HFPlayer.h>
+#import <HFOpenMusicPlayer/HFOpenMusicPlayerConfiguration.h>
 
-
+typedef NS_ENUM(NSInteger, HFOpenMusicListenType) {
+    TYPE_TRAFFIC = 0,
+    TYPE_UGC = 1,
+    TYPE_K = 2
+};
 
 //! Project version number for HFOpenMusicPlayer.
 FOUNDATION_EXPORT double HFOpenMusicPlayerVersionNumber;
@@ -25,8 +30,8 @@ FOUNDATION_EXPORT const unsigned char HFOpenMusicPlayerVersionString[];
 
 @interface HFOpenMusicPlayer : UIView
 
-@property(nonatomic ,strong)HFPlayerConfiguration                                *config;
+@property(nonatomic ,strong)HFOpenMusicPlayerConfiguration                                *config;
 
--(instancetype)initWithListenType:(NSUInteger)type config:(HFPlayerConfiguration *)config;
+-(instancetype)initWithListenType:(NSUInteger)type config:(HFOpenMusicPlayerConfiguration *_Nonnull)config;
 
 @end

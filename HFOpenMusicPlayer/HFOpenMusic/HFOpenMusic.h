@@ -8,12 +8,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "HFOpenModel.h"
+#import "HFOpenMusicPlayer.h"
 
-typedef NS_ENUM(NSInteger, HFOpenMusicListenType) {
-    TYPE_TRAFFIC = 0,
-    TYPE_UGC = 1,
-    TYPE_K = 2
-};
+//typedef NS_ENUM(NSInteger, HFOpenMusicListenType) {
+//    TYPE_TRAFFIC = 0,
+//    TYPE_UGC = 1,
+//    TYPE_K = 2
+//};
 
 //! Project version number for HFOpenMusic.
 FOUNDATION_EXPORT double HFOpenMusicVersionNumber;
@@ -38,4 +39,5 @@ FOUNDATION_EXPORT const unsigned char HFOpenMusicVersionString[];
 -(void)nextPlay;
 -(void)cutSongDuration:(float)duration musicId:(NSString *)musicId;
 -(void)showMusicSegmentView;
+-(void)dismissView;
 @end

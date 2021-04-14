@@ -24,8 +24,13 @@
 }
 
 -(void)setBufferCacheSize:(NSUInteger)bufferCacheSize {
-    _bufferCacheSize = bufferCacheSize;
-    _advanceBufferCacheSize = bufferCacheSize/2;
+    //最小270kb
+    if (bufferCacheSize < 270*1024) {
+        _bufferCacheSize = 270*1024;
+    } else {
+        _bufferCacheSize = bufferCacheSize;
+    }
+    _advanceBufferCacheSize = _bufferCacheSize/2;
 }
 
 -(void)defaultSetting {

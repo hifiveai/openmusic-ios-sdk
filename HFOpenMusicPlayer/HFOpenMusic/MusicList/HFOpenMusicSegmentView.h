@@ -21,6 +21,7 @@
 @property(nonatomic ,assign) NSInteger                                         listenType;
 
 -(void)showMusicSegmentView;
+-(void)dismissView;
 -(void)addSegmentViewToView:(UIView *)view;
 -(void)cutSongWithType:(NSUInteger)type;
 -(void)playDataUpload:(float)playDuration musicId:(NSString *)musicId ;

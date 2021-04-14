@@ -86,7 +86,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScale(16), KScale(16))];
     [view addSubview:imageview];
     searchField.leftView = view;
-    
+    searchField.backgroundColor = KColorHex(0x333333);
     searchField.textColor = [UIColor whiteColor];
     searchVeiw.py_width -= searchMargin * 1.5;
     searchVeiw.placeholder = @"搜索歌曲名/歌手";

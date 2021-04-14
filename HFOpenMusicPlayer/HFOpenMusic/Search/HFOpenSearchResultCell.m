@@ -44,7 +44,9 @@
             [detailStr appendString:@"，"];
             [detailStr appendString:[dic hfv_objectForKey_Safe:@"name"]];
         }
-        [detailStr deleteCharactersInRange:NSMakeRange(0, 1)];
+        if (detailStr && detailStr.length>0) {
+            [detailStr deleteCharactersInRange:NSMakeRange(0, 1)];
+        }
         [detailStr appendString:@"-"];
     }
     [detailStr appendString:model.albumName];
