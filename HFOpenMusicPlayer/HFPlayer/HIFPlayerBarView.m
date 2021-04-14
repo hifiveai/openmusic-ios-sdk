@@ -175,7 +175,6 @@
     NSArray *artistAry = currentModel.artist;
     if (artistAry && artistAry.count>0) {
         NSDictionary *artistDic = artistAry[0];
-        //[artistDic hfv_objectForKey_Safe:@"name"]
         NSString *name = [artistDic objectForKey:@"name"];
         [text appendString:@"-"];
         [text appendString:name];
@@ -532,7 +531,7 @@
 
 #pragma mark - dealloc
 -(void)dealloc {
-    LPLog(@"^^^^dealloc^^^^^^^^^^^^^^^%@",self.class);
+    LPLog(@"^^^^^^^^^^^^^^^^^dealloc^^^^^^^^^^^^^^^%@",self.class);
 }
 
 -(void)initPlayerApi:(NSURL *)url {
@@ -540,7 +539,7 @@
         if (_config && ![HFPlayerUtils isBlankString:_config.urlString]) {
             HFPlayerApiConfiguration *config = [HFPlayerApiConfiguration defaultConfiguration];
             config.cacheEnable = _config.cacheEnable;
-            config.bufferCacheSize = _config.bufferCacheSize;//270Kb
+            config.bufferCacheSize = _config.bufferCacheSize;
             config.advanceBufferCacheSize = _config.advanceBufferCacheSize;
             config.repeatPlay = _config.repeatPlay;
             config.networkAbilityEable = _config.networkAbilityEable;
@@ -600,7 +599,6 @@
         [_wordBtn.titleLabel setFont:[UIFont fontWithName:@"PingFangSC-Medium" size:KScale(10)]];
         [_wordBtn setTitle:@"词" forState:UIControlStateNormal];
         [_wordBtn setTitleColor:KColorHex(0xD34747) forState:UIControlStateNormal];
-        //[_wordBtn setTitleColor:KColorHex(0xD34747) forState:UIControlStateSelected];
         _wordBtn.layer.borderWidth = KScale(1);
         _wordBtn.layer.cornerRadius = KScale(5);
         _wordBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
@@ -708,8 +706,6 @@
         _progressView.trackTintColor = [UIColor.whiteColor colorWithAlphaComponent:0.1];
         _progressView.tintColor = [UIColor.grayColor colorWithAlphaComponent:0.8f];
         _progressView.alpha = 0;
-//        _progressView.trackTintColor = UIColor.blackColor;
-//        _progressView.tintColor = UIColor.redColor;
     }
     return _progressView;
 }
@@ -718,11 +714,9 @@
     if (!_slider) {
         _slider = [[HFVSlider alloc] init];
         _slider.backgroundColor = UIColor.clearColor;
-//        [_slider setOpaque:NO];
         _slider.maximumTrackTintColor = UIColor.clearColor;
         _slider.tintColor = UIColor.whiteColor;
         _slider.alpha = 0;
-//        _slider.tintColor = UIColor.greenColor;
         _slider.value = 0.0;
         [_slider trackRectForBounds:CGRectMake(0, 0, KScreenWidth, KScale(11.5))];
         [_slider setThumbImage:[HFPlayerUtils bundleImageWithName:@"player_slider"] forState:UIControlStateNormal];

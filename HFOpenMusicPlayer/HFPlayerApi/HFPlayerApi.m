@@ -186,6 +186,10 @@
     if (self.status == HFPlayerStatusFailed) {
         return;
     }
+    int timescale = _hfPlayer.currentItem.duration.timescale;
+    if (timescale <= 0) {
+        return;
+    }
     [self pause];
     _resourceLoaderManager.seeking = YES;
     _resourceLoaderManager.requestRecord = YES;
@@ -196,7 +200,6 @@
     if ([self.delegate respondsToSelector:@selector(playerLoadingBegin)]) {
         [self.delegate playerLoadingBegin];
     }
-    int timescale = _hfPlayer.currentItem.duration.timescale;
     [self.hfPlayer.currentItem seekToTime:CMTimeMake(duration*timescale, timescale) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
         if (finished) {
             [weakSelf play];

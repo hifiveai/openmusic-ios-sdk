@@ -31,6 +31,17 @@ HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
 | rate | 播放速率 | 默认1.0 |
 | autoLoad | 播放器自动缓冲数据 | 默认开启 |
 
+## 视图显示与移除
+在初始化播放器UI视图之后，显示只需添加到当前视图或者window上即可，移除则在当前视图或者window移除即可。
+```objc
+//显示
+HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
+HFPlayer *playerView = [[HFPlayer alloc] initWithConfiguration:config];
+[self.view addSubview: playerView];
+//移除
+[playerView removeFromSuperview];
+```
+
 ## 展开播放条
 ```objc
 -(void)unfoldPlayerBar;
