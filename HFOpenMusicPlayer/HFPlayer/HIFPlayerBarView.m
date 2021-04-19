@@ -95,7 +95,6 @@
     }
     
     //判断是否切歌
-    
     if (![oldMedia isEqualToString:newMedia] || self.slider.value>0.99) {
         //歌曲发生了切换
         if (_playerApi) {
@@ -106,10 +105,8 @@
             self.slider.value = 0;
             self.progressView.progress = 0;
             [self.playerApi replaceCurrentUrlWithUrl:[NSURL URLWithString:config.urlString] configuration:self.playerConfig];
-            [self.playerApi play];
         } else {
             [self initPlayerApi:[NSURL URLWithString:config.urlString]];
-            [self.playerApi play];
         }
     }
     
@@ -388,11 +385,10 @@
 //播放/暂停
 -(void)playBtnClick:(UIButton *)sender {
     //sender.selected YES:播放  NO:暂停
-    sender.selected = !sender.selected;
     if (sender.selected) {
-        [_playerApi play];
-    } else {
         [_playerApi pause];
+    } else {
+        [_playerApi play];
     }
     if ([self.delegate respondsToSelector:@selector(playBtnClick:)]) {
         [self.delegate playBtnClick:sender];
@@ -431,18 +427,18 @@
 /// 播放器状态更新
 -(void)playerStatusChanged:(HFPlayerStatus)status {
         switch (status) {
-            case HFPlayerStatusLoading:
+            case HFPlayerStatusInit:
             {
                 [self startLoadingAnimate];
             }
             case HFPlayerStatusReadyToPlay:
             {
-                [self stopLoadingAnimate];
                 [self.playerApi play];
             }
                 break;
             case HFPlayerStatusPlaying:
             {
+                [self stopLoadingAnimate];
                 if (!self.playBtn.selected) {
                     self.playBtn.selected = true;
                 }
@@ -451,12 +447,13 @@
             case HFPlayerStatusPasue:
             {
                 [self endHeadRotationAnimate];
-                self.playBtn.selected = NO;
+                if (self.playBtn.selected) {
+                    self.playBtn.selected = NO;
+                }
             }
                 break;
             case  HFPlayerStatusBufferEmpty:
             {
-                
                 [self startLoadingAnimate];
             }
                 break;
@@ -471,6 +468,11 @@
                 self.playBtn.selected = NO;
                 self.slider.value = 0.f;
             }
+                break;
+            case HFPlayerStatusError:
+            {
+                //[self startLoadingAnimate];
+            }
             default:
                 break;
         }
@@ -480,15 +482,13 @@
 /// 播放进度回调
 -(void)playerPlayProgress:(float)progress currentDuration:(float)currentDuration totalDuration:(float)totalDuration {
     _currentDuration = currentDuration;
-    NSLog(@"llkk");
     if (!_seeking) {
-        NSLog(@"llkkllkk");
         self.slider.value = progress;
     }
 }
 
 /// 数据缓冲进度回调
--(void)playerLoadingProgress:(float)progress timeRange:(CMTimeRange) timeRange {
+-(void)playerLoadingProgress:(float)progress {
         self.progressView.progress = progress;
 }
 

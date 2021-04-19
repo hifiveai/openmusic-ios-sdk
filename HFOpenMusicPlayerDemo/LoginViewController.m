@@ -32,7 +32,8 @@
     label1.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:label1];
     UITextField *filed1 = [[UITextField alloc] initWithFrame:CGRectMake(100, 105, 250, 40)];
-    filed1.text = @"300a44d050c942eebeae8765a878b0ee";
+    //filed1.text = @"300a44d050c942eebeae8765a878b0ee";
+    filed1.text = @"e8cb57f7d6134832b6ebfdc231ed2f57";
     filed1.layer.borderColor = UIColor.blackColor.CGColor;
     filed1.layer.borderWidth = 1;
     filed1.layer.cornerRadius = 10;
@@ -44,7 +45,8 @@
     label2.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:label2];
     UITextField *filed2 = [[UITextField alloc] initWithFrame:CGRectMake(100, 205, 250, 40)];
-    filed2.text = @"0e31fe11b31247fca8";
+    //filed2.text = @"0e31fe11b31247fca8";
+    filed2.text = @"68dc9aa2580146caaf";
     filed2.layer.borderColor = UIColor.blackColor.CGColor;
     filed2.layer.borderWidth = 1;
     filed2.layer.cornerRadius = 10;

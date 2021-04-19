@@ -23,15 +23,15 @@ FOUNDATION_EXPORT const unsigned char HFPlayerApiVersionString[];
 typedef NS_ENUM(NSInteger, HFPlayerStatus) {
     HFPlayerStatusInit = 2000,
     HFPlayerStatusUnknow = 2001,
-    HFPlayerStatusLoading = 2002,
-    HFPlayerStatusReadyToPlay = 2003,
-    HFPlayerStatusPlaying = 2004,
-    HFPlayerStatusPasue = 2005,
-    HFPlayerStatusBufferEmpty = 2006,
-    HFPlayerStatusBufferKeepUp = 2007,
-    HFPlayerStatusFailed = 2008,
-    HFPlayerStatusFinished = 2009,
-    HFPlayerStatusStoped = 2010
+    HFPlayerStatusReadyToPlay = 2002,
+    HFPlayerStatusPlaying = 2003,
+    HFPlayerStatusPasue = 2004,
+    HFPlayerStatusBufferEmpty = 2005,
+    HFPlayerStatusBufferKeepUp = 2006,
+    HFPlayerStatusFailed = 2007,
+    HFPlayerStatusFinished = 2008,
+    HFPlayerStatusStoped = 2009,
+    HFPlayerStatusError = 2010
 };
 
 
@@ -52,8 +52,7 @@ typedef NS_ENUM(NSInteger, HFPlayerStatus) {
 
 /// 数据缓冲进度回调
 /// @params progress 缓冲进度
-/// @params timeRange 本次缓冲时间段
--(void)playerLoadingProgress:(float)progress timeRange:(CMTimeRange) timeRange;
+-(void)playerLoadingProgress:(float)progress;
 
 /// 播放器遇到数据缓冲
 -(void)playerLoadingBegin;

@@ -7,16 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA16E64A262D5A3F007DEAE6 /* HFPlayerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CA16E648262D5A3F007DEAE6 /* HFPlayerApi.m */; };
+		CA16E64B262D5A3F007DEAE6 /* HFPlayerApi.h in Headers */ = {isa = PBXBuildFile; fileRef = CA16E649262D5A3F007DEAE6 /* HFPlayerApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA16E64F262D5A63007DEAE6 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E64E262D5A63007DEAE6 /* IJKMediaFramework.framework */; };
+		CA16E650262D5A63007DEAE6 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E64E262D5A63007DEAE6 /* IJKMediaFramework.framework */; };
+		CA16E652262D5AA4007DEAE6 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E651262D5AA4007DEAE6 /* VideoToolbox.framework */; };
+		CA16E654262D5AAE007DEAE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E653262D5AAE007DEAE6 /* UIKit.framework */; };
+		CA16E656262D5AB9007DEAE6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E655262D5AB8007DEAE6 /* QuartzCore.framework */; };
+		CA16E658262D5AC6007DEAE6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E657262D5AC6007DEAE6 /* OpenGLES.framework */; };
+		CA16E65A262D5ADD007DEAE6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E659262D5ADC007DEAE6 /* MobileCoreServices.framework */; };
+		CA16E65C262D5AEC007DEAE6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E65B262D5AEC007DEAE6 /* MediaPlayer.framework */; };
+		CA16E65E262D5AF7007DEAE6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E65D262D5AF7007DEAE6 /* libz.tbd */; };
+		CA16E662262D5B04007DEAE6 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E661262D5B04007DEAE6 /* libbz2.tbd */; };
+		CA16E666262D5B13007DEAE6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E665262D5B13007DEAE6 /* CoreVideo.framework */; };
+		CA16E668262D5B1E007DEAE6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E667262D5B1E007DEAE6 /* CoreMedia.framework */; };
+		CA16E66A262D5B28007DEAE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E669262D5B28007DEAE6 /* CoreGraphics.framework */; };
+		CA16E66C262D5B31007DEAE6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E66B262D5B31007DEAE6 /* AVFoundation.framework */; };
+		CA16E66E262D5B41007DEAE6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E66D262D5B41007DEAE6 /* AudioToolbox.framework */; };
+		CA16E670262D5B80007DEAE6 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E66F262D5B80007DEAE6 /* libc++.tbd */; };
+		CA16E674262D5B8D007DEAE6 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E673262D5B8D007DEAE6 /* libbz2.1.0.tbd */; };
+		CA16E67A262D5BE5007DEAE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA16E679262D5BE5007DEAE6 /* ViewController.m */; };
 		CA20D07C261CC10D00DBB34F /* HFPlayerApiConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D060261CC10D00DBB34F /* HFPlayerApiConfiguration.m */; };
 		CA20D07D261CC10D00DBB34F /* HFPlayerCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D062261CC10D00DBB34F /* HFPlayerCacheManager.m */; };
 		CA20D07E261CC10D00DBB34F /* HFPlayerCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D063261CC10D00DBB34F /* HFPlayerCacheManager.h */; };
-		CA20D083261CC10D00DBB34F /* HFPlayerApi.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D069261CC10D00DBB34F /* HFPlayerApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA20D084261CC10D00DBB34F /* HFSourceDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D06B261CC10D00DBB34F /* HFSourceDownLoader.h */; };
 		CA20D085261CC10D00DBB34F /* HFSourceDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D06C261CC10D00DBB34F /* HFSourceDownLoader.m */; };
 		CA20D086261CC10D00DBB34F /* HFPlayerApiConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D06D261CC10D00DBB34F /* HFPlayerApiConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA20D087261CC10D00DBB34F /* HFResourceLoaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D06F261CC10D00DBB34F /* HFResourceLoaderManager.h */; };
 		CA20D088261CC10D00DBB34F /* HFResourceLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D070261CC10D00DBB34F /* HFResourceLoaderManager.m */; };
-		CA20D08B261CC10D00DBB34F /* HFPlayerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D073261CC10D00DBB34F /* HFPlayerApi.m */; };
 		CA20D08C261CC10D00DBB34F /* NSMutableArray+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D075261CC10D00DBB34F /* NSMutableArray+SafeAccess.m */; };
 		CA20D08D261CC10D00DBB34F /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D076261CC10D00DBB34F /* NSDictionary+SafeAccess.m */; };
 		CA20D08E261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D077261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.m */; };
@@ -202,7 +220,6 @@
 		CA3DBEA1261C768F008A8A42 /* HFOpenMusicPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3DBEB0261C76CB008A8A42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */; };
 		CA3DBEB3261C76CB008A8A42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEB2261C76CB008A8A42 /* SceneDelegate.m */; };
-		CA3DBEB6261C76CB008A8A42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEB5261C76CB008A8A42 /* ViewController.m */; };
 		CA3DBEB9261C76CB008A8A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3DBEB7261C76CB008A8A42 /* Main.storyboard */; };
 		CA3DBEBB261C76CF008A8A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3DBEBA261C76CF008A8A42 /* Assets.xcassets */; };
 		CA3DBEBE261C76CF008A8A42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3DBEBC261C76CF008A8A42 /* LaunchScreen.storyboard */; };
@@ -274,16 +291,33 @@
 		0166652064B6D723C3EDA077 /* Pods-HFOpenMusicPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayerDemo.release.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		1CD1EE15EC7425335ADADACB /* Pods-HFOpenMusicPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HFOpenMusicPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA16E648262D5A3F007DEAE6 /* HFPlayerApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerApi.m; sourceTree = "<group>"; };
+		CA16E649262D5A3F007DEAE6 /* HFPlayerApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerApi.h; sourceTree = "<group>"; };
+		CA16E64E262D5A63007DEAE6 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		CA16E651262D5AA4007DEAE6 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		CA16E653262D5AAE007DEAE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CA16E655262D5AB8007DEAE6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CA16E657262D5AC6007DEAE6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		CA16E659262D5ADC007DEAE6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CA16E65B262D5AEC007DEAE6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		CA16E65D262D5AF7007DEAE6 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CA16E661262D5B04007DEAE6 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		CA16E665262D5B13007DEAE6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		CA16E667262D5B1E007DEAE6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		CA16E669262D5B28007DEAE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CA16E66B262D5B31007DEAE6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CA16E66D262D5B41007DEAE6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CA16E66F262D5B80007DEAE6 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CA16E673262D5B8D007DEAE6 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		CA16E679262D5BE5007DEAE6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA20D060261CC10D00DBB34F /* HFPlayerApiConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerApiConfiguration.m; sourceTree = "<group>"; };
 		CA20D062261CC10D00DBB34F /* HFPlayerCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerCacheManager.m; sourceTree = "<group>"; };
 		CA20D063261CC10D00DBB34F /* HFPlayerCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerCacheManager.h; sourceTree = "<group>"; };
-		CA20D069261CC10D00DBB34F /* HFPlayerApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerApi.h; sourceTree = "<group>"; };
 		CA20D06B261CC10D00DBB34F /* HFSourceDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSourceDownLoader.h; sourceTree = "<group>"; };
 		CA20D06C261CC10D00DBB34F /* HFSourceDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSourceDownLoader.m; sourceTree = "<group>"; };
 		CA20D06D261CC10D00DBB34F /* HFPlayerApiConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerApiConfiguration.h; sourceTree = "<group>"; };
 		CA20D06F261CC10D00DBB34F /* HFResourceLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFResourceLoaderManager.h; sourceTree = "<group>"; };
 		CA20D070261CC10D00DBB34F /* HFResourceLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFResourceLoaderManager.m; sourceTree = "<group>"; };
-		CA20D073261CC10D00DBB34F /* HFPlayerApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerApi.m; sourceTree = "<group>"; };
 		CA20D075261CC10D00DBB34F /* NSMutableArray+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SafeAccess.m"; sourceTree = "<group>"; };
 		CA20D076261CC10D00DBB34F /* NSDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeAccess.m"; sourceTree = "<group>"; };
 		CA20D077261CC10D00DBB34F /* NSMutableDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SafeAccess.m"; sourceTree = "<group>"; };
@@ -475,7 +509,6 @@
 		CA3DBEB1261C76CB008A8A42 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		CA3DBEB2261C76CB008A8A42 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		CA3DBEB4261C76CB008A8A42 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CA3DBEB5261C76CB008A8A42 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA3DBEB8261C76CB008A8A42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA3DBEBA261C76CF008A8A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA3DBEBD261C76CF008A8A42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -542,7 +575,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA16E66E262D5B41007DEAE6 /* AudioToolbox.framework in Frameworks */,
+				CA16E66C262D5B31007DEAE6 /* AVFoundation.framework in Frameworks */,
+				CA16E66A262D5B28007DEAE6 /* CoreGraphics.framework in Frameworks */,
+				CA16E668262D5B1E007DEAE6 /* CoreMedia.framework in Frameworks */,
+				CA16E666262D5B13007DEAE6 /* CoreVideo.framework in Frameworks */,
+				CA16E662262D5B04007DEAE6 /* libbz2.tbd in Frameworks */,
+				CA16E65E262D5AF7007DEAE6 /* libz.tbd in Frameworks */,
+				CA16E65C262D5AEC007DEAE6 /* MediaPlayer.framework in Frameworks */,
+				CA16E65A262D5ADD007DEAE6 /* MobileCoreServices.framework in Frameworks */,
+				CA16E658262D5AC6007DEAE6 /* OpenGLES.framework in Frameworks */,
+				CA16E656262D5AB9007DEAE6 /* QuartzCore.framework in Frameworks */,
+				CA16E654262D5AAE007DEAE6 /* UIKit.framework in Frameworks */,
+				CA16E652262D5AA4007DEAE6 /* VideoToolbox.framework in Frameworks */,
 				CA51520D26295F2500114244 /* SystemConfiguration.framework in Frameworks */,
+				CA16E64F262D5A63007DEAE6 /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +597,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA16E674262D5B8D007DEAE6 /* libbz2.1.0.tbd in Frameworks */,
+				CA16E670262D5B80007DEAE6 /* libc++.tbd in Frameworks */,
+				CA16E650262D5A63007DEAE6 /* IJKMediaFramework.framework in Frameworks */,
 				CA3DBF16261C7D52008A8A42 /* HFOpenMusicPlayer.framework in Frameworks */,
 				CAA15D374661E73224E37E09 /* libPods-HFOpenMusicPlayerDemo.a in Frameworks */,
 			);
@@ -570,8 +620,8 @@
 		CA20D05F261CC10D00DBB34F /* HFPlayerApi */ = {
 			isa = PBXGroup;
 			children = (
-				CA20D069261CC10D00DBB34F /* HFPlayerApi.h */,
-				CA20D073261CC10D00DBB34F /* HFPlayerApi.m */,
+				CA16E649262D5A3F007DEAE6 /* HFPlayerApi.h */,
+				CA16E648262D5A3F007DEAE6 /* HFPlayerApi.m */,
 				CA20D06D261CC10D00DBB34F /* HFPlayerApiConfiguration.h */,
 				CA20D060261CC10D00DBB34F /* HFPlayerApiConfiguration.m */,
 				CA20D06E261CC10D00DBB34F /* ResourceLoader */,
@@ -1117,6 +1167,7 @@
 		CA3DBE9E261C768F008A8A42 /* HFOpenMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				CA16E64E262D5A63007DEAE6 /* IJKMediaFramework.framework */,
 				CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */,
 				CA3DBECB261C7935008A8A42 /* HFOpenMusicPlayer.m */,
 				CA50E3552625311700331BF9 /* HFOpenMusicPlayerConfiguration.h */,
@@ -1154,7 +1205,7 @@
 				CAFED1E72626D96D0074EAF8 /* ChooseSdkUIViewController.h */,
 				CAFED1E82626D96D0074EAF8 /* ChooseSdkUIViewController.m */,
 				CA3DBEB4261C76CB008A8A42 /* ViewController.h */,
-				CA3DBEB5261C76CB008A8A42 /* ViewController.m */,
+				CA16E679262D5BE5007DEAE6 /* ViewController.m */,
 				CA3DBEB7261C76CB008A8A42 /* Main.storyboard */,
 				CA3DBEBA261C76CF008A8A42 /* Assets.xcassets */,
 				CA3DBEBC261C76CF008A8A42 /* LaunchScreen.storyboard */,
@@ -1167,6 +1218,21 @@
 		CA3DBED1261C79E1008A8A42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA16E673262D5B8D007DEAE6 /* libbz2.1.0.tbd */,
+				CA16E66F262D5B80007DEAE6 /* libc++.tbd */,
+				CA16E66D262D5B41007DEAE6 /* AudioToolbox.framework */,
+				CA16E66B262D5B31007DEAE6 /* AVFoundation.framework */,
+				CA16E669262D5B28007DEAE6 /* CoreGraphics.framework */,
+				CA16E667262D5B1E007DEAE6 /* CoreMedia.framework */,
+				CA16E665262D5B13007DEAE6 /* CoreVideo.framework */,
+				CA16E661262D5B04007DEAE6 /* libbz2.tbd */,
+				CA16E65D262D5AF7007DEAE6 /* libz.tbd */,
+				CA16E65B262D5AEC007DEAE6 /* MediaPlayer.framework */,
+				CA16E659262D5ADC007DEAE6 /* MobileCoreServices.framework */,
+				CA16E657262D5AC6007DEAE6 /* OpenGLES.framework */,
+				CA16E655262D5AB8007DEAE6 /* QuartzCore.framework */,
+				CA16E653262D5AAE007DEAE6 /* UIKit.framework */,
+				CA16E651262D5AA4007DEAE6 /* VideoToolbox.framework */,
 				CA51520C26295F2500114244 /* SystemConfiguration.framework */,
 				3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */,
 			);
@@ -1260,6 +1326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA50E3572625311700331BF9 /* HFOpenMusicPlayerConfiguration.h in Headers */,
+				CA16E64B262D5A3F007DEAE6 /* HFPlayerApi.h in Headers */,
 				CAC777A6261EA70000B973F9 /* HFOpenApiManager.h in Headers */,
 				CA20D287261CC8DF00DBB34F /* HFOpenMusicSegmentView.h in Headers */,
 				CA20D084261CC10D00DBB34F /* HFSourceDownLoader.h in Headers */,
@@ -1308,7 +1375,6 @@
 				CA20D28A261CC8DF00DBB34F /* HFOpenModel.h in Headers */,
 				CA20D086261CC10D00DBB34F /* HFPlayerApiConfiguration.h in Headers */,
 				CA20D24D261CC8DE00DBB34F /* View+MASAdditions.h in Headers */,
-				CA20D083261CC10D00DBB34F /* HFPlayerApi.h in Headers */,
 				CA20D25B261CC8DF00DBB34F /* HFSVProgressHUD.h in Headers */,
 				CA20D251261CC8DE00DBB34F /* MASViewConstraint.h in Headers */,
 				CA20D21E261CC8DE00DBB34F /* NSString+MJExtension.h in Headers */,
@@ -1596,7 +1662,6 @@
 				CA20D26C261CC8DF00DBB34F /* HFOpenSearchResultCell.m in Sources */,
 				CA3DBEFC261C7AD2008A8A42 /* LYKeychainQuery.m in Sources */,
 				CA20D295261CC8DF00DBB34F /* NSMutableArray+SafeAccess.m in Sources */,
-				CA20D08B261CC10D00DBB34F /* HFPlayerApi.m in Sources */,
 				CA20D138261CC48B00DBB34F /* HFPlayerModel.m in Sources */,
 				CA20D216261CC8DE00DBB34F /* HFOpenRadioSegmentView.m in Sources */,
 				CA20D26E261CC8DF00DBB34F /* UIView+Utils.m in Sources */,
@@ -1611,6 +1676,7 @@
 				CA20D20B261CC8DE00DBB34F /* LPSegmentViewController.m in Sources */,
 				CA20D102261CC48B00DBB34F /* HFVSlider.m in Sources */,
 				CA20D275261CC8DF00DBB34F /* UIColor+PYExtension.m in Sources */,
+				CA16E64A262D5A3F007DEAE6 /* HFPlayerApi.m in Sources */,
 				CA20D278261CC8DF00DBB34F /* HFOpenHotSearchCell.m in Sources */,
 				CA20D29C261CC8DF00DBB34F /* HFVGlobalTool.m in Sources */,
 				CA20D07C261CC10D00DBB34F /* HFPlayerApiConfiguration.m in Sources */,
@@ -1648,12 +1714,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA16E67A262D5BE5007DEAE6 /* ViewController.m in Sources */,
 				CA96EECE261F081F00CD3EA1 /* LoginViewController.m in Sources */,
 				CAC7A9A7261D5A2B0082FCA3 /* TestConfigViewController.m in Sources */,
 				CAC7A9B7261D7ECF0082FCA3 /* HFInputView.m in Sources */,
 				CAC7A9B2261D5FF10082FCA3 /* CheckBoxView.m in Sources */,
 				CAFED1E92626D96D0074EAF8 /* ChooseSdkUIViewController.m in Sources */,
-				CA3DBEB6261C76CB008A8A42 /* ViewController.m in Sources */,
 				CA3DBEB0261C76CB008A8A42 /* AppDelegate.m in Sources */,
 				CA3DBEC1261C76CF008A8A42 /* main.m in Sources */,
 				CA3DBEB3261C76CB008A8A42 /* SceneDelegate.m in Sources */,
@@ -1877,6 +1943,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N24P8B6R5C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HFOpenMusicPlayer",
+				);
 				INFOPLIST_FILE = HFOpenMusicPlayerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1899,6 +1969,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N24P8B6R5C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HFOpenMusicPlayer",
+				);
 				INFOPLIST_FILE = HFOpenMusicPlayerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -70,6 +70,9 @@
     config.bufferCacheSize = self.bufferCacheSize*1024;
     config.panTopLimit = self.topLimit;
     config.panBottomLimit = self.bottomLimit;
+//https://img.zhugexuetang.com/lleXB2SNF5UFp1LfNpPI0hsyQjNs
+    //http://music.163.com/song/media/outer/url?id=64634.mp3
+    //ijkio:cache:ffio:
     config.urlString = @"http://music.163.com/song/media/outer/url?id=64634.mp3";
     config.songName = @"一丝不挂";
     HFPlayer *playerView = [[HFPlayer alloc] initWithConfiguration:config];
