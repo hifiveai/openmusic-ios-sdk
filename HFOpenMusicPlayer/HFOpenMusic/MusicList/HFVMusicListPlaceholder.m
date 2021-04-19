@@ -23,7 +23,7 @@
 -(void)createUI {
     UIView *container = [[UIView alloc] init];
     UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = KBoundleImageName(@"music_listPlaceholder_image");
+    imageView.image = KBoundleImageName(@"currentPlayNodata");
     UIButton *button = [[UIButton alloc] init];
     [button setBackgroundImage:KBoundleImageName(@"music_listPlaceholder_border") forState:UIControlStateNormal];
     [button setTitle:@"添加歌曲" forState:UIControlStateNormal];

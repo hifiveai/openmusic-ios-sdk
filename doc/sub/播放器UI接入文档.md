@@ -1,6 +1,6 @@
 # 《播放器UI》接口文档
 [TOC]
-## 初始化
+## 初始化及显示视图
 ```objc
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
 ```
@@ -26,20 +26,14 @@ HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
 | cacheEnable | 是否允许客户端缓存 | 默认关闭 |
 | bufferCacheSize | 缓冲区大小 | 默认270kb（最小配置270kb） |
 | advanceBufferCacheSize | 预缓冲区大小 | 默认为缓冲区大小的1/2 |
-| repeatPlay | 是否允许重复播放 | 默认开启 |
+| repeatPlay | 是否允许重复播放 | 默认关闭 |
 | networkAbilityEable | 是否开启网络监测,断线重连播放 | 默认开启 |
 | rate | 播放速率 | 默认1.0 |
 | autoLoad | 播放器自动缓冲数据 | 默认开启 |
 
-## 视图显示与移除
-在初始化播放器UI视图之后，显示只需添加到当前视图或者window上即可，移除则在当前视图或者window移除即可。
+## 移除视图
 ```objc
-//显示
-HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
-HFPlayer *playerView = [[HFPlayer alloc] initWithConfiguration:config];
-[self.view addSubview: playerView];
-//移除
-[playerView removeFromSuperview];
+-(void)removePlayerView;
 ```
 
 ## 展开播放条

@@ -20,10 +20,7 @@
 
 @property(nonatomic ,weak)id <HFReachabilityProtocol> delegate;
 
-/// 开启网络监测
 -(void)startListenNetWorkStatus;
-
-/// 关闭网络监测
 -(void)stopListenNetWorkStatus;
 
 @end

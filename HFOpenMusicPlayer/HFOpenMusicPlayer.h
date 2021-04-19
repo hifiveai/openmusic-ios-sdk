@@ -33,5 +33,5 @@ FOUNDATION_EXPORT const unsigned char HFOpenMusicPlayerVersionString[];
 @property(nonatomic ,strong)HFOpenMusicPlayerConfiguration                                *config;
 
 -(instancetype)initWithListenType:(NSUInteger)type config:(HFOpenMusicPlayerConfiguration *_Nonnull)config;
-
+-(void)removeMusicPlayerView;
 @end

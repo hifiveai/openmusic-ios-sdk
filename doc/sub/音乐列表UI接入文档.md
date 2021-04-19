@@ -1,12 +1,13 @@
 # 《音乐列表UI》接口文档
 [TOC]
-## 初始化UI视图
+## 初始化及显示UI视图
 ```objc
--(instancetype)initWithListenType:(HFOpenMusicListenType) type;
+-(instancetype)initMusicListViewWithListenType:(HFOpenMusicListenType)type showControlbtn:(BOOL)showControlbtn;
 ```
 | 参数 | 必填 | 描述 | 可选值 |
 |---|---|---|---|
 | type | 是 | 音乐授权类型 | 详见[音乐授权类型] |
+| showControlbtn | 是 | 是否显示控制视图展开/收起的按钮 | true/false |
 
 **音乐授权类型**
 
@@ -15,6 +16,11 @@
 | BGM音乐播放           | TYPE_TRAFFIC |      |
 | 音视频作品BGM音乐播放 | TYPE_UGC     |      |
 | K歌音乐播放           | KTYPE_K      |      |
+
+## 移除视图
+```objc
+-(void)removeMusicListView;
+```
 
 ## 设置代理
 遵循协议 `HFOpenMusicDelegate`
@@ -30,12 +36,12 @@
 ```objc
 -(void)nextPlay;
 ```
-## 显示音乐列表
+## 展开音乐列表
 ```objc
 -(void)showMusicSegmentView;
 ```
 
-## 关闭音乐列表
+## 收起音乐列表
 ```objc
 -(void)dismissView;
 ```

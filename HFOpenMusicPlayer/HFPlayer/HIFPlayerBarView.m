@@ -45,14 +45,16 @@
 @property(nonatomic, assign)NSUInteger                                         currentIndex;
 
 @property(nonatomic ,assign)BOOL                                               seeking;
+@property(nonatomic ,assign)BOOL                                               cutSongEnable;
 
 @end
 @implementation HIFPlayerBarView
 
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config {
     if (self = [super init]) {
-        self.config = config;
         [self configUI];
+        self.config = config;
+        _cutSongEnable = true;
         [self configPlayer];
         [self configDefaultData];
         [self configNotification];
@@ -93,7 +95,8 @@
     }
     
     //判断是否切歌
-    //if (![oldMedia isEqualToString:newMedia]) {
+    
+    if (![oldMedia isEqualToString:newMedia] || self.slider.value>0.99) {
         //歌曲发生了切换
         if (_playerApi) {
             if ([self.delegate respondsToSelector:@selector(cutSongDuration:musicId:)]) {
@@ -108,7 +111,7 @@
             [self initPlayerApi:[NSURL URLWithString:config.urlString]];
             [self.playerApi play];
         }
-    //}
+    }
     
 }
 
@@ -142,24 +145,6 @@
 -(void)updateChangeSongEnabled:(BOOL)enable {
     self.nextBtn.enabled = enable;
     self.previousBtn.enabled = enable;
-}
-
--(void)updateSongWordEabled:(BOOL)enable {
-    self.wordBtn.enabled = enable;
-    if (enable) {
-        self.wordBtn.backgroundColor = UIColor.whiteColor;
-        self.wordBtn.selected = YES;
-        self.wordBtn.alpha = self.shrinkBtn.selected?0:1;
-    } else {
-        self.wordBtn.backgroundColor = UIColor.clearColor;
-        self.wordBtn.selected = NO;
-        self.wordBtn.alpha = self.shrinkBtn.selected?0:0.45;
-    }
-}
-
-//自动播放下一首
--(void)autoPlayNextMusic {
-    
 }
 
 #pragma mark - 配置view数据
@@ -197,7 +182,7 @@
 }
 
 -(void)setShowBar:(BOOL)showBar {
-    if (_showBar != showBar) {
+    if (_showBar != showBar && self.superview) {
         CGRect currentFrame = self.frame;
         float rightPadding = showBar?KScale(20):self.superview.frame.size.width-
         KScale(20)-currentFrame.size.height;
@@ -205,7 +190,7 @@
             for (int i=0; i<self.subviews.count; i++ ) {
                 UIView *view = self.subviews[i];
                 if (i!=0 ) {
-                    view.alpha = showBar?((i==2 && !self.accompanyBtn.isEnabled)?0.45:1):0;
+                    view.alpha = showBar?((i==2 || i==3)?0.45:1):0;
                 }
             }
             [self mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -388,7 +373,13 @@
 
 //上一首
 -(void)previousBtnClick:(UIButton *)sender {
-    
+    if (!_cutSongEnable) {
+        return;
+    }
+    _cutSongEnable = false;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.cutSongEnable = true;
+    });
     if ([self.delegate respondsToSelector:@selector(previousBtnClick:)]) {
         [self.delegate previousBtnClick:sender];
     }
@@ -410,7 +401,13 @@
 
 //下一首
 -(void)nextBtnClick:(UIButton *)sender {
-    
+    if (!_cutSongEnable) {
+        return;
+    }
+    _cutSongEnable = false;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.cutSongEnable = true;
+    });
     if ([self.delegate respondsToSelector:@selector(nextBtnClick:)]) {
         [self.delegate nextBtnClick:sender];
     }
@@ -483,7 +480,9 @@
 /// 播放进度回调
 -(void)playerPlayProgress:(float)progress currentDuration:(float)currentDuration totalDuration:(float)totalDuration {
     _currentDuration = currentDuration;
+    NSLog(@"llkk");
     if (!_seeking) {
+        NSLog(@"llkkllkk");
         self.slider.value = progress;
     }
 }
@@ -505,6 +504,7 @@
 
 /// 播放完成回调
 -(void)playerPlayToEnd {
+    NSLog(@"bofangwancheng----barview");
     if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
         [self.delegate playerPlayToEnd];
     }
@@ -598,11 +598,12 @@
         _wordBtn = [[UIButton alloc] init];
         [_wordBtn.titleLabel setFont:[UIFont fontWithName:@"PingFangSC-Medium" size:KScale(10)]];
         [_wordBtn setTitle:@"词" forState:UIControlStateNormal];
-        [_wordBtn setTitleColor:KColorHex(0xD34747) forState:UIControlStateNormal];
+        //[_wordBtn setTitleColor:KColorHex(0xD34747) forState:UIControlStateNormal];
+        [_wordBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         _wordBtn.layer.borderWidth = KScale(1);
         _wordBtn.layer.cornerRadius = KScale(5);
         _wordBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
-        [_wordBtn setBackgroundColor:[UIColor whiteColor]];
+        [_wordBtn setBackgroundColor:[UIColor clearColor]];
         _wordBtn.selected = YES;
         _wordBtn.enabled = false;
         _wordBtn.alpha = self.shrinkBtn.selected?0:0.45;

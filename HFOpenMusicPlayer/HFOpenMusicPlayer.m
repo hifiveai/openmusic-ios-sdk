@@ -25,9 +25,9 @@
 -(instancetype)initWithListenType:(NSUInteger)type config:(HFOpenMusicPlayerConfiguration *)config {
     if (self = [super init]) {
         self.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
-        
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
         //列表
-        HFOpenMusic *listView = [[HFOpenMusic alloc] initWithListenType:type];
+        HFOpenMusic *listView = [[HFOpenMusic alloc] initMusicListViewWithListenType:type showControlbtn:false];
         listView.delegate = self;
         _listView = listView;
         listView.frame = CGRectMake(0, KScreenHeight-KScale(440), KScreenWidth, KScale(440));
@@ -43,6 +43,10 @@
         [self addSubview:player];
     }
     return self;
+}
+
+-(void)removeMusicPlayerView {
+    [self removeFromSuperview];
 }
 
 -(HFPlayerConfiguration *)changeToPlayerConfig:(HFOpenMusicPlayerConfiguration *)config {
@@ -68,12 +72,13 @@
 }
 
 //上一首
--(void)previousPlay {
+-(void)previousClick {
     [self.listView previousPlay];
 }
 
 //下一首
--(void)nextPlay {
+-(void)nextClick {
+    NSLog(@"播放完成----下一首回调");
     [self.listView nextPlay];
 }
 
@@ -126,5 +131,20 @@
     config.canCutSong = canCutSong;
     _player.config = config;
 }
+
+#pragma mark - 事件传递
+-(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+
+    UIView *targetView = [super hitTest:point withEvent:event];
+    if ([targetView class]==[self class]) {
+        //没有点击到子控件，只能自己处理
+        //传递到被遮挡的用户页面去
+        return nil;
+    } else {
+        //有子控件，不用考虑遮挡问题
+        return targetView;
+    }
+}
+
 
 @end

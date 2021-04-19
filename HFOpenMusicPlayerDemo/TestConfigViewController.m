@@ -10,6 +10,7 @@
 #import "HFInputView.h"
 #import "Masonry.h"
 #import "ViewController.h"
+#import "ChooseSdkUIViewController.h"
 
 @interface TestConfigViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -105,7 +106,8 @@
 -(void)submit:(UIButton *)sender {
     NSLog(@"%@",_inpitView1.field.text);
     
-    ViewController *vc = [ViewController new];
+    
+    ChooseSdkUIViewController *vc = [ChooseSdkUIViewController new];
     if ([_check1 getResult] == 0) {
         vc.networkAbilityEable = true;
     } else if ([_check1 getResult] == 1) {
@@ -124,11 +126,8 @@
     vc.bufferCacheSize = [_inpitView1.field.text integerValue];
     vc.topLimit = [_inpitView2.field.text integerValue];
     vc.bottomLimit = [_inpitView3.field.text integerValue];
-    
-    
-    
-    
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 

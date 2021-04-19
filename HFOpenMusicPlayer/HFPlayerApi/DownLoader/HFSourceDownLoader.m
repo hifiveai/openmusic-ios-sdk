@@ -94,7 +94,7 @@ typedef NS_ENUM (NSUInteger ,PLAYER_LOADSTATUES){
         _isDataMax = YES;
     }
     //设置请求分片区域
-    NSLog(@"开始请求的header数据长度requestLength---%lu",requestLength);
+    //NSLog(@"开始请求的header数据长度requestLength---%lu",requestLength);
     [request addValue:[NSString stringWithFormat:@"bytes=%ld-%ld",(unsigned long)offset, (unsigned long)_maxBufferLoadingSize] forHTTPHeaderField:@"Range"];
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request];
     _task = task;
@@ -108,7 +108,7 @@ typedef NS_ENUM (NSUInteger ,PLAYER_LOADSTATUES){
     }
     _isSeeking = YES;
     _loadStatues = PLAYER_LOADSTATUES_LOADING;
-    NSLog(@"seek缓冲了！！！目标target:%lu,当前状态:%lu",(unsigned long)offset,_loadStatues);
+    //NSLog(@"seek缓冲了！！！目标target:%lu,当前状态:%lu",(unsigned long)offset,_loadStatues);
     //从暂停处的位置，设置range，开始请求
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:_url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:20.0];
     NSUInteger requestLength;
@@ -121,7 +121,7 @@ typedef NS_ENUM (NSUInteger ,PLAYER_LOADSTATUES){
         _offset = offset;
         _downLoadingOffset = 0;
     }
-    NSLog(@"seek请求的header数据长度requestLength---%lu",requestLength);
+    //NSLog(@"seek请求的header数据长度requestLength---%lu",requestLength);
     if ((_offset+requestLength) <= (_currentPlayingOffset+_maxBufferLoadingSize)) {
         //没有加载最大数据数据量
         _isDataMax = NO;
@@ -146,7 +146,7 @@ didReceiveResponse:(NSURLResponse *)response
  completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
     //1.处理response
     //2.通过代理传出去，把数据返给resourceLoader
-    NSLog(@"收到response！！");
+    //NSLog(@"收到response！！");
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
     NSDictionary *dic = (NSDictionary *)[httpResponse allHeaderFields] ;
     NSString *content = [dic valueForKey:@"Content-Range"];
@@ -159,7 +159,7 @@ didReceiveResponse:(NSURLResponse *)response
         videoLength = [length integerValue];
     }
     self.videoLength = videoLength;
-    NSLog(@"总文件大小%lu",(unsigned long)videoLength);
+    //NSLog(@"总文件大小%lu",(unsigned long)videoLength);
     self.mimeType = response.MIMEType;
     if (self.mimeType && self.mimeType.length==0) {
         self.mimeType = @"video/mp4";
@@ -177,7 +177,7 @@ didReceiveResponse:(NSURLResponse *)response
     if (_task == dataTask) {
         
         //拼接数据
-        NSLog(@"接收到数据了--大小：%lu",data.length);
+        //NSLog(@"接收到数据了--大小：%lu",data.length);
         //1.更新相关offset
         _downLoadingOffset += data.length;
         
@@ -185,9 +185,8 @@ didReceiveResponse:(NSURLResponse *)response
         [self.fileHandle seekToEndOfFile];
         [self.fileHandle writeData:data];
         //如果文件下载完整了，发出缓存完成的通知
-        NSLog(@"XXXXXXXXXXX_downLoadingOffset:%lu,_videoLength:%lu",_downLoadingOffset,_videoLength);
+        //NSLog(@"XXXXXXXXXXX_downLoadingOffset:%lu,_videoLength:%lu",_downLoadingOffset,_videoLength);
         if (_config.cacheEnable && _downLoadingOffset>=_videoLength) {
-            NSLog(@"XXXXXX我已经发出了通知了的哟");
             [[NSNotificationCenter defaultCenter] postNotificationName:KNotification_cacheCompleted object:nil userInfo:@{@"path":_tempPath}];
         }
         //3.代理
@@ -201,7 +200,6 @@ didReceiveResponse:(NSURLResponse *)response
 
 -(void)dataLoadComplete {
     //if (_isSeeking) {
-        NSLog(@"发出了数据下载请求完成了的通知");
         
     [[NSNotificationCenter defaultCenter] postNotificationName:KNotification_singleDataLoadComplete object:nil userInfo:@{@"isDataMax":@(_isDataMax)}];
     
@@ -220,7 +218,7 @@ didCompleteWithError:(nullable NSError *)error {
         //[self performSelector:@selector(dataLoadComplete) withObject:nil afterDelay:0.5];
         [self dataLoadComplete];
     } else {
-        NSLog(@"%@",error);
+        NSLog(@"下载出错，当前网络状态为：%li",(long)_networkStatus);
         //下载出错
         //1.主动取消的错误不做处理
         if (error.code == -999) {
@@ -233,9 +231,9 @@ didCompleteWithError:(nullable NSError *)error {
         if (_networkStatus == NotReachable) {
             return;
         }
-        if (_config.autoLoad) {
-            [self bufferingResume];
-        }
+//        if (_config.autoLoad) {
+//            [self bufferingResume];
+//        }
     }
     if ([self.delegate respondsToSelector:@selector(downLoadCompleteWithError:)]) {
         [self.delegate downLoadCompleteWithError:error];
@@ -257,7 +255,10 @@ didCompleteWithError:(nullable NSError *)error {
     NSDictionary *userInfo = notifi.userInfo;
     float progress = [[userInfo hfv_objectForKey_Safe:@"progress"] floatValue];
     _currentPlayingOffset = _videoLength*progress;
-    NSLog(@"---播放进度跟新了--%lu",_currentPlayingOffset);
+    //NSLog(@"---播放进度跟新了--%lu",(unsigned long)_currentPlayingOffset);
+    if (_currentLoadingOffset >= _videoLength) {
+        return;
+    }
     //1.当maxBufferLoadingSize没有限制，则不用判断
     //2.当缓冲数据不够时，并且当前是暂停缓冲状态，则需要从新开启请求进行缓冲数据
     //3.根据minBufferLoadingSize来进行判断，minBufferLoadingSize=0（未设置）就默认为max的3/4
@@ -267,7 +268,6 @@ didCompleteWithError:(nullable NSError *)error {
         (_loadStatues == PLAYER_LOADSTATUES_LOADPAUSE || _loadStatues == PLAYER_LOADSTATUES_COMPLETE) &&
         _config.autoLoad == true
         ) {
-        NSLog(@"满足继续缓冲条件了%lu",(unsigned long)_loadStatues);
         [self bufferingResume];
     }
 }
@@ -293,7 +293,7 @@ didCompleteWithError:(nullable NSError *)error {
 -(void)bufferingResume {
     if (_config.autoLoad) {
         _loadStatues = PLAYER_LOADSTATUES_LOADING;
-        NSLog(@"继续缓冲startOffset：%lu,dataLoadingOffset:%lu,_currentLoadingOffset:%lu,_currentPlayingOffset:%lu",(unsigned long)_offset,_downLoadingOffset+_offset,_currentLoadingOffset,_currentPlayingOffset);
+//        NSLog(@"继续缓冲startOffset：%lu,dataLoadingOffset:%u,_currentLoadingOffset:%lu,_currentPlayingOffset:%lu",(unsigned long)_offset,_downLoadingOffset+_offset,(unsigned long)_currentLoadingOffset,_currentPlayingOffset);
 
         if ([self.delegate respondsToSelector:@selector(needBufferingResumeCurrentPlayOffset:)]) {
 //            BOOL result = [self.delegate needBufferingResumeCurrentPlayOffset:_currentPlayingOffset];
@@ -315,6 +315,9 @@ didCompleteWithError:(nullable NSError *)error {
 }
 
 -(void)reachabilityChanged:(NetworkStatus)status {
+    NSLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    NSLog(@"新的网络状态为：%ld",(long)status);
+    NSLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     _networkStatus = status;
     switch (status) {
         case NotReachable:
@@ -326,13 +329,7 @@ didCompleteWithError:(nullable NSError *)error {
         case ReachableViaWiFi:
         {
             //网络恢复wifi则恢复缓冲
-            if ( _maxBufferLoadingSize != 0 &&
-                (_downLoadingOffset+_offset)<(_minBufferLoadingSize+_currentPlayingOffset) &&
-                (_currentLoadingOffset)<(_minBufferLoadingSize+_currentPlayingOffset) &&
-                (_loadStatues == PLAYER_LOADSTATUES_LOADPAUSE || _loadStatues == PLAYER_LOADSTATUES_COMPLETE) &&
-                _config.autoLoad == true
-                ) {
-                NSLog(@"满足继续缓冲条件了%lu",(unsigned long)_loadStatues);
+            if (_config.networkAbilityEable && _config.autoLoad == true) {
                 [self bufferingResume];
             }
         }
@@ -340,13 +337,7 @@ didCompleteWithError:(nullable NSError *)error {
         case ReachableViaWWAN:
         {
             //网络恢复移动网络则恢复缓冲
-            if ( _maxBufferLoadingSize != 0 &&
-                (_downLoadingOffset+_offset)<(_minBufferLoadingSize+_currentPlayingOffset) &&
-                (_currentLoadingOffset)<(_minBufferLoadingSize+_currentPlayingOffset) &&
-                (_loadStatues == PLAYER_LOADSTATUES_LOADPAUSE || _loadStatues == PLAYER_LOADSTATUES_COMPLETE) &&
-                _config.autoLoad == true
-                ) {
-                NSLog(@"满足继续缓冲条件了%lu",(unsigned long)_loadStatues);
+            if (_config.networkAbilityEable && _config.autoLoad == true ) {
                 [self bufferingResume];
             }
         }
@@ -384,6 +375,7 @@ didCompleteWithError:(nullable NSError *)error {
 
 -(void)cleanNotCompleteSongCache {
     if (!_config.cacheEnable) {
+        NSLog(@"把本地的数据给删除了");
         [[HFPlayerCacheManager shared] deleteCacheWithUrl: _url];
     }else {
         //判断文件是否完整

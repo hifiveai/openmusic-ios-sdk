@@ -51,11 +51,14 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char*
 static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void* info)
 {
 #pragma unused (target, flags)
-//	NSCAssert(info != NULL, @"info was NULL in ReachabilityCallback");
-//	NSCAssert([(__bridge NSObject*) info isKindOfClass: [HFReachability class]], @"info was wrong class in ReachabilityCallback");
-//
-//    HFReachability* noteObject = (__bridge HFReachability *)info;
-//    [[NSNotificationCenter defaultCenter] postNotificationName: kReachabilityChangedNotification object: noteObject];
+	NSCAssert(info != NULL, @"info was NULL in ReachabilityCallback");
+	NSCAssert([(__bridge NSObject*) info isKindOfClass: [HFReachability class]], @"info was wrong class in ReachabilityCallback");
+
+    HFReachability* noteObject = (__bridge HFReachability *)info;
+    // Post a notification to notify the client that the network reachability changed.
+    if (noteObject) {
+        [[NSNotificationCenter defaultCenter] postNotificationName: kReachabilityChangedNotification object: noteObject];
+    }
 }
 
 

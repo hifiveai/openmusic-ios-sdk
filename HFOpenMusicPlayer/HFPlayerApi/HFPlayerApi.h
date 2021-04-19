@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, HFPlayerStatus) {
 -(void)playerCachedidCompleteWithPath:(NSString *_Nullable)cachePath;
 
 /// 资源链接失效回调
--(void)sourceAsessceTokenDisabled;
+///-(void)sourceAsessceTokenDisabled;
 
 @end
 

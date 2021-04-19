@@ -18,7 +18,7 @@
 
 -(instancetype)init {
     if (self = [super init]) {
-        
+        NSLog(@"!!!!!!!");
     }
     return self;
 }
@@ -34,7 +34,7 @@
 }
 
 - (void) reachabilityChanged:(NSNotification *)note {
-    //NSLog(@"网络状态被改变了！！！！");
+    NSLog(@"网络状态被改变了！！！！");
     // 当前发送通知的 reachability
     HFReachability *reachability = [note object];
     

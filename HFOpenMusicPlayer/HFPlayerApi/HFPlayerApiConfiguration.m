@@ -37,7 +37,7 @@
     //默认配置
     self.bufferCacheSize = 1024*270;//270k
     self.advanceBufferCacheSize = _bufferCacheSize/2;
-    self.repeatPlay = YES;
+    self.repeatPlay = false;
     self.networkAbilityEable = YES;
     self.rate = 1.0;
     self.bkgLoadingEnable = YES;

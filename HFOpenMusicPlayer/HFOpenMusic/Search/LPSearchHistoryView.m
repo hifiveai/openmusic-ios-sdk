@@ -49,16 +49,11 @@
 }
 -(void)setHistoryArray:(NSMutableArray *)historyArray {
     _historyArray = historyArray;
-    
-//    if (historyArray.count <= 0) {
-//        return;
-//    }
     [self setupTagViews];
 }
 
 -(instancetype)init {
     if (self = [super init]) {
-        [self createUI];
         [self requestHistoryData];
     }
     return self;
@@ -72,22 +67,40 @@
         make.top.equalTo(self);
         make.left.mas_equalTo(KScale(20));
         make.height.mas_equalTo(KScale(20));
-        //make.bottom.equalTo(self);
     }];
     [self.clearButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.titleLabel.mas_centerY);
        make.right.mas_equalTo(-KScale(10));
        make.width.height.mas_equalTo(KScale(25));
-        //make.bottom.equalTo(self);
     }];
     
     
 }
 -(void)setupTagViews{
-    
-    for (int i = 0; i < self.historyTagArray.count; i++) {
-        [self.historyTagArray[i] removeFromSuperview];
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
     }
+    if (self.historyArray && self.historyArray.count>0) {
+        [self createUI];
+        if (self.superview) {
+            [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.right.equalTo(self.superview);
+                make.top.mas_equalTo(KScale(10));
+            }];
+        }
+    } else {
+        self.frame = CGRectZero;
+        if (self.superview) {
+            [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.right.equalTo(self.superview);
+                make.top.mas_equalTo(KScale(10));
+                make.height.mas_equalTo(0);
+            }];
+        }
+    }
+//    for (int i = 0; i < self.historyTagArray.count; i++) {
+//        [self.historyTagArray[i] removeFromSuperview];
+//    }
     [self.historyTagArray removeAllObjects];
     
     CGFloat x = KScale(20);
@@ -136,37 +149,6 @@
         
         
         x += width + interitemSpacing;//宽度+间隙
-    }
-    
-    if (self.historyArray.count <= 0) {
-        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self);
-            make.left.mas_equalTo(KScale(20));
-            make.height.mas_equalTo(KScale(20));
-            make.bottom.equalTo(self);
-        }];
-        [self.clearButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.titleLabel.mas_centerY);
-           make.right.mas_equalTo(-KScale(10));
-           make.width.height.mas_equalTo(KScale(25));
-            make.bottom.equalTo(self);
-        }];
-    } else {
-//        [self layoutIfNeeded];
-        [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self);
-            make.left.mas_equalTo(KScale(20));
-            make.height.mas_equalTo(KScale(20));
-            //make.bottom.equalTo(self);
-            //make.bottom.equalTo(self.historyTagArray[0].mas_top);
-        }];
-        [self.clearButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.titleLabel.mas_centerY);
-           make.right.mas_equalTo(-KScale(10));
-           make.width.height.mas_equalTo(KScale(25));
-            //make.bottom.equalTo(self.historyTagArray[0].mas_top);
-        }];
-        //[self layoutIfNeeded];
     }
     
 }

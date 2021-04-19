@@ -23,8 +23,13 @@
         _config = config;
         [self configUI];
         [self configGestureRecognizer];
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
     return self;
+}
+
+-(void)removePlayerView {
+    [self removeFromSuperview];
 }
 
 -(void)setConfig:(HFPlayerConfiguration *)config {
@@ -50,11 +55,26 @@
     _barView = [[HIFPlayerBarView alloc] initWithConfiguration:[_config copy]];
     _barView.delegate = self;
     [self addSubview: _barView];
-    [_barView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(KScale(20));
-        make.right.equalTo(self).offset(-KScreenWidth+KScale(70));//20 305
-        make.top.bottom.mas_equalTo(self);
-    }];
+    if ([HFVLibUtils isBlankString:_config.urlString] ) {
+        [_barView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).offset(KScale(20));
+            make.right.equalTo(self).offset(-KScreenWidth+KScale(70));//20 305
+            make.top.bottom.mas_equalTo(self);
+        }];
+    } else {
+        [_barView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).offset(KScale(20));
+            make.right.equalTo(self).offset(KScale(-20));//20 305
+            make.top.bottom.mas_equalTo(self);
+        }];
+        for (int i=0; i<_barView.subviews.count; i++ ) {
+            UIView *view = _barView.subviews[i];
+            if (i!=0 ) {
+                view.alpha = (i==2 || i==3)?0.45:1;
+            }
+        }
+    }
+    
 }
 
 -(void)configGestureRecognizer {
@@ -119,14 +139,12 @@
 }
 
 -(void)playerPlayToEnd {
+    NSLog(@"播放完成----hfplayer");
     if (self.config.autoNext) {
         if ([self.delegate respondsToSelector:@selector(nextClick)]) {
             [self.delegate nextClick];
         }
     }
-//    if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
-//        [self.delegate playerPlayToEnd];
-//    }
 }
 
 -(void)cutSongDuration:(float)duration musicId:(NSString *)musicId {
@@ -135,5 +153,18 @@
     }
 }
 
+#pragma mark - 事件传递
+-(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+
+    UIView *targetView = [super hitTest:point withEvent:event];
+    if ([targetView class]==[self class] || [targetView class] == [HIFPlayerBarView class]) {
+        //没有点击到子控件，只能自己处理
+        //传递到被遮挡的用户页面去
+        return nil;
+    } else {
+        //有子控件，不用考虑遮挡问题
+        return targetView;
+    }
+}
 
 @end

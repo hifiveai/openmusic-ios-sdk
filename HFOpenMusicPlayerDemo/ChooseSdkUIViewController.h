@@ -1,13 +1,15 @@
 //
-//  ViewController.h
+//  ChooseSdkUIViewController.h
 //  HFOpenMusicPlayerDemo
 //
-//  Created by 郭亮 on 2021/4/6.
+//  Created by 郭亮 on 2021/4/14.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface ChooseSdkUIViewController : UIViewController
 
 @property(nonatomic ,assign)BOOL                                         networkAbilityEable;
 @property(nonatomic ,assign)BOOL                                         cacheEnable;
@@ -16,7 +18,6 @@
 @property(nonatomic ,assign)NSUInteger                                   bottomLimit;
 @property(nonatomic ,assign)NSUInteger                                   musicType;
 
-
-@property(nonatomic ,assign)NSUInteger                                    uiType;
 @end
 
+NS_ASSUME_NONNULL_END

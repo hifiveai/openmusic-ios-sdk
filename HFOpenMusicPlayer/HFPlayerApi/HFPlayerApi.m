@@ -89,6 +89,7 @@
 
 -(void)replaceCurrentUrlWithUrl:(NSURL *)url configuration:(HFPlayerApiConfiguration *)config {
     LPLog(@"-----playerApiReplaceUrl:%@-----",url.absoluteString);
+    [self pause];
     [self.resourceLoaderManager cleanNotCompleteSongCache];
     if (self.hfPlayer) {
         self.status = HFPlayerStatusLoading;
@@ -111,11 +112,12 @@
         } else {
             //无缓存，需要请求
             LPLog(@"-----replaceNoCache-----");
-            HFResourceLoaderManager *resourceLoaderManager = [HFResourceLoaderManager new];
+            HFResourceLoaderManager *resourceLoaderManager = [[HFResourceLoaderManager alloc] init];
             resourceLoaderManager.config = _config;
             self.resourceLoaderManager = resourceLoaderManager;
             playerItem = [resourceLoaderManager playerItemWithURL:url];
             [self.hfPlayer replaceCurrentItemWithPlayerItem:playerItem];
+            [self play];
         }
         //kvo监听
         [self configKVO:playerItem];
@@ -327,6 +329,7 @@
         self.currentLoadProgress = progressF;
         if (self.currentLoadProgress>self.currentPlayProgress) {
             self.status = HFPlayerStatusBufferKeepUp;
+            [self play];
             if ([self.delegate respondsToSelector:@selector(playerLoadingEnd)]) {
                 [self.delegate playerLoadingEnd];
             }
@@ -359,17 +362,13 @@
 //通知回调
 -(void)dataLoadCompelete:(NSNotification *)notif {
     _isPlaying = NO;
-    NSLog(@"LLLLLLLLLL");
     [self performSelector:@selector(dataHandler:) withObject:notif.userInfo afterDelay:0.1];
     NSDictionary *info = notif.userInfo;
 }
 
 -(void)dataHandler:(id) object {
     BOOL isDataMax = [(NSDictionary *)object hfv_objectForKey_Safe:@"isDataMax"];
-    NSLog(@"%i",_status);
-    NSLog(@"tttttt");
     if (!_isPlaying) {
-        NSLog(@"ggggggggg");
         if (_currentSeekProgress < 0.0001) {
             return;
         }
