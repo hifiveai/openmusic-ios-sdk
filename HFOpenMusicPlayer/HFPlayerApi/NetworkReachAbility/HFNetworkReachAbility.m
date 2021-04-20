@@ -31,6 +31,14 @@
         self.interNetReachability = [HFReachability reachabilityForInternetConnection];
         // 开始监听
         [self.interNetReachability startNotifier];
+    
+    
+    
+    
+//    NetworkStatus netStatus = [self.interNetReachability currentReachabilityStatus];
+//    if ([self.delegate respondsToSelector:@selector(reachabilityChanged:)]) {
+//        [self.delegate reachabilityChanged:netStatus];
+//    }
 }
 
 - (void) reachabilityChanged:(NSNotification *)note {

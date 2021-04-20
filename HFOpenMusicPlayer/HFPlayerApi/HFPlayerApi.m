@@ -22,10 +22,12 @@
 //网络监听
 @property(nonatomic, strong) HFNetworkReachAbility                *networkReachAbility;
 @property(nonatomic, assign) NetworkStatus                        networkStatus;
+@property(nonatomic, assign) NSTimeInterval                       noNetLoadDuration;
 
 //ijk
 @property(nonatomic ,strong)IJKFFMoviePlayerController                   *ijkPlayer;
 @property(nonatomic ,strong)NSTimer                                      *timer;//监听播放进度
+@property(nonatomic ,strong)NSString                                     *path;//缓存路径
 
 @end
 
@@ -44,24 +46,29 @@
 
 #pragma mark - 初始化
 -(instancetype)initPlayerWtihUrl:(NSURL *)url configuration:(HFPlayerApiConfiguration *)config {
-    //[_ijkPlayer setOptionValue:mapPath forKey:@"cache_map_path" ofCategory:kIJKFFOptionCategoryFormat];
-    //[_ijkPlayer setOptionIntValue:1 forKey:@"parse_cache_map" ofCategory:kIJKFFOptionCategoryFormat];
-    //[_ijkPlayer setOptionIntValue:1 forKey:@"auto_save_map" ofCategory:kIJKFFOptionCategoryFormat];
     if (self = [super init]) {
         _config = config;
-        [self configDefaultSetting];
-        IJKFFOptions *options = [IJKFFOptions optionsByDefault];
-        [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
-        [options setPlayerOptionIntValue:0 forKey:@"infbuf"];
-        //缓存路径
-        //cache_file_path
-        if (_config.cacheEnable) {
-            NSString *urlString = url.absoluteString;
-            url = [NSURL URLWithString:[NSString stringWithFormat:@"ijkio:cache:ffio:%@",urlString]];
-            NSString *path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
-            [options setFormatOptionValue:path forKey:@"cache_file_path"];
+        _path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
+        if ([[HFPlayerCacheManager shared] isExistCacheWithUrl:url]) {
+            //播放本地
+            url = [NSURL URLWithString:_path];
+            _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:nil];
+        } else {
+            IJKFFOptions *options = [IJKFFOptions optionsByDefault];
+            [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
+            [options setPlayerOptionIntValue:0 forKey:@"infbuf"];
+            //缓存路径
+            //cache_file_path
+            if (_config.cacheEnable) {
+                NSString *urlString = url.absoluteString;
+                url = [NSURL URLWithString:[NSString stringWithFormat:@"ijkio:cache:ffio:%@",urlString]];
+                [options setFormatOptionValue:_path forKey:@"cache_file_path"];
+//                [options setFormatOptionValue:@"1" forKey:@"parse_cache_map"];
+//                [options setFormatOptionValue:@"1" forKey:@"auto_save_map"];
+//                [options setFormatOptionValue:mapPath forKey:@"cache_map_path"];
+            }
+            _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
         }
-        _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
         
         [_ijkPlayer setPlaybackRate:_config.rate];
         [self installMovieNotificationObservers];
@@ -69,6 +76,9 @@
         [_ijkPlayer prepareToPlay];
         self.status = HFPlayerStatusInit;
         
+        [self configDefaultSetting];
+        _noNetLoadDuration = 999999999999;
+        _networkStatus = ReachableViaWiFi;
     }
     return self;
 }
@@ -80,19 +90,52 @@
     if (_ijkPlayer) {
         [self stop];
     }
-    IJKFFOptions *options = [IJKFFOptions optionsByDefault];
-    [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
-    //缓存路径
-    //cache_file_path
-    NSString *path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
-    [options setFormatOptionValue:path forKey:@"cache_file_path"];
-    _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
+//    IJKFFOptions *options = [IJKFFOptions optionsByDefault];
+//    [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
+//    //缓存路径
+//    //cache_file_path
+//    _path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
+//    [options setFormatOptionValue:_path forKey:@"cache_file_path"];
+//    _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
+//    [_ijkPlayer setPlaybackRate:_config.rate];
+//    [self installMovieNotificationObservers];
+//    [self configTimer];
+//    [_ijkPlayer prepareToPlay];
+//    self.status = HFPlayerStatusInit;
+//    _noNetLoadDuration = 999999999999;
+//    _networkStatus = ReachableViaWiFi;
+    
+    _path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
+    if ([[HFPlayerCacheManager shared] isExistCacheWithUrl:url]) {
+        //播放本地
+        url = [NSURL URLWithString:_path];
+        _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:nil];
+    } else {
+        IJKFFOptions *options = [IJKFFOptions optionsByDefault];
+        [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
+        [options setPlayerOptionIntValue:0 forKey:@"infbuf"];
+        //缓存路径
+        //cache_file_path
+        if (_config.cacheEnable) {
+            NSString *urlString = url.absoluteString;
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"ijkio:cache:ffio:%@",urlString]];
+            [options setFormatOptionValue:_path forKey:@"cache_file_path"];
+//                [options setFormatOptionValue:@"1" forKey:@"parse_cache_map"];
+//                [options setFormatOptionValue:@"1" forKey:@"auto_save_map"];
+//                [options setFormatOptionValue:mapPath forKey:@"cache_map_path"];
+        }
+        _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
+    }
     
     [_ijkPlayer setPlaybackRate:_config.rate];
     [self installMovieNotificationObservers];
     [self configTimer];
     [_ijkPlayer prepareToPlay];
     self.status = HFPlayerStatusInit;
+    
+    [self configDefaultSetting];
+    _noNetLoadDuration = 999999999999;
+    _networkStatus = ReachableViaWiFi;
 }
 #pragma mark - 播放控制
 //开始播放
@@ -134,12 +177,17 @@
     if (duration<0) {
         return;
     }
+    //[self pause];
     _ijkPlayer.currentPlaybackTime = duration;
     [self play];
 }
 
 //拖动播放（进度）
 -(void)seekToProgress:(float)progress {
+//    if (progress>1.f) {
+//        progress = 1.f;
+//    }
+    NSLog(@"asdasdsadddsdfs");
     float targetSecond = _ijkPlayer.duration*progress;
     [self seekToDuration:targetSecond];
 }
@@ -158,7 +206,7 @@
 //音量控制
 -(void)configVolume:(float)volume {
     if (_ijkPlayer) {
-       
+        [_ijkPlayer setPlaybackVolume:volume];
     }
 }
 
@@ -170,6 +218,20 @@
         [self removeMovieNotificationObservers];
         //销毁定时器
         [self destroyTimer];
+        //判断缓存文件是否完整
+        if ([HFVLibUtils isBlankString:_path]) {
+            return;
+        }
+        NSData *filedata = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_path] options:NSDataReadingMappedIfSafe error:nil];
+        if (filedata.length<_ijkPlayer.monitor.filesize) {
+            //不完整就删除
+            NSLog(@"数据不完整需要删除");
+            if ([[NSFileManager defaultManager] fileExistsAtPath:_path]) {
+                [[NSFileManager defaultManager] removeItemAtPath:_path error:nil];
+            }
+        } else {
+            NSLog(@"数据文件完整！！！");
+        }
     }
 }
 
@@ -197,7 +259,6 @@
 -(void)configTimer {
     __weak typeof(self) weakSelf = self;
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.3 repeats:true block:^(NSTimer * _Nonnull timer) {
-        
         float totalDuration = weakSelf.ijkPlayer.duration;
         float currentDuration = weakSelf.ijkPlayer.currentPlaybackTime;
         float playProgress = currentDuration/totalDuration;
@@ -208,8 +269,11 @@
         if ([weakSelf.delegate respondsToSelector:@selector(playerPlayProgress:currentDuration:totalDuration:)]) {
             [weakSelf.delegate playerPlayProgress:playProgress currentDuration:currentDuration totalDuration:totalDuration];
         }
+        if (currentDuration>weakSelf.noNetLoadDuration) {
+            [weakSelf pause];
+        }
         //缓冲进度
-        if ([weakSelf.delegate respondsToSelector:@selector(playerLoadingProgress:)]) {
+        if (weakSelf.networkStatus != NotReachable && [weakSelf.delegate respondsToSelector:@selector(playerLoadingProgress:)]) {
             [weakSelf.delegate playerLoadingProgress:bufferProgress];
         }
     }];
@@ -394,6 +458,7 @@
         {
             //断网就停止当前请求，在请求失败回调里面做好记录 _videoLength
             //[self bufferingPause];
+            _noNetLoadDuration = _ijkPlayer.playableDuration;
         }
             break;
         case ReachableViaWiFi:
@@ -402,6 +467,7 @@
             if (_config.networkAbilityEable && _config.autoLoad == true) {
                 [self seekToDuration:_ijkPlayer.currentPlaybackTime];
             }
+            _noNetLoadDuration = 999999999999;
         }
             break;
         case ReachableViaWWAN:
@@ -410,6 +476,7 @@
             if (_config.networkAbilityEable && _config.autoLoad == true ) {
                 [self seekToDuration:_ijkPlayer.currentPlaybackTime];
             }
+            _noNetLoadDuration = 999999999999;
         }
             break;
         default:
@@ -423,6 +490,20 @@
 -(void)dealloc {
     LPLog(@"-----播放器释放了-----");
     [self stop];
+    //判断缓存文件是否完整
+    if ([HFVLibUtils isBlankString:_path]) {
+        return;
+    }
+    NSData *filedata = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_path] options:NSDataReadingMappedIfSafe error:nil];
+    if (filedata.length<_ijkPlayer.monitor.filesize) {
+        //不完整就删除
+        NSLog(@"数据不完整需要删除");
+        if ([[NSFileManager defaultManager] fileExistsAtPath:_path]) {
+            [[NSFileManager defaultManager] removeItemAtPath:_path error:nil];
+        }
+    } else {
+        NSLog(@"数据文件完整！！！");
+    }
 }
 
 @end
