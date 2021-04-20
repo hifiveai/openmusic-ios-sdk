@@ -8,15 +8,20 @@
 #import "HFPlayerApi.h"
 #import "HFResourceLoaderManager.h"
 #import "HFPlayerCacheManager.h"
+#import "HFNetworkReachAbility.h"
 
 //ijk
 #import <IJKMediaFramework/IJKMediaFramework.h>
 #import <IJKMediaFramework/IJKMediaFramework.h>
 
-@interface HFPlayerApi ()
+@interface HFPlayerApi () <HFReachabilityProtocol>
 
 @property(nonatomic ,assign)HFPlayerStatus                               status;
 @property(nonatomic ,strong)HFPlayerApiConfiguration                     *config;
+
+//网络监听
+@property(nonatomic, strong) HFNetworkReachAbility                *networkReachAbility;
+@property(nonatomic, assign) NetworkStatus                        networkStatus;
 
 //ijk
 @property(nonatomic ,strong)IJKFFMoviePlayerController                   *ijkPlayer;
@@ -46,12 +51,16 @@
         _config = config;
         [self configDefaultSetting];
         IJKFFOptions *options = [IJKFFOptions optionsByDefault];
-        [options setPlayerOptionIntValue:512000 forKey:@"max-buffer-size"];
+        [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
         [options setPlayerOptionIntValue:0 forKey:@"infbuf"];
         //缓存路径
         //cache_file_path
-        NSString *path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
-        [options setFormatOptionValue:path forKey:@"cache_file_path"];
+        if (_config.cacheEnable) {
+            NSString *urlString = url.absoluteString;
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"ijkio:cache:ffio:%@",urlString]];
+            NSString *path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
+            [options setFormatOptionValue:path forKey:@"cache_file_path"];
+        }
         _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
         
         [_ijkPlayer setPlaybackRate:_config.rate];
@@ -89,7 +98,7 @@
 //开始播放
 -(void)play {
     if (_ijkPlayer) {
-        if (self.status == HFPlayerStatusReadyToPlay || self.status == HFPlayerStatusError) {
+        if (self.status == HFPlayerStatusReadyToPlay) {
             [_ijkPlayer prepareToPlay];
         } else {
             [_ijkPlayer play];
@@ -126,6 +135,7 @@
         return;
     }
     _ijkPlayer.currentPlaybackTime = duration;
+    [self play];
 }
 
 //拖动播放（进度）
@@ -178,6 +188,8 @@
     [avSession setActive:YES error:nil];
     
     self.status = HFPlayerStatusInit;
+    
+    [self.networkReachAbility startListenNetWorkStatus];
 }
 
 #pragma mark - 定时器监听播放/缓冲进度
@@ -286,7 +298,15 @@
 
         case IJKMPMovieFinishReasonPlaybackError:
             NSLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackError: %d\n", reason);
-            self.status = HFPlayerStatusError;
+            //_ijkPlayer.duration
+            if (_ijkPlayer.duration-_ijkPlayer.currentPlaybackTime<1) {
+                if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
+                    [self.delegate playerPlayToEnd];
+                }
+            }else {
+                self.status = HFPlayerStatusError;
+                self.status = HFPlayerStatusPasue;
+            }
             break;
 
         default:
@@ -355,6 +375,47 @@
     [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMoviePlayerPlaybackStateDidChangeNotification object:_ijkPlayer];
 }
 
+#pragma mark - 🐠网络监测🐠
+-(HFNetworkReachAbility *)networkReachAbility {
+    if (!_networkReachAbility) {
+        _networkReachAbility = [[HFNetworkReachAbility alloc] init];
+        _networkReachAbility.delegate = self;
+    }
+    return _networkReachAbility;
+}
+
+-(void)reachabilityChanged:(NetworkStatus)status {
+    NSLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    NSLog(@"新的网络状态为：%ld",(long)status);
+    NSLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    _networkStatus = status;
+    switch (status) {
+        case NotReachable:
+        {
+            //断网就停止当前请求，在请求失败回调里面做好记录 _videoLength
+            //[self bufferingPause];
+        }
+            break;
+        case ReachableViaWiFi:
+        {
+            //网络恢复wifi则恢复缓冲
+            if (_config.networkAbilityEable && _config.autoLoad == true) {
+                [self seekToDuration:_ijkPlayer.currentPlaybackTime];
+            }
+        }
+            break;
+        case ReachableViaWWAN:
+        {
+            //网络恢复移动网络则恢复缓冲
+            if (_config.networkAbilityEable && _config.autoLoad == true ) {
+                [self seekToDuration:_ijkPlayer.currentPlaybackTime];
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
 
 
 

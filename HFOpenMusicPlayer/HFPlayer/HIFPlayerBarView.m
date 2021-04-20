@@ -447,6 +447,7 @@
             case HFPlayerStatusPasue:
             {
                 [self endHeadRotationAnimate];
+                [self stopLoadingAnimate];
                 if (self.playBtn.selected) {
                     self.playBtn.selected = NO;
                 }
@@ -471,7 +472,7 @@
                 break;
             case HFPlayerStatusError:
             {
-                //[self startLoadingAnimate];
+                [self startLoadingAnimate];
             }
             default:
                 break;
@@ -550,6 +551,7 @@
             _playerApi = [[HFPlayerApi alloc] initPlayerWtihUrl:url configuration:config];
             _currentIndex = 0;
             _playerApi.delegate = self;
+            [self startLoadingAnimate];
         }
     }
 }
