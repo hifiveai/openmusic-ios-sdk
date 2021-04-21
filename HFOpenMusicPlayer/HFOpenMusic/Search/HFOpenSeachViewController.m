@@ -105,7 +105,7 @@
 -(void)requestData {
     __weak typeof(self) weakSelf = self;
     [[HFOpenApiManager shared] searchMusicWithTagIds:nil priceFromCent:nil priceToCent:nil bpmFrom:nil bpmTo:nil durationFrom:nil durationTo:nil keyword:self.searchBar.text language:nil searchFiled:nil
-                                         searchSmart:nil page:[NSString stringWithFormat:@"%lu",(unsigned long)weakSelf.page] pageSize:@"20" success:^(id  _Nullable response) {
+                                         searchSmart:@"1" page:[NSString stringWithFormat:@"%lu",(unsigned long)weakSelf.page] pageSize:@"20" success:^(id  _Nullable response) {
         [weakSelf endRefresh];
         NSArray *musicArray = [HFOpenMusicModel mj_objectArrayWithKeyValuesArray: [response hfv_objectForKey_Safe:@"record"]];
         if (musicArray && musicArray.count>0) {
@@ -127,15 +127,14 @@
                     [weakSelf.dataArray addObjectsFromArray:favoriteArray];
                     NSLog(@"%@",weakSelf.dataArray);
                     NSLog(@"---%@",[NSThread currentThread]);
-                    [weakSelf.myTableView reloadData];
                     HFOpenMetaModel *metaModel = [HFOpenMetaModel mj_objectWithKeyValues:[response hfv_objectForKey_Safe:@"meta"]];
                     if (metaModel.currentPage*20 >= metaModel.totalCount) {
                         self.myTableView.mj_footer = nil;
                     }else {
                         self.myTableView.mj_footer = self.mjFooterView;
                     }
-                    
                 }
+                [weakSelf.myTableView reloadData];
             } fail:^(NSError * _Nullable error) {
                 NSLog(@"adsddddllllllll");
                 [HFVProgressHud showErrorWithError:error];

@@ -22,10 +22,9 @@
 @end
 
 @implementation HFOpenMusicPlayer
--(instancetype)initWithListenType:(NSUInteger)type config:(HFOpenMusicPlayerConfiguration *)config {
+-(instancetype)initWithListenType:(HFOpenMusicListenType)type config:(HFOpenMusicPlayerConfiguration *)config {
     if (self = [super init]) {
         self.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
         //列表
         HFOpenMusic *listView = [[HFOpenMusic alloc] initMusicListViewWithListenType:type showControlbtn:false];
         listView.delegate = self;
@@ -45,8 +44,22 @@
     return self;
 }
 
+-(void)setConfig:(HFOpenMusicPlayerConfiguration *)config {
+    _config = config;
+    HFPlayerConfiguration *playerConfig = [self changeToPlayerConfig:config];
+    _player.config = config;
+}
+
+-(void)showMusicPlayerView {
+    if (self) {
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+    }
+}
+
 -(void)removeMusicPlayerView {
-    [self removeFromSuperview];
+    if (self.superview) {
+        [self removeFromSuperview];
+    }
 }
 
 -(HFPlayerConfiguration *)changeToPlayerConfig:(HFOpenMusicPlayerConfiguration *)config {

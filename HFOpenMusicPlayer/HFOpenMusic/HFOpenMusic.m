@@ -32,6 +32,12 @@
     return self;
 }
 
+-(void)addMusicListView {
+    if (self) {
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+    }
+}
+
 -(void)removeMusicListView {
     if (self.superview) {
         [self removeFromSuperview];
@@ -48,7 +54,7 @@
     //440
     //self.frame = CGRectMake(0, KScreenHeight-KScale(440), KScreenWidth, KScale(440));
     self.frame = CGRectMake(0,0,KScreenWidth,KScreenHeight);
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
+    //[[UIApplication sharedApplication].keyWindow addSubview:self];
     
     //列表
     HFOpenMusicSegmentView *segment = [[HFOpenMusicSegmentView alloc] init];

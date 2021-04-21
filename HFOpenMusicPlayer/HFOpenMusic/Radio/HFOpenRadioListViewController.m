@@ -108,6 +108,7 @@ static NSInteger pageSize = 10;
         NSDictionary *dict = response;
         HFOpenMetaModel *metaModel = [HFOpenMetaModel mj_objectWithKeyValues:[dict hfv_objectForKey_Safe:@"meta"]];
         self.dataArray = [HFOpenChannelSheetModel mj_objectArrayWithKeyValuesArray:[dict hfv_objectForKey_Safe:@"record"]];
+        [self.myCollectionView reloadData];
         if (self.dataArray && self.dataArray.count>0) {
             for (HFOpenChannelSheetModel *model in self.dataArray) {
                 NSArray *tags = model.tag;
@@ -119,7 +120,6 @@ static NSInteger pageSize = 10;
                 model.tag = [tagModels copy];
             }
             
-            [self.myCollectionView reloadData];
             if (metaModel.currentPage*pageSize >= metaModel.totalCount) {
                 self.myCollectionView.mj_footer = nil;
             }else {

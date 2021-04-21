@@ -63,11 +63,6 @@ typedef NS_ENUM(NSInteger, HFPlayerStatus) {
 /// 播放完成回调
 -(void)playerPlayToEnd;
 
-/// 数据完成缓存回调
--(void)playerCachedidCompleteWithPath:(NSString *_Nullable)cachePath;
-
-/// 资源链接失效回调
-///-(void)sourceAsessceTokenDisabled;
 
 @end
 

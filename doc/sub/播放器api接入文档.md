@@ -2,7 +2,7 @@
 
 [TOC]
 ## 初始化SDK
-遵循协议 `<HFPlayerStatusProtocol>`
+
 
 ```objc
 HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfiguration];
@@ -30,24 +30,16 @@ playerApi.delegate = self;
 ```objc
 HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfiguration];
 ```
-| 配置项 | 描述 | 默认值 |
-|---|---|---|
-| cacheEnable | 是否允许客户端缓存 | 默认关闭 |
-| bufferCacheSize | 缓冲区大小 | 默认270kb（最小配置270kb） |
-| advanceBufferCacheSize | 预缓冲区大小 | 默认为缓冲区大小的1/2 |
-| repeatPlay | 是否允许重复播放 | 默认关闭 |
-| networkAbilityEable | 是否开启网络监测,断线重连播放 | 默认开启 |
-| rate | 播放速率 | 默认1.0 |
-| autoLoad | 播放器自动缓冲数据 | 默认开启 |
+| 配置项 | 描述 | 默认值 | 类型 |
+|---|---|---|---|
+| cacheEnable | 是否允许客户端缓存 | 默认关闭 | BOOL |
+| bufferCacheSize | 缓冲区大小 | 默认270kb（最小配置270kb） | NSUInteger |
+| repeatPlay | 是否允许重复播放 | 默认关闭 | BOOL |
+| networkAbilityEable | 是否开启网络监测,断线重连播放 | 默认开启 | BOOL |
+| rate | 播放速率 | 默认1.0 | float |
+| autoLoad | 播放器自动缓冲数据 | 默认开启 | BOOL |
 
-##  播放器设置播放url
-<font color='#FF0000'>新加接口，传url</font>
-设置后会马上播放
-
-
-## 切换播放音频资源地址
-<font color='#FF0000'>这个接口能否和《播放器设置播放url》整合一个</font>
-
+## 切换播放音频地址
 ```objc
 -(void)replaceCurrentUrlWithUrl:(NSURL *_Nonnull)url 
                   configuration:(HFPlayerConfiguration * _Nullable )config;
@@ -60,15 +52,8 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
   | url | 是 | 音频资源地址，支持网络和本地地址 | |
   | config | 是 | 播放器配置 | 详见[配置] |
 
-## 手动加载媒体资源数据
-在config配置里面将自动加载数据（autoLoad）设置为false时，需要调用此接口来加载数据
-```objc
--(void)loadMediaData;
-```
 
 ## 播放器播放
-<font color='#FF0000'>这个接口能否和《播放器设置播放url》整合一个</font>
-
 ```objc
 -(void)play;
 ```
@@ -139,32 +124,39 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 | volume | 是 | 音量  0.0～1.0，0.0代表播放器静音, 1.0 代表播放器音量最大 |
 
 ## 设置播放器回调
-<font color='#FF0000'>放代码实例，注释说明即可（状态更新回调等都在代码里注释说明），如java的</font>
+遵循协议 `<HFPlayerStatusProtocol>`
+```objc
+-(void)viewDidLoad {
+    HFPlayerApi *player = [[HFPlayerApi alloc] initPlayerWtihUrl:[NSURL URLWithString:@"xxx"] configuration:[HFPlayerApiConfiguration defaultConfiguration]];
+    player.delegate = self;
+}
 
-```java
-HFOpenMusic.getInstance()
-                .setPlayListen(new HFPlayMusicListener() {
-                    @Override
-                    public void onPlayMusic(MusicRecord musicDetail, String url) {
-                        //播放音乐回调
-                    }
 
-                    @Override
-                    public void onStop() {
-                        //播放停止回调
-                        HFPlayer.getInstance().stopPlay();
-                    }
+-(void)playerStatusChanged:(HFPlayerStatus)status {
+    /// 播放器状态更新回调
+}
 
-                    @Override
-                    public void onCloseOpenMusic() {
-                        //。。。
-                    }
-                })
-                .showOpenMusic(MainActivity.this);
+-(void)playerPlayProgress:(float)progress currentDuration:(float)currentDuration totalDuration:(float)totalDuration {
+    /// 播放进度回调
+}
+
+-(void)playerLoadingProgress:(float)progress {
+    /// 数据缓冲进度回调
+}
+
+-(void)playerLoadingBegin {
+    /// 播放器遇到数据缓冲
+}
+
+-(void)playerLoadingEnd {
+    /// 播放器数据缓冲结束，继续播放
+}
+
+-(void)playerPlayToEnd {
+    /// 播放完成回调
+}
+
 ```
-
-
-
 
 ## 播放器状态码
 

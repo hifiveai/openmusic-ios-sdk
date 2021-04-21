@@ -39,15 +39,14 @@
 
 -(void)refreshAction {
     NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
-    NSString *timeStr = [NSString stringWithFormat:@"%0.f",time*10];
+    NSString *timeStr = [NSString stringWithFormat:@"%0.f",time*1000];
     [self.dataArray removeAllObjects];
     _page = 1;
     __weak typeof(self) weakSelf = self;
     [[HFOpenApiManager shared] baseHotWithStartTime:timeStr duration:@"365" page:[NSString stringWithFormat:@"%lu",(unsigned long)_page] pageSize:@"20" success:^(id  _Nullable response) {
         [weakSelf endRefresh];
         weakSelf.dataArray = [HFOpenMusicModel mj_objectArrayWithKeyValuesArray: [response hfv_objectForKey_Safe:@"record"]];
-        if (weakSelf.dataArray && weakSelf.dataArray.count>0) {
-            [weakSelf.myTableView reloadData];
+       // if (weakSelf.dataArray && weakSelf.dataArray.count>0) {
             //判断有无更多数据
             HFOpenMetaModel *metaModel = [HFOpenMetaModel mj_objectWithKeyValues:[response hfv_objectForKey_Safe:@"meta"]];
             if (metaModel.currentPage*20 >= metaModel.totalCount) {
@@ -55,7 +54,10 @@
             }else {
                 self.myTableView.mj_footer = self.mjFooterView;
             }
-        }
+//        } else {
+//            self.myTableView.mj_footer = nil;
+//        }
+        [weakSelf.myTableView reloadData];
         
     } fail:^(NSError * _Nullable error) {
         [weakSelf endRefresh];
@@ -72,8 +74,8 @@
         [weakSelf endRefresh];
         NSArray *models = [HFOpenMusicModel mj_objectArrayWithKeyValuesArray: [response hfv_objectForKey_Safe:@"record"]];
         [weakSelf.dataArray addObjectsFromArray:models];
-        if (weakSelf.dataArray && weakSelf.dataArray.count>0) {
-            [weakSelf.myTableView reloadData];
+
+        //if (weakSelf.dataArray && weakSelf.dataArray.count>0) {
             //判断有无更多数据
             HFOpenMetaModel *metaModel = [HFOpenMetaModel mj_objectWithKeyValues:[response hfv_objectForKey_Safe:@"meta"]];
             if (metaModel.currentPage*20 >= metaModel.totalCount) {
@@ -81,8 +83,8 @@
             }else {
                 self.myTableView.mj_footer = self.mjFooterView;
             }
-        }
-        
+        [weakSelf.myTableView reloadData];
+        //}
     } fail:^(NSError * _Nullable error) {
         [weakSelf endRefresh];
         [HFVProgressHud showErrorWithError:error];

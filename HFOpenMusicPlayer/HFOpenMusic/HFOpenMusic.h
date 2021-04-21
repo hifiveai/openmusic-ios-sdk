@@ -35,6 +35,7 @@ FOUNDATION_EXPORT const unsigned char HFOpenMusicVersionString[];
 @property(nonatomic ,weak)id <HFOpenMusicDelegate> delegate;
 
 -(instancetype)initMusicListViewWithListenType:(HFOpenMusicListenType) type showControlbtn:(BOOL)showControlbtn;
+-(void)addMusicListView;
 -(void)removeMusicListView;
 -(void)previousPlay;
 -(void)nextPlay;

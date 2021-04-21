@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		CA16E64A262D5A3F007DEAE6 /* HFPlayerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CA16E648262D5A3F007DEAE6 /* HFPlayerApi.m */; };
 		CA16E64B262D5A3F007DEAE6 /* HFPlayerApi.h in Headers */ = {isa = PBXBuildFile; fileRef = CA16E649262D5A3F007DEAE6 /* HFPlayerApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA16E64F262D5A63007DEAE6 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E64E262D5A63007DEAE6 /* IJKMediaFramework.framework */; };
-		CA16E650262D5A63007DEAE6 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E64E262D5A63007DEAE6 /* IJKMediaFramework.framework */; };
 		CA16E652262D5AA4007DEAE6 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E651262D5AA4007DEAE6 /* VideoToolbox.framework */; };
 		CA16E654262D5AAE007DEAE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E653262D5AAE007DEAE6 /* UIKit.framework */; };
 		CA16E656262D5AB9007DEAE6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E655262D5AB8007DEAE6 /* QuartzCore.framework */; };
@@ -253,6 +251,8 @@
 		CA51521D2629677100114244 /* HFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5152192629677000114244 /* HFReachability.m */; };
 		CA51521E2629677100114244 /* HFNetworkReachAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = CA51521A2629677100114244 /* HFNetworkReachAbility.m */; };
 		CA51521F2629677100114244 /* HFNetworkReachAbility.h in Headers */ = {isa = PBXBuildFile; fileRef = CA51521B2629677100114244 /* HFNetworkReachAbility.h */; };
+		CA8D0CD3262FCE020091D062 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8D0CD2262FCE020091D062 /* IJKMediaFramework.framework */; };
+		CA8D0CD4262FCE020091D062 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8D0CD2262FCE020091D062 /* IJKMediaFramework.framework */; };
 		CA96EECE261F081F00CD3EA1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA96EECD261F081F00CD3EA1 /* LoginViewController.m */; };
 		CAA15D374661E73224E37E09 /* libPods-HFOpenMusicPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */; };
 		CAC777A5261EA70000B973F9 /* HFOpenApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */; };
@@ -293,7 +293,6 @@
 		3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HFOpenMusicPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA16E648262D5A3F007DEAE6 /* HFPlayerApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerApi.m; sourceTree = "<group>"; };
 		CA16E649262D5A3F007DEAE6 /* HFPlayerApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerApi.h; sourceTree = "<group>"; };
-		CA16E64E262D5A63007DEAE6 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		CA16E651262D5AA4007DEAE6 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		CA16E653262D5AAE007DEAE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CA16E655262D5AB8007DEAE6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -542,6 +541,7 @@
 		CA5152192629677000114244 /* HFReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFReachability.m; sourceTree = "<group>"; };
 		CA51521A2629677100114244 /* HFNetworkReachAbility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFNetworkReachAbility.m; sourceTree = "<group>"; };
 		CA51521B2629677100114244 /* HFNetworkReachAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFNetworkReachAbility.h; sourceTree = "<group>"; };
+		CA8D0CD2262FCE020091D062 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		CA96EECC261F081F00CD3EA1 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CA96EECD261F081F00CD3EA1 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenApiManager.m; sourceTree = "<group>"; };
@@ -578,6 +578,7 @@
 				CA16E66E262D5B41007DEAE6 /* AudioToolbox.framework in Frameworks */,
 				CA16E66C262D5B31007DEAE6 /* AVFoundation.framework in Frameworks */,
 				CA16E66A262D5B28007DEAE6 /* CoreGraphics.framework in Frameworks */,
+				CA8D0CD3262FCE020091D062 /* IJKMediaFramework.framework in Frameworks */,
 				CA16E668262D5B1E007DEAE6 /* CoreMedia.framework in Frameworks */,
 				CA16E666262D5B13007DEAE6 /* CoreVideo.framework in Frameworks */,
 				CA16E662262D5B04007DEAE6 /* libbz2.tbd in Frameworks */,
@@ -589,7 +590,6 @@
 				CA16E654262D5AAE007DEAE6 /* UIKit.framework in Frameworks */,
 				CA16E652262D5AA4007DEAE6 /* VideoToolbox.framework in Frameworks */,
 				CA51520D26295F2500114244 /* SystemConfiguration.framework in Frameworks */,
-				CA16E64F262D5A63007DEAE6 /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,8 +599,8 @@
 			files = (
 				CA16E674262D5B8D007DEAE6 /* libbz2.1.0.tbd in Frameworks */,
 				CA16E670262D5B80007DEAE6 /* libc++.tbd in Frameworks */,
-				CA16E650262D5A63007DEAE6 /* IJKMediaFramework.framework in Frameworks */,
 				CA3DBF16261C7D52008A8A42 /* HFOpenMusicPlayer.framework in Frameworks */,
+				CA8D0CD4262FCE020091D062 /* IJKMediaFramework.framework in Frameworks */,
 				CAA15D374661E73224E37E09 /* libPods-HFOpenMusicPlayerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1167,7 +1167,7 @@
 		CA3DBE9E261C768F008A8A42 /* HFOpenMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				CA16E64E262D5A63007DEAE6 /* IJKMediaFramework.framework */,
+				CA8D0CD2262FCE020091D062 /* IJKMediaFramework.framework */,
 				CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */,
 				CA3DBECB261C7935008A8A42 /* HFOpenMusicPlayer.m */,
 				CA50E3552625311700331BF9 /* HFOpenMusicPlayerConfiguration.h */,
@@ -1304,16 +1304,16 @@
 		CAFED1CC2626933E0074EAF8 /* sub */ = {
 			isa = PBXGroup;
 			children = (
-				CAFED1CD2626933E0074EAF8 /* 通用api接入文档.html */,
 				CAFED1CE2626933E0074EAF8 /* 播放器和音乐列表接入文档.html */,
+				CAFED1D22626933E0074EAF8 /* 播放器UI接入文档.html */,
+				CAFED1D62626933E0074EAF8 /* 音乐列表UI接入文档.html */,
+				CAFED1D52626933E0074EAF8 /* 播放器api接入文档.html */,
+				CAFED1CD2626933E0074EAF8 /* 通用api接入文档.html */,
+				CAFED1D12626933E0074EAF8 /* 播放器和音乐列表接入文档.md */,
 				CAFED1CF2626933E0074EAF8 /* 播放器UI接入文档.md */,
 				CAFED1D02626933E0074EAF8 /* 音乐列表UI接入文档.md */,
-				CAFED1D12626933E0074EAF8 /* 播放器和音乐列表接入文档.md */,
-				CAFED1D22626933E0074EAF8 /* 播放器UI接入文档.html */,
 				CAFED1D32626933E0074EAF8 /* 播放器api接入文档.md */,
 				CAFED1D42626933E0074EAF8 /* 通用api接入文档.md */,
-				CAFED1D52626933E0074EAF8 /* 播放器api接入文档.html */,
-				CAFED1D62626933E0074EAF8 /* 音乐列表UI接入文档.html */,
 			);
 			path = sub;
 			sourceTree = "<group>";

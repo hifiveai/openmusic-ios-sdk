@@ -23,13 +23,20 @@
         _config = config;
         [self configUI];
         [self configGestureRecognizer];
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
     return self;
 }
 
+-(void)showPlayerView {
+    if (self) {
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+    }
+}
+
 -(void)removePlayerView {
-    [self removeFromSuperview];
+    if (self.superview) {
+        [self removeFromSuperview];
+    }
 }
 
 -(void)setConfig:(HFPlayerConfiguration *)config {
@@ -47,6 +54,14 @@
     if (_barView) {
         [_barView shrinkAnimation];
     }
+}
+
+-(void)play {
+    [self.barView play];
+}
+
+-(void)pause {
+    [self.barView pause];
 }
 
 #pragma mark - Private Method

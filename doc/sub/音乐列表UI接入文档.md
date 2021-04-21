@@ -1,7 +1,6 @@
 # 《音乐列表UI》接口文档
 [TOC]
-## 初始化及显示UI视图
-<font color='#FF0000'>只初始化不显示UI。</font>
+## 初始化
 
 ```objc
 -(instancetype)initMusicListViewWithListenType:(HFOpenMusicListenType)type showControlbtn:(BOOL)showControlbtn;
@@ -20,37 +19,46 @@
 | K歌音乐播放           | KTYPE_K      |      |
 
 ## 显示音乐列表
-<font color='#FF0000'>新增接口，没有就加代码实例。</font>
-
-
+```objc
+-(void)addMusicListView;
+```
 ## 隐藏音乐列表
 ```objc
 -(void)removeMusicListView;
 ```
-
+## 播放上一首，更新歌曲UI列表并回调歌曲数据
+```objc
+-(void)previousPlay;
+```
+## 播放下一首，更新歌曲UI列表并回调歌曲数据
+```objc
+-(void)nextPlay;
+```
+## 上滑显示列表
+```objc
+-(void)showMusicSegmentView;
+```
+## 下滑隐藏列表
+```objc
+-(void)dismissView;
+```
 ## 设置代理
-<font color='#FF0000'>放代码实例，注释说明即可（状态更新回调等都在代码里注释说明），如java的</font>
+```objc
+-(void)viewDidLoad {
+    HFOpenMusic *listView = [[HFOpenMusic alloc] initMusicListViewWithListenType:self.musicType showControlbtn:true];
+    listView.delegate = self;
+    [listView addMusicListView];
+}
 
-```java
-HFOpenMusic.getInstance()
-                .setPlayListen(new HFPlayMusicListener() {
-                    @Override
-                    public void onPlayMusic(MusicRecord musicDetail, String url) {
-                        //播放音乐回调
-                    }
+//代理方法
+-(void)currentPlayChangedMusic:(HFOpenMusicModel *)musicModel detail:(HFOpenMusicDetailInfoModel *)detailModel canCutSong:(BOOL)canCutSong {
+    //当前播放发生切换回调
+}
 
-                    @Override
-                    public void onStop() {
-                        //播放停止回调
-                        HFPlayer.getInstance().stopPlay();
-                    }
+-(void)canCutSongChanged:(BOOL)canCutSong {
+    //上/下切歌按钮能否被点击，需要更新回调
+}
 
-                    @Override
-                    public void onCloseOpenMusic() {
-                        //。。。
-                    }
-                })
-                .showOpenMusic(MainActivity.this);
 ```
 
 遵循协议 `HFOpenMusicDelegate`
@@ -60,7 +68,6 @@ HFOpenMusic.getInstance()
 
 
 ## 当前播放发生切换回调
-<font color='#FF0000'>与《设置代理》整合</font>
 ```objc
 -(void)currentPlayChangedMusic:(HFOpenMusicModel *)musicModel detail:(HFOpenMusicDetailInfoModel *)detailModel canCutSong:(BOOL)canCutSong;
 ```
@@ -72,9 +79,6 @@ HFOpenMusic.getInstance()
 
 
 ## 上/下切歌按钮能否被点击，需要更新回调
-<font color='#FF0000'>与《设置代理》整合</font>
-
-
 ```objc
 -(void)canCutSongChanged:(BOOL)canCutSong;
 ```

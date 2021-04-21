@@ -14,7 +14,7 @@
 
 
 
-@interface ViewController () <HFOpenMusicDelegate>
+@interface ViewController () <HFOpenMusicDelegate ,HFPlayerStatusProtocol>
 @property(nonatomic ,strong)HFOpenMusicPlayer                       *playerListView;
 @property(nonatomic ,strong)HFPlayer                                *playerView;
 @property(nonatomic ,strong)HFOpenMusic                             *listView;
@@ -50,6 +50,18 @@
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 //播放器+列表
 -(void)configUiType0 {
     HFOpenMusicPlayerConfiguration *config = [HFOpenMusicPlayerConfiguration defaultConfiguration];
@@ -58,7 +70,9 @@
     config.bufferCacheSize = self.bufferCacheSize*1024;
     config.panTopLimit = self.topLimit;
     config.panBottomLimit = self.bottomLimit;
-    HFOpenMusicPlayer *playerListView = [[HFOpenMusicPlayer alloc] initWithListenType:self.musicType config:config];
+    HFOpenMusicPlayer *playerListView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
+    //显示
+    [playerListView showMusicPlayerView];
     _playerListView = playerListView;
 }
 
@@ -83,6 +97,7 @@
 -(void)configUiType2 {
     HFOpenMusic *listView = [[HFOpenMusic alloc] initMusicListViewWithListenType:self.musicType showControlbtn:true];
     listView.delegate = self;
+    [listView showMusicListView];
     _listView = listView;
 }
 

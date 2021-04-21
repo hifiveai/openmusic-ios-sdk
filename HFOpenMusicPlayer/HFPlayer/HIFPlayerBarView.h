@@ -28,6 +28,9 @@
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
 -(void)unfoldAnimation;
 -(void)shrinkAnimation;
+-(void)play;
+-(void)pause;
+-(void)stop;
 
 @end
 

@@ -112,6 +112,18 @@
     
 }
 
+-(void)play {
+    [_playerApi play];
+}
+
+-(void)pause {
+    [_playerApi pause];
+}
+
+-(void)stop {
+    [_playerApi stop];
+}
+
 #pragma mark - PrivateMethod
 -(void)configDefaultData {
     self.secondName = @"";

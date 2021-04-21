@@ -35,7 +35,10 @@ FOUNDATION_EXPORT const unsigned char HFPlayerVersionString[];
 
 
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
+-(void)showPlayerView;
 -(void)removePlayerView;
+-(void)play;
+-(void)pause;
 -(void)unfoldPlayerBar;
 -(void)shrinkPlayerBar;
 @end

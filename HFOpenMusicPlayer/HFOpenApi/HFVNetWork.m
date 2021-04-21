@@ -32,12 +32,12 @@
     //预发服务器
     //return @"https://hifive-gateway-pre.hifiveai.com";
     //正式服务器
-    //return @"https://gateway.open.hifiveai.com";
+    return @"https://gateway.open.hifiveai.com";
     
     
     
     //正式服务器-release
-    return @"https://gateway.open-b.hifiveai.com";
+    //return @"https://gateway.open-b.hifiveai.com";
     
     
     

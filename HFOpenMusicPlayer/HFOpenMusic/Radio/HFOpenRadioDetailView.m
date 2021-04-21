@@ -151,13 +151,13 @@
         [weakSelf.dataArray addObjectsFromArray:tempArray];
         HFOpenMetaModel *metaModel = [HFOpenMetaModel mj_objectWithKeyValues:[response hfv_objectForKey_Safe:@"meta"]];
         if (self.dataArray && self.dataArray.count>0) {
-            [self.myTableView reloadData];
             if (metaModel.currentPage*10 >= metaModel.totalCount) {
                 self.myTableView.mj_footer = nil;
             }else {
                 self.myTableView.mj_footer = self.mjFooterView;
             }
         }
+        [self.myTableView reloadData];
     } fail:^(NSError * _Nullable error) {
         [HFVProgressHud showErrorWithError:error];
         [self endRefresh];
