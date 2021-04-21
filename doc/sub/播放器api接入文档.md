@@ -11,7 +11,6 @@ playerApi.delegate = self;
 ```
 
 ## 初始化播放器
-<font color='#FF0000'>这里只做初始化，不用传url</font>
 
 ```objc
 -(instancetype)initPlayerWtihUrl:(NSURL *_Nonnull)url 
