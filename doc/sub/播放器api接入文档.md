@@ -11,20 +11,22 @@ playerApi.delegate = self;
 ```
 
 ## 初始化播放器
+<font color='#FF0000'>这里只做初始化，不用传url</font>
+
 ```objc
 -(instancetype)initPlayerWtihUrl:(NSURL *_Nonnull)url 
                    configuration:(HFPlayerConfiguration * _Nonnull)config;
 ```
-- 接口参数
-  
+接口参数
+
 | 参数 | 必填 | 描述 | 可选值 |
 |---|---|---|---|
 | url | 是 | 音频资源地址，支持网络和本地地址 | |
 | config | 是 | 播放器配置 | 详见[配置] |
 
-**配置**
+### 播放器配置
 
-- 创建默认配置
+创建默认配置
 ```objc
 HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfiguration];
 ```
@@ -38,7 +40,14 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 | rate | 播放速率 | 默认1.0 |
 | autoLoad | 播放器自动缓冲数据 | 默认开启 |
 
+##  播放器设置播放url
+<font color='#FF0000'>新加接口，传url</font>
+设置后会马上播放
+
+
 ## 切换播放音频资源地址
+<font color='#FF0000'>这个接口能否和《播放器设置播放url》整合一个</font>
+
 ```objc
 -(void)replaceCurrentUrlWithUrl:(NSURL *_Nonnull)url 
                   configuration:(HFPlayerConfiguration * _Nullable )config;
@@ -58,33 +67,38 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 ```
 
 ## 播放器播放
+<font color='#FF0000'>这个接口能否和《播放器设置播放url》整合一个</font>
+
 ```objc
 -(void)play;
 ```
 
-## 暂停播放
+## 播放器暂停
 可继续播放
 ```objc
 -(void)pause;
 ```
 
-## 恢复播放
+## 播放器恢复播放
 ```objc
 -(void)resume;
 ```
 
-## 停止播放
+## 播放器停止播放
 不可继续播放。若需再次播放此资源，需要重新初始化播放器加载url进行播放
 ```objc
 -(void)stop;
 ```
-
+## 销毁播放器
+```objc
+-(void)destroy;
+````
 ## 清除缓存
 ```objc
 -(void)clearCache;
 ```
 
-## 跳转播放位置
+## 设置播放位置
 按时间
 ```objc
 -(void)seekToDuration:(float)Duration;
@@ -114,7 +128,7 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 |---|---|---|
 | rate | 是 | 播放速率 0.0～2.0，0.0代表暂停播放，2.0代表两倍速播放 |
 
-## 音量控制
+## 设置音量
 ```objc
 -(void)configVolume:(float)volume;
 ```
@@ -124,67 +138,33 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 |---|---|---|
 | volume | 是 | 音量  0.0～1.0，0.0代表播放器静音, 1.0 代表播放器音量最大 |
 
-## 销毁播放器
-```objc
--(void)destroy;
-````
+## 设置播放器回调
+<font color='#FF0000'>放代码实例，注释说明即可（状态更新回调等都在代码里注释说明），如java的</font>
 
-## 播放器状态更新回调
+```java
+HFOpenMusic.getInstance()
+                .setPlayListen(new HFPlayMusicListener() {
+                    @Override
+                    public void onPlayMusic(MusicRecord musicDetail, String url) {
+                        //播放音乐回调
+                    }
 
-```objc
--(void)pllayerStatusChanged:(HFPlayerStatus) status;
+                    @Override
+                    public void onStop() {
+                        //播放停止回调
+                        HFPlayer.getInstance().stopPlay();
+                    }
+
+                    @Override
+                    public void onCloseOpenMusic() {
+                        //。。。
+                    }
+                })
+                .showOpenMusic(MainActivity.this);
 ```
 
-- 回调参数
-  
-| 参数 | 描述 |
-|---|---|
-| status | 播放器状态 |
 
-## 播放进度回调
 
-```objc
--(void)playerPlayProgress:(float)progress currentDuration:(float)currentDuration totalDuration:(float)totalDuration;
-```
-
-- 回调参数
-  
-| 参数 | 描述 |
-|---|---|
-| progress | 当前播放进度 |
-| currentDuration | 当前播放时长，秒 |
-| totalDuration | 资源总播放时长 ，秒|
-
-## 数据缓冲进度回调
-
-```objc
--(void)playerLoadingProgress:(float)progress timeRange:(CMTimeRange) timeRange;
-```
-
-- 回调参数
-
-| 参数 | 描述 |
-|---|---|
-| progress | 当前缓冲进度 |
-| timeRange | 本次缓冲时间段 |
-
-## 播放器遇到缓冲
-
-```objc
--(void)playerLoadingBegin;
-```
-
-## 播放器缓冲结束
-
-```objc
--(void)playerLoadingEnd;
-```
-
-## 播放器播放完毕
-
-```objc
--(void)playerPlayToEnd;
-```
 
 ## 播放器状态码
 

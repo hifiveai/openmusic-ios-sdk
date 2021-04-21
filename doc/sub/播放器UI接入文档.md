@@ -1,6 +1,6 @@
 # 《播放器UI》接口文档
 [TOC]
-## 初始化及显示视图
+## 初始化SDK
 ```objc
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
 ```
@@ -31,37 +31,48 @@ HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
 | rate | 播放速率 | 默认1.0 |
 | autoLoad | 播放器自动缓冲数据 | 默认开启 |
 
-## 移除视图
+## 显示播放器
+<font color='#FF0000'>新加接口，不需要每次调用初始化并显示</font>
+
+## 移除播放器
 ```objc
 -(void)removePlayerView;
 ```
 
-## 展开播放条
+
+## 播放歌曲
+<font color='#FF0000'>新加接口，可以设置url、标题、封面</font>
+
+## 停止播放音乐
+<font color='#FF0000'>新加接口</font>
+
+## 展开播放器
 ```objc
 -(void)unfoldPlayerBar;
 ```
 
-## 收起播放条
+## 折叠播放器
 ```objc
 -(void)shrinkPlayerBar;
 ```
 
 ## 设置代理
-遵循协议`HFPlayerDelegat`
+遵循协议`HFPlayerDelegate`
 ```objc
 -(void)setDelegate:(id<HFPlayerDelegate>)delegate
 ```
 
-## 上一曲按钮点击回调
+### 上一曲按钮点击回调
 ```objc
 -(void)previousClick;
 ```
-## 下一曲按钮点击回调
+### 下一曲按钮点击回调
 ```objc
 -(void)nextClick;
 ```
-## 头像点击回调
+### 头像点击回调
 ```objc
 -(void)headerClick;
 ```
+
 
