@@ -18,11 +18,11 @@
 | 音视频作品BGM音乐播放 | TYPE_UGC     |      |
 | K歌音乐播放           | KTYPE_K      |      |
 
-## 显示音乐列表
+## 添加音乐列表视图
 ```objc
 -(void)addMusicListView;
 ```
-## 隐藏音乐列表
+## 移除音乐列表视图
 ```objc
 -(void)removeMusicListView;
 ```
@@ -36,11 +36,11 @@
 ```objc
 -(void)nextPlay;
 ```
-## 显示列表
+## 列表上移显示
 ```objc
 -(void)showMusicSegmentView;
 ```
-## 隐藏列表
+## 列表下移隐藏
 ```objc
 -(void)dismissView;
 ```
@@ -64,8 +64,38 @@
 ```
 
 
-| 参数 | 描述 |
-|---|---|
-| musicModel | 歌曲信息数据 |
-| detailModel | 歌曲详情数据 |
-| canCutSong | 上/下切歌按钮能否被点击 |
+| 参数 | 描述 | 类型 |
+|---|---|---|
+| musicModel | 歌曲信息数据 | HFOpenMusicModel |
+| detailModel | 歌曲详情数据 | HFOpenMusicDetailInfoModel |
+| canCutSong | 上/下切歌按钮能否被点击 | BOOL |
+
+**musicModel**
+| 属性 | 描述 | 类型 |
+|---|---|---|
+| musicId | 音乐id |  NSString |
+| musicName | 音乐名 |  NSString |
+| albumId | 专辑id |  NSString |
+| albumName | 专辑名 |  NSString |
+| author | 作词者 |  NSArray |
+| composer | 作曲者 |  NSArray |
+| arranger | 编曲者 |  NSArray |
+| cover | 封面 |  NSArray |
+| duration | 时长（秒），此字段可能和播放器读取时长有一定误差 |  NSString |
+| auditionBegin | 推荐试听开始时间 |  NSString |
+| auditionEnd | 推荐试听结束时间 |  NSString |
+| bpm | 每分钟节拍 |  NSString |
+| tag | 标签 |  NSArray |
+| version | 版本信息 |  NSArray |
+| 表演者 | 表演者 |  NSArray |
+
+**detailModel**
+| 属性 | 描述 | 类型 |
+|---|---|---|
+| musicId | 音乐id |  NSString |
+| expires | 过期时间 |  NSString |
+| fileUrl | 试听地址 |  NSString |
+| fileSize | 文件大小 |  NSString |
+| waveUrl | 波形图地址 |  NSString |
+
+

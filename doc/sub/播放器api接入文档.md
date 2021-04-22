@@ -1,26 +1,16 @@
 # 《播放器API》接口文档
 
 [TOC]
-## 初始化SDK
 
-
-```objc
-HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfiguration];
-HFPlayerApi *playerApi = [[HFPlayerApi alloc] initPlayerWtihUrl:[NSURL URLWithString:_songUrl] configuration:configuration];
-playerApi.delegate = self;
-```
-
-## 初始化播放器
+## 初始化
 
 ```objc
--(instancetype)initPlayerWtihUrl:(NSURL *_Nonnull)url 
-                   configuration:(HFPlayerConfiguration * _Nonnull)config;
+-(instancetype)initPlayerWtihConfiguration:(HFPlayerApiConfiguration * _Nonnull)config;
 ```
 接口参数
 
 | 参数 | 必填 | 描述 | 可选值 |
 |---|---|---|---|
-| url | 是 | 音频资源地址，支持网络和本地地址 | |
 | config | 是 | 播放器配置 | 详见[配置] |
 
 ### 播放器配置
@@ -28,34 +18,29 @@ playerApi.delegate = self;
 创建默认配置
 ```objc
 HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfiguration];
+//用户可根据需要修改配置
+configuration.bufferCacheSize = 500;
+configuration.cacheEnable = true;
 ```
 | 配置项 | 描述 | 默认值 | 类型 |
 |---|---|---|---|
 | cacheEnable | 是否允许客户端缓存 | 默认关闭 | BOOL |
-| bufferCacheSize | 缓冲区大小 | 默认270kb（最小配置270kb） | NSUInteger |
+| bufferCacheSize | 缓冲区大小 | 默认270（单位：kb，最小配置270kb） | NSUInteger |
 | repeatPlay | 是否允许重复播放 | 默认关闭 | BOOL |
 | networkAbilityEable | 是否开启网络监测,断线重连播放 | 默认开启 | BOOL |
 | rate | 播放速率 | 默认1.0 | float |
-| autoLoad | 播放器自动缓冲数据 | 默认开启 | BOOL |
 
-## 切换播放音频地址
+## 播放音频
 ```objc
--(void)replaceCurrentUrlWithUrl:(NSURL *_Nonnull)url 
-                  configuration:(HFPlayerConfiguration * _Nullable )config;
+-(void)playWithUrlString:(NSString *_Nonnull)urlString;
 ```
 
 - 接口参数
   
   | 参数 | 必填 | 描述 | 可选值 |
   |---|---|---|---|
-  | url | 是 | 音频资源地址，支持网络和本地地址 | |
-  | config | 是 | 播放器配置 | 详见[配置] |
+  | urlString | 是 | 音频资源地址字符串，支持网络和本地地址 | |
 
-
-## 播放器播放
-```objc
--(void)play;
-```
 
 ## 播放器暂停
 可继续播放
@@ -63,13 +48,13 @@ HFPlayerApiConfiguration *configuration = [HFPlayerApiConfiguration defaultConfi
 -(void)pause;
 ```
 
-## 播放器恢复播放
+## 播放器继续播放
 ```objc
 -(void)resume;
 ```
 
 ## 播放器停止播放
-不可继续播放。若需再次播放此资源，需要重新初始化播放器加载url进行播放
+不可继续播放。若需再次播放此资源，需要调用播放音频方法传入url进行播放
 ```objc
 -(void)stop;
 ```

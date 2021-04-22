@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, HFPlayerStatus) {
 @property(nonatomic ,weak)id <HFPlayerStatusProtocol>                         delegate;
 
 
-/// 初始化播放器
+/// 初始化
 /// @params config 播放器配置(可传nil，nil则表示默认配置)
 -(instancetype)initPlayerWtihConfiguration:(HFPlayerApiConfiguration * _Nonnull)config;
 

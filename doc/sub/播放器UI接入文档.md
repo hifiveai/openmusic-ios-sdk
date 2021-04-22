@@ -29,12 +29,12 @@ HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
 | networkAbilityEable | 是否开启网络监测,断线重连播放 | 默认开启 |
 | rate | 播放速率 | 默认1.0 | float |
 
-## 显示播放器
+## 添加播放器视图
 ```objc
 -(void)addPlayerView;
 ```
 
-## 移除播放器
+## 移除播放器视图
 ```objc
 -(void)removePlayerView;
 ```

@@ -1298,8 +1298,8 @@
 				CAFED1D52626933E0074EAF8 /* 播放器api接入文档.html */,
 				CAFED1CD2626933E0074EAF8 /* 通用api接入文档.html */,
 				CAFED1D12626933E0074EAF8 /* 播放器和音乐列表接入文档.md */,
-				CAFED1CF2626933E0074EAF8 /* 播放器UI接入文档.md */,
 				CAFED1D02626933E0074EAF8 /* 音乐列表UI接入文档.md */,
+				CAFED1CF2626933E0074EAF8 /* 播放器UI接入文档.md */,
 				CAFED1D32626933E0074EAF8 /* 播放器api接入文档.md */,
 				CAFED1D42626933E0074EAF8 /* 通用api接入文档.md */,
 			);
