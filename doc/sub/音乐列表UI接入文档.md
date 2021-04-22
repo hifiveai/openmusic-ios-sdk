@@ -26,19 +26,21 @@
 ```objc
 -(void)removeMusicListView;
 ```
-## 播放上一首，更新歌曲UI列表并回调歌曲数据
+## 播放上一首
+该接口会更新歌曲UI列表并回调歌曲数据
 ```objc
 -(void)previousPlay;
 ```
-## 播放下一首，更新歌曲UI列表并回调歌曲数据
+## 播放下一首
+该接口会更新歌曲UI列表并回调歌曲数据
 ```objc
 -(void)nextPlay;
 ```
-## 上滑显示列表
+## 显示列表
 ```objc
 -(void)showMusicSegmentView;
 ```
-## 下滑隐藏列表
+## 隐藏列表
 ```objc
 -(void)dismissView;
 ```
@@ -61,27 +63,9 @@
 
 ```
 
-遵循协议 `HFOpenMusicDelegate`
-```objc
--(void)setDelegate:(id<HFOpenMusicDelegate>)delegate;
-```
 
-
-## 当前播放发生切换回调
-```objc
--(void)currentPlayChangedMusic:(HFOpenMusicModel *)musicModel detail:(HFOpenMusicDetailInfoModel *)detailModel canCutSong:(BOOL)canCutSong;
-```
 | 参数 | 描述 |
 |---|---|
 | musicModel | 歌曲信息数据 |
 | detailModel | 歌曲详情数据 |
-| canCutSong | 上/下切歌按钮能否被点击 |
-
-
-## 上/下切歌按钮能否被点击，需要更新回调
-```objc
--(void)canCutSongChanged:(BOOL)canCutSong;
-```
-| 参数 | 描述 |
-|---|---|
 | canCutSong | 上/下切歌按钮能否被点击 |
