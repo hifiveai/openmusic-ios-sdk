@@ -25,25 +25,16 @@
 
 -(void)defaultSetting {
     //默认配置
-    self.bufferCacheSize = 270*1024;//270k
-    self.advanceBufferCacheSize = _bufferCacheSize/2;
+    self.bufferCacheSize = 270;//270k
     self.repeatPlay = false;
     self.networkAbilityEable = YES;
     self.rate = 1.0;
-    self.bkgLoadingEnable = YES;
-    self.autoLoad = YES;
     self.cacheEnable = true;
     
     self.autoNext = YES;
     self.panTopLimit = 0;
     self.panBottomLimit = 0;
 }
-
--(void)setBufferCacheSize:(NSUInteger)bufferCacheSize {
-    _bufferCacheSize = bufferCacheSize;
-    _advanceBufferCacheSize = bufferCacheSize/2;
-}
-
 
 -(id)copyWithZone:(NSZone *)zone{
     
@@ -61,12 +52,9 @@
     
     config.cacheEnable = self.cacheEnable;
     config.bufferCacheSize = self.bufferCacheSize;
-    config.advanceBufferCacheSize = self.advanceBufferCacheSize;
     config.repeatPlay = self.repeatPlay;
     config.networkAbilityEable = self.networkAbilityEable;
     config.rate = self.rate;
-    config.bkgLoadingEnable = self.bkgLoadingEnable;
-    config.autoLoad = self.autoLoad;
     return config ;
 }
 
@@ -85,12 +73,9 @@
     
     config.cacheEnable = self.cacheEnable;
     config.bufferCacheSize = self.bufferCacheSize;
-    config.advanceBufferCacheSize = self.advanceBufferCacheSize;
     config.repeatPlay = self.repeatPlay;
     config.networkAbilityEable = self.networkAbilityEable;
     config.rate = self.rate;
-    config.bkgLoadingEnable = self.bkgLoadingEnable;
-    config.autoLoad = self.autoLoad;
     
     return config;
 }

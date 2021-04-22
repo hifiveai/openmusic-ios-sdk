@@ -15,21 +15,12 @@
 @property(nonatomic ,assign)BOOL                       cacheEnable;
 //缓冲区大小(默认2M)
 @property(nonatomic ,assign)NSUInteger                 bufferCacheSize;
-//预缓冲区大小
-@property(nonatomic ,assign)NSUInteger                 advanceBufferCacheSize;
 //是否允许重复播放(默认开启)
 @property(nonatomic ,assign)BOOL                       repeatPlay;
 //是否开启网络监测,断线重连播放(默认开启)
 @property(nonatomic ,assign)BOOL                       networkAbilityEable;
 //播放速率(默认1.0)
 @property(nonatomic ,assign)float                      rate;
-//是否允许后台缓冲数据(默认开启)
-@property(nonatomic ,assign)BOOL                       bkgLoadingEnable;
-//播放器自动缓冲数据(默认开启)
-@property(nonatomic ,assign)BOOL                       autoLoad;
-
-
-
 
 
 +(HFPlayerApiConfiguration *)defaultConfiguration;

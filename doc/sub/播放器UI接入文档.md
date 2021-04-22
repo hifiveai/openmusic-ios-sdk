@@ -31,7 +31,7 @@ HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
 
 ## 显示播放器
 ```objc
--(void)showPlayerView;
+-(void)addPlayerView;
 ```
 
 ## 移除播放器
@@ -67,7 +67,27 @@ HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
 ## 设置代理
 遵循协议`HFPlayerDelegate`
 ```objc
--(void)setDelegate:(id<HFPlayerDelegate>)delegate
+-(void)viewDidLoad {
+HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
+config.urlString = @"http://xxxxxx";
+config.songName = @"xxx";
+HFPlayer *playerView = [[HFPlayer alloc] initWithConfiguration:config];
+playerView.delegate = self;
+[playerView addPlayerView];
+}
+
+-(void)previousClick {
+  //上一曲点击
+}
+
+-(void)nextClick {
+  //下一曲按钮点击
+}
+
+-(void)headerClick {
+  //头像点击
+}
+
 ```
 
 ### 上一曲按钮点击回调

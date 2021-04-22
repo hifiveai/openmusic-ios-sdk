@@ -50,29 +50,17 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 //播放器+列表
 -(void)configUiType0 {
     HFOpenMusicPlayerConfiguration *config = [HFOpenMusicPlayerConfiguration defaultConfiguration];
     config.networkAbilityEable = self.networkAbilityEable;
     config.cacheEnable = self.cacheEnable;
-    config.bufferCacheSize = self.bufferCacheSize*1024;
+    config.bufferCacheSize = self.bufferCacheSize;
     config.panTopLimit = self.topLimit;
     config.panBottomLimit = self.bottomLimit;
     HFOpenMusicPlayer *playerListView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
     //显示
-    [playerListView showMusicPlayerView];
+    [playerListView addMusicPlayerView];
     _playerListView = playerListView;
 }
 
@@ -81,23 +69,27 @@
     HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
     config.networkAbilityEable = self.networkAbilityEable;
     config.cacheEnable = self.cacheEnable;
-    config.bufferCacheSize = self.bufferCacheSize*1024;
+    config.bufferCacheSize = self.bufferCacheSize;
     config.panTopLimit = self.topLimit;
     config.panBottomLimit = self.bottomLimit;
-//https://img.zhugexuetang.com/lleXB2SNF5UFp1LfNpPI0hsyQjNs
+    //https://img.zhugexuetang.com/lleXB2SNF5UFp1LfNpPI0hsyQjNs
     //http://music.163.com/song/media/outer/url?id=64634.mp3
     //ijkio:cache:ffio:
     config.urlString = @"http://music.163.com/song/media/outer/url?id=64634.mp3";
     config.songName = @"一丝不挂";
     HFPlayer *playerView = [[HFPlayer alloc] initWithConfiguration:config];
+    playerView.delegate = self;
+    [playerView addPlayerView];
     _playerView = playerView;
+    //开始播放
+    [_playerView play];
 }
 
 //列表
 -(void)configUiType2 {
     HFOpenMusic *listView = [[HFOpenMusic alloc] initMusicListViewWithListenType:self.musicType showControlbtn:true];
     listView.delegate = self;
-    [listView showMusicListView];
+    [listView addMusicListView];
     _listView = listView;
 }
 

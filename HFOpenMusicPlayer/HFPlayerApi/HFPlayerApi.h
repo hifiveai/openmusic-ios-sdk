@@ -72,23 +72,13 @@ typedef NS_ENUM(NSInteger, HFPlayerStatus) {
 
 
 /// 初始化播放器
-/// @params url 音频资源url
 /// @params config 播放器配置(可传nil，nil则表示默认配置)
--(instancetype)initPlayerWtihUrl:(NSURL *_Nonnull)url configuration:(HFPlayerApiConfiguration * _Nonnull)config;
+-(instancetype)initPlayerWtihConfiguration:(HFPlayerApiConfiguration * _Nonnull)config;
 
-/// 切换播放
-/// @params url 音频资源url
-/// @params config 播放器配置(可传nil，nil则表示保持当前配置)
--(void)replaceCurrentUrlWithUrl:(NSURL *_Nonnull)url configuration:(HFPlayerApiConfiguration * _Nullable )config;
 
-/// 加载媒体资源数据
--(void)loadMediaData;
-
-//设置播放器视图(视频播放需要配置播放器试图，音频不需要调用此方法)
--(void)setPlayerView:(UIView *_Nonnull)view;
-
-/// 开始播放
--(void)play;
+/// 播放音频
+/// @params urlString 音频资源地址
+-(void)playWithUrlString:(NSString *_Nonnull)urlString;
 
 /// 暂停播放，可继续播放
 -(void)pause;

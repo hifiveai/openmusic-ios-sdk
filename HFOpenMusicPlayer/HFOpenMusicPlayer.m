@@ -17,7 +17,6 @@
 
 @property(nonatomic ,strong)HFPlayer                                             *player;
 @property(nonatomic ,strong)HFOpenMusic                                          *listView;
-//@property(nonatomic ,strong)HFPlayerConfiguration                                *config;
 
 @end
 
@@ -47,10 +46,10 @@
 -(void)setConfig:(HFOpenMusicPlayerConfiguration *)config {
     _config = config;
     HFPlayerConfiguration *playerConfig = [self changeToPlayerConfig:config];
-    _player.config = config;
+    _player.config = playerConfig;
 }
 
--(void)showMusicPlayerView {
+-(void)addMusicPlayerView {
     if (self) {
         [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
@@ -69,12 +68,9 @@
     playerConfig.panBottomLimit = config.panBottomLimit;
     playerConfig.cacheEnable = config.cacheEnable;
     playerConfig.bufferCacheSize = config.bufferCacheSize;
-    playerConfig.advanceBufferCacheSize = config.advanceBufferCacheSize;
     playerConfig.repeatPlay = config.repeatPlay;
     playerConfig.networkAbilityEable = config.networkAbilityEable;
     playerConfig.rate = config.rate;
-    playerConfig.bkgLoadingEnable = config.bkgLoadingEnable;
-    playerConfig.autoLoad = config.autoLoad;
     return playerConfig;
 }
 
@@ -91,7 +87,6 @@
 
 //下一首
 -(void)nextClick {
-    NSLog(@"播放完成----下一首回调");
     [self.listView nextPlay];
 }
 
@@ -136,7 +131,7 @@
         config.musicId = @"";
         _player.config = config;
     }
-
+    [_player play];
 }
 
 -(void)canCutSongChanged:(BOOL)canCutSong {

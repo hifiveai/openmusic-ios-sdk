@@ -27,7 +27,7 @@
     return self;
 }
 
--(void)showPlayerView {
+-(void)addPlayerView {
     if (self) {
         [[UIApplication sharedApplication].keyWindow addSubview:self];
     }

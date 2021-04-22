@@ -55,7 +55,6 @@
         [self configUI];
         self.config = config;
         _cutSongEnable = true;
-        [self configPlayer];
         [self configDefaultData];
         [self configNotification];
     }
@@ -95,29 +94,37 @@
     }
     
     //判断是否切歌
-    if (![oldMedia isEqualToString:newMedia] || self.slider.value>0.99) {
-        //歌曲发生了切换
-        if (_playerApi) {
-            if ([self.delegate respondsToSelector:@selector(cutSongDuration:musicId:)]) {
-                [self.delegate cutSongDuration:_currentDuration musicId:oldMusicId];
-            }
-            _currentDuration = 0;
-            self.slider.value = 0;
-            self.progressView.progress = 0;
-            [self.playerApi replaceCurrentUrlWithUrl:[NSURL URLWithString:config.urlString] configuration:self.playerConfig];
-        } else {
-            [self initPlayerApi:[NSURL URLWithString:config.urlString]];
-        }
-    }
+//    if (![oldMedia isEqualToString:newMedia] || self.slider.value>0.99) {
+//        //歌曲发生了切换
+//        if (_playerApi) {
+//            if ([self.delegate respondsToSelector:@selector(cutSongDuration:musicId:)]) {
+//                [self.delegate cutSongDuration:_currentDuration musicId:oldMusicId];
+//            }
+//            _currentDuration = 0;
+//            self.slider.value = 0;
+//            self.progressView.progress = 0;
+//            [self.playerApi replaceCurrentUrlWithUrl:[NSURL URLWithString:config.urlString] configuration:self.playerConfig];
+//        } else {
+//            [self initPlayerApi:[NSURL URLWithString:config.urlString]];
+//        }
+//    }
     
 }
 
 -(void)play {
-    [_playerApi play];
+    _currentDuration = 0;
+    self.slider.value = 0;
+    self.progressView.progress = 0;
+    [self startLoadingAnimate];
+    [self.playerApi playWithUrlString:_config.urlString];
 }
 
 -(void)pause {
     [_playerApi pause];
+}
+
+-(void)resume {
+    [_playerApi resume];
 }
 
 -(void)stop {
@@ -128,10 +135,6 @@
 -(void)configDefaultData {
     self.secondName = @"";
     _currentDuration = 0.f;
-}
-
--(void)configPlayer {
-    
 }
 
 -(void)configUI {
@@ -400,7 +403,7 @@
     if (sender.selected) {
         [_playerApi pause];
     } else {
-        [_playerApi play];
+        [_playerApi resume];
     }
     if ([self.delegate respondsToSelector:@selector(playBtnClick:)]) {
         [self.delegate playBtnClick:sender];
@@ -445,7 +448,7 @@
             }
             case HFPlayerStatusReadyToPlay:
             {
-                [self.playerApi play];
+                
             }
                 break;
             case HFPlayerStatusPlaying:
@@ -549,25 +552,20 @@
     LPLog(@"^^^^^^^^^^^^^^^^^dealloc^^^^^^^^^^^^^^^%@",self.class);
 }
 
--(void)initPlayerApi:(NSURL *)url {
+-(HFPlayerApi *)playerApi {
     if (!_playerApi) {
-        if (_config && ![HFPlayerUtils isBlankString:_config.urlString]) {
-            HFPlayerApiConfiguration *config = [HFPlayerApiConfiguration defaultConfiguration];
-            config.cacheEnable = _config.cacheEnable;
-            config.bufferCacheSize = _config.bufferCacheSize;
-            config.advanceBufferCacheSize = _config.advanceBufferCacheSize;
-            config.repeatPlay = _config.repeatPlay;
-            config.networkAbilityEable = _config.networkAbilityEable;
-            config.rate = _config.rate;
-            config.bkgLoadingEnable = _config.bkgLoadingEnable;
-            config.autoLoad = _config.autoLoad;
-            _playerConfig = config;
-            _playerApi = [[HFPlayerApi alloc] initPlayerWtihUrl:url configuration:config];
-            _currentIndex = 0;
-            _playerApi.delegate = self;
-            [self startLoadingAnimate];
-        }
+        HFPlayerApiConfiguration *config = [HFPlayerApiConfiguration defaultConfiguration];
+        config.cacheEnable = _config.cacheEnable;
+        config.bufferCacheSize = _config.bufferCacheSize;
+        config.repeatPlay = _config.repeatPlay;
+        config.networkAbilityEable = _config.networkAbilityEable;
+        config.rate = _config.rate;
+        _playerConfig = config;
+        _playerApi = [[HFPlayerApi alloc] initPlayerWtihConfiguration:_playerConfig];
+        _currentIndex = 0;
+        _playerApi.delegate = self;
     }
+    return _playerApi;
 }
 
 #pragma mark - UI界面

@@ -24,7 +24,7 @@
 
 -(void)defaultSetting {
     //默认配置
-    self.bufferCacheSize = 270*1024;//270kb
+    self.bufferCacheSize = 270;//270kb
     self.advanceBufferCacheSize = _bufferCacheSize/2;
     self.repeatPlay = false;
     self.networkAbilityEable = YES;

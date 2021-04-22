@@ -6,7 +6,6 @@
 //
 
 #import "HFPlayerApi.h"
-#import "HFResourceLoaderManager.h"
 #import "HFPlayerCacheManager.h"
 #import "HFNetworkReachAbility.h"
 
@@ -45,108 +44,51 @@
 #pragma mark - 🐒public method🐒
 
 #pragma mark - 初始化
--(instancetype)initPlayerWtihUrl:(NSURL *)url configuration:(HFPlayerApiConfiguration *)config {
+-(instancetype)initPlayerWtihConfiguration:(HFPlayerApiConfiguration *)config {
     if (self = [super init]) {
         _config = config;
-        _path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
-        if ([[HFPlayerCacheManager shared] isExistCacheWithUrl:url]) {
-            //播放本地
-            url = [NSURL URLWithString:_path];
-            _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:nil];
-        } else {
-            IJKFFOptions *options = [IJKFFOptions optionsByDefault];
-            [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
-            [options setPlayerOptionIntValue:0 forKey:@"infbuf"];
-            //缓存路径
-            //cache_file_path
-            if (_config.cacheEnable) {
-                NSString *urlString = url.absoluteString;
-                url = [NSURL URLWithString:[NSString stringWithFormat:@"ijkio:cache:ffio:%@",urlString]];
-                [options setFormatOptionValue:_path forKey:@"cache_file_path"];
-//                [options setFormatOptionValue:@"1" forKey:@"parse_cache_map"];
-//                [options setFormatOptionValue:@"1" forKey:@"auto_save_map"];
-//                [options setFormatOptionValue:mapPath forKey:@"cache_map_path"];
-            }
-            _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
-        }
-        
-        [_ijkPlayer setPlaybackRate:_config.rate];
-        [self installMovieNotificationObservers];
-        [self configTimer];
-        [_ijkPlayer prepareToPlay];
-        self.status = HFPlayerStatusInit;
-        
-        [self configDefaultSetting];
-        _noNetLoadDuration = 999999999999;
-        _networkStatus = ReachableViaWiFi;
     }
     return self;
 }
 
--(void)replaceCurrentUrlWithUrl:(NSURL *)url configuration:(HFPlayerApiConfiguration *)config {
-    if (config) {
-        _config = config;
-    }
+#pragma mark - 播放控制
+//开始播放
+-(void)playWithUrlString:(NSString *)urlString {
     if (_ijkPlayer) {
         [self stop];
     }
-//    IJKFFOptions *options = [IJKFFOptions optionsByDefault];
-//    [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
-//    //缓存路径
-//    //cache_file_path
-//    _path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
-//    [options setFormatOptionValue:_path forKey:@"cache_file_path"];
-//    _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
-//    [_ijkPlayer setPlaybackRate:_config.rate];
-//    [self installMovieNotificationObservers];
-//    [self configTimer];
-//    [_ijkPlayer prepareToPlay];
-//    self.status = HFPlayerStatusInit;
-//    _noNetLoadDuration = 999999999999;
-//    _networkStatus = ReachableViaWiFi;
-    
+    if ([HFVLibUtils isBlankString:urlString]) {
+        return;
+    }
+    NSURL *url = [NSURL URLWithString:urlString];
     _path = [[HFPlayerCacheManager shared] getCachePathWithUrl:url];
     if ([[HFPlayerCacheManager shared] isExistCacheWithUrl:url]) {
         //播放本地
         url = [NSURL URLWithString:_path];
         _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:nil];
     } else {
+        //播放网络
         IJKFFOptions *options = [IJKFFOptions optionsByDefault];
-        [options setPlayerOptionIntValue:_config.bufferCacheSize forKey:@"max-buffer-size"];
+        [options setPlayerOptionIntValue:_config.bufferCacheSize*1024 forKey:@"max-buffer-size"];
         [options setPlayerOptionIntValue:0 forKey:@"infbuf"];
         //缓存路径
-        //cache_file_path
+        //cache_file_path  parse_cache_map auto_save_map cache_map_path
         if (_config.cacheEnable) {
             NSString *urlString = url.absoluteString;
             url = [NSURL URLWithString:[NSString stringWithFormat:@"ijkio:cache:ffio:%@",urlString]];
             [options setFormatOptionValue:_path forKey:@"cache_file_path"];
-//                [options setFormatOptionValue:@"1" forKey:@"parse_cache_map"];
-//                [options setFormatOptionValue:@"1" forKey:@"auto_save_map"];
-//                [options setFormatOptionValue:mapPath forKey:@"cache_map_path"];
         }
         _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
     }
-    
     [_ijkPlayer setPlaybackRate:_config.rate];
     [self installMovieNotificationObservers];
     [self configTimer];
-    [_ijkPlayer prepareToPlay];
     self.status = HFPlayerStatusInit;
-    
     [self configDefaultSetting];
     _noNetLoadDuration = 999999999999;
     _networkStatus = ReachableViaWiFi;
-}
-#pragma mark - 播放控制
-//开始播放
--(void)play {
-    if (_ijkPlayer) {
-        if (self.status == HFPlayerStatusReadyToPlay) {
-            [_ijkPlayer prepareToPlay];
-        } else {
-            [_ijkPlayer play];
-        }
-    }
+    //播放
+    [_ijkPlayer prepareToPlay];
 }
 
 //暂停播放
@@ -179,15 +121,11 @@
     }
     //[self pause];
     _ijkPlayer.currentPlaybackTime = duration;
-    [self play];
+    [self resume];
 }
 
 //拖动播放（进度）
 -(void)seekToProgress:(float)progress {
-//    if (progress>1.f) {
-//        progress = 1.f;
-//    }
-    NSLog(@"asdasdsadddsdfs");
     float targetSecond = _ijkPlayer.duration*progress;
     [self seekToDuration:targetSecond];
 }
@@ -225,12 +163,12 @@
         NSData *filedata = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_path] options:NSDataReadingMappedIfSafe error:nil];
         if (filedata.length<_ijkPlayer.monitor.filesize) {
             //不完整就删除
-            NSLog(@"数据不完整需要删除");
+            LPLog(@"数据不完整需要删除");
             if ([[NSFileManager defaultManager] fileExistsAtPath:_path]) {
                 [[NSFileManager defaultManager] removeItemAtPath:_path error:nil];
             }
         } else {
-            NSLog(@"数据文件完整！！！");
+            LPLog(@"数据文件完整！！！");
         }
     }
 }
@@ -321,7 +259,7 @@
 
     if ((loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
         //缓冲结束
-        NSLog(@"loadStateDidChange: IJKMPMovieLoadStatePlaythroughOK: %d\n", (int)loadState);
+        LPLog(@"loadStateDidChange: IJKMPMovieLoadStatePlaythroughOK: %d\n", (int)loadState);
         if ([self.delegate respondsToSelector:@selector(playerLoadingEnd)]) {
             [self.delegate playerLoadingEnd];
         }
@@ -329,13 +267,13 @@
         
     } else if ((loadState & IJKMPMovieLoadStateStalled) != 0) {
         //遇到缓冲
-        NSLog(@"loadStateDidChange: IJKMPMovieLoadStateStalled: %d\n", (int)loadState);
+        LPLog(@"loadStateDidChange: IJKMPMovieLoadStateStalled: %d\n", (int)loadState);
         if ([self.delegate respondsToSelector:@selector(playerLoadingBegin)]) {
             [self.delegate playerLoadingBegin];
         }
         self.status = HFPlayerStatusBufferEmpty;
     } else {
-        NSLog(@"loadStateDidChange: ???: %d\n", (int)loadState);
+        LPLog(@"loadStateDidChange: ???: %d\n", (int)loadState);
     }
 }
 
@@ -349,7 +287,7 @@
     switch (reason)
     {
         case IJKMPMovieFinishReasonPlaybackEnded:
-            NSLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackEnded: %d\n", reason);
+            LPLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackEnded: %d\n", reason);
             //播放完成
             if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
                 [self.delegate playerPlayToEnd];
@@ -357,11 +295,11 @@
             break;
 
         case IJKMPMovieFinishReasonUserExited:
-            NSLog(@"playbackStateDidChange: IJKMPMovieFinishReasonUserExited: %d\n", reason);
+            LPLog(@"playbackStateDidChange: IJKMPMovieFinishReasonUserExited: %d\n", reason);
             break;
 
         case IJKMPMovieFinishReasonPlaybackError:
-            NSLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackError: %d\n", reason);
+            LPLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackError: %d\n", reason);
             //_ijkPlayer.duration
             if (_ijkPlayer.duration-_ijkPlayer.currentPlaybackTime<1) {
                 if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
@@ -374,14 +312,14 @@
             break;
 
         default:
-            NSLog(@"playbackPlayBackDidFinish: ???: %d\n", reason);
+            LPLog(@"playbackPlayBackDidFinish: ???: %d\n", reason);
             break;
     }
 }
 
 - (void)mediaIsPreparedToPlayDidChange:(NSNotification*)notification
 {
-    NSLog(@"mediaIsPreparedToPlayDidChange\n");
+    LPLog(@"mediaIsPreparedToPlayDidChange\n");
     IJKFFMoviePlayerController *obj = (IJKFFMoviePlayerController *)notification.object;
     if (obj.isPreparedToPlay) {
         self.status = HFPlayerStatusReadyToPlay;
@@ -400,31 +338,31 @@
     switch (_ijkPlayer.playbackState)
     {
         case IJKMPMoviePlaybackStateStopped: {
-            NSLog(@"IJKMPMoviePlayBackStateDidChange %d: stoped", (int)_ijkPlayer.playbackState);
+            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: stoped", (int)_ijkPlayer.playbackState);
             self.status = HFPlayerStatusStoped;
             break;
         }
         case IJKMPMoviePlaybackStatePlaying: {
-            NSLog(@"IJKMPMoviePlayBackStateDidChange %d: playing", (int)_ijkPlayer.playbackState);
+            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: playing", (int)_ijkPlayer.playbackState);
             self.status = HFPlayerStatusPlaying;
             break;
         }
         case IJKMPMoviePlaybackStatePaused: {
-            NSLog(@"IJKMPMoviePlayBackStateDidChange %d: paused", (int)_ijkPlayer.playbackState);
+            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: paused", (int)_ijkPlayer.playbackState);
             self.status = HFPlayerStatusPasue;
             break;
         }
         case IJKMPMoviePlaybackStateInterrupted: {
-            NSLog(@"IJKMPMoviePlayBackStateDidChange %d: interrupted", (int)_ijkPlayer.playbackState);
+            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: interrupted", (int)_ijkPlayer.playbackState);
             break;
         }
         case IJKMPMoviePlaybackStateSeekingForward:
         case IJKMPMoviePlaybackStateSeekingBackward: {
-            NSLog(@"IJKMPMoviePlayBackStateDidChange %d: seeking", (int)_ijkPlayer.playbackState);
+            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: seeking", (int)_ijkPlayer.playbackState);
             break;
         }
         default: {
-            NSLog(@"IJKMPMoviePlayBackStateDidChange %d: unknown", (int)_ijkPlayer.playbackState);
+            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: unknown", (int)_ijkPlayer.playbackState);
             break;
         }
     }
@@ -449,9 +387,9 @@
 }
 
 -(void)reachabilityChanged:(NetworkStatus)status {
-    NSLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-    NSLog(@"新的网络状态为：%ld",(long)status);
-    NSLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    LPLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    LPLog(@"新的网络状态为：%ld",(long)status);
+    LPLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     _networkStatus = status;
     switch (status) {
         case NotReachable:
@@ -464,7 +402,7 @@
         case ReachableViaWiFi:
         {
             //网络恢复wifi则恢复缓冲
-            if (_config.networkAbilityEable && _config.autoLoad == true) {
+            if (_config.networkAbilityEable) {
                 [self seekToDuration:_ijkPlayer.currentPlaybackTime];
             }
             _noNetLoadDuration = 999999999999;
@@ -473,7 +411,7 @@
         case ReachableViaWWAN:
         {
             //网络恢复移动网络则恢复缓冲
-            if (_config.networkAbilityEable && _config.autoLoad == true ) {
+            if (_config.networkAbilityEable) {
                 [self seekToDuration:_ijkPlayer.currentPlaybackTime];
             }
             _noNetLoadDuration = 999999999999;
@@ -497,12 +435,12 @@
     NSData *filedata = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_path] options:NSDataReadingMappedIfSafe error:nil];
     if (filedata.length<_ijkPlayer.monitor.filesize) {
         //不完整就删除
-        NSLog(@"数据不完整需要删除");
+        LPLog(@"数据不完整需要删除");
         if ([[NSFileManager defaultManager] fileExistsAtPath:_path]) {
             [[NSFileManager defaultManager] removeItemAtPath:_path error:nil];
         }
     } else {
-        NSLog(@"数据文件完整！！！");
+        LPLog(@"数据文件完整！！！");
     }
 }
 
