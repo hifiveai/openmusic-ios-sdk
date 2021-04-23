@@ -154,8 +154,13 @@
 }
 
 -(void)playerPlayToEnd {
-    NSLog(@"播放完成----hfplayer");
+    //播放完成
+    if (self.config.repeatPlay) {
+        //再次播放
+        return;
+    }
     if (self.config.autoNext) {
+        //切换下一首音频资源
         if ([self.delegate respondsToSelector:@selector(nextClick)]) {
             [self.delegate nextClick];
         }

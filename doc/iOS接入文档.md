@@ -12,7 +12,6 @@
 
 [TOC]
 ## 一、SDK集成
-
 ### 系统支持
 
 iOS9.0以上
@@ -24,9 +23,17 @@ iOS9.0以上
 ### 集成SDK
 
 目前仅提供静态库接入方案，手动集成：
-- 下载解压并拖拽HFOpenApi.framework文件到Xcode工程内(请勾选`Copy items if needed`选项)
+- 下载解压并拖拽HFOpenMusicPlayer.framework文件到Xcode工程内(请勾选`Copy items if needed`选项)
 
-- 在 Xcode 中，选择：项目 `TARGETS` -> `General` -> `Frameworks`,`Libraries,and Embedded Content` 中，确保 HFOpenApi.framework，Embed 设置为 `Do Not Embed`。
+- 拖拽IJKMediaFramework.framework文件到Xcode工程内(请勾选`Copy items if needed`选项)
+
+- 在 Xcode 中，选择：项目 `TARGETS` -> `General` -> `Frameworks`,`Libraries,and Embedded Content` 中，确保 HFOpenMusicPlayer.framework和IJKMediaFramework.framework，Embed 设置为 `Do Not Embed`。
+
+- 添加资源文件，将HFOpenMusic.bundle文件和HFPlayer.bundle文件拖拽到Xcode工程内(请勾选`Copy items if needed`选项)。
+
+- 在 Xcode 中，选择：`TARGETS` -> `BuildPhases` -> `Link Binary With Libraries`,添加如下依赖库：
+   libc++.tbd
+   libbz2.1.0.tbd
 
 - 用pod导入依赖的第三方库，创建或修改Podfile文件，添加  
   pod 'MJExtension'  
@@ -34,12 +41,9 @@ iOS9.0以上
   pod 'YYWebImage' 
   pod 'MJRefresh'  
   pod 'FLAnimatedImage'  
-  执行pod install  
-
+  执行pod install ,再次打开.xcworkspace工程。
 - 在TARGETS->Build Settings->Other Linker Flags中添加-ObjC。
-
 - 在TARGETS->Build Settings->Architctures->Excluded Architctures,添加Any iOS Simulator SDK，设置为arm64。
-
 ## 二、接口说明
 
 <font color='#FF0000'>SDK有五种场景接入方式，开发者可以选其中一种方式接入。</font>

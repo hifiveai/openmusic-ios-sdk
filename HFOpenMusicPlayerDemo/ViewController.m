@@ -29,6 +29,12 @@
     imageView.image = [UIImage imageNamed:@"bkg.jpg"];
     [self.view addSubview:imageView];
     
+    UIButton *testBtn = [[UIButton alloc] init];
+    testBtn.frame = CGRectMake(200, 300, 50, 50);
+    testBtn.backgroundColor = UIColor.greenColor;
+    [self.view addSubview:testBtn];
+    [testBtn addTarget:self action:@selector(testBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
     switch (_uiType) {
         case 0:
         {
@@ -48,6 +54,11 @@
         default:
             break;
     }
+}
+
+-(void)testBtnClick {
+    NSLog(@"123click");
+    
 }
 
 //播放器+列表

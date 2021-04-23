@@ -25,6 +25,7 @@
 
 //ijk
 @property(nonatomic ,strong)IJKFFMoviePlayerController                   *ijkPlayer;
+@property(nonatomic ,copy)NSString                                       *currentUrlString;
 @property(nonatomic ,strong)NSTimer                                      *timer;//监听播放进度
 @property(nonatomic ,strong)NSString                                     *path;//缓存路径
 
@@ -54,6 +55,7 @@
 #pragma mark - 播放控制
 //开始播放
 -(void)playWithUrlString:(NSString *)urlString {
+    _currentUrlString = urlString;
     if (_ijkPlayer) {
         [self stop];
     }
@@ -77,6 +79,10 @@
             NSString *urlString = url.absoluteString;
             url = [NSURL URLWithString:[NSString stringWithFormat:@"ijkio:cache:ffio:%@",urlString]];
             [options setFormatOptionValue:_path forKey:@"cache_file_path"];
+        } else {
+            NSString *urlString = url.absoluteString;
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"ijkio:cache:ffio:%@",urlString]];
+            [options setFormatOptionValue:@"tempfile.tmp" forKey:@"cache_file_path"];
         }
         _ijkPlayer =[[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
     }
@@ -292,6 +298,9 @@
             if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
                 [self.delegate playerPlayToEnd];
             }
+            if (_config.repeatPlay && ![HFVLibUtils isBlankString:_currentUrlString]) {
+                [self playWithUrlString:_currentUrlString];
+            }
             break;
 
         case IJKMPMovieFinishReasonUserExited:
@@ -304,6 +313,9 @@
             if (_ijkPlayer.duration-_ijkPlayer.currentPlaybackTime<1) {
                 if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
                     [self.delegate playerPlayToEnd];
+                }
+                if (_config.repeatPlay && ![HFVLibUtils isBlankString:_currentUrlString]) {
+                    [self playWithUrlString:_currentUrlString];
                 }
             }else {
                 self.status = HFPlayerStatusError;

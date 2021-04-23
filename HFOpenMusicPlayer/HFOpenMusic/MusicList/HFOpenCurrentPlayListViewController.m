@@ -39,7 +39,8 @@
 
 -(void)refreshAction {
     NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
-    NSString *timeStr = [NSString stringWithFormat:@"%0.f",time*1000];
+    NSTimeInterval oneYear = 3600*24*365;
+    NSString *timeStr = [NSString stringWithFormat:@"%0.f",time-oneYear];
     [self.dataArray removeAllObjects];
     _page = 1;
     __weak typeof(self) weakSelf = self;
@@ -67,7 +68,8 @@
 
 -(void)loadMoreAction {
     NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
-    NSString *timeStr = [NSString stringWithFormat:@"%0.f",time*10];
+    NSTimeInterval oneYear = 3600*24*365;
+    NSString *timeStr = [NSString stringWithFormat:@"%0.f",time-oneYear];
     _page++;
     __weak typeof(self) weakSelf = self;
     [[HFOpenApiManager shared] baseHotWithStartTime:timeStr duration:@"365" page:[NSString stringWithFormat:@"%lu",(unsigned long)_page] pageSize:@"20" success:^(id  _Nullable response) {

@@ -61,9 +61,10 @@
 #pragma mark - tableview刷新
 -(void)refreshAction {
     NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
-    NSString *timeStr = [NSString stringWithFormat:@"%0.f",time*1000];
+    NSTimeInterval oneYear = 3600*24*365;
+    NSString *timeStr = [NSString stringWithFormat:@"%0.f",time-oneYear];
     __weak typeof(self) weakSelf = self;
-    [[HFOpenApiManager shared] baseHotWithStartTime:timeStr duration:@"7" page:nil pageSize:@"20" success:^(id  _Nullable response) {
+    [[HFOpenApiManager shared] baseHotWithStartTime:timeStr duration:@"365" page:nil pageSize:@"20" success:^(id  _Nullable response) {
         [weakSelf endRefresh];
         weakSelf.dataArray = [HFOpenMusicModel mj_objectArrayWithKeyValuesArray: [response hfv_objectForKey_Safe:@"record"]];
        // if (weakSelf.dataArray && weakSelf.dataArray.count>0) {

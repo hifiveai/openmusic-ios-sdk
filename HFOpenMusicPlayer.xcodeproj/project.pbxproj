@@ -211,6 +211,18 @@
 		CA20D2BD261CD31E00DBB34F /* bkg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BA261CD31C00DBB34F /* bkg.jpg */; };
 		CA20D2BE261CD31E00DBB34F /* HFOpenMusic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */; };
 		CA20D2BF261CD31E00DBB34F /* HFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */; };
+		CA317F362631759B00DE5974 /* iOS接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F292631759A00DE5974 /* iOS接入文档.html */; };
+		CA317F372631759B00DE5974 /* iOS接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2A2631759A00DE5974 /* iOS接入文档.md */; };
+		CA317F382631759B00DE5974 /* 通用api接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2C2631759B00DE5974 /* 通用api接入文档.html */; };
+		CA317F392631759B00DE5974 /* 播放器和音乐列表接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2D2631759B00DE5974 /* 播放器和音乐列表接入文档.html */; };
+		CA317F3A2631759B00DE5974 /* 播放器UI接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2E2631759B00DE5974 /* 播放器UI接入文档.md */; };
+		CA317F3B2631759B00DE5974 /* 音乐列表UI接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2F2631759B00DE5974 /* 音乐列表UI接入文档.md */; };
+		CA317F3C2631759B00DE5974 /* 播放器和音乐列表接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F302631759B00DE5974 /* 播放器和音乐列表接入文档.md */; };
+		CA317F3D2631759B00DE5974 /* 播放器UI接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F312631759B00DE5974 /* 播放器UI接入文档.html */; };
+		CA317F3E2631759B00DE5974 /* 播放器api接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F322631759B00DE5974 /* 播放器api接入文档.md */; };
+		CA317F3F2631759B00DE5974 /* 通用api接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F332631759B00DE5974 /* 通用api接入文档.md */; };
+		CA317F402631759B00DE5974 /* 播放器api接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F342631759B00DE5974 /* 播放器api接入文档.html */; };
+		CA317F412631759B00DE5974 /* 音乐列表UI接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F352631759B00DE5974 /* 音乐列表UI接入文档.html */; };
 		CA3DBEA1261C768F008A8A42 /* HFOpenMusicPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3DBEB0261C76CB008A8A42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */; };
 		CA3DBEB3261C76CB008A8A42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEB2261C76CB008A8A42 /* SceneDelegate.m */; };
@@ -247,8 +259,7 @@
 		CA51521D2629677100114244 /* HFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5152192629677000114244 /* HFReachability.m */; };
 		CA51521E2629677100114244 /* HFNetworkReachAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = CA51521A2629677100114244 /* HFNetworkReachAbility.m */; };
 		CA51521F2629677100114244 /* HFNetworkReachAbility.h in Headers */ = {isa = PBXBuildFile; fileRef = CA51521B2629677100114244 /* HFNetworkReachAbility.h */; };
-		CA8D0CD3262FCE020091D062 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8D0CD2262FCE020091D062 /* IJKMediaFramework.framework */; };
-		CA8D0CD4262FCE020091D062 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8D0CD2262FCE020091D062 /* IJKMediaFramework.framework */; };
+		CA51B0D12631A6C200912C30 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA51B0D02631A6C200912C30 /* IJKMediaFramework.framework */; };
 		CA96EECE261F081F00CD3EA1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA96EECD261F081F00CD3EA1 /* LoginViewController.m */; };
 		CAA15D374661E73224E37E09 /* libPods-HFOpenMusicPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */; };
 		CAC777A5261EA70000B973F9 /* HFOpenApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */; };
@@ -258,18 +269,6 @@
 		CAC7A9AD261D5D130082FCA3 /* normol.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC7A9AB261D5D130082FCA3 /* normol.png */; };
 		CAC7A9B2261D5FF10082FCA3 /* CheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7A9B1261D5FF10082FCA3 /* CheckBoxView.m */; };
 		CAC7A9B7261D7ECF0082FCA3 /* HFInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7A9B6261D7ECF0082FCA3 /* HFInputView.m */; };
-		CAFED1D92626933F0074EAF8 /* 通用api接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1CD2626933E0074EAF8 /* 通用api接入文档.html */; };
-		CAFED1DA2626933F0074EAF8 /* 播放器和音乐列表接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1CE2626933E0074EAF8 /* 播放器和音乐列表接入文档.html */; };
-		CAFED1DB2626933F0074EAF8 /* 播放器UI接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1CF2626933E0074EAF8 /* 播放器UI接入文档.md */; };
-		CAFED1DC2626933F0074EAF8 /* 音乐列表UI接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D02626933E0074EAF8 /* 音乐列表UI接入文档.md */; };
-		CAFED1DD2626933F0074EAF8 /* 播放器和音乐列表接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D12626933E0074EAF8 /* 播放器和音乐列表接入文档.md */; };
-		CAFED1DE2626933F0074EAF8 /* 播放器UI接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D22626933E0074EAF8 /* 播放器UI接入文档.html */; };
-		CAFED1DF2626933F0074EAF8 /* 播放器api接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D32626933E0074EAF8 /* 播放器api接入文档.md */; };
-		CAFED1E02626933F0074EAF8 /* 通用api接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D42626933E0074EAF8 /* 通用api接入文档.md */; };
-		CAFED1E12626933F0074EAF8 /* 播放器api接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D52626933E0074EAF8 /* 播放器api接入文档.html */; };
-		CAFED1E22626933F0074EAF8 /* 音乐列表UI接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D62626933E0074EAF8 /* 音乐列表UI接入文档.html */; };
-		CAFED1E32626933F0074EAF8 /* iOS接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D72626933E0074EAF8 /* iOS接入文档.html */; };
-		CAFED1E42626933F0074EAF8 /* iOS接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CAFED1D82626933F0074EAF8 /* iOS接入文档.md */; };
 		CAFED1E92626D96D0074EAF8 /* ChooseSdkUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFED1E82626D96D0074EAF8 /* ChooseSdkUIViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -491,6 +490,18 @@
 		CA20D2BA261CD31C00DBB34F /* bkg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bkg.jpg; sourceTree = "<group>"; };
 		CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HFOpenMusic.bundle; sourceTree = "<group>"; };
 		CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HFPlayer.bundle; sourceTree = "<group>"; };
+		CA317F292631759A00DE5974 /* iOS接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "iOS接入文档.html"; sourceTree = "<group>"; };
+		CA317F2A2631759A00DE5974 /* iOS接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS接入文档.md"; sourceTree = "<group>"; };
+		CA317F2C2631759B00DE5974 /* 通用api接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "通用api接入文档.html"; sourceTree = "<group>"; };
+		CA317F2D2631759B00DE5974 /* 播放器和音乐列表接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器和音乐列表接入文档.html"; sourceTree = "<group>"; };
+		CA317F2E2631759B00DE5974 /* 播放器UI接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器UI接入文档.md"; sourceTree = "<group>"; };
+		CA317F2F2631759B00DE5974 /* 音乐列表UI接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "音乐列表UI接入文档.md"; sourceTree = "<group>"; };
+		CA317F302631759B00DE5974 /* 播放器和音乐列表接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器和音乐列表接入文档.md"; sourceTree = "<group>"; };
+		CA317F312631759B00DE5974 /* 播放器UI接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器UI接入文档.html"; sourceTree = "<group>"; };
+		CA317F322631759B00DE5974 /* 播放器api接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器api接入文档.md"; sourceTree = "<group>"; };
+		CA317F332631759B00DE5974 /* 通用api接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "通用api接入文档.md"; sourceTree = "<group>"; };
+		CA317F342631759B00DE5974 /* 播放器api接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器api接入文档.html"; sourceTree = "<group>"; };
+		CA317F352631759B00DE5974 /* 音乐列表UI接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "音乐列表UI接入文档.html"; sourceTree = "<group>"; };
 		CA3DBE9C261C768F008A8A42 /* HFOpenMusicPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HFOpenMusicPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFOpenMusicPlayer.h; sourceTree = "<group>"; };
 		CA3DBEA0261C768F008A8A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -533,7 +544,7 @@
 		CA5152192629677000114244 /* HFReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFReachability.m; sourceTree = "<group>"; };
 		CA51521A2629677100114244 /* HFNetworkReachAbility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFNetworkReachAbility.m; sourceTree = "<group>"; };
 		CA51521B2629677100114244 /* HFNetworkReachAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFNetworkReachAbility.h; sourceTree = "<group>"; };
-		CA8D0CD2262FCE020091D062 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		CA51B0D02631A6C200912C30 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		CA96EECC261F081F00CD3EA1 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CA96EECD261F081F00CD3EA1 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenApiManager.m; sourceTree = "<group>"; };
@@ -546,18 +557,6 @@
 		CAC7A9B1261D5FF10082FCA3 /* CheckBoxView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBoxView.m; sourceTree = "<group>"; };
 		CAC7A9B5261D7ECF0082FCA3 /* HFInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFInputView.h; sourceTree = "<group>"; };
 		CAC7A9B6261D7ECF0082FCA3 /* HFInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFInputView.m; sourceTree = "<group>"; };
-		CAFED1CD2626933E0074EAF8 /* 通用api接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "通用api接入文档.html"; sourceTree = "<group>"; };
-		CAFED1CE2626933E0074EAF8 /* 播放器和音乐列表接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器和音乐列表接入文档.html"; sourceTree = "<group>"; };
-		CAFED1CF2626933E0074EAF8 /* 播放器UI接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器UI接入文档.md"; sourceTree = "<group>"; };
-		CAFED1D02626933E0074EAF8 /* 音乐列表UI接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "音乐列表UI接入文档.md"; sourceTree = "<group>"; };
-		CAFED1D12626933E0074EAF8 /* 播放器和音乐列表接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器和音乐列表接入文档.md"; sourceTree = "<group>"; };
-		CAFED1D22626933E0074EAF8 /* 播放器UI接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器UI接入文档.html"; sourceTree = "<group>"; };
-		CAFED1D32626933E0074EAF8 /* 播放器api接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器api接入文档.md"; sourceTree = "<group>"; };
-		CAFED1D42626933E0074EAF8 /* 通用api接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "通用api接入文档.md"; sourceTree = "<group>"; };
-		CAFED1D52626933E0074EAF8 /* 播放器api接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器api接入文档.html"; sourceTree = "<group>"; };
-		CAFED1D62626933E0074EAF8 /* 音乐列表UI接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "音乐列表UI接入文档.html"; sourceTree = "<group>"; };
-		CAFED1D72626933E0074EAF8 /* iOS接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "iOS接入文档.html"; sourceTree = "<group>"; };
-		CAFED1D82626933F0074EAF8 /* iOS接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS接入文档.md"; sourceTree = "<group>"; };
 		CAFED1E72626D96D0074EAF8 /* ChooseSdkUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseSdkUIViewController.h; sourceTree = "<group>"; };
 		CAFED1E82626D96D0074EAF8 /* ChooseSdkUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseSdkUIViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -570,7 +569,7 @@
 				CA16E66E262D5B41007DEAE6 /* AudioToolbox.framework in Frameworks */,
 				CA16E66C262D5B31007DEAE6 /* AVFoundation.framework in Frameworks */,
 				CA16E66A262D5B28007DEAE6 /* CoreGraphics.framework in Frameworks */,
-				CA8D0CD3262FCE020091D062 /* IJKMediaFramework.framework in Frameworks */,
+				CA51B0D12631A6C200912C30 /* IJKMediaFramework.framework in Frameworks */,
 				CA16E668262D5B1E007DEAE6 /* CoreMedia.framework in Frameworks */,
 				CA16E666262D5B13007DEAE6 /* CoreVideo.framework in Frameworks */,
 				CA16E662262D5B04007DEAE6 /* libbz2.tbd in Frameworks */,
@@ -592,7 +591,6 @@
 				CA16E674262D5B8D007DEAE6 /* libbz2.1.0.tbd in Frameworks */,
 				CA16E670262D5B80007DEAE6 /* libc++.tbd in Frameworks */,
 				CA3DBF16261C7D52008A8A42 /* HFOpenMusicPlayer.framework in Frameworks */,
-				CA8D0CD4262FCE020091D062 /* IJKMediaFramework.framework in Frameworks */,
 				CAA15D374661E73224E37E09 /* libPods-HFOpenMusicPlayerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1131,12 +1129,39 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		CA317F282631748B00DE5974 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				CA317F292631759A00DE5974 /* iOS接入文档.html */,
+				CA317F2A2631759A00DE5974 /* iOS接入文档.md */,
+				CA317F2B2631759B00DE5974 /* sub */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		CA317F2B2631759B00DE5974 /* sub */ = {
+			isa = PBXGroup;
+			children = (
+				CA317F2C2631759B00DE5974 /* 通用api接入文档.html */,
+				CA317F2D2631759B00DE5974 /* 播放器和音乐列表接入文档.html */,
+				CA317F2E2631759B00DE5974 /* 播放器UI接入文档.md */,
+				CA317F2F2631759B00DE5974 /* 音乐列表UI接入文档.md */,
+				CA317F302631759B00DE5974 /* 播放器和音乐列表接入文档.md */,
+				CA317F312631759B00DE5974 /* 播放器UI接入文档.html */,
+				CA317F322631759B00DE5974 /* 播放器api接入文档.md */,
+				CA317F332631759B00DE5974 /* 通用api接入文档.md */,
+				CA317F342631759B00DE5974 /* 播放器api接入文档.html */,
+				CA317F352631759B00DE5974 /* 音乐列表UI接入文档.html */,
+			);
+			path = sub;
+			sourceTree = "<group>";
+		};
 		CA3DBE92261C768F008A8A42 = {
 			isa = PBXGroup;
 			children = (
 				CA3DBE9E261C768F008A8A42 /* HFOpenMusicPlayer */,
 				CA3DBEAD261C76CB008A8A42 /* HFOpenMusicPlayerDemo */,
-				CAFED1CB262693210074EAF8 /* doc */,
+				CA317F282631748B00DE5974 /* doc */,
 				CA3DBE9D261C768F008A8A42 /* Products */,
 				CA3DBED1261C79E1008A8A42 /* Frameworks */,
 				BB44E0BFAD16A5726879EEBA /* Pods */,
@@ -1155,7 +1180,7 @@
 		CA3DBE9E261C768F008A8A42 /* HFOpenMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				CA8D0CD2262FCE020091D062 /* IJKMediaFramework.framework */,
+				CA51B0D02631A6C200912C30 /* IJKMediaFramework.framework */,
 				CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */,
 				CA3DBECB261C7935008A8A42 /* HFOpenMusicPlayer.m */,
 				CA50E3552625311700331BF9 /* HFOpenMusicPlayerConfiguration.h */,
@@ -1277,33 +1302,6 @@
 				CA3DBEF3261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.h */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		CAFED1CB262693210074EAF8 /* doc */ = {
-			isa = PBXGroup;
-			children = (
-				CAFED1D72626933E0074EAF8 /* iOS接入文档.html */,
-				CAFED1D82626933F0074EAF8 /* iOS接入文档.md */,
-				CAFED1CC2626933E0074EAF8 /* sub */,
-			);
-			path = doc;
-			sourceTree = "<group>";
-		};
-		CAFED1CC2626933E0074EAF8 /* sub */ = {
-			isa = PBXGroup;
-			children = (
-				CAFED1CE2626933E0074EAF8 /* 播放器和音乐列表接入文档.html */,
-				CAFED1D22626933E0074EAF8 /* 播放器UI接入文档.html */,
-				CAFED1D62626933E0074EAF8 /* 音乐列表UI接入文档.html */,
-				CAFED1D52626933E0074EAF8 /* 播放器api接入文档.html */,
-				CAFED1CD2626933E0074EAF8 /* 通用api接入文档.html */,
-				CAFED1D12626933E0074EAF8 /* 播放器和音乐列表接入文档.md */,
-				CAFED1D02626933E0074EAF8 /* 音乐列表UI接入文档.md */,
-				CAFED1CF2626933E0074EAF8 /* 播放器UI接入文档.md */,
-				CAFED1D32626933E0074EAF8 /* 播放器api接入文档.md */,
-				CAFED1D42626933E0074EAF8 /* 通用api接入文档.md */,
-			);
-			path = sub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1542,19 +1540,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAFED1DB2626933F0074EAF8 /* 播放器UI接入文档.md in Resources */,
-				CAFED1DA2626933F0074EAF8 /* 播放器和音乐列表接入文档.html in Resources */,
-				CAFED1E32626933F0074EAF8 /* iOS接入文档.html in Resources */,
-				CAFED1DC2626933F0074EAF8 /* 音乐列表UI接入文档.md in Resources */,
-				CAFED1DD2626933F0074EAF8 /* 播放器和音乐列表接入文档.md in Resources */,
-				CAFED1DE2626933F0074EAF8 /* 播放器UI接入文档.html in Resources */,
-				CAFED1E42626933F0074EAF8 /* iOS接入文档.md in Resources */,
-				CAFED1DF2626933F0074EAF8 /* 播放器api接入文档.md in Resources */,
+				CA317F3B2631759B00DE5974 /* 音乐列表UI接入文档.md in Resources */,
+				CA317F3D2631759B00DE5974 /* 播放器UI接入文档.html in Resources */,
+				CA317F372631759B00DE5974 /* iOS接入文档.md in Resources */,
+				CA317F402631759B00DE5974 /* 播放器api接入文档.html in Resources */,
+				CA317F382631759B00DE5974 /* 通用api接入文档.html in Resources */,
+				CA317F3C2631759B00DE5974 /* 播放器和音乐列表接入文档.md in Resources */,
+				CA317F3E2631759B00DE5974 /* 播放器api接入文档.md in Resources */,
+				CA317F412631759B00DE5974 /* 音乐列表UI接入文档.html in Resources */,
+				CA317F3F2631759B00DE5974 /* 通用api接入文档.md in Resources */,
+				CA317F392631759B00DE5974 /* 播放器和音乐列表接入文档.html in Resources */,
+				CA317F362631759B00DE5974 /* iOS接入文档.html in Resources */,
+				CA317F3A2631759B00DE5974 /* 播放器UI接入文档.md in Resources */,
 				CA20D22C261CC8DE00DBB34F /* MJRefresh.bundle in Resources */,
-				CAFED1E12626933F0074EAF8 /* 播放器api接入文档.html in Resources */,
-				CAFED1D92626933F0074EAF8 /* 通用api接入文档.html in Resources */,
-				CAFED1E02626933F0074EAF8 /* 通用api接入文档.md in Resources */,
-				CAFED1E22626933F0074EAF8 /* 音乐列表UI接入文档.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1862,11 +1860,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HFOpenMusicPlayer",
@@ -1880,7 +1880,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 4.1.3.1;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hifiveai.HFOpenMusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1893,11 +1896,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HFOpenMusicPlayer",
@@ -1911,7 +1917,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 4.1.3.1;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hifiveai.HFOpenMusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

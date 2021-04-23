@@ -87,7 +87,7 @@
 | bpm | 每分钟节拍 |  NSString |
 | tag | 标签 |  NSArray |
 | version | 版本信息 |  NSArray |
-| 表演者 | 表演者 |  NSArray |
+| artist | 表演者 |  NSArray |
 
 **detailModel**
 | 属性 | 描述 | 类型 |

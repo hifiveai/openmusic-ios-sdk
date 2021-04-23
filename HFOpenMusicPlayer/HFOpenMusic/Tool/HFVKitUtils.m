@@ -99,29 +99,38 @@
 
 /// 获取当前window
 +(UIWindow*)getCurrentWindow {
-
-    if ([[[UIApplication sharedApplication] delegate] window]) {
-        return [[[UIApplication sharedApplication] delegate] window];
-    }else{
-        if(@available(iOS 13.0, *)) {
-            NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
-            UIWindowScene* windowScene = (UIWindowScene*)array[0];
-
-            //如果是普通App开发，可以使用
-//            SceneDelegate * delegate = (SceneDelegate *)windowScene.delegate;
-//            UIWindow * mainWindow = delegate.window;
+//    if ([UIApplication sharedApplication].keyWindow) {
+//        return [UIApplication sharedApplication].keyWindow;
+//    }else{
+//        if(@available(iOS 13.0, *)) {
+//            NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
+//            UIWindowScene* windowScene = (UIWindowScene*)array[0];
+//            //由于在sdk开发中，引入不了SceneDelegate的头文件，所以需要用kvc获取宿主app的window.
+//
+//            UIWindow* mainWindow = [windowScene valueForKeyPath:@"delegate.window"];
+//            if(mainWindow) {
+//                return mainWindow;
+//            }else{
+//                return [UIApplication sharedApplication].windows.lastObject;
+//            }
+//        }else{
+//            return [UIApplication sharedApplication].keyWindow;
+//        }
+//    }
+    if(@available(iOS 13.0, *)) {
+        NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
+        UIWindowScene* windowScene = (UIWindowScene*)array[0];
             //由于在sdk开发中，引入不了SceneDelegate的头文件，所以需要用kvc获取宿主app的window.
 
             UIWindow* mainWindow = [windowScene valueForKeyPath:@"delegate.window"];
-            if(mainWindow) {
-                return mainWindow;
-            }else{
-                return [UIApplication sharedApplication].windows.lastObject;
-            }
+        if(mainWindow) {
+            return mainWindow;
         }else{
-            return [UIApplication sharedApplication].keyWindow;
+            return [UIApplication sharedApplication].windows.lastObject;
+        }
+    }else{
+        return [UIApplication sharedApplication].keyWindow;
         }
-    }
 }
 
 

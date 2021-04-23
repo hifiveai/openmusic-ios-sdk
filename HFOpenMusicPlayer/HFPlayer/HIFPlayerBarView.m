@@ -520,7 +520,6 @@
 
 /// 播放完成回调
 -(void)playerPlayToEnd {
-    NSLog(@"bofangwancheng----barview");
     if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
         [self.delegate playerPlayToEnd];
     }
@@ -530,18 +529,16 @@
 #pragma mark - Slider 拖拽事件
 -(void)sliderValueChanged:(HFVSlider *)sender {
     //值改变
-    NSLog(@"asdasddsdsadfdf");
+    
 }
 
 -(void)slidertouchDown:(HFVSlider *)sender {
     //拖动开始
-    NSLog(@"asdasddsdsadfdf--开始");
     _seeking = YES;
 }
 
 -(void)sliderTouchUpInSide:(HFVSlider *)sender {
     //拖动结束
-    NSLog(@"asdasddsdsadfdf--结束");
     _seeking = NO;
     [_playerApi seekToProgress:sender.value];
 }
