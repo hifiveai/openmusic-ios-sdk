@@ -196,7 +196,7 @@
 
 + (void)log:(NSString *)str {
     if ([HFVLibInfo shared].isDebug) {
-         //NSLog(@"%@ ", str);
+         
     }
 }
 

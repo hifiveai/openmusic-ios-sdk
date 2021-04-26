@@ -154,6 +154,9 @@
 }
 
 -(void)playerPlayToEnd {
+    if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
+        [self.delegate playerPlayToEnd];
+    }
     //播放完成
     if (self.config.repeatPlay) {
         //再次播放

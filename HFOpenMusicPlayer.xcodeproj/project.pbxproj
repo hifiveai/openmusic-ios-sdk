@@ -20,7 +20,6 @@
 		CA16E666262D5B13007DEAE6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E665262D5B13007DEAE6 /* CoreVideo.framework */; };
 		CA16E668262D5B1E007DEAE6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E667262D5B1E007DEAE6 /* CoreMedia.framework */; };
 		CA16E66A262D5B28007DEAE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E669262D5B28007DEAE6 /* CoreGraphics.framework */; };
-		CA16E66C262D5B31007DEAE6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E66B262D5B31007DEAE6 /* AVFoundation.framework */; };
 		CA16E66E262D5B41007DEAE6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E66D262D5B41007DEAE6 /* AudioToolbox.framework */; };
 		CA16E670262D5B80007DEAE6 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E66F262D5B80007DEAE6 /* libc++.tbd */; };
 		CA16E674262D5B8D007DEAE6 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E673262D5B8D007DEAE6 /* libbz2.1.0.tbd */; };
@@ -86,7 +85,6 @@
 		CA20D229261CC8DE00DBB34F /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D173261CC8DE00DBB34F /* UIScrollView+MJExtension.h */; };
 		CA20D22A261CC8DE00DBB34F /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D174261CC8DE00DBB34F /* MJRefresh.h */; };
 		CA20D22B261CC8DE00DBB34F /* NSBundle+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D175261CC8DE00DBB34F /* NSBundle+MJRefresh.h */; };
-		CA20D22C261CC8DE00DBB34F /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D176261CC8DE00DBB34F /* MJRefresh.bundle */; };
 		CA20D22D261CC8DE00DBB34F /* UIView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D177261CC8DE00DBB34F /* UIView+MJExtension.h */; };
 		CA20D22E261CC8DE00DBB34F /* MJRefreshConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D178261CC8DE00DBB34F /* MJRefreshConfig.h */; };
 		CA20D22F261CC8DE00DBB34F /* MJRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D179261CC8DE00DBB34F /* MJRefreshConst.h */; };
@@ -180,7 +178,7 @@
 		CA20D287261CC8DF00DBB34F /* HFOpenMusicSegmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1E4261CC8DE00DBB34F /* HFOpenMusicSegmentView.h */; };
 		CA20D288261CC8DF00DBB34F /* HFVMusicListPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1E5261CC8DE00DBB34F /* HFVMusicListPlaceholder.m */; };
 		CA20D289261CC8DF00DBB34F /* HFOpenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1E7261CC8DE00DBB34F /* HFOpenModel.m */; };
-		CA20D28A261CC8DF00DBB34F /* HFOpenModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1E8261CC8DE00DBB34F /* HFOpenModel.h */; };
+		CA20D28A261CC8DF00DBB34F /* HFOpenModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1E8261CC8DE00DBB34F /* HFOpenModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA20D28B261CC8DF00DBB34F /* HFOpenMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1E9261CC8DE00DBB34F /* HFOpenMusic.m */; };
 		CA20D28D261CC8DF00DBB34F /* LPBaseListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1EC261CC8DE00DBB34F /* LPBaseListViewController.h */; };
 		CA20D28E261CC8DF00DBB34F /* LPBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1ED261CC8DE00DBB34F /* LPBaseCollectionViewController.m */; };
@@ -194,7 +192,6 @@
 		CA20D296261CC8DF00DBB34F /* HFVKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1F6261CC8DE00DBB34F /* HFVKitUtils.h */; };
 		CA20D297261CC8DF00DBB34F /* NSObject+LPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1F7261CC8DE00DBB34F /* NSObject+LPUtils.m */; };
 		CA20D298261CC8DF00DBB34F /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1F8261CC8DE00DBB34F /* NSDictionary+SafeAccess.m */; };
-		CA20D299261CC8DF00DBB34F /* HIFPlayerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1F9261CC8DE00DBB34F /* HIFPlayerHeader.h */; };
 		CA20D29B261CC8DF00DBB34F /* HFVMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1FB261CC8DE00DBB34F /* HFVMacro.h */; };
 		CA20D29C261CC8DF00DBB34F /* HFVGlobalTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1FC261CC8DE00DBB34F /* HFVGlobalTool.m */; };
 		CA20D29D261CC8DF00DBB34F /* NSMutableDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1FD261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.m */; };
@@ -211,18 +208,6 @@
 		CA20D2BD261CD31E00DBB34F /* bkg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BA261CD31C00DBB34F /* bkg.jpg */; };
 		CA20D2BE261CD31E00DBB34F /* HFOpenMusic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */; };
 		CA20D2BF261CD31E00DBB34F /* HFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */; };
-		CA317F362631759B00DE5974 /* iOS接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F292631759A00DE5974 /* iOS接入文档.html */; };
-		CA317F372631759B00DE5974 /* iOS接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2A2631759A00DE5974 /* iOS接入文档.md */; };
-		CA317F382631759B00DE5974 /* 通用api接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2C2631759B00DE5974 /* 通用api接入文档.html */; };
-		CA317F392631759B00DE5974 /* 播放器和音乐列表接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2D2631759B00DE5974 /* 播放器和音乐列表接入文档.html */; };
-		CA317F3A2631759B00DE5974 /* 播放器UI接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2E2631759B00DE5974 /* 播放器UI接入文档.md */; };
-		CA317F3B2631759B00DE5974 /* 音乐列表UI接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F2F2631759B00DE5974 /* 音乐列表UI接入文档.md */; };
-		CA317F3C2631759B00DE5974 /* 播放器和音乐列表接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F302631759B00DE5974 /* 播放器和音乐列表接入文档.md */; };
-		CA317F3D2631759B00DE5974 /* 播放器UI接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F312631759B00DE5974 /* 播放器UI接入文档.html */; };
-		CA317F3E2631759B00DE5974 /* 播放器api接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F322631759B00DE5974 /* 播放器api接入文档.md */; };
-		CA317F3F2631759B00DE5974 /* 通用api接入文档.md in Resources */ = {isa = PBXBuildFile; fileRef = CA317F332631759B00DE5974 /* 通用api接入文档.md */; };
-		CA317F402631759B00DE5974 /* 播放器api接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F342631759B00DE5974 /* 播放器api接入文档.html */; };
-		CA317F412631759B00DE5974 /* 音乐列表UI接入文档.html in Resources */ = {isa = PBXBuildFile; fileRef = CA317F352631759B00DE5974 /* 音乐列表UI接入文档.html */; };
 		CA3DBEA1261C768F008A8A42 /* HFOpenMusicPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3DBEB0261C76CB008A8A42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */; };
 		CA3DBEB3261C76CB008A8A42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEB2261C76CB008A8A42 /* SceneDelegate.m */; };
@@ -252,6 +237,7 @@
 		CA3DBF0A261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEF3261C7AD2008A8A42 /* NSMutableDictionary+SafeAccess.h */; };
 		CA3DBF0B261C7AD2008A8A42 /* HFVNetWork.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEF4261C7AD2008A8A42 /* HFVNetWork.h */; };
 		CA3DBF16261C7D52008A8A42 /* HFOpenMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3DBE9C261C768F008A8A42 /* HFOpenMusicPlayer.framework */; };
+		CA498B1426365A300038D070 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E66B262D5B31007DEAE6 /* AVFoundation.framework */; };
 		CA50E3572625311700331BF9 /* HFOpenMusicPlayerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = CA50E3552625311700331BF9 /* HFOpenMusicPlayerConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA50E3582625311700331BF9 /* HFOpenMusicPlayerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CA50E3562625311700331BF9 /* HFOpenMusicPlayerConfiguration.m */; };
 		CA51520D26295F2500114244 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA51520C26295F2500114244 /* SystemConfiguration.framework */; };
@@ -260,6 +246,7 @@
 		CA51521E2629677100114244 /* HFNetworkReachAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = CA51521A2629677100114244 /* HFNetworkReachAbility.m */; };
 		CA51521F2629677100114244 /* HFNetworkReachAbility.h in Headers */ = {isa = PBXBuildFile; fileRef = CA51521B2629677100114244 /* HFNetworkReachAbility.h */; };
 		CA51B0D12631A6C200912C30 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA51B0D02631A6C200912C30 /* IJKMediaFramework.framework */; };
+		CA8672D82632E0F400DCB9DD /* HFOpenEnumHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA8672D32632DB7F00DCB9DD /* HFOpenEnumHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA96EECE261F081F00CD3EA1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA96EECD261F081F00CD3EA1 /* LoginViewController.m */; };
 		CAA15D374661E73224E37E09 /* libPods-HFOpenMusicPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3793C6929BE6364A412DC102 /* libPods-HFOpenMusicPlayerDemo.a */; };
 		CAC777A5261EA70000B973F9 /* HFOpenApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */; };
@@ -473,7 +460,6 @@
 		CA20D1F6261CC8DE00DBB34F /* HFVKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVKitUtils.h; sourceTree = "<group>"; };
 		CA20D1F7261CC8DE00DBB34F /* NSObject+LPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LPUtils.m"; sourceTree = "<group>"; };
 		CA20D1F8261CC8DE00DBB34F /* NSDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeAccess.m"; sourceTree = "<group>"; };
-		CA20D1F9261CC8DE00DBB34F /* HIFPlayerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFPlayerHeader.h; sourceTree = "<group>"; };
 		CA20D1FB261CC8DE00DBB34F /* HFVMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVMacro.h; sourceTree = "<group>"; };
 		CA20D1FC261CC8DE00DBB34F /* HFVGlobalTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVGlobalTool.m; sourceTree = "<group>"; };
 		CA20D1FD261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SafeAccess.m"; sourceTree = "<group>"; };
@@ -545,6 +531,7 @@
 		CA51521A2629677100114244 /* HFNetworkReachAbility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFNetworkReachAbility.m; sourceTree = "<group>"; };
 		CA51521B2629677100114244 /* HFNetworkReachAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFNetworkReachAbility.h; sourceTree = "<group>"; };
 		CA51B0D02631A6C200912C30 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		CA8672D32632DB7F00DCB9DD /* HFOpenEnumHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFOpenEnumHeader.h; sourceTree = "<group>"; };
 		CA96EECC261F081F00CD3EA1 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CA96EECD261F081F00CD3EA1 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CAC777A3261EA70000B973F9 /* HFOpenApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenApiManager.m; sourceTree = "<group>"; };
@@ -566,8 +553,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA498B1426365A300038D070 /* AVFoundation.framework in Frameworks */,
 				CA16E66E262D5B41007DEAE6 /* AudioToolbox.framework in Frameworks */,
-				CA16E66C262D5B31007DEAE6 /* AVFoundation.framework in Frameworks */,
 				CA16E66A262D5B28007DEAE6 /* CoreGraphics.framework in Frameworks */,
 				CA51B0D12631A6C200912C30 /* IJKMediaFramework.framework in Frameworks */,
 				CA16E668262D5B1E007DEAE6 /* CoreMedia.framework in Frameworks */,
@@ -1111,7 +1098,6 @@
 				CA20D1F6261CC8DE00DBB34F /* HFVKitUtils.h */,
 				CA20D1F7261CC8DE00DBB34F /* NSObject+LPUtils.m */,
 				CA20D1F8261CC8DE00DBB34F /* NSDictionary+SafeAccess.m */,
-				CA20D1F9261CC8DE00DBB34F /* HIFPlayerHeader.h */,
 				CA20D1FB261CC8DE00DBB34F /* HFVMacro.h */,
 				CA20D1FC261CC8DE00DBB34F /* HFVGlobalTool.m */,
 				CA20D1FD261CC8DE00DBB34F /* NSMutableDictionary+SafeAccess.m */,
@@ -1187,6 +1173,7 @@
 				CA50E3562625311700331BF9 /* HFOpenMusicPlayerConfiguration.m */,
 				CA3DBEA0261C768F008A8A42 /* Info.plist */,
 				CA3DBEEA261C7AD2008A8A42 /* PrefixHeader.pch */,
+				CA8672D32632DB7F00DCB9DD /* HFOpenEnumHeader.h */,
 				CA20D147261CC8DE00DBB34F /* HFOpenMusic */,
 				CA20D09A261CC48B00DBB34F /* HFPlayer */,
 				CA20D05F261CC10D00DBB34F /* HFPlayerApi */,
@@ -1311,6 +1298,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8672D82632E0F400DCB9DD /* HFOpenEnumHeader.h in Headers */,
+				CA20D28A261CC8DF00DBB34F /* HFOpenModel.h in Headers */,
 				CA50E3572625311700331BF9 /* HFOpenMusicPlayerConfiguration.h in Headers */,
 				CA16E64B262D5A3F007DEAE6 /* HFPlayerApi.h in Headers */,
 				CAC777A6261EA70000B973F9 /* HFOpenApiManager.h in Headers */,
@@ -1357,7 +1346,6 @@
 				CA51521C2629677100114244 /* HFReachability.h in Headers */,
 				CA20D267261CC8DF00DBB34F /* MKAnnotationView+YYWebImage.h in Headers */,
 				CA20D249261CC8DE00DBB34F /* MASLayoutConstraint.h in Headers */,
-				CA20D28A261CC8DF00DBB34F /* HFOpenModel.h in Headers */,
 				CA20D086261CC10D00DBB34F /* HFPlayerApiConfiguration.h in Headers */,
 				CA20D24D261CC8DE00DBB34F /* View+MASAdditions.h in Headers */,
 				CA20D25B261CC8DF00DBB34F /* HFSVProgressHUD.h in Headers */,
@@ -1371,7 +1359,6 @@
 				CA20D274261CC8DF00DBB34F /* NSObject+LPUtils.h in Headers */,
 				CA20D235261CC8DE00DBB34F /* MJRefreshAutoNormalFooter.h in Headers */,
 				CA3DBF02261C7AD2008A8A42 /* PrefixHeader.pch in Headers */,
-				CA20D299261CC8DF00DBB34F /* HIFPlayerHeader.h in Headers */,
 				CA20D239261CC8DE00DBB34F /* MJRefreshStateHeader.h in Headers */,
 				CA20D27D261CC8DF00DBB34F /* LPSearchHistoryView.h in Headers */,
 				CA20D231261CC8DE00DBB34F /* MJRefreshBackGifFooter.h in Headers */,
@@ -1540,19 +1527,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA317F3B2631759B00DE5974 /* 音乐列表UI接入文档.md in Resources */,
-				CA317F3D2631759B00DE5974 /* 播放器UI接入文档.html in Resources */,
-				CA317F372631759B00DE5974 /* iOS接入文档.md in Resources */,
-				CA317F402631759B00DE5974 /* 播放器api接入文档.html in Resources */,
-				CA317F382631759B00DE5974 /* 通用api接入文档.html in Resources */,
-				CA317F3C2631759B00DE5974 /* 播放器和音乐列表接入文档.md in Resources */,
-				CA317F3E2631759B00DE5974 /* 播放器api接入文档.md in Resources */,
-				CA317F412631759B00DE5974 /* 音乐列表UI接入文档.html in Resources */,
-				CA317F3F2631759B00DE5974 /* 通用api接入文档.md in Resources */,
-				CA317F392631759B00DE5974 /* 播放器和音乐列表接入文档.html in Resources */,
-				CA317F362631759B00DE5974 /* iOS接入文档.html in Resources */,
-				CA317F3A2631759B00DE5974 /* 播放器UI接入文档.md in Resources */,
-				CA20D22C261CC8DE00DBB34F /* MJRefresh.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1871,6 +1845,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HFOpenMusicPlayer",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HFOpenMusicPlayer/PrefixHeader.pch";
 				INFOPLIST_FILE = HFOpenMusicPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1908,6 +1883,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HFOpenMusicPlayer",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HFOpenMusicPlayer/PrefixHeader.pch";
 				INFOPLIST_FILE = HFOpenMusicPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1943,6 +1919,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HFOpenMusicPlayer",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = HFOpenMusicPlayerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1970,6 +1947,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HFOpenMusicPlayer",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = HFOpenMusicPlayerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -152,7 +152,6 @@ static NSInteger pageSize = 10;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"asdadssdaasdsadsadsasadsadsa");
     [self.detailView showView:self.dataArray[indexPath.row]];
 }
 

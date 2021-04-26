@@ -69,6 +69,7 @@ typedef NS_ENUM(NSInteger, HFPlayerStatus) {
 @interface HFPlayerApi : NSObject
 
 @property(nonatomic ,weak)id <HFPlayerStatusProtocol>                         delegate;
+@property(nonatomic ,strong)HFPlayerApiConfiguration                          *config;
 
 
 /// 初始化

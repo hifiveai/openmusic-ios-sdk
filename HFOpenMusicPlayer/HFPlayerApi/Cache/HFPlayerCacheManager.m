@@ -50,15 +50,12 @@ static HFPlayerCacheManager *manager = nil;
         if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
             [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
             [[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
-            //NSLog(@"删除重新创建视频文件");
         } else {
-            //NSLog(@"创建视频文件");
             [[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
         }
     } else {
         //不存在
         [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
-        //NSLog(@"创建文件夹和视频文件");
         [[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
     }
     

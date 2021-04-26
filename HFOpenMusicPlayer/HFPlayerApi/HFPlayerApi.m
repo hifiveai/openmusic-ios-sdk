@@ -11,17 +11,16 @@
 
 //ijk
 #import <IJKMediaFramework/IJKMediaFramework.h>
-#import <IJKMediaFramework/IJKMediaFramework.h>
 
 @interface HFPlayerApi () <HFReachabilityProtocol>
 
 @property(nonatomic ,assign)HFPlayerStatus                               status;
-@property(nonatomic ,strong)HFPlayerApiConfiguration                     *config;
+
 
 //网络监听
-@property(nonatomic, strong) HFNetworkReachAbility                *networkReachAbility;
-@property(nonatomic, assign) NetworkStatus                        networkStatus;
-@property(nonatomic, assign) NSTimeInterval                       noNetLoadDuration;
+@property(nonatomic, strong) HFNetworkReachAbility                       *networkReachAbility;
+@property(nonatomic, assign) NetworkStatus                               networkStatus;
+@property(nonatomic, assign) NSTimeInterval                              noNetLoadDuration;
 
 //ijk
 @property(nonatomic ,strong)IJKFFMoviePlayerController                   *ijkPlayer;
@@ -122,7 +121,7 @@
 
 //拖动播放（时间）
 -(void)seekToDuration:(float)duration {
-    if (duration<0) {
+    if (duration<0 || !_ijkPlayer) {
         return;
     }
     //[self pause];
@@ -167,6 +166,8 @@
             return;
         }
         NSData *filedata = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_path] options:NSDataReadingMappedIfSafe error:nil];
+        LPLog(@"1----:%lu",(unsigned long)filedata.length);
+        LPLog(@"2----:%lld",_ijkPlayer.monitor.filesize);
         if (filedata.length<_ijkPlayer.monitor.filesize) {
             //不完整就删除
             LPLog(@"数据不完整需要删除");
@@ -176,6 +177,7 @@
         } else {
             LPLog(@"数据文件完整！！！");
         }
+        //_ijkPlayer = nil;
     }
 }
 
@@ -208,7 +210,6 @@
         float playProgress = currentDuration/totalDuration;
         float bufferDuration = weakSelf.ijkPlayer.playableDuration;
         float bufferProgress = bufferDuration/totalDuration;
-        //NSLog(@"定时器方法执行了buffer:%f,totalDuration:%f,bufferProgress:%ld",bufferProgress,totalDuration,(long)weakSelf.ijkPlayer.bufferingProgress);
         //播放进度
         if ([weakSelf.delegate respondsToSelector:@selector(playerPlayProgress:currentDuration:totalDuration:)]) {
             [weakSelf.delegate playerPlayProgress:playProgress currentDuration:currentDuration totalDuration:totalDuration];
@@ -383,10 +384,18 @@
 #pragma mark - 移除通知
 -(void)removeMovieNotificationObservers
 {
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMoviePlayerLoadStateDidChangeNotification object:_ijkPlayer];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMoviePlayerPlaybackDidFinishNotification object:_ijkPlayer];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMediaPlaybackIsPreparedToPlayDidChangeNotification object:_ijkPlayer];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMoviePlayerPlaybackStateDidChangeNotification object:_ijkPlayer];
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:IJKMPMoviePlayerLoadStateDidChangeNotification
+                                                 object:_ijkPlayer];
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:IJKMPMoviePlayerPlaybackDidFinishNotification
+                                                 object:_ijkPlayer];
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:IJKMPMediaPlaybackIsPreparedToPlayDidChangeNotification
+                                                 object:_ijkPlayer];
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:IJKMPMoviePlayerPlaybackStateDidChangeNotification
+                                                 object:_ijkPlayer];
 }
 
 #pragma mark - 🐠网络监测🐠
@@ -441,19 +450,20 @@
     LPLog(@"-----播放器释放了-----");
     [self stop];
     //判断缓存文件是否完整
-    if ([HFVLibUtils isBlankString:_path]) {
-        return;
-    }
-    NSData *filedata = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_path] options:NSDataReadingMappedIfSafe error:nil];
-    if (filedata.length<_ijkPlayer.monitor.filesize) {
-        //不完整就删除
-        LPLog(@"数据不完整需要删除");
-        if ([[NSFileManager defaultManager] fileExistsAtPath:_path]) {
-            [[NSFileManager defaultManager] removeItemAtPath:_path error:nil];
-        }
-    } else {
-        LPLog(@"数据文件完整！！！");
-    }
+//    if ([HFVLibUtils isBlankString:_path]) {
+//        return;
+//    }
+//    NSData *filedata = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_path] options:NSDataReadingMappedIfSafe error:nil];
+//
+//    if (filedata.length<_ijkPlayer.monitor.filesize) {
+//        //不完整就删除
+//        LPLog(@"数据不完整需要删除");
+//        if ([[NSFileManager defaultManager] fileExistsAtPath:_path]) {
+//            [[NSFileManager defaultManager] removeItemAtPath:_path error:nil];
+//        }
+//    } else {
+//        LPLog(@"数据文件完整！！！");
+//    }
 }
 
 @end

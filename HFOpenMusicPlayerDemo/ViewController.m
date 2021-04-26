@@ -7,12 +7,6 @@
 
 #import "ViewController.h"
 #import <HFOpenMusicPlayer/HFOpenMusicPlayer.h>
-#import <HFOpenMusicPlayer/HFPlayerApi.h>
-#import <HFOpenMusicPlayer/HFOpenApiManager.h>
-#import <HFOpenMusicPlayer/HFPlayer.h>
-#import <HFOpenMusicPlayer/HFOpenMusic.h>
-
-
 
 @interface ViewController () <HFOpenMusicDelegate ,HFPlayerStatusProtocol>
 @property(nonatomic ,strong)HFOpenMusicPlayer                       *playerListView;

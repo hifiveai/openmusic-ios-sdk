@@ -39,6 +39,7 @@
 @property(nonatomic, strong)HFPlayerApi                                        *playerApi;
 @property(nonatomic, strong)HFPlayerApiConfiguration                           *playerConfig;
 @property(nonatomic, assign)float                                              currentDuration;
+@property(nonatomic, copy)NSString                                             *currentMusicId;
 
 //数据
 @property(nonatomic, strong)HFPlayerMusicModel                                 *currentModel;
@@ -61,10 +62,17 @@
     return self;
 }
 -(void)setConfig:(HFPlayerConfiguration *)config {
-    NSString *newMedia = config.urlString;
-    NSString *oldMedia = _config.urlString;
-    NSString *oldMusicId = _config.musicId;
     _config = config;
+    if (_playerApi) {
+        HFPlayerApiConfiguration *apiConfig = [HFPlayerApiConfiguration defaultConfiguration];
+        apiConfig.cacheEnable = _config.cacheEnable;
+        apiConfig.bufferCacheSize = _config.bufferCacheSize;
+        apiConfig.repeatPlay = _config.repeatPlay;
+        apiConfig.networkAbilityEable = _config.networkAbilityEable;
+        apiConfig.rate = _config.rate;
+        _playerApi.config = apiConfig;
+    }
+    
     //UI显示更新
     if (config.canCutSong) {
         _previousBtn.enabled = true;
@@ -92,27 +100,18 @@
         [self setShowBar:YES];
         _playBtn.enabled = true;
     }
-    
-    //判断是否切歌
-//    if (![oldMedia isEqualToString:newMedia] || self.slider.value>0.99) {
-//        //歌曲发生了切换
-//        if (_playerApi) {
-//            if ([self.delegate respondsToSelector:@selector(cutSongDuration:musicId:)]) {
-//                [self.delegate cutSongDuration:_currentDuration musicId:oldMusicId];
-//            }
-//            _currentDuration = 0;
-//            self.slider.value = 0;
-//            self.progressView.progress = 0;
-//            [self.playerApi replaceCurrentUrlWithUrl:[NSURL URLWithString:config.urlString] configuration:self.playerConfig];
-//        } else {
-//            [self initPlayerApi:[NSURL URLWithString:config.urlString]];
-//        }
-//    }
-    
 }
 
 -(void)play {
+    //把上一首歌曲id和播放时长进行上报
+    if (![HFVLibUtils isBlankString:_currentMusicId] && _currentDuration >0) {
+        if ([self.delegate respondsToSelector:@selector(cutSongDuration:musicId:)]) {
+            [self.delegate cutSongDuration:_currentDuration musicId:_currentMusicId];
+        }
+    }
+    
     _currentDuration = 0;
+    _currentMusicId = _config.musicId;
     self.slider.value = 0;
     self.progressView.progress = 0;
     [self startLoadingAnimate];

@@ -24,6 +24,7 @@ FOUNDATION_EXPORT const unsigned char HFPlayerVersionString[];
 -(void)previousClick;
 -(void)nextClick;
 -(void)headerClick;
+-(void)playerPlayToEnd;
 -(void)cutSongDuration:(float)duration musicId:(NSString *)musicId;
 @end
 

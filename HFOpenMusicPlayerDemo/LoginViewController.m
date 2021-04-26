@@ -6,7 +6,7 @@
 //
 
 #import "LoginViewController.h"
-#import <HFOpenMusicPlayer/HFOpenApiManager.h>
+#import <HFOpenMusicPlayer/HFOpenMusicPlayer.h>
 #import "TestConfigViewController.h"
 
 @interface LoginViewController ()

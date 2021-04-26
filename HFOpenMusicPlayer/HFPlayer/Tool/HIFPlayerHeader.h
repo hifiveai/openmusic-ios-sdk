@@ -5,8 +5,10 @@
 //  Created by 郭亮 on 2020/11/10.
 //
 
-#ifndef Header_h
-#define Header_h
+//#ifndef Header_h
+//#define Header_h
+#ifndef HIFPlayerHeader_h
+#define HIFPlayerHeader_h
 
 #import <Masonry.h>
 
@@ -52,12 +54,8 @@ typedef NS_ENUM(NSInteger, HIFPlayerSecondStates) {
     HIFPlayerSecondStatesDownNormol = 3
 };
 
-typedef NS_ENUM(NSInteger, HFOpenMusicListenType) {
-    TYPE_TRAFFIC = 0,
-    TYPE_UGC = 1,
-    TYPE_K = 2
-};
+
 
 #define HIFUpdateDataCacheKey @"hfvmusicdata"
 
-#endif /* Header_h */
+#endif /* HIFPlayerHeader_h */

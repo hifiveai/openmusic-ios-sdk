@@ -125,8 +125,6 @@
                 NSArray *favoriteArray = [HFOpenMusicModel mj_objectArrayWithKeyValuesArray: [response hfv_objectForKey_Safe:@"record"]];
                 if (favoriteArray && favoriteArray.count>0) {
                     [weakSelf.dataArray addObjectsFromArray:favoriteArray];
-                    NSLog(@"%@",weakSelf.dataArray);
-                    NSLog(@"---%@",[NSThread currentThread]);
                     HFOpenMetaModel *metaModel = [HFOpenMetaModel mj_objectWithKeyValues:[response hfv_objectForKey_Safe:@"meta"]];
                     if (metaModel.currentPage*20 >= metaModel.totalCount) {
                         self.myTableView.mj_footer = nil;
@@ -136,7 +134,6 @@
                 }
                 [weakSelf.myTableView reloadData];
             } fail:^(NSError * _Nullable error) {
-                NSLog(@"adsddddllllllll");
                 [HFVProgressHud showErrorWithError:error];
                 weakSelf.page--;
             }];

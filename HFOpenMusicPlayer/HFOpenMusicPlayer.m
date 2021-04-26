@@ -11,12 +11,12 @@
 #import "HFPlayerApiConfiguration.h"
 #import "HFPlayerApi.h"
 #import "HFOpenMusic.h"
-//#import "HFOpenApiManager.h"
 
 @interface HFOpenMusicPlayer () <HFPlayerDelegate, HFOpenMusicDelegate>
 
 @property(nonatomic ,strong)HFPlayer                                             *player;
 @property(nonatomic ,strong)HFOpenMusic                                          *listView;
+@property(nonatomic ,assign)BOOL                                                 playEnd;
 
 @end
 
@@ -51,8 +51,8 @@
 
 -(void)addMusicPlayerView {
     if (self) {
-        //[[UIApplication sharedApplication].keyWindow addSubview:self];
-        [[HFVKitUtils getCurrentWindow] addSubview:self];
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+        //[[HFVKitUtils getCurrentWindow] addSubview:self];
     }
 }
 
@@ -92,14 +92,20 @@
 }
 
 //切歌数据上报
--(void)cutSongDuration:(float)duration musicId:(NSString *)musicId{
+-(void)cutSongDuration:(float)duration musicId:(NSString *)musicId {
     [self.listView cutSongDuration:duration musicId:musicId];
+}
+
+//播放完毕
+-(void)playerPlayToEnd {
+    _playEnd = true;
 }
 
 
 #pragma mark - ListView Delegate
 -(void)currentPlayChangedMusic:(HFOpenMusicModel *)musicModel detail:(HFOpenMusicDetailInfoModel *)detailModel canCutSong:(BOOL)canCutSong {
     HFPlayerConfiguration *config = _player.config;
+    BOOL urlChanged = true;
     if (musicModel && detailModel) {
         //通过改变配置config，控制playerBar显示和播放
         NSArray *coverAry = musicModel.cover;
@@ -107,7 +113,6 @@
             HFOpenMusicCoverModel *coverModel = coverAry[0];
             config.imageUrlString = coverModel.url;
         }
-        
         NSMutableString *text = [[NSMutableString alloc] init];
         [text appendString: musicModel.musicName];
         NSArray *artistAry = musicModel.artist;
@@ -120,19 +125,28 @@
         }
         config.songName = text;
         config.canCutSong = canCutSong;
+        if ([config.urlString isEqualToString:detailModel.fileUrl]) {
+            urlChanged = false;
+        }
         config.urlString = detailModel.fileUrl;
         config.musicId = musicModel.musicId;
         _player.config = config;
     } else {
+        config.canCutSong = canCutSong;
         config.songName = @"";
-        config.canCutSong = @"";
+        if ([config.urlString isEqualToString:@""]) {
+            urlChanged = false;
+        }
         config.urlString = @"";
         config.imageUrlString = @"";
         config.canCutSong = false;
         config.musicId = @"";
         _player.config = config;
     }
-    [_player play];
+    if (urlChanged || _playEnd) {
+        [_player play];
+        _playEnd = false;
+    }
 }
 
 -(void)canCutSongChanged:(BOOL)canCutSong {
@@ -143,7 +157,6 @@
 
 #pragma mark - 事件传递
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-
     UIView *targetView = [super hitTest:point withEvent:event];
     if ([targetView class]==[self class]) {
         //没有点击到子控件，只能自己处理

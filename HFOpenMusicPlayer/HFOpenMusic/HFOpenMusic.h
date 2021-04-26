@@ -7,19 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "HFOpenModel.h"
-#import "HFOpenMusicPlayer.h"
+#import <HFOpenMusicPlayer/HFOpenModel.h>
+#import <HFOpenMusicPlayer/HFOpenEnumHeader.h>
 
-//typedef NS_ENUM(NSInteger, HFOpenMusicListenType) {
-//    TYPE_TRAFFIC = 0,
-//    TYPE_UGC = 1,
-//    TYPE_K = 2
-//};
-
-//! Project version number for HFOpenMusic.
 FOUNDATION_EXPORT double HFOpenMusicVersionNumber;
 
-//! Project version string for HFOpenMusic.
 FOUNDATION_EXPORT const unsigned char HFOpenMusicVersionString[];
 
 @protocol HFOpenMusicDelegate <NSObject>
