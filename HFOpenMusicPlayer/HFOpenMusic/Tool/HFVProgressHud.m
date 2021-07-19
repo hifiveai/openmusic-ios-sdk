@@ -6,39 +6,39 @@
 //
 
 #import "HFVProgressHud.h"
-
+#import <SVProgressHUD/SVProgressHUD.h>
 @implementation HFVProgressHud
 
 +(void)showErrorWithError:(NSError *)error {
     if (error && error.userInfo) {
         NSString *status = [HFVKitUtils getErrorMessage:error.userInfo];
         if (status && status.length>0) {
-            [HFSVProgressHUD showErrorWithStatus:status];
-            [HFSVProgressHUD dismissWithDelay:2];
+            [SVProgressHUD showErrorWithStatus:status];
+            [SVProgressHUD dismissWithDelay:2];
         }
     }
 }
 
 +(void)showInfoWithStatus:(NSString *)status {
     if (status && status.length>0) {
-        [HFSVProgressHUD showInfoWithStatus:status];
-        [HFSVProgressHUD dismissWithDelay:1];
+        [SVProgressHUD showInfoWithStatus:status];
+        [SVProgressHUD dismissWithDelay:1];
     }
 }
 
 +(void)showSuccessWithStatus:(NSString *)status {
     if (status && status.length>0) {
-        [HFSVProgressHUD setSuccessImage:[HFVKitUtils bundleImageWithName:@"success_hud"]];
-        [HFSVProgressHUD showSuccessWithStatus:status];
+        [SVProgressHUD setSuccessImage:[HFVKitUtils bundleImageWithName:@"success_hud"]];
+        [SVProgressHUD showSuccessWithStatus:status];
 
-        [HFSVProgressHUD dismissWithDelay:1];
+        [SVProgressHUD dismissWithDelay:1];
     }
 }
 
 +(void)showErrorWithStatus:(NSString *)status {
     if (status && status.length>0) {
-        [HFSVProgressHUD showErrorWithStatus:status];
-        [HFSVProgressHUD dismissWithDelay:1];
+        [SVProgressHUD showErrorWithStatus:status];
+        [SVProgressHUD dismissWithDelay:1];
     }
 }
 

@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "HFOpenMusic.h"
 #import "HFOpenMusicSegmentView.h"
-
+#import <SVProgressHUD/SVProgressHUD.h>
 @interface HFOpenMusic () <HFOpenMusicPlayDelegate ,HFPlayerDelegate>
 
 @property(nonatomic ,strong)HFPlayer                                          *player;
@@ -60,7 +60,7 @@
     segment.listenType = _listenType;
     [segment addSegmentViewToView:self];
     _segment = segment;
-    [HFSVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
 }
 
 -(void)addShowButton {

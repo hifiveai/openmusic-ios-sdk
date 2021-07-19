@@ -111,7 +111,8 @@ static HFOpenApiManager *manager = nil;
 }
 
 -(void)baseLoginWithNickname:(NSString *)nickname gender:(NSString *)gender birthday:(NSString *)birthday location:(NSString *)location education:(NSString *)education profession:(NSString *)profession isOrganization:(BOOL)isOrganization reserve:(NSString *)reserve favoriteSinger:(NSString *)favoriteSinger favoriteGenre:(NSString *)favoriteGenre success:(void (^)(id _Nullable))success fail:(void (^)(NSError * _Nullable))fail {
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:0];
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
     [params hfv_setObject_Safe:nickname forKey:@"Nickname"];
     [params hfv_setObject_Safe:gender forKey:@"Gender"];
     [params hfv_setObject_Safe:birthday forKey:@"Birthday"];

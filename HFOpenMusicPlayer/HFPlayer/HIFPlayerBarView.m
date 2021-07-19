@@ -7,7 +7,6 @@
 
 #import "HIFPlayerBarView.h"
 #import "HFPlayerApi.h"
-#import "HFOpenApi.h"
 #import "HFPlayerApiConfiguration.h"
 #import "Masonry.h"
 #import "HFPlayerModel.h"

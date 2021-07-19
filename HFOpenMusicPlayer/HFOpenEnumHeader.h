@@ -10,9 +10,9 @@
 
 #import <UIKit/UIKit.h>
 typedef NS_ENUM(NSInteger, HFOpenMusicListenType) {
-    TYPE_TRAFFIC = 0,
-    TYPE_UGC = 1,
-    TYPE_K = 2
+    TYPE_TRAFFIC = 0,//BGM音乐播放
+    TYPE_UGC = 1,//音视频作品BGM音乐播放
+    TYPE_K = 2 //K歌音乐播放
 };
 
 

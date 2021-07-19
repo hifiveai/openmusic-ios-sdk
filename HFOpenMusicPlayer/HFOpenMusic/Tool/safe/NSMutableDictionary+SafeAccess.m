@@ -25,13 +25,10 @@
 
 - (void)hfv_setObject_Safe:(id)anObject forKey:(id)aKey{
 
-    @try {
-         [self setObject:anObject forKey:aKey];
-    } @catch (NSException *exception) {
-        
-    } @finally {
-        
+    if (anObject && aKey) {
+        [self setObject:anObject forKey:aKey];
     }
+
 }
 
 - (void)hfv_removeObjectForKey_Safe:(id)aKey {

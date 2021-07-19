@@ -1,11 +1,18 @@
 platform :ios, '9.0'
+use_frameworks!
+target 'HFOpenMusicPlayerDemo' do
 
-target 'HFOpenMusicPlayerDemo' do 
- pod 'MJExtension'
- pod 'Masonry'
- pod 'YYWebImage'
- pod 'MJRefresh'
- pod 'FLAnimatedImage'
+  
+  target 'HFOpenMusicPlayer' do
+   pod 'MJExtension'
+   pod 'Masonry'
+   pod 'YYWebImage'
+   pod 'MJRefresh'
+   pod 'FLAnimatedImage'
+   pod 'SVProgressHUD'
+   
+  end
+  
+  end
 
-end
 

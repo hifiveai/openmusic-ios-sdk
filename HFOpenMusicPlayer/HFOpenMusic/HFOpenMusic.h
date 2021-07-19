@@ -10,9 +10,6 @@
 #import <HFOpenMusicPlayer/HFOpenModel.h>
 #import <HFOpenMusicPlayer/HFOpenEnumHeader.h>
 
-FOUNDATION_EXPORT double HFOpenMusicVersionNumber;
-
-FOUNDATION_EXPORT const unsigned char HFOpenMusicVersionString[];
 
 @protocol HFOpenMusicDelegate <NSObject>
 

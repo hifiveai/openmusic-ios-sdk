@@ -7,16 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-//#import <HFPlayer/HFPlayerConfiguration.h>
 #import "HFPlayerConfiguration.h"
 
-//! Project version number for HFPlayer.
-FOUNDATION_EXPORT double HFPlayerVersionNumber;
-
-//! Project version string for HFPlayer.
-FOUNDATION_EXPORT const unsigned char HFPlayerVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <HFPlayer/PublicHeader.h>
 
 @protocol HFPlayerDelegate <NSObject>
 

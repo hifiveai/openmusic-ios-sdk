@@ -21,7 +21,7 @@
 @end
 
 @implementation HFOpenMusicPlayer
--(instancetype)initWithListenType:(HFOpenMusicListenType)type config:(HFOpenMusicPlayerConfiguration *)config {
+-(instancetype _Nonnull )initWithListenType:(HFOpenMusicListenType)type config:(HFOpenMusicPlayerConfiguration *_Nonnull)config{
     if (self = [super init]) {
         self.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
         //列表
