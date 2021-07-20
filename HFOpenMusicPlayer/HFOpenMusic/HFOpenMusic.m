@@ -11,10 +11,10 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 @interface HFOpenMusic () <HFOpenMusicPlayDelegate ,HFPlayerDelegate>
 
-@property(nonatomic ,strong)HFPlayer                                          *player;
-@property(nonatomic ,assign)HFOpenMusicListenType                             listenType;
-@property(nonatomic ,strong)HFOpenMusicSegmentView                            *segment;
-@property(nonatomic ,strong)UIButton                                          *showBtn;
+@property(nonatomic ,strong)HFPlayer *player;
+@property(nonatomic ,assign)HFOpenMusicListenType  listenType;
+@property(nonatomic ,strong)HFOpenMusicSegmentView *segment;
+@property(nonatomic ,strong)UIButton *showBtn;
 
 @end
 

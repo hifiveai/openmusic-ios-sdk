@@ -7,8 +7,6 @@
 //
 
 #import "HFVLibInfo.h"
-#import <UIKit/UIDevice.h>
-#import "LYKeychain.h"
 #import "HFVLibUtils.h"
 
 

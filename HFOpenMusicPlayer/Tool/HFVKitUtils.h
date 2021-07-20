@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HFPlayerUtils : NSObject
+@interface HFVKitUtils : NSObject
 
 + (NSBundle *)HFVKitBundle;
 
@@ -40,7 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 获取错误信息
 + (NSString *)getErrorMessage:(NSDictionary *)info;
-
 
 + (BOOL)isBlankString:(NSString *)string;
 @end

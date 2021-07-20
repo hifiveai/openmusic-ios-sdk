@@ -6,16 +6,16 @@
 //  Copyright © 2019 ZEGO. All rights reserved.
 //
 
-#import "HFPlayerUtils.h"
+#import "HFVKitUtils.h"
 
-@implementation HFPlayerUtils
+@implementation HFVKitUtils
 
 + (NSBundle *)HFVKitBundle
 {
     static NSBundle *HKBundle = nil;
     if (HKBundle == nil) {
         // 这里不使用mainBundle是为了适配pod 1.x和0.x
-        HKBundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[HFPlayerUtils class]] pathForResource:@"MJRefresh" ofType:@"bundle"]];
+        HKBundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[HFVKitUtils class]] pathForResource:@"MJRefresh" ofType:@"bundle"]];
     }
     return HKBundle;
 }
@@ -99,29 +99,38 @@
 
 /// 获取当前window
 +(UIWindow*)getCurrentWindow {
-
-    if ([[[UIApplication sharedApplication] delegate] window]) {
-        return [[[UIApplication sharedApplication] delegate] window];
-    }else{
-        if(@available(iOS 13.0, *)) {
-            NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
-            UIWindowScene* windowScene = (UIWindowScene*)array[0];
-
-            //如果是普通App开发，可以使用
-//            SceneDelegate * delegate = (SceneDelegate *)windowScene.delegate;
-//            UIWindow * mainWindow = delegate.window;
+//    if ([UIApplication sharedApplication].keyWindow) {
+//        return [UIApplication sharedApplication].keyWindow;
+//    }else{
+//        if(@available(iOS 13.0, *)) {
+//            NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
+//            UIWindowScene* windowScene = (UIWindowScene*)array[0];
+//            //由于在sdk开发中，引入不了SceneDelegate的头文件，所以需要用kvc获取宿主app的window.
+//
+//            UIWindow* mainWindow = [windowScene valueForKeyPath:@"delegate.window"];
+//            if(mainWindow) {
+//                return mainWindow;
+//            }else{
+//                return [UIApplication sharedApplication].windows.lastObject;
+//            }
+//        }else{
+//            return [UIApplication sharedApplication].keyWindow;
+//        }
+//    }
+    if(@available(iOS 13.0, *)) {
+        NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
+        UIWindowScene* windowScene = (UIWindowScene*)array[0];
             //由于在sdk开发中，引入不了SceneDelegate的头文件，所以需要用kvc获取宿主app的window.
 
             UIWindow* mainWindow = [windowScene valueForKeyPath:@"delegate.window"];
-            if(mainWindow) {
-                return mainWindow;
-            }else{
-                return [UIApplication sharedApplication].windows.lastObject;
-            }
+        if(mainWindow) {
+            return mainWindow;
         }else{
-            return [UIApplication sharedApplication].keyWindow;
+            return [UIApplication sharedApplication].windows.lastObject;
+        }
+    }else{
+        return [UIApplication sharedApplication].keyWindow;
         }
-    }
 }
 
 
@@ -135,8 +144,8 @@
  */
 //+ (UIImage *)imageWithName:(NSString *)name;
 + (UIImage *)bundleImageWithName:(NSString *)name {
-    NSBundle *bundle = [HFPlayerUtils resourcesBundleWithName:@"HFPlayer.bundle"];
-    return [HFPlayerUtils imageInBundle:bundle withName:name];
+    NSBundle *bundle = [HFVKitUtils resourcesBundleWithName:@"HFOpenMusic.bundle"];
+    return [HFVKitUtils imageInBundle:bundle withName:name];
 }
 
 + (UIImage *)imageInBundle:(NSBundle *)bundle withName:(NSString *)name {
@@ -155,7 +164,7 @@
     if (!bundle) {
         // 动态framework的bundle资源是打包在framework里面的，所以无法通过mainBundle拿到资源，只能通过其他方法来获取bundle资源。
         NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
-        NSDictionary *bundleData = [HFPlayerUtils parseBundleName:bundleName];
+        NSDictionary *bundleData = [HFVKitUtils parseBundleName:bundleName];
         if (bundleData) {
             bundle = [NSBundle bundleWithPath:[frameworkBundle pathForResource:[bundleData objectForKey:@"name"] ofType:[bundleData objectForKey:@"type"]]];
         }
@@ -179,9 +188,11 @@
     if ([[info allKeys] containsObject:@"msg"]) {
         errorString = [info valueForKey:@"msg"];
     }
+//    if (errorString.length <= 0) {
+//        errorString = @"服务器异常";
+//    }
     return errorString;
 }
-
 + (BOOL)isBlankString:(NSString *)string {
     if (string == nil || string == NULL) {
         return YES;

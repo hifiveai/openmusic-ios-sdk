@@ -40,9 +40,7 @@
 		CA20D138261CC48B00DBB34F /* HFPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D0EC261CC48B00DBB34F /* HFPlayerModel.m */; };
 		CA20D139261CC48B00DBB34F /* HFPlayerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0ED261CC48B00DBB34F /* HFPlayerModel.h */; };
 		CA20D13A261CC48B00DBB34F /* HFVSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0EE261CC48B00DBB34F /* HFVSlider.h */; };
-		CA20D13C261CC48B00DBB34F /* HFPlayerUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0F1261CC48B00DBB34F /* HFPlayerUtils.h */; };
 		CA20D13D261CC48B00DBB34F /* HIFPlayerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D0F2261CC48B00DBB34F /* HIFPlayerHeader.h */; };
-		CA20D140261CC48B00DBB34F /* HFPlayerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D0F5261CC48B00DBB34F /* HFPlayerUtils.m */; };
 		CA20D208261CC8DE00DBB34F /* LPCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D149261CC8DE00DBB34F /* LPCategoryView.m */; };
 		CA20D209261CC8DE00DBB34F /* LPSegmentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D14A261CC8DE00DBB34F /* LPSegmentViewController.h */; };
 		CA20D20A261CC8DE00DBB34F /* HFVCategoryFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D14B261CC8DE00DBB34F /* HFVCategoryFlowLayout.m */; };
@@ -64,14 +62,10 @@
 		CA20D26C261CC8DF00DBB34F /* HFOpenSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1C7261CC8DE00DBB34F /* HFOpenSearchResultCell.m */; };
 		CA20D26D261CC8DF00DBB34F /* UIView+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1C9261CC8DE00DBB34F /* UIView+PYExtension.m */; };
 		CA20D26E261CC8DF00DBB34F /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1CA261CC8DE00DBB34F /* UIView+Utils.m */; };
-		CA20D26F261CC8DF00DBB34F /* NSObject+LPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1CB261CC8DE00DBB34F /* NSObject+LPUtils.m */; };
-		CA20D270261CC8DF00DBB34F /* NSArray+GLSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1CC261CC8DE00DBB34F /* NSArray+GLSafe.m */; };
 		CA20D271261CC8DF00DBB34F /* UIColor+PYExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1CD261CC8DE00DBB34F /* UIColor+PYExtension.h */; };
 		CA20D272261CC8DF00DBB34F /* UIView+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1CE261CC8DE00DBB34F /* UIView+Utils.h */; };
 		CA20D273261CC8DF00DBB34F /* UIView+PYExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1CF261CC8DE00DBB34F /* UIView+PYExtension.h */; };
-		CA20D274261CC8DF00DBB34F /* NSObject+LPUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D0261CC8DE00DBB34F /* NSObject+LPUtils.h */; };
 		CA20D275261CC8DF00DBB34F /* UIColor+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1D1261CC8DE00DBB34F /* UIColor+PYExtension.m */; };
-		CA20D276261CC8DF00DBB34F /* NSArray+GLSafe.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D2261CC8DE00DBB34F /* NSArray+GLSafe.h */; };
 		CA20D277261CC8DF00DBB34F /* LPSearchHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1D3261CC8DE00DBB34F /* LPSearchHistoryView.m */; };
 		CA20D278261CC8DF00DBB34F /* HFOpenHotSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20D1D4261CC8DE00DBB34F /* HFOpenHotSearchCell.m */; };
 		CA20D279261CC8DF00DBB34F /* HFAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D1D5261CC8DE00DBB34F /* HFAlertView.h */; };
@@ -135,10 +129,6 @@
 		CA3DBEF9261C7AD2008A8A42 /* HFVLibUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEE0261C7AD2008A8A42 /* HFVLibUtils.h */; };
 		CA3DBEFA261C7AD2008A8A42 /* HFVLibInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEE1261C7AD2008A8A42 /* HFVLibInfo.h */; };
 		CA3DBEFB261C7AD2008A8A42 /* HFVLibUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEE2261C7AD2008A8A42 /* HFVLibUtils.m */; };
-		CA3DBEFC261C7AD2008A8A42 /* LYKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEE4261C7AD2008A8A42 /* LYKeychainQuery.m */; };
-		CA3DBEFD261C7AD2008A8A42 /* LYKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEE5261C7AD2008A8A42 /* LYKeychain.m */; };
-		CA3DBEFE261C7AD2008A8A42 /* LYKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEE6261C7AD2008A8A42 /* LYKeychain.h */; };
-		CA3DBEFF261C7AD2008A8A42 /* LYKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEE7261C7AD2008A8A42 /* LYKeychainQuery.h */; };
 		CA3DBF01261C7AD2008A8A42 /* HFOpenAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEE9261C7AD2008A8A42 /* HFOpenAction.m */; };
 		CA3DBF02261C7AD2008A8A42 /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEEA261C7AD2008A8A42 /* PrefixHeader.pch */; };
 		CA3DBF0B261C7AD2008A8A42 /* HFVNetWork.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBEF4261C7AD2008A8A42 /* HFVNetWork.h */; };
@@ -215,9 +205,7 @@
 		CA20D0EC261CC48B00DBB34F /* HFPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerModel.m; sourceTree = "<group>"; };
 		CA20D0ED261CC48B00DBB34F /* HFPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerModel.h; sourceTree = "<group>"; };
 		CA20D0EE261CC48B00DBB34F /* HFVSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVSlider.h; sourceTree = "<group>"; };
-		CA20D0F1261CC48B00DBB34F /* HFPlayerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPlayerUtils.h; sourceTree = "<group>"; };
 		CA20D0F2261CC48B00DBB34F /* HIFPlayerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFPlayerHeader.h; sourceTree = "<group>"; };
-		CA20D0F5261CC48B00DBB34F /* HFPlayerUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerUtils.m; sourceTree = "<group>"; };
 		CA20D149261CC8DE00DBB34F /* LPCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPCategoryView.m; sourceTree = "<group>"; };
 		CA20D14A261CC8DE00DBB34F /* LPSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPSegmentViewController.h; sourceTree = "<group>"; };
 		CA20D14B261CC8DE00DBB34F /* HFVCategoryFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVCategoryFlowLayout.m; sourceTree = "<group>"; };
@@ -239,14 +227,10 @@
 		CA20D1C7261CC8DE00DBB34F /* HFOpenSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenSearchResultCell.m; sourceTree = "<group>"; };
 		CA20D1C9261CC8DE00DBB34F /* UIView+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYExtension.m"; sourceTree = "<group>"; };
 		CA20D1CA261CC8DE00DBB34F /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
-		CA20D1CB261CC8DE00DBB34F /* NSObject+LPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LPUtils.m"; sourceTree = "<group>"; };
-		CA20D1CC261CC8DE00DBB34F /* NSArray+GLSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+GLSafe.m"; sourceTree = "<group>"; };
 		CA20D1CD261CC8DE00DBB34F /* UIColor+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYExtension.h"; sourceTree = "<group>"; };
 		CA20D1CE261CC8DE00DBB34F /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
 		CA20D1CF261CC8DE00DBB34F /* UIView+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYExtension.h"; sourceTree = "<group>"; };
-		CA20D1D0261CC8DE00DBB34F /* NSObject+LPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LPUtils.h"; sourceTree = "<group>"; };
 		CA20D1D1261CC8DE00DBB34F /* UIColor+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYExtension.m"; sourceTree = "<group>"; };
-		CA20D1D2261CC8DE00DBB34F /* NSArray+GLSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+GLSafe.h"; sourceTree = "<group>"; };
 		CA20D1D3261CC8DE00DBB34F /* LPSearchHistoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPSearchHistoryView.m; sourceTree = "<group>"; };
 		CA20D1D4261CC8DE00DBB34F /* HFOpenHotSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenHotSearchCell.m; sourceTree = "<group>"; };
 		CA20D1D5261CC8DE00DBB34F /* HFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFAlertView.h; sourceTree = "<group>"; };
@@ -329,10 +313,6 @@
 		CA3DBEE0261C7AD2008A8A42 /* HFVLibUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVLibUtils.h; sourceTree = "<group>"; };
 		CA3DBEE1261C7AD2008A8A42 /* HFVLibInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVLibInfo.h; sourceTree = "<group>"; };
 		CA3DBEE2261C7AD2008A8A42 /* HFVLibUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVLibUtils.m; sourceTree = "<group>"; };
-		CA3DBEE4261C7AD2008A8A42 /* LYKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYKeychainQuery.m; sourceTree = "<group>"; };
-		CA3DBEE5261C7AD2008A8A42 /* LYKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYKeychain.m; sourceTree = "<group>"; };
-		CA3DBEE6261C7AD2008A8A42 /* LYKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYKeychain.h; sourceTree = "<group>"; };
-		CA3DBEE7261C7AD2008A8A42 /* LYKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYKeychainQuery.h; sourceTree = "<group>"; };
 		CA3DBEE9261C7AD2008A8A42 /* HFOpenAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenAction.m; sourceTree = "<group>"; };
 		CA3DBEEA261C7AD2008A8A42 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CA3DBEF4261C7AD2008A8A42 /* HFVNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVNetWork.h; sourceTree = "<group>"; };
@@ -491,9 +471,7 @@
 		CA20D0F0261CC48B00DBB34F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				CA20D0F1261CC48B00DBB34F /* HFPlayerUtils.h */,
 				CA20D0F2261CC48B00DBB34F /* HIFPlayerHeader.h */,
-				CA20D0F5261CC48B00DBB34F /* HFPlayerUtils.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -509,7 +487,6 @@
 				CA20D1DD261CC8DE00DBB34F /* MusicList */,
 				CA20D1E6261CC8DE00DBB34F /* Model */,
 				CA20D1EB261CC8DE00DBB34F /* Base */,
-				CA20D1F0261CC8DE00DBB34F /* Tool */,
 			);
 			path = HFOpenMusic;
 			sourceTree = "<group>";
@@ -551,7 +528,6 @@
 				CA20D1D6261CC8DE00DBB34F /* HFOpenSeachViewController.m */,
 				CA20D1D9261CC8DE00DBB34F /* LPSearchHistoryView.h */,
 				CA20D1D3261CC8DE00DBB34F /* LPSearchHistoryView.m */,
-				CA20D1C8261CC8DE00DBB34F /* Extension */,
 				CA20D1C6261CC8DE00DBB34F /* HFOpenHotSearchView.m */,
 				CA20D1C7261CC8DE00DBB34F /* HFOpenSearchResultCell.m */,
 				CA20D1D4261CC8DE00DBB34F /* HFOpenHotSearchCell.m */,
@@ -567,16 +543,14 @@
 		CA20D1C8261CC8DE00DBB34F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CA20D1F7261CC8DE00DBB34F /* NSObject+LPUtils.m */,
+				CA20D202261CC8DE00DBB34F /* NSObject+LPUtils.h */,
 				CA20D1C9261CC8DE00DBB34F /* UIView+PYExtension.m */,
 				CA20D1CA261CC8DE00DBB34F /* UIView+Utils.m */,
-				CA20D1CB261CC8DE00DBB34F /* NSObject+LPUtils.m */,
-				CA20D1CC261CC8DE00DBB34F /* NSArray+GLSafe.m */,
 				CA20D1CD261CC8DE00DBB34F /* UIColor+PYExtension.h */,
 				CA20D1CE261CC8DE00DBB34F /* UIView+Utils.h */,
 				CA20D1CF261CC8DE00DBB34F /* UIView+PYExtension.h */,
-				CA20D1D0261CC8DE00DBB34F /* NSObject+LPUtils.h */,
 				CA20D1D1261CC8DE00DBB34F /* UIColor+PYExtension.m */,
-				CA20D1D2261CC8DE00DBB34F /* NSArray+GLSafe.h */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -619,20 +593,19 @@
 		CA20D1F0261CC8DE00DBB34F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				CA20D1C8261CC8DE00DBB34F /* Extension */,
 				3CAA745E26A5786500262B86 /* safe */,
 				CA20D1F1261CC8DE00DBB34F /* HFVProgressHud.h */,
 				CA20D1F2261CC8DE00DBB34F /* LPMJGifFooter.h */,
 				CA20D1F3261CC8DE00DBB34F /* HIFParseLyricTool.m */,
 				CA20D1F4261CC8DE00DBB34F /* LPMJGifHeader.h */,
 				CA20D1F6261CC8DE00DBB34F /* HFVKitUtils.h */,
-				CA20D1F7261CC8DE00DBB34F /* NSObject+LPUtils.m */,
 				CA20D1FB261CC8DE00DBB34F /* HFVMacro.h */,
 				CA20D1FC261CC8DE00DBB34F /* HFVGlobalTool.m */,
 				CA20D1FE261CC8DE00DBB34F /* LPMJGifHeader.m */,
 				CA20D1FF261CC8DE00DBB34F /* HIFParseLyricTool.h */,
 				CA20D200261CC8DE00DBB34F /* LPMJGifFooter.m */,
 				CA20D201261CC8DE00DBB34F /* HFVProgressHud.m */,
-				CA20D202261CC8DE00DBB34F /* NSObject+LPUtils.h */,
 				CA20D203261CC8DE00DBB34F /* HFVKitUtils.m */,
 				CA20D207261CC8DE00DBB34F /* HFVGlobalTool.h */,
 			);
@@ -699,6 +672,7 @@
 				CA3DBEEA261C7AD2008A8A42 /* PrefixHeader.pch */,
 				CA8672D32632DB7F00DCB9DD /* HFOpenEnumHeader.h */,
 				CA20D147261CC8DE00DBB34F /* HFOpenMusic */,
+				CA20D1F0261CC8DE00DBB34F /* Tool */,
 				CA20D09A261CC48B00DBB34F /* HFPlayer */,
 				CA20D05F261CC10D00DBB34F /* HFPlayerApi */,
 				CA3DBEDA261C7AD2008A8A42 /* HFOpenApi */,
@@ -774,7 +748,6 @@
 				CA3DBEF4261C7AD2008A8A42 /* HFVNetWork.h */,
 				CA3DBEDD261C7AD2008A8A42 /* HFVNetWork.m */,
 				CA3DBEDE261C7AD2008A8A42 /* Utils */,
-				CA3DBEE3261C7AD2008A8A42 /* SAMKeychain */,
 			);
 			path = HFOpenApi;
 			sourceTree = "<group>";
@@ -788,17 +761,6 @@
 				CA3DBEE2261C7AD2008A8A42 /* HFVLibUtils.m */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		CA3DBEE3261C7AD2008A8A42 /* SAMKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				CA3DBEE4261C7AD2008A8A42 /* LYKeychainQuery.m */,
-				CA3DBEE5261C7AD2008A8A42 /* LYKeychain.m */,
-				CA3DBEE6261C7AD2008A8A42 /* LYKeychain.h */,
-				CA3DBEE7261C7AD2008A8A42 /* LYKeychainQuery.h */,
-			);
-			path = SAMKeychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -833,17 +795,13 @@
 				CA20D086261CC10D00DBB34F /* HFPlayerApiConfiguration.h in Headers */,
 				CA20D209261CC8DE00DBB34F /* LPSegmentViewController.h in Headers */,
 				CA20D292261CC8DF00DBB34F /* LPMJGifFooter.h in Headers */,
-				CA20D274261CC8DF00DBB34F /* NSObject+LPUtils.h in Headers */,
 				CA3DBF02261C7AD2008A8A42 /* PrefixHeader.pch in Headers */,
 				CA20D27D261CC8DF00DBB34F /* LPSearchHistoryView.h in Headers */,
-				CA20D13C261CC48B00DBB34F /* HFPlayerUtils.h in Headers */,
 				CA20D27C261CC8DF00DBB34F /* HFOpenHotSearchCell.h in Headers */,
 				CA20D13A261CC48B00DBB34F /* HFVSlider.h in Headers */,
 				CA20D2A7261CC8DF00DBB34F /* HFVGlobalTool.h in Headers */,
 				CA3DBEFA261C7AD2008A8A42 /* HFVLibInfo.h in Headers */,
-				CA20D276261CC8DF00DBB34F /* NSArray+GLSafe.h in Headers */,
 				CA3DBF0B261C7AD2008A8A42 /* HFVNetWork.h in Headers */,
-				CA3DBEFE261C7AD2008A8A42 /* LYKeychain.h in Headers */,
 				CA20D07E261CC10D00DBB34F /* HFPlayerCacheManager.h in Headers */,
 				CA20D20E261CC8DE00DBB34F /* HFOpenRadioDetailHeader.h in Headers */,
 				CA20D286261CC8DF00DBB34F /* HFOpenCurrentPlayListViewController.h in Headers */,
@@ -865,7 +823,6 @@
 				CA20D296261CC8DF00DBB34F /* HFVKitUtils.h in Headers */,
 				CA20D291261CC8DF00DBB34F /* HFVProgressHud.h in Headers */,
 				CA51521F2629677100114244 /* HFNetworkReachAbility.h in Headers */,
-				CA3DBEFF261C7AD2008A8A42 /* LYKeychainQuery.h in Headers */,
 				CA3DBEF9261C7AD2008A8A42 /* HFVLibUtils.h in Headers */,
 				CA20D20D261CC8DE00DBB34F /* HFVCategoryFlowLayout.h in Headers */,
 				CA20D2A4261CC8DF00DBB34F /* NSMutableArray+SafeAccess.h in Headers */,
@@ -1052,16 +1009,12 @@
 				CA20D208261CC8DE00DBB34F /* LPCategoryView.m in Sources */,
 				CA20D212261CC8DE00DBB34F /* HFOpenRadioListViewController.m in Sources */,
 				CA50E3582625311700331BF9 /* HFOpenMusicPlayerConfiguration.m in Sources */,
-				CA20D140261CC48B00DBB34F /* HFPlayerUtils.m in Sources */,
 				CA20D28F261CC8DF00DBB34F /* LPBaseListViewController.m in Sources */,
 				CA20D20A261CC8DE00DBB34F /* HFVCategoryFlowLayout.m in Sources */,
 				CA20D280261CC8DF00DBB34F /* HFAlertView.m in Sources */,
 				CA3DBECC261C7935008A8A42 /* HFOpenMusicPlayer.m in Sources */,
-				CA3DBEFD261C7AD2008A8A42 /* LYKeychain.m in Sources */,
-				CA20D26F261CC8DF00DBB34F /* NSObject+LPUtils.m in Sources */,
 				CAC777A5261EA70000B973F9 /* HFOpenApiManager.m in Sources */,
 				CA20D26C261CC8DF00DBB34F /* HFOpenSearchResultCell.m in Sources */,
-				CA3DBEFC261C7AD2008A8A42 /* LYKeychainQuery.m in Sources */,
 				CA20D295261CC8DF00DBB34F /* NSMutableArray+SafeAccess.m in Sources */,
 				CA20D138261CC48B00DBB34F /* HFPlayerModel.m in Sources */,
 				CA20D216261CC8DE00DBB34F /* HFOpenRadioSegmentView.m in Sources */,
@@ -1097,7 +1050,6 @@
 				CA20D28B261CC8DF00DBB34F /* HFOpenMusic.m in Sources */,
 				CA20D298261CC8DF00DBB34F /* NSDictionary+SafeAccess.m in Sources */,
 				CA20D26B261CC8DF00DBB34F /* HFOpenHotSearchView.m in Sources */,
-				CA20D270261CC8DF00DBB34F /* NSArray+GLSafe.m in Sources */,
 				CA20D29E261CC8DF00DBB34F /* LPMJGifHeader.m in Sources */,
 				CA3DBF01261C7AD2008A8A42 /* HFOpenAction.m in Sources */,
 			);

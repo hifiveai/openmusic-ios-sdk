@@ -10,11 +10,9 @@
 
 @interface HFOpenHotSearchView() <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView                                 *hotList;
-@property (nonatomic, strong) LPMJGifHeader                               *mjHeaderView;
-//@property (nonatomic, strong) LPMJGifFooter                               *mjFooterView;
-
-@property (nonatomic, copy) NSArray                                       *dataArray;
+@property (nonatomic, strong) UITableView  *hotList;
+@property (nonatomic, strong) LPMJGifHeader  *mjHeaderView;
+@property (nonatomic, copy) NSArray *dataArray;
 
 @end
 

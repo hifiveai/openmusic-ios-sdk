@@ -16,36 +16,36 @@
 @interface HIFPlayerBarView () <HFPlayerStatusProtocol>
 
 //UI
-@property(nonatomic ,assign)BOOL                                               showBar;
-@property(nonatomic ,strong)UIButton                                           *headImgBtn;
-@property(nonatomic ,strong)UILabel                                            *titleLabel;
-@property(nonatomic ,strong)UIButton                                           *accompanyBtn;
-@property(nonatomic ,strong)UIButton                                           *wordBtn;
-@property(nonatomic ,strong)UIButton                                           *previousBtn;
-@property(nonatomic ,strong)UIButton                                           *playBtn;
-@property(nonatomic ,strong)UIButton                                           *nextBtn;
-@property(nonatomic ,strong)UIButton                                           *shrinkBtn;
+@property(nonatomic ,assign)BOOL  showBar;
+@property(nonatomic ,strong)UIButton  *headImgBtn;
+@property(nonatomic ,strong)UILabel   *titleLabel;
+@property(nonatomic ,strong)UIButton  *accompanyBtn;
+@property(nonatomic ,strong)UIButton  *wordBtn;
+@property(nonatomic ,strong)UIButton  *previousBtn;
+@property(nonatomic ,strong)UIButton  *playBtn;
+@property(nonatomic ,strong)UIButton  *nextBtn;
+@property(nonatomic ,strong)UIButton  *shrinkBtn;
 @property(nonatomic ,strong)UIImageView                                        *loadingImgView;
-@property(nonatomic ,strong)UILabel                                            *downloadLabel;
-@property(nonatomic ,assign)NSInteger                                          majorVersion;
-@property(nonatomic ,assign)BOOL                                               isHeadAnimating;
-@property(nonatomic ,copy)NSString                                             *secondName;
+@property(nonatomic ,strong)UILabel   *downloadLabel;
+@property(nonatomic ,assign)NSInteger majorVersion;
+@property(nonatomic ,assign)BOOL  isHeadAnimating;
+@property(nonatomic ,copy)NSString*secondName;
 @property(nonatomic ,strong)UIProgressView                                     *progressView;
-@property(nonatomic ,strong)HFVSlider                                          *slider;
+@property(nonatomic ,strong)HFVSlider *slider;
 
 
 //播放器
 @property(nonatomic, strong)HFPlayerApi                                        *playerApi;
 @property(nonatomic, strong)HFPlayerApiConfiguration                           *playerConfig;
-@property(nonatomic, assign)float                                              currentDuration;
-@property(nonatomic, copy)NSString                                             *currentMusicId;
+@property(nonatomic, assign)float currentDuration;
+@property(nonatomic, copy)NSString*currentMusicId;
 
 //数据
 @property(nonatomic, strong)HFPlayerMusicModel                                 *currentModel;
-@property(nonatomic, assign)NSUInteger                                         currentIndex;
+@property(nonatomic, assign)NSUIntegercurrentIndex;
 
-@property(nonatomic ,assign)BOOL                                               seeking;
-@property(nonatomic ,assign)BOOL                                               cutSongEnable;
+@property(nonatomic ,assign)BOOL  seeking;
+@property(nonatomic ,assign)BOOL  cutSongEnable;
 
 @end
 @implementation HIFPlayerBarView
@@ -310,7 +310,7 @@
         }
         [self.superview layoutIfNeeded];
     } completion:nil];
-
+    
     [UIView animateWithDuration:0.7 animations:^{
         [self mas_updateConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.superview).offset(KScale(20));
@@ -347,9 +347,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(appDidEnterPlaygroundNotificationHander) name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(songListMovedNotificationHander:) name:KNotification_songListMoved
-//                                               object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self
+    //selector:@selector(songListMovedNotificationHander:) name:KNotification_songListMoved
+    //  object:nil];
 }
 
 -(void)appDidEnterPlaygroundNotificationHander {
@@ -439,58 +439,58 @@
 #pragma mark - HFPlayerApiDelegate
 /// 播放器状态更新
 -(void)playerStatusChanged:(HFPlayerStatus)status {
-        switch (status) {
-            case HFPlayerStatusInit:
-            {
-                [self startLoadingAnimate];
-            }
-            case HFPlayerStatusReadyToPlay:
-            {
-                
-            }
-                break;
-            case HFPlayerStatusPlaying:
-            {
-                [self stopLoadingAnimate];
-                if (!self.playBtn.selected) {
-                    self.playBtn.selected = true;
-                }
-            }
-                break;
-            case HFPlayerStatusPasue:
-            {
-                [self endHeadRotationAnimate];
-                [self stopLoadingAnimate];
-                if (self.playBtn.selected) {
-                    self.playBtn.selected = NO;
-                }
-            }
-                break;
-            case  HFPlayerStatusBufferEmpty:
-            {
-                [self startLoadingAnimate];
-            }
-                break;
-            case HFPlayerStatusBufferKeepUp:
-            {
-                [self stopLoadingAnimate];
-            }
-                break;
-            case HFPlayerStatusStoped:
-            {
-                [self endHeadRotationAnimate];
-                self.playBtn.selected = NO;
-                self.slider.value = 0.f;
-            }
-                break;
-            case HFPlayerStatusError:
-            {
-                [self startLoadingAnimate];
-            }
-            default:
-                break;
+    switch (status) {
+        case HFPlayerStatusInit:
+        {
+            [self startLoadingAnimate];
         }
-
+        case HFPlayerStatusReadyToPlay:
+        {
+            
+        }
+            break;
+        case HFPlayerStatusPlaying:
+        {
+            [self stopLoadingAnimate];
+            if (!self.playBtn.selected) {
+                self.playBtn.selected = true;
+            }
+        }
+            break;
+        case HFPlayerStatusPasue:
+        {
+            [self endHeadRotationAnimate];
+            [self stopLoadingAnimate];
+            if (self.playBtn.selected) {
+                self.playBtn.selected = NO;
+            }
+        }
+            break;
+        case  HFPlayerStatusBufferEmpty:
+        {
+            [self startLoadingAnimate];
+        }
+            break;
+        case HFPlayerStatusBufferKeepUp:
+        {
+            [self stopLoadingAnimate];
+        }
+            break;
+        case HFPlayerStatusStoped:
+        {
+            [self endHeadRotationAnimate];
+            self.playBtn.selected = NO;
+            self.slider.value = 0.f;
+        }
+            break;
+        case HFPlayerStatusError:
+        {
+            [self startLoadingAnimate];
+        }
+        default:
+            break;
+    }
+    
 }
 
 /// 播放进度回调
@@ -503,7 +503,7 @@
 
 /// 数据缓冲进度回调
 -(void)playerLoadingProgress:(float)progress {
-        self.progressView.progress = progress;
+    self.progressView.progress = progress;
 }
 
 /// 播放器数据缓冲
