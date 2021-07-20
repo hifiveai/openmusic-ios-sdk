@@ -22,8 +22,8 @@
 
 @interface HFPlayer : UIView
 
-@property(nonatomic ,weak)id <HFPlayerDelegate>                        delegate;
-@property(nonatomic ,strong)HFPlayerConfiguration                      *config;
+@property(nonatomic ,weak)id <HFPlayerDelegate>   delegate;
+@property(nonatomic ,strong)HFPlayerConfiguration *config;
 
 
 

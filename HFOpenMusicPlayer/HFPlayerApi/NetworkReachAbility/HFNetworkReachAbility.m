@@ -41,7 +41,7 @@
 }
 
 - (void) reachabilityChanged:(NSNotification *)note {
-    LPLog(@"网络状态被改变了！！！！");
+    HFLog(@"网络状态被改变了！！！！");
     // 当前发送通知的 reachability
     HFReachability *reachability = [note object];
     

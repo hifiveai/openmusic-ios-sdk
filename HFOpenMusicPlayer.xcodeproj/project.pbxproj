@@ -114,7 +114,6 @@
 		CA20D2A7261CC8DF00DBB34F /* HFVGlobalTool.h in Headers */ = {isa = PBXBuildFile; fileRef = CA20D207261CC8DE00DBB34F /* HFVGlobalTool.h */; };
 		CA20D2BD261CD31E00DBB34F /* bkg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BA261CD31C00DBB34F /* bkg.jpg */; };
 		CA20D2BE261CD31E00DBB34F /* HFOpenMusic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */; };
-		CA20D2BF261CD31E00DBB34F /* HFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */; };
 		CA3DBEA1261C768F008A8A42 /* HFOpenMusicPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DBE9F261C768F008A8A42 /* HFOpenMusicPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3DBEB0261C76CB008A8A42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */; };
 		CA3DBEB3261C76CB008A8A42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DBEB2261C76CB008A8A42 /* SceneDelegate.m */; };
@@ -279,7 +278,6 @@
 		CA20D207261CC8DE00DBB34F /* HFVGlobalTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVGlobalTool.h; sourceTree = "<group>"; };
 		CA20D2BA261CD31C00DBB34F /* bkg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bkg.jpg; sourceTree = "<group>"; };
 		CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HFOpenMusic.bundle; sourceTree = "<group>"; };
-		CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HFPlayer.bundle; sourceTree = "<group>"; };
 		CA317F292631759A00DE5974 /* iOS接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "iOS接入文档.html"; sourceTree = "<group>"; };
 		CA317F2A2631759A00DE5974 /* iOS接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS接入文档.md"; sourceTree = "<group>"; };
 		CA317F2C2631759B00DE5974 /* 通用api接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "通用api接入文档.html"; sourceTree = "<group>"; };
@@ -687,7 +685,6 @@
 				CAC7A9AA261D5D130082FCA3 /* selected.png */,
 				CAC7A9AB261D5D130082FCA3 /* normol.png */,
 				CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */,
-				CA20D2BC261CD31E00DBB34F /* HFPlayer.bundle */,
 				CA3DBEAE261C76CB008A8A42 /* AppDelegate.h */,
 				CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */,
 				CA3DBEB1261C76CB008A8A42 /* SceneDelegate.h */,
@@ -921,7 +918,6 @@
 				CA3DBEBE261C76CF008A8A42 /* LaunchScreen.storyboard in Resources */,
 				CAC7A9AC261D5D130082FCA3 /* selected.png in Resources */,
 				CA20D2BE261CD31E00DBB34F /* HFOpenMusic.bundle in Resources */,
-				CA20D2BF261CD31E00DBB34F /* HFPlayer.bundle in Resources */,
 				CA3DBEBB261C76CF008A8A42 /* Assets.xcassets in Resources */,
 				CA20D2BD261CD31E00DBB34F /* bkg.jpg in Resources */,
 				CA3DBEB9261C76CB008A8A42 /* Main.storyboard in Resources */,

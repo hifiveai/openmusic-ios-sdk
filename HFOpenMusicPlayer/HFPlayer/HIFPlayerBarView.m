@@ -35,14 +35,14 @@
 
 
 //播放器
-@property(nonatomic, strong)HFPlayerApi                                        *playerApi;
-@property(nonatomic, strong)HFPlayerApiConfiguration                           *playerConfig;
+@property(nonatomic, strong)HFPlayerApi   *playerApi;
+@property(nonatomic, strong)HFPlayerApiConfiguration  *playerConfig;
 @property(nonatomic, assign)float currentDuration;
 @property(nonatomic, copy)NSString*currentMusicId;
 
 //数据
 @property(nonatomic, strong)HFPlayerMusicModel                                 *currentModel;
-@property(nonatomic, assign)NSUIntegercurrentIndex;
+@property(nonatomic, assign)NSUInteger currentIndex;
 
 @property(nonatomic ,assign)BOOL  seeking;
 @property(nonatomic ,assign)BOOL  cutSongEnable;
@@ -81,13 +81,13 @@
         _nextBtn.enabled = false;
     }
     _titleLabel.text = config.songName;
-    if (![HFPlayerUtils isBlankString:config.imageUrlString]) {
-        [_headImgBtn yy_setImageWithURL:[NSURL URLWithString:config.imageUrlString] forState:UIControlStateNormal placeholder:[HFPlayerUtils bundleImageWithName:@"player_defaultHeader"]];
+    if (![HFVKitUtils isBlankString:config.imageUrlString]) {
+        [_headImgBtn yy_setImageWithURL:[NSURL URLWithString:config.imageUrlString] forState:UIControlStateNormal placeholder:[HFVKitUtils bundleImageWithName:@"player_defaultHeader"]];
     } else {
-        [_headImgBtn setImage:[HFPlayerUtils bundleImageWithName:@"player_defaultHeader"] forState:UIControlStateNormal];
+        [_headImgBtn setImage:[HFVKitUtils bundleImageWithName:@"player_defaultHeader"] forState:UIControlStateNormal];
     }
     //判断是否关闭播放器
-    if ([HFPlayerUtils isBlankString:config.urlString]) {
+    if ([HFVKitUtils isBlankString:config.urlString]) {
         if (_playerApi) {
             [_playerApi stop];
             _playerApi = nil;
@@ -355,7 +355,7 @@
 -(void)appDidEnterPlaygroundNotificationHander {
     if (_isHeadAnimating) {
         //如果正在播放状态，回到前台后需要重新开始动画
-        LPLog(@"header动画ing");
+        HFLog(@"header动画ing");
         [self endHeadRotationAnimate];
         [self startHeadRotationAnimate];
     }
@@ -544,7 +544,7 @@
 
 #pragma mark - dealloc
 -(void)dealloc {
-    LPLog(@"^^^^^^^^^^^^^^^^^dealloc^^^^^^^^^^^^^^^%@",self.class);
+    HFLog(@"^^^^^^^^^^^^^^^^^dealloc^^^^^^^^^^^^^^^%@",self.class);
 }
 
 -(HFPlayerApi *)playerApi {
@@ -567,7 +567,7 @@
 -(UIButton *)headImgBtn {
     if (!_headImgBtn) {
         _headImgBtn = [[UIButton alloc] init];
-        [_headImgBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_defaultHeader"] forState:UIControlStateNormal];
+        [_headImgBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_defaultHeader"] forState:UIControlStateNormal];
         _headImgBtn.clipsToBounds = YES;
         [_headImgBtn addTarget:self action:@selector(headImgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -626,8 +626,8 @@
     if (!_previousBtn) {
         _previousBtn = [[UIButton alloc] init];
         [_previousBtn addTarget:self action:@selector(previousBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_previousBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_previous"] forState:UIControlStateNormal];
-        [_previousBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_previous_unable"] forState:UIControlStateDisabled];
+        [_previousBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_previous"] forState:UIControlStateNormal];
+        [_previousBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_previous_unable"] forState:UIControlStateDisabled];
         _previousBtn.alpha = 0;
         _previousBtn.enabled = false;
     }
@@ -644,7 +644,7 @@
         _loadingImgView.contentMode = UIViewContentModeScaleAspectFit;
         NSMutableArray  *arrayM=[NSMutableArray array];
         for (int i=0; i<31; i++) {
-            [arrayM addObject:[HFPlayerUtils bundleImageWithName:[NSString stringWithFormat:@"frame-%i",i]]];
+            [arrayM addObject:[HFVKitUtils bundleImageWithName:[NSString stringWithFormat:@"frame-%i",i]]];
             
         }
         //设置动画数组
@@ -679,8 +679,8 @@
     if (!_playBtn) {
         _playBtn = [[UIButton alloc] init];
         [_playBtn addTarget:self action:@selector(playBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_playBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_play"] forState:UIControlStateNormal];
-        [_playBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_pause"] forState:UIControlStateSelected];
+        [_playBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_play"] forState:UIControlStateNormal];
+        [_playBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_pause"] forState:UIControlStateSelected];
         _playBtn.alpha = 0;
         _playBtn.enabled = false;
     }
@@ -691,8 +691,8 @@
     if (!_nextBtn) {
         _nextBtn = [[UIButton alloc] init];
         [_nextBtn addTarget:self action:@selector(nextBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_nextBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_next"] forState:UIControlStateNormal];
-        [_nextBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_next_unable"] forState:UIControlStateDisabled];
+        [_nextBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_next"] forState:UIControlStateNormal];
+        [_nextBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_next_unable"] forState:UIControlStateDisabled];
         _nextBtn.enabled = false;
         _nextBtn.alpha = 0;
     }
@@ -703,8 +703,8 @@
     if (!_shrinkBtn) {
         _shrinkBtn = [[UIButton alloc] init];
         [_shrinkBtn addTarget:self action:@selector(shrinkBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_shrinkBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_shrink"] forState:UIControlStateNormal];
-        [_shrinkBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_spread"] forState:UIControlStateSelected];
+        [_shrinkBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_shrink"] forState:UIControlStateNormal];
+        [_shrinkBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_spread"] forState:UIControlStateSelected];
         _shrinkBtn.alpha = 0;
     }
     return _shrinkBtn;
@@ -729,7 +729,7 @@
         _slider.alpha = 0;
         _slider.value = 0.0;
         [_slider trackRectForBounds:CGRectMake(0, 0, KScreenWidth, KScale(11.5))];
-        [_slider setThumbImage:[HFPlayerUtils bundleImageWithName:@"player_slider"] forState:UIControlStateNormal];
+        [_slider setThumbImage:[HFVKitUtils bundleImageWithName:@"player_slider"] forState:UIControlStateNormal];
         [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
         [_slider addTarget:self action:@selector(slidertouchDown:) forControlEvents:UIControlEventTouchDown];
         [_slider addTarget:self action:@selector(sliderTouchUpInSide:) forControlEvents:UIControlEventTouchUpInside];

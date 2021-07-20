@@ -8,11 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#ifdef DEBUG
-#define DLog(fmt, ...) NSLog((@"\n\n\n\n\n\n👿%@:" fmt), NSStringFromClass([self class]), ##__VA_ARGS__);
-#else
-#define DLog(...)
-#endif
 
 #define HFVMusicDomain @"HFVMusicDomain"
 #define HFVMusicError(c,m) [[NSError alloc] initWithDomain:@"HFVMusicDomain" code:c userInfo:@{@"code":@(c),@"msg":m}]

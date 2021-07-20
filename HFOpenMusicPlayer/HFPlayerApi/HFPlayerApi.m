@@ -166,16 +166,16 @@
             return;
         }
         NSData *filedata = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_path] options:NSDataReadingMappedIfSafe error:nil];
-        LPLog(@"1----:%lu",(unsigned long)filedata.length);
-        LPLog(@"2----:%lld",_ijkPlayer.monitor.filesize);
+        HFLog(@"1----:%lu",(unsigned long)filedata.length);
+        HFLog(@"2----:%lld",_ijkPlayer.monitor.filesize);
         if (filedata.length<_ijkPlayer.monitor.filesize) {
             //不完整就删除
-            LPLog(@"数据不完整需要删除");
+            HFLog(@"数据不完整需要删除");
             if ([[NSFileManager defaultManager] fileExistsAtPath:_path]) {
                 [[NSFileManager defaultManager] removeItemAtPath:_path error:nil];
             }
         } else {
-            LPLog(@"数据文件完整！！！");
+            HFLog(@"数据文件完整！！！");
         }
         //_ijkPlayer = nil;
     }
@@ -266,7 +266,7 @@
 
     if ((loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
         //缓冲结束
-        LPLog(@"loadStateDidChange: IJKMPMovieLoadStatePlaythroughOK: %d\n", (int)loadState);
+        HFLog(@"loadStateDidChange: IJKMPMovieLoadStatePlaythroughOK: %d\n", (int)loadState);
         if ([self.delegate respondsToSelector:@selector(playerLoadingEnd)]) {
             [self.delegate playerLoadingEnd];
         }
@@ -274,13 +274,13 @@
         
     } else if ((loadState & IJKMPMovieLoadStateStalled) != 0) {
         //遇到缓冲
-        LPLog(@"loadStateDidChange: IJKMPMovieLoadStateStalled: %d\n", (int)loadState);
+        HFLog(@"loadStateDidChange: IJKMPMovieLoadStateStalled: %d\n", (int)loadState);
         if ([self.delegate respondsToSelector:@selector(playerLoadingBegin)]) {
             [self.delegate playerLoadingBegin];
         }
         self.status = HFPlayerStatusBufferEmpty;
     } else {
-        LPLog(@"loadStateDidChange: ???: %d\n", (int)loadState);
+        HFLog(@"loadStateDidChange: ???: %d\n", (int)loadState);
     }
 }
 
@@ -294,7 +294,7 @@
     switch (reason)
     {
         case IJKMPMovieFinishReasonPlaybackEnded:
-            LPLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackEnded: %d\n", reason);
+            HFLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackEnded: %d\n", reason);
             //播放完成
             if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
                 [self.delegate playerPlayToEnd];
@@ -305,11 +305,11 @@
             break;
 
         case IJKMPMovieFinishReasonUserExited:
-            LPLog(@"playbackStateDidChange: IJKMPMovieFinishReasonUserExited: %d\n", reason);
+            HFLog(@"playbackStateDidChange: IJKMPMovieFinishReasonUserExited: %d\n", reason);
             break;
 
         case IJKMPMovieFinishReasonPlaybackError:
-            LPLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackError: %d\n", reason);
+            HFLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackError: %d\n", reason);
             //_ijkPlayer.duration
             if (_ijkPlayer.duration-_ijkPlayer.currentPlaybackTime<1) {
                 if ([self.delegate respondsToSelector:@selector(playerPlayToEnd)]) {
@@ -325,14 +325,14 @@
             break;
 
         default:
-            LPLog(@"playbackPlayBackDidFinish: ???: %d\n", reason);
+            HFLog(@"playbackPlayBackDidFinish: ???: %d\n", reason);
             break;
     }
 }
 
 - (void)mediaIsPreparedToPlayDidChange:(NSNotification*)notification
 {
-    LPLog(@"mediaIsPreparedToPlayDidChange\n");
+    HFLog(@"mediaIsPreparedToPlayDidChange\n");
     IJKFFMoviePlayerController *obj = (IJKFFMoviePlayerController *)notification.object;
     if (obj.isPreparedToPlay) {
         self.status = HFPlayerStatusReadyToPlay;
@@ -351,31 +351,31 @@
     switch (_ijkPlayer.playbackState)
     {
         case IJKMPMoviePlaybackStateStopped: {
-            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: stoped", (int)_ijkPlayer.playbackState);
+            HFLog(@"IJKMPMoviePlayBackStateDidChange %d: stoped", (int)_ijkPlayer.playbackState);
             self.status = HFPlayerStatusStoped;
             break;
         }
         case IJKMPMoviePlaybackStatePlaying: {
-            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: playing", (int)_ijkPlayer.playbackState);
+            HFLog(@"IJKMPMoviePlayBackStateDidChange %d: playing", (int)_ijkPlayer.playbackState);
             self.status = HFPlayerStatusPlaying;
             break;
         }
         case IJKMPMoviePlaybackStatePaused: {
-            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: paused", (int)_ijkPlayer.playbackState);
+            HFLog(@"IJKMPMoviePlayBackStateDidChange %d: paused", (int)_ijkPlayer.playbackState);
             self.status = HFPlayerStatusPasue;
             break;
         }
         case IJKMPMoviePlaybackStateInterrupted: {
-            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: interrupted", (int)_ijkPlayer.playbackState);
+            HFLog(@"IJKMPMoviePlayBackStateDidChange %d: interrupted", (int)_ijkPlayer.playbackState);
             break;
         }
         case IJKMPMoviePlaybackStateSeekingForward:
         case IJKMPMoviePlaybackStateSeekingBackward: {
-            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: seeking", (int)_ijkPlayer.playbackState);
+            HFLog(@"IJKMPMoviePlayBackStateDidChange %d: seeking", (int)_ijkPlayer.playbackState);
             break;
         }
         default: {
-            LPLog(@"IJKMPMoviePlayBackStateDidChange %d: unknown", (int)_ijkPlayer.playbackState);
+            HFLog(@"IJKMPMoviePlayBackStateDidChange %d: unknown", (int)_ijkPlayer.playbackState);
             break;
         }
     }
@@ -408,9 +408,9 @@
 }
 
 -(void)reachabilityChanged:(NetworkStatus)status {
-    LPLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-    LPLog(@"新的网络状态为：%ld",(long)status);
-    LPLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    HFLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    HFLog(@"新的网络状态为：%ld",(long)status);
+    HFLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     _networkStatus = status;
     switch (status) {
         case NotReachable:
@@ -447,7 +447,7 @@
 
 #pragma mark 🐠dealloc🐠
 -(void)dealloc {
-    LPLog(@"-----播放器释放了-----");
+    HFLog(@"-----播放器释放了-----");
     [self stop];
     //判断缓存文件是否完整
 //    if ([HFVLibUtils isBlankString:_path]) {
@@ -457,12 +457,12 @@
 //
 //    if (filedata.length<_ijkPlayer.monitor.filesize) {
 //        //不完整就删除
-//        LPLog(@"数据不完整需要删除");
+//        HFLog(@"数据不完整需要删除");
 //        if ([[NSFileManager defaultManager] fileExistsAtPath:_path]) {
 //            [[NSFileManager defaultManager] removeItemAtPath:_path error:nil];
 //        }
 //    } else {
-//        LPLog(@"数据文件完整！！！");
+//        HFLog(@"数据文件完整！！！");
 //    }
 }
 

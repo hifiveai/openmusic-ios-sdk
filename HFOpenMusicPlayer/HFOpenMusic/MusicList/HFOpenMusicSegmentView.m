@@ -44,27 +44,27 @@ static NSString *audioRate = @"320";
         case 0:
         {
             [[HFOpenApiManager shared] trafficReportListenWithMusicId:(NSString * _Nonnull)musicId duration:[NSString stringWithFormat:@"%0.f",playDuration] timestamp:timeStr audioFormat:audioFormat audioRate:audioRate success:^(id  _Nullable response) {
-                LPLog(@"上报成功0");
+                HFLog(@"上报成功0");
             } fail:^(NSError * _Nullable error) {
-                LPLog(@"上报失败0：%@",error.userInfo);
+                HFLog(@"上报失败0：%@",error.userInfo);
             }];
         }
             break;
         case 1:
         {
             [[HFOpenApiManager shared] ugcReportListenWithMusicId:(NSString * _Nonnull)musicId duration:[NSString stringWithFormat:@"%0.f",playDuration] timestamp:timeStr audioFormat:audioFormat audioRate:audioRate success:^(id  _Nullable response) {
-                LPLog(@"上报成功1");
+                HFLog(@"上报成功1");
             } fail:^(NSError * _Nullable error) {
-                LPLog(@"上报失败1");
+                HFLog(@"上报失败1");
             }];
         }
             break;
         case 2:
         {
             [[HFOpenApiManager shared] kReportListenWithMusicId:(NSString * _Nonnull)musicId duration:[NSString stringWithFormat:@"%0.f",playDuration] timestamp:timeStr audioFormat:audioFormat audioRate:audioRate success:^(id  _Nullable response) {
-                LPLog(@"上报成功2");
+                HFLog(@"上报成功2");
             } fail:^(NSError * _Nullable error) {
-                LPLog(@"上报失败2");
+                HFLog(@"上报失败2");
             }];
         }
             break;

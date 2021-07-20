@@ -55,9 +55,9 @@
 
 // 日志输出
 #ifdef DEBUG
-#define LPLog(...) NSLog(__VA_ARGS__)
+#define HFLog(...) NSLog(__VA_ARGS__)
 #else
-#define LPLog(...)
+#define HFLog(...)
 #endif
 
 

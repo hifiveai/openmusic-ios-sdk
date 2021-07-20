@@ -21,9 +21,9 @@
 
 @interface HIFPlayerBarView : UIView
 
-@property(nonatomic ,weak)id <HFPlayerViewDelegate>                                 delegate;
-@property(nonatomic ,assign)HIFPlayerBarViewStates                                  states;
-@property(nonatomic ,strong)HFPlayerConfiguration                                   *config;
+@property(nonatomic ,weak)id <HFPlayerViewDelegate>  delegate;
+@property(nonatomic ,assign)HIFPlayerBarViewStates   states;
+@property(nonatomic ,strong)HFPlayerConfiguration *config;
 
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
 -(void)unfoldAnimation;

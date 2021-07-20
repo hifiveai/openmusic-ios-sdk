@@ -66,7 +66,7 @@
 -(void)addShowButton {
     //向上移动按钮
     UIButton *showBtn = [[UIButton alloc] init];
-    [showBtn setBackgroundImage:[HFPlayerUtils bundleImageWithName:@"player_defaultHeader"] forState:UIControlStateNormal];
+    [showBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_defaultHeader"] forState:UIControlStateNormal];
     showBtn.layer.cornerRadius = KScale(25);
     [showBtn addTarget:self action:@selector(showMusicSegmentView) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:showBtn];

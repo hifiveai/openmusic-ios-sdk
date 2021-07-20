@@ -29,7 +29,6 @@
 #import "FLAnimatedImage.h"
 #import "FLAnimatedImageView.h"
 #import "HFPlayerModel.h"
-#import "HFPlayerUtils.h"
 #import "HIFPlayerHeader.h"
 #import "HFVMacro.h"
 #import "HFPlayer.h"
@@ -50,7 +49,6 @@
 #import "UIColor+PYExtension.h"
 #import "NSObject+LPUtils.h"
 #import "HFVGlobalTool.h"
-#import "NSArray+GLSafe.h"
 #import "HFVProgressHud.h"
 
 

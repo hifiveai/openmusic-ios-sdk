@@ -11,7 +11,7 @@
 
 @interface HFPlayer () <HFPlayerViewDelegate>
 
-@property(nonatomic ,strong)HIFPlayerBarView                             *barView;
+@property(nonatomic ,strong)HIFPlayerBarView   *barView;
 
 @end
 

@@ -44,7 +44,7 @@
     //return [HFVLibInfo shared].domain;
 }
 
-- (int)updateHeaderForRequest:(NSMutableURLRequest *)request action:(NSString *)action params:(NSDictionary *)params needLogin:(BOOL)needLogin error:(NSError **)error {
+- (int)updateHeaderForRequest:(NSMutableURLRequest *)request action:(NSString *)action params:(NSDictionary *)params neeHFLogin:(BOOL)neeHFLogin error:(NSError **)error {
     if ([HFVLibUtils isBlankString:[HFVLibInfo shared].appId]) {
         *error = HFVMusicError(HFVSDK_CODE_NoRegister, @"未注册");
         [self configErrorNotificationCode:HFVSDK_CODE_NoRegister msg:@"未注册"];
@@ -55,7 +55,7 @@
         [self configErrorNotificationCode:HFVSDK_CODE_NoRegister msg:@"未注册"];
         return -1;
     }
-    if (needLogin && [HFVLibUtils isBlankString:[HFVLibInfo shared].accessToken]) {
+    if (neeHFLogin && [HFVLibUtils isBlankString:[HFVLibInfo shared].accessToken]) {
         *error = HFVMusicError(HFVSDK_CODE_NoLogin, @"未登录");
         [self configErrorNotificationCode:HFVSDK_CODE_NoLogin msg:@"未登录"];
         return -1;
@@ -81,7 +81,7 @@
     [request setValue:random forHTTPHeaderField:@"X-HF-Nonce"];
     [request setValue:[HFVLibInfo shared].clientId forHTTPHeaderField:@"X-HF-ClientId"];
     [request setValue:authorization forHTTPHeaderField:@"Authorization"];
-    if (needLogin) {
+    if (neeHFLogin) {
         [request setValue:[HFVLibInfo shared].accessToken forHTTPHeaderField:@"X-HF-Token"];
     }
     return 0;
@@ -125,7 +125,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:full]];
     request.HTTPMethod = @"GET";
     NSError *header_error;
-    int state = [self updateHeaderForRequest:request action:action params:queryParams needLogin:needToken error:&header_error];
+    int state = [self updateHeaderForRequest:request action:action params:queryParams neeHFLogin:needToken error:&header_error];
     if (header_error) {
         fail(header_error);
         return;
@@ -139,14 +139,14 @@
 
 -(void)postRequestWithAction:(NSString *)action queryParams:(NSDictionary *)queryParams bodyParams:(NSDictionary *)bodyParams needToken:(BOOL)needToken success:(void (^)(id _Nullable))success fail:(void (^)(NSError * _Nullable))fail {
     NSString *full = self.baseUrl;
-//    if (queryParams.count != 0) {
-//        NSString *query = [self convertQuery:[HFVLibUtils urlEncodeWithDIctionary:queryParams]];
-//        full = [NSString stringWithFormat:@"%@?%@",full,query];
-//    }
+    //    if (queryParams.count != 0) {
+    //        NSString *query = [self convertQuery:[HFVLibUtils urlEncodeWithDIctionary:queryParams]];
+    //        full = [NSString stringWithFormat:@"%@?%@",full,query];
+    //    }
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:full]];
     request.HTTPMethod = @"POST";
     NSError *header_error;
-    int state = [self updateHeaderForRequest:request action:action params:bodyParams needLogin:needToken error:&header_error];
+    int state = [self updateHeaderForRequest:request action:action params:bodyParams neeHFLogin:needToken error:&header_error];
     if (header_error) {
         fail(header_error);
         return;
@@ -169,10 +169,10 @@
         [self configErrorNotificationCode:HFVSDK_CODE_NoNetwork msg:@"当前网络不可用，请检查网络连接"];
         return nil;
     }
-    DLog(@"\n⬇️⬇️⬇️⬇️\nurl = %@\n⬆️⬆️⬆️⬆️",request.URL);
-    DLog(@"\n⬇️⬇️⬇️⬇️\nmethod = %@\n⬆️⬆️⬆️⬆️",request.HTTPMethod);
-    DLog(@"\n⬇️⬇️⬇️⬇️\nheader = %@\n⬆️⬆️⬆️⬆️",request.allHTTPHeaderFields);
-    DLog(@"\n⬇️⬇️⬇️⬇️\nbody = %@\n⬆️⬆️⬆️⬆️",request.HTTPBody);
+    HFLog(@"\n⬇️⬇️⬇️⬇️\nurl = %@\n⬆️⬆️⬆️⬆️",request.URL);
+    HFLog(@"\n⬇️⬇️⬇️⬇️\nmethod = %@\n⬆️⬆️⬆️⬆️",request.HTTPMethod);
+    HFLog(@"\n⬇️⬇️⬇️⬇️\nheader = %@\n⬆️⬆️⬆️⬆️",request.allHTTPHeaderFields);
+    HFLog(@"\n⬇️⬇️⬇️⬇️\nbody = %@\n⬆️⬆️⬆️⬆️",request.HTTPBody);
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
@@ -191,7 +191,7 @@
                     int code = [[dic hfv_objectForKey_Safe:@"code"] intValue];
                     id data = [dic hfv_objectForKey_Safe:@"data"];
 #ifdef DEBUG
-                    DLog(@"\n⬇️⬇️⬇️⬇️\n%@\n⬆️⬆️⬆️⬆️\n",[dic description]);
+                    HFLog(@"\n⬇️⬇️⬇️⬇️\n%@\n⬆️⬆️⬆️⬆️\n",[dic description]);
 #endif
                     if (code == 10200) {
                         if (success) {
@@ -208,7 +208,7 @@
                     if (fail) {
                         fail(HFVMusicError(HFVSDK_CODE_JsonError, @""));
                     }
-//                    [self configErrorNotificationCode:HFVSDK_CODE_JsonError msg:@"数据异常"];
+                    //                    [self configErrorNotificationCode:HFVSDK_CODE_JsonError msg:@"数据异常"];
                 }
             }
         });
@@ -262,16 +262,15 @@
     if (params.count != 0) {
         paramsStr = [self getParamsStringWithParams: params];
     }
-    DLog(@"签名one：%@",paramsStr);
+    HFLog(@"签名one：%@",paramsStr);
     //2. 把请求方式(get or post) 和 公共参数的值，按照公共参数的顺序排列，中间以空格隔开
     //NSString *publicParamsStr = @"GET TrafficTagSheet V4.0.1 170ae316b9b14c1b9c185988771bde16 CgA1cq9jpI3Ku5JiwMwuPuqzWY30trM5 hf2y7jk19a56qetq05 HF3-HMAC-SHA1 1594696782451";
     //Method X-HF-Action、X-HF-Version、X-HF-AppId、X-HF-Nonce、X-HF-ClientId、'HF3-HMAC-SHA1'、X-HF-Timestamp
     NSString *publicParamsStr = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@ %@",method,action,[HFVLibInfo shared].version,[HFVLibInfo shared].appId,random,[HFVLibInfo shared].clientId,@"HF3-HMAC-SHA1",timestamp];
-    DLog(@"签名two：---%@",publicParamsStr);
+    HFLog(@"签名two：---%@",publicParamsStr);
     //3. 把步骤2的结果做base64编码
     NSString *base64Str = [HFVLibUtils base64EncodeString:publicParamsStr];
-    DLog(@"签名three:%@",base64Str);
-    
+    HFLog(@"签名three:%@",base64Str);
     //4. 合并步骤1和3的结果，得到待签名的字符串
     NSString *beforSign;
     if (paramsStr.length>0) {
@@ -279,16 +278,16 @@
     } else {
         beforSign = base64Str;
     }
-    DLog(@"签名four:%@",beforSign);
+    HFLog(@"签名four:%@",beforSign);
     
     //5. 签名
     NSString *a = [HFVLibUtils base64EncodeString:beforSign];
-    DLog(@"签名five：%@",a);
+    HFLog(@"签名five：%@",a);
     NSString *b = [HFVLibUtils hmacSHA1String:a Key:[HFVLibInfo shared].secret error:error];
     if (!b) {
-        DLog(@"签名失败");
+        HFLog(@"签名失败");
     }
-    DLog(@"最总结过:%@",b);
+    HFLog(@"最终结果:%@",b);
     return b;
 }
 
@@ -297,8 +296,8 @@
     NSArray *keys = params.allKeys;
     //按照字典排序
     NSArray *sortArray = [keys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-            return [obj1 compare:obj2 options:NSNumericSearch];
-        }];
+        return [obj1 compare:obj2 options:NSNumericSearch];
+    }];
     for (NSString *key in sortArray) {
         NSString *tempStr = [NSString stringWithFormat:@"%@=%@&",key, [params hfv_objectForKey_Safe:key]];
         [resultStr appendString:tempStr];
