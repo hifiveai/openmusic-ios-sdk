@@ -99,30 +99,28 @@
 
 /// 获取当前window
 +(UIWindow*)getCurrentWindow {
-//    if ([UIApplication sharedApplication].keyWindow) {
-//        return [UIApplication sharedApplication].keyWindow;
-//    }else{
-//        if(@available(iOS 13.0, *)) {
-//            NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
-//            UIWindowScene* windowScene = (UIWindowScene*)array[0];
-//            //由于在sdk开发中，引入不了SceneDelegate的头文件，所以需要用kvc获取宿主app的window.
-//
-//            UIWindow* mainWindow = [windowScene valueForKeyPath:@"delegate.window"];
-//            if(mainWindow) {
-//                return mainWindow;
-//            }else{
-//                return [UIApplication sharedApplication].windows.lastObject;
-//            }
-//        }else{
-//            return [UIApplication sharedApplication].keyWindow;
-//        }
-//    }
+    //    if ([UIApplication sharedApplication].keyWindow) {
+    //        return [UIApplication sharedApplication].keyWindow;
+    //    }else{
+    //        if(@available(iOS 13.0, *)) {
+    //            NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
+    //            UIWindowScene* windowScene = (UIWindowScene*)array[0];
+    //            //由于在sdk开发中，引入不了SceneDelegate的头文件，所以需要用kvc获取宿主app的window.
+    //
+    //            UIWindow* mainWindow = [windowScene valueForKeyPath:@"delegate.window"];
+    //            if(mainWindow) {
+    //                return mainWindow;
+    //            }else{
+    //                return [UIApplication sharedApplication].windows.lastObject;
+    //            }
+    //        }else{
+    //            return [UIApplication sharedApplication].keyWindow;
+    //        }
+    //    }
     if(@available(iOS 13.0, *)) {
         NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
-        UIWindowScene* windowScene = (UIWindowScene*)array[0];
-            //由于在sdk开发中，引入不了SceneDelegate的头文件，所以需要用kvc获取宿主app的window.
-
-            UIWindow* mainWindow = [windowScene valueForKeyPath:@"delegate.window"];
+        UIWindowScene* windowScene = (UIWindowScene*)array.firstObject;
+        UIWindow* mainWindow = windowScene.windows.firstObject;
         if(mainWindow) {
             return mainWindow;
         }else{
@@ -130,7 +128,7 @@
         }
     }else{
         return [UIApplication sharedApplication].keyWindow;
-        }
+    }
 }
 
 
@@ -138,7 +136,7 @@
 // MARK:- loazing '.boudle' Image for sdk
 /**
  设置图标 通过.boudle文件
-
+ 
  @param name 图标名称
  @return UIImage
  */
@@ -188,9 +186,9 @@
     if ([[info allKeys] containsObject:@"msg"]) {
         errorString = [info valueForKey:@"msg"];
     }
-//    if (errorString.length <= 0) {
-//        errorString = @"服务器异常";
-//    }
+    //    if (errorString.length <= 0) {
+    //        errorString = @"服务器异常";
+    //    }
     return errorString;
 }
 + (BOOL)isBlankString:(NSString *)string {

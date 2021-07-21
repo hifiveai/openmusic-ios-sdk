@@ -9,10 +9,14 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 @implementation HFVProgressHud
 
+
+
 +(void)showErrorWithError:(NSError *)error {
+   
     if (error && error.userInfo) {
         NSString *status = [HFVKitUtils getErrorMessage:error.userInfo];
         if (status && status.length>0) {
+            [SVProgressHUD setContainerView:[HFVKitUtils getCurrentWindow]];
             [SVProgressHUD showErrorWithStatus:status];
             [SVProgressHUD dismissWithDelay:2];
         }
@@ -21,6 +25,7 @@
 
 +(void)showInfoWithStatus:(NSString *)status {
     if (status && status.length>0) {
+        [SVProgressHUD setContainerView:[HFVKitUtils getCurrentWindow]];
         [SVProgressHUD showInfoWithStatus:status];
         [SVProgressHUD dismissWithDelay:1];
     }
@@ -28,6 +33,7 @@
 
 +(void)showSuccessWithStatus:(NSString *)status {
     if (status && status.length>0) {
+        [SVProgressHUD setContainerView:[HFVKitUtils getCurrentWindow]];
         [SVProgressHUD setSuccessImage:[HFVKitUtils bundleImageWithName:@"success_hud"]];
         [SVProgressHUD showSuccessWithStatus:status];
 
@@ -37,6 +43,7 @@
 
 +(void)showErrorWithStatus:(NSString *)status {
     if (status && status.length>0) {
+        [SVProgressHUD setContainerView:[HFVKitUtils getCurrentWindow]];
         [SVProgressHUD showErrorWithStatus:status];
         [SVProgressHUD dismissWithDelay:1];
     }

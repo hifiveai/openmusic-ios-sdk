@@ -51,8 +51,7 @@
 
 -(void)addMusicPlayerView {
     if (self) {
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
-        //[[HFVKitUtils getCurrentWindow] addSubview:self];
+      [[HFVKitUtils getCurrentWindow] addSubview:self];
     }
 }
 

@@ -9,7 +9,8 @@ target 'HFOpenMusicPlayerDemo' do
    pod 'YYWebImage'
    pod 'MJRefresh'
    pod 'FLAnimatedImage'
-   pod 'SVProgressHUD'
+   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+
    
   end
   
