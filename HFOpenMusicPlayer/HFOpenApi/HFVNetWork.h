@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *baseUrl;
 @property(nonatomic,strong)NSURLSession *session;
 
-- (int)updateHeaderForRequest:(NSMutableURLRequest *)request  error:(NSError **)error;
 - (NSString *)convertQuery:(NSDictionary *)dic;
 
 - (void)getRequestWithAction:(NSString *)action queryParams:(NSDictionary * _Nullable )queryParams needToken:(BOOL)needToken success:(void (^)(id _Nullable response))success fail:(void (^)(NSError * _Nullable error))fail;

@@ -41,7 +41,7 @@
     
     
     
-    //return [HFVLibInfo shared].domain;
+    return [HFVLibInfo shared].domain;
 }
 
 - (int)updateHeaderForRequest:(NSMutableURLRequest *)request action:(NSString *)action params:(NSDictionary *)params neeHFLogin:(BOOL)neeHFLogin error:(NSError **)error {

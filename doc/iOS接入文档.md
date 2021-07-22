@@ -36,11 +36,12 @@ iOS9.0以上
    libbz2.1.0.tbd
 
 - 用pod导入依赖的第三方库，创建或修改Podfile文件，添加  
-  pod 'MJExtension'  
-  pod 'Masonry'  
-  pod 'YYWebImage' 
-  pod 'MJRefresh'  
-  pod 'FLAnimatedImage'  
+pod 'MJExtension'
+pod 'Masonry'
+pod 'YYWebImage'
+pod 'MJRefresh'
+pod 'FLAnimatedImage'
+pod 'SVProgressHUD'
   执行pod install ,再次打开.xcworkspace工程。
 - 在TARGETS->Build Settings->Other Linker Flags中添加-ObjC。
 - 在TARGETS->Build Settings->Architctures->Excluded Architctures,添加Any iOS Simulator SDK，设置为arm64。

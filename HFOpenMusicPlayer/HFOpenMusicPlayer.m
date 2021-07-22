@@ -14,9 +14,9 @@
 
 @interface HFOpenMusicPlayer () <HFPlayerDelegate, HFOpenMusicDelegate>
 
-@property(nonatomic ,strong)HFPlayer                                             *player;
-@property(nonatomic ,strong)HFOpenMusic                                          *listView;
-@property(nonatomic ,assign)BOOL                                                 playEnd;
+@property(nonatomic ,strong)HFPlayer  *player;
+@property(nonatomic ,strong)HFOpenMusic  *listView;
+@property(nonatomic ,assign)BOOL   playEnd;
 
 @end
 
