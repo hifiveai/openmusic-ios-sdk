@@ -115,18 +115,7 @@
             listVC.groupId = model.groupId;
             [weakSelf.controllerArray addObject:listVC];
         }
-        for (HFOpenChannelModel *model in weakSelf.dataArray) {
-            [weakSelf.titleArray addObject:model.groupName];
-            HFOpenRadioListViewController *listVC = HFOpenRadioListViewController.new;
-            listVC.groupId = model.groupId;
-            [weakSelf.controllerArray addObject:listVC];
-        }
-        for (HFOpenChannelModel *model in weakSelf.dataArray) {
-            [weakSelf.titleArray addObject:model.groupName];
-            HFOpenRadioListViewController *listVC = HFOpenRadioListViewController.new;
-            listVC.groupId = model.groupId;
-            [weakSelf.controllerArray addObject:listVC];
-        }
+   
         [self createUI];
     } fail:^(NSError * _Nullable error) {
         [HFVProgressHud showErrorWithError:error];
