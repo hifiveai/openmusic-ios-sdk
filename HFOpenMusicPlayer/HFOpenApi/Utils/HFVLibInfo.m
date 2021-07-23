@@ -24,16 +24,9 @@ static HFVLibInfo *hfv_info = nil;
         hfv_info = [HFVLibInfo new];
 
         hfv_info.pg = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
-
-//        NSString *vendor = [LYKeychain passwordForService:@"HFVService" account:@"vendor"];
-//        if (vendor.length == 0) {
-//            vendor = [HFVLibUtils uuidString];
-//            [LYKeychain setPassword:vendor forService:@"HFVService" account:@"vendor"];
-//        }
-//        hfv_info.vendorId = vendor;
+        hfv_info.domain = @"https://gateway.open.hifiveai.com";
         hfv_info.platform = @"PLATFORM_IOS";
-//        hfv_info.musicLanguage = @"0";
-        
+
     });
     return hfv_info;
 }

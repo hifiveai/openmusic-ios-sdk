@@ -338,7 +338,7 @@ static NSString *audioRate = @"320";
     HFOpenSeachViewController *searchVC = [HFOpenSeachViewController new];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchVC];
     nav.modalPresentationStyle = UIModalPresentationCustom;
-    self.segmentVC.view.backgroundColor = UIColor.redColor;
+    
     [self.segmentVC presentViewController:nav animated:YES completion:nil];
 }
 

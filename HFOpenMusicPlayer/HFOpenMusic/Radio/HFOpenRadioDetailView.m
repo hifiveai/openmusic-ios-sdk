@@ -37,6 +37,7 @@
         [self setRadiusWithRadius:KScale(20) corner:UIRectCornerTopLeft | UIRectCornerTopRight];
         
         [self createUI];
+        
     }
     return self;
 }
@@ -62,13 +63,28 @@
         _myTableView.delegate = self;
         _myTableView.dataSource = self;
         _myTableView.showsHorizontalScrollIndicator = false;
+        _myTableView.separatorInset = UIEdgeInsetsMake(0, KScale(15), 0, 0);
+        _myTableView.separatorColor = [UIColor.whiteColor colorWithAlphaComponent:0.1];
         _myTableView.backgroundColor = KColorHex(0x282828);
-        _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         //_myTableView.backgroundColor = UIColor.greenColor;
         _myTableView.mj_header = self.mjHeaderView;
+        _myTableView.mj_footer = self.mjFooterView;
+        _myTableView.tableFooterView = UIView.new;
+        if (@available(iOS 13.0, *)) {
+            _myTableView.automaticallyAdjustsScrollIndicatorInsets = false;
+        } else {
+            if (@available(iOS 11.0, *)) {
+                [_myTableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+      //  _myTableView.contentInset = UIEdgeInsetsMake(0, 0, -34, 0);
     }
     return _myTableView;
 }
+
 -(LPMJGifHeader *)mjHeaderView {
     if (!_mjHeaderView) {
         _mjHeaderView = [[LPMJGifHeader alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScale(50))];
@@ -185,7 +201,7 @@
     return KScale(44);
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.f;
+    return 0.1;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc] init];

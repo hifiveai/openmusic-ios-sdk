@@ -8,12 +8,12 @@
 #import "HFOpenHotSearchView.h"
 #import "HFOpenHotSearchCell.h"
 
-@interface HFOpenHotSearchView() <UITableViewDelegate, UITableViewDataSource>
+@interface HFOpenHotSearchView() <UITableViewDelegate, UITableViewDataSource,UIScrollViewDelegate>
 
 @property (nonatomic, strong) UITableView  *hotList;
 @property (nonatomic, strong) LPMJGifHeader  *mjHeaderView;
 @property (nonatomic, copy) NSArray *dataArray;
-
+@property (nonatomic, assign) BOOL canBackAction;
 @end
 
 @implementation HFOpenHotSearchView
@@ -54,6 +54,10 @@
         make.bottom.equalTo(self).offset(-KScale(30));
     }];
     [self.hotList.mj_header beginRefreshing];
+    __weak  __typeof(self)  weakSelf = self;
+    self.hotList.mj_header.endRefreshingCompletionBlock = ^{
+        weakSelf.canBackAction = YES;
+    };
 }
 
 #pragma mark - tableview刷新
@@ -68,9 +72,12 @@
        // if (weakSelf.dataArray && weakSelf.dataArray.count>0) {
             [weakSelf.hotList reloadData];
         //}
+        
     } fail:^(NSError * _Nullable error) {
+       
         [weakSelf endRefresh];
         [HFVProgressHud showErrorWithError:error];
+      
     }];
     
 }
@@ -105,6 +112,11 @@
                                                         object:nil
                                                       userInfo:[NSDictionary dictionaryWithObject:model
                                                         forKey:@"music"]];
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (self.didScroll && self.canBackAction ) {
+        self.didScroll();
+    }
 }
 
 -(LPMJGifHeader *)mjHeaderView {

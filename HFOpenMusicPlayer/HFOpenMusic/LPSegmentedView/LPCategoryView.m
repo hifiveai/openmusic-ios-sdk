@@ -72,12 +72,7 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    if (self.originalIndex > 0) {
-        self.selectedIndex = self.originalIndex;
-    } else {
-        _selectedIndex = 0;
-        [self setupMoveLineDefaultLocation];
-    }
+
 }
 
 #pragma mark - Public Method
@@ -97,20 +92,24 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
     }
     self.selectedIndex = targetIndex;
     self.originalIndex = targetIndex;
+
 }
 
 #pragma mark - Private Method
 - (void)setupSubViews {
     [self addSubview:self.collectionView];
-    [self.collectionView addSubview:self.underline];
+    
     [self addSubview:self.separator];
+    [self addSubview:self.underline];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self);
+        make.top.equalTo(self);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
         make.height.mas_equalTo(self.height - HFV_ONE_PIXEL);
     }];
     [self.underline mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.height - self.underlineHeight - HFV_ONE_PIXEL);
+        make.bottom.equalTo(self);
         make.height.mas_equalTo(self.underlineHeight);
     }];
     [self.separator mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -121,14 +120,13 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
 }
 
 - (LPCategoryCollectionCell *)getCell:(NSUInteger)index {
-    return (LPCategoryCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    LPCategoryCollectionCell*cell =  (LPCategoryCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+    
+    return cell;
 }
 
 - (void)layoutAndScrollToSelectedItem {
-    [self.collectionView.collectionViewLayout invalidateLayout];
-    [self.collectionView setNeedsLayout];
-    [self.collectionView layoutIfNeeded];
-    
+
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.selectedIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 
     if (self.selectedItemHelper) {
@@ -139,6 +137,7 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
     if (selectedCell) {
         self.selectedCellExist = YES;
         [self updateMoveLineLocation];
+       
     } else {
         self.selectedCellExist = NO;
         //这种情况下updateMoveLineLocation将在self.collectionView滚动结束后执行（代理方法scrollViewDidEndScrollingAnimation）
@@ -155,9 +154,14 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
 
 - (void)updateMoveLineLocation {
     LPCategoryCollectionCell *cell = [self getCell:self.selectedIndex];
+    if (!cell) {
+        self.underline.hidden = YES;
+        return;;
+    }
+    self.underline.hidden = NO;
     [UIView animateWithDuration:0.15 animations:^{
         [self.underline mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.height - self.underlineHeight - HFV_ONE_PIXEL);
+            make.bottom.equalTo(self);
             make.height.mas_equalTo(self.underlineHeight);
             make.width.centerX.equalTo(cell.titleLabel);
         }];
@@ -178,26 +182,21 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat itemWidth = [self getWidthWithContent:self.titles[indexPath.row]];
-    if (indexPath.row>0) {
-        CGFloat lastWidth = [self getWidthWithContent:self.titles[indexPath.row-1]];
-        if (itemWidth == lastWidth) {
-            itemWidth -= 0.05;
-        }
-    }
+//    if (indexPath.row>0) {
+//        CGFloat lastWidth = [self getWidthWithContent:self.titles[indexPath.row-1]];
+//        if (itemWidth == lastWidth) {
+//            itemWidth -= 0.05;
+//        }
+//    }
     return CGSizeMake(itemWidth, self.collectionView.frame.size.height);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 0;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return self.cellSpacing;
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, self.leftAndRightMargin, 0, self.rightMargin ? self.rightMargin : self.leftAndRightMargin);
-}
+
+
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -230,11 +229,13 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
     if (self.titles.count == 0) {
         return;
     }
+
     if (selectedIndex >= self.titles.count) {
         _selectedIndex = self.titles.count - 1;
     } else {
         _selectedIndex = selectedIndex;
     }
+
     [self layoutAndScrollToSelectedItem];
 }
 
@@ -247,16 +248,12 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
     [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(categoryViewHeight - HFV_ONE_PIXEL);
     }];
-    [self.underline mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(categoryViewHeight - self.underlineHeight - HFV_ONE_PIXEL);
-    }];
+
 }
 
 - (void)setUnderlineHeight:(CGFloat)underlineHeight {
     _underlineHeight = underlineHeight;
-    [self.underline mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.height - self.underlineHeight - HFV_ONE_PIXEL);
-    }];
+
 }
 
 - (void)setCellSpacing:(CGFloat)cellSpacing {
@@ -267,11 +264,16 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
 - (void)setLeftAndRightMargin:(CGFloat)leftAndRightMargin {
     _leftAndRightMargin = leftAndRightMargin;
     self.flowLayout.leftMargin = leftAndRightMargin;
-    [self.collectionView.collectionViewLayout invalidateLayout];
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(leftAndRightMargin);
+    }];
 }
 - (void)setRightMargin:(CGFloat)rightMargin {
     _rightMargin = rightMargin;
-    [self.collectionView.collectionViewLayout invalidateLayout];
+
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-rightMargin);
+    }];
 }
 
 #pragma mark - Getter

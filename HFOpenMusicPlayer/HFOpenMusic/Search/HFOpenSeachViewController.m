@@ -13,7 +13,7 @@
 
 #define searchMargin 10 // 默认边距
 
-@interface HFOpenSeachViewController () <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, searchHistoryDelegate>
+@interface HFOpenSeachViewController () <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, searchHistoryDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, assign) NSUInteger page;
@@ -31,6 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configUI];
+    
+    __weak  __typeof(self)  weakSelf = self;
+    _hotSearchView.didScroll = ^{
+        [weakSelf.searchBar resignFirstResponder];
+    };
 }
 
 -(void)configUI {
@@ -49,15 +54,14 @@
         make.left.right.bottom.equalTo(self.view);
     }];
 
-    self.myTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+   
+   // self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
-    self.myTableView.backgroundColor = KColorHex(0x282828);
+ 
     self.myTableView.hidden = true;
     self.myTableView.showsVerticalScrollIndicator = NO;
-    self.myTableView.mj_header = self.mjHeaderView;
-    self.myTableView.mj_footer = self.mjFooterView;
+
     [self.myTableView registerClass:[HFOpenSearchResultCell class] forCellReuseIdentifier:@"HFOpenSearchResultCell"];
     [self.view addSubview:self.myTableView];
     [self.myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -228,6 +232,11 @@
                                                         forKey:@"music"]];
 }
 
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    [self.searchBar resignFirstResponder];
+}
 #pragma mark - SearchBar Delegate
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     if (searchBar.text.length <= 0) {

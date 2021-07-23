@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <HFOpenMusicPlayer/HFOpenModel.h>
-#import <HFOpenMusicPlayer/HFOpenEnumHeader.h>
+#import "HFOpenModel.h"
+#import "HFOpenEnumHeader.h"
 
 
 @protocol HFOpenMusicDelegate <NSObject>

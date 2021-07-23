@@ -24,23 +24,6 @@
 }
 
 - (NSString *)baseUrl {
-    //return @"http://172.20.23.68:8011";
-    //测试服务器
-    //return @"https://hifive-gateway-test.hifiveai.com";
-    //沙箱环境
-    //return @"https://hifive-openapi-qa.hifiveai.com";
-    //预发服务器
-    //return @"https://hifive-gateway-pre.hifiveai.com";
-    //正式服务器
-    return @"https://gateway.open.hifiveai.com";
-    
-    
-    
-    //正式服务器-release
-    //return @"https://gateway.open-b.hifiveai.com";
-    
-    
-    
     return [HFVLibInfo shared].domain;
 }
 

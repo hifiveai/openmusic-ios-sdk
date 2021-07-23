@@ -6,8 +6,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "TestConfigViewController.h"
-#import "LoginViewController.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -16,12 +15,12 @@
 @implementation SceneDelegate
 
 
-- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
+- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions  API_AVAILABLE(ios(13.0)){
     if ([scene isKindOfClass:[UIWindowScene class]]) {
         UIWindowScene *windowSence = (UIWindowScene*) scene;
         UIWindow *window = [[UIWindow alloc] initWithWindowScene:windowSence];
         window.backgroundColor = [UIColor whiteColor];
-        window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
+        window.rootViewController = [ViewController new];
         [window makeKeyAndVisible];
         self.window = window;
     }

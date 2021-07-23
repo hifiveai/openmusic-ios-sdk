@@ -23,8 +23,13 @@ FOUNDATION_EXPORT const unsigned char HFOpenMusicPlayerVersionString[];
 
 @interface HFOpenMusicPlayer : UIView
 
+
+@property(nonatomic ,strong)HFPlayer  * _Nonnull player;
+@property(nonatomic ,strong)HFOpenMusic  *_Nonnull listView;
+
 ///相关配置项
 @property(nonatomic ,strong)HFOpenMusicPlayerConfiguration                                * _Nullable config;
+
 
 
 /// 初始化

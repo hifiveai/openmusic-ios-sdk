@@ -12,7 +12,7 @@
 @property (nonatomic, strong) UILabel *rankLabel;
 @property (nonatomic, strong) UILabel *nameLabel;
 //@property (nonatomic, strong) UILabel *numberLabel;
-@property (nonatomic, strong) UIView *bottomLine;
+//@property (nonatomic, strong) UIView *bottomLine;
 
 @end
 @implementation HFOpenHotSearchCell
@@ -32,7 +32,7 @@
     [self.contentView addSubview:self.nameLabel];
     [self.contentView addSubview:self.rankLabel];
     //[self.contentView addSubview:self.numberLabel];
-    [self.contentView addSubview:self.bottomLine];
+    //[self.contentView addSubview:self.bottomLine];
 
 
     [self.rankLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -48,11 +48,11 @@
 //        make.centerY.equalTo(self.contentView);
 //        make.right.mas_equalTo(-KScale(20));
 //    }];
-    [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(KScale(20));
-        make.bottom.right.equalTo(self.contentView);
-        make.height.mas_equalTo(KScale(0.5));
-    }];
+//    [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(KScale(20));
+//        make.bottom.right.equalTo(self.contentView);
+//        make.height.mas_equalTo(KScale(0.5));
+//    }];
 }
 
 -(void)cellReloadData:(HFOpenMusicModel *)model rank:(NSInteger)rank{
@@ -106,13 +106,13 @@
 //    }
 //    return _numberLabel;
 //}
--(UIView *)bottomLine {
-    if (!_bottomLine) {
-        _bottomLine = [[UIView alloc] init];
-        _bottomLine.backgroundColor = KColorHex(0x666666);
-    }
-    return _bottomLine;
-}
+//-(UIView *)bottomLine {
+//    if (!_bottomLine) {
+//        _bottomLine = [[UIView alloc] init];
+//        _bottomLine.backgroundColor = KColorHex(0x666666);
+//    }
+//    return _bottomLine;
+//}
 
 
 

@@ -94,9 +94,8 @@
 }
 
 -(void)configUI {
-    self.myTableView.backgroundColor = KColorHex(0x282828);
-    self.myTableView.separatorInset = UIEdgeInsetsMake(0, KScale(15), 0, 0);
-    self.myTableView.separatorColor = [UIColor.whiteColor colorWithAlphaComponent:0.1];
+    
+    
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     //self.myTableView.tableFooterView = UIView.new;

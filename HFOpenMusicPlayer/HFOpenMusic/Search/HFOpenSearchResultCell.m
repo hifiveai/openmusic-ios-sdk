@@ -29,6 +29,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         [self configUI];
     }
     return  self;
@@ -69,7 +70,7 @@
     [self.contentView addSubview:self.detailLabel];
 //    [self.contentView addSubview:self.likeButton];
 //    [self.contentView addSubview:self.kButton];
-    [self.contentView addSubview:self.bottomLine];
+   // [self.contentView addSubview:self.bottomLine];
 
     
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -92,11 +93,11 @@
 //           make.right.mas_equalTo(KScale(-20));
 //           make.width.height.mas_equalTo(KScale(20));
 //    }];
-    [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(KScale(20));
-        make.bottom.right.equalTo(self.contentView);
-        make.height.mas_equalTo(KScale(0.5));
-    }];
+//    [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(KScale(20));
+//        make.bottom.right.equalTo(self.contentView);
+//        make.height.mas_equalTo(KScale(0.5));
+//    }];
     [self.nameLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
     [self.detailLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
 }

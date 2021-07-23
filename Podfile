@@ -3,7 +3,7 @@ use_frameworks!
 target 'HFOpenMusicPlayerDemo' do
 
   
-  target 'HFOpenMusicPlayer' do
+
    pod 'MJExtension'
    pod 'Masonry'
    pod 'YYWebImage'
@@ -12,7 +12,7 @@ target 'HFOpenMusicPlayerDemo' do
    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 
    
-  end
+
   
   end
 

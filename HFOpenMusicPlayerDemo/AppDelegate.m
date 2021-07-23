@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
+#import "ViewController.h"
 
 
 @interface AppDelegate ()
@@ -25,7 +25,7 @@
     } else {
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         self.window.backgroundColor = [UIColor whiteColor];
-        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
+        self.window.rootViewController = [ViewController new];
         [self.window makeKeyAndVisible];
     }
     return YES;
@@ -35,7 +35,7 @@
 #pragma mark - UISceneSession lifecycle
 
 
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
+- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions  API_AVAILABLE(ios(13.0))*)options {
     // Called when a new scene session is being created.
     // Use this method to select a configuration to create the new scene with.
     return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];

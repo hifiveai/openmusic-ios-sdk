@@ -9,5 +9,8 @@
 
 @interface HFOpenHotSearchView : UIView
 
+
+@property (nonatomic, strong) void(^didScroll)(void);
+
 @end
 

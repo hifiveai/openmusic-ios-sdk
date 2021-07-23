@@ -15,7 +15,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    if (@available(iOS 13.0, *)) {
+        self.myCollectionView.automaticallyAdjustsScrollIndicatorInsets = NO;
+    } else {
+        if (@available(iOS 11.0, *)) {
+            self.myCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
 }
 
 -(UICollectionView *)myCollectionView {

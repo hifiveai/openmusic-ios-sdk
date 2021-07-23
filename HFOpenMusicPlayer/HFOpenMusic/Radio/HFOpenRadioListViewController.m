@@ -38,8 +38,12 @@ static NSInteger pageSize = 10;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.myCollectionView.mj_header beginRefreshing];
+   self.automaticallyAdjustsScrollViewInsets = NO;
+   
     [self createUI];
+    [self.myCollectionView.mj_header beginRefreshing];
+ 
+  
 }
 
 -(void)createUI {
@@ -50,13 +54,11 @@ static NSInteger pageSize = 10;
     layout.minimumLineSpacing = KScale(10);
     layout.minimumInteritemSpacing = KScale(10);
     layout.sectionInset = UIEdgeInsetsMake(KScale(20), KScale(20), KScale(20), KScale(20));
-    self.myCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) collectionViewLayout:layout];
+    self.myCollectionView.collectionViewLayout = layout;
     self.myCollectionView.delegate = self;
     self.myCollectionView.dataSource = self;
     self.myCollectionView.backgroundColor = KColorHex(0x282828);
-    self.myCollectionView.mj_header = self.mjHeaderView;
-    self.myCollectionView.mj_footer = self.mjFooterView;
-
+ 
     [self.myCollectionView registerClass:[HFOpenRadioCollectionViewCell class] forCellWithReuseIdentifier: @"cell"];
     
     [self.view addSubview:self.myCollectionView];
@@ -105,6 +107,7 @@ static NSInteger pageSize = 10;
     //__weak typeof(self) weakSelf = self;
     [[HFOpenApiManager shared] channelSheetWithGroupId:self.groupId language:nil recoNum:nil page:@"1" pageSize:[NSString stringWithFormat:@"%lu",(unsigned long)pageSize] success:^(id  _Nullable response) {
         [self endRefresh];
+       
         NSDictionary *dict = response;
         HFOpenMetaModel *metaModel = [HFOpenMetaModel mj_objectWithKeyValues:[dict hfv_objectForKey_Safe:@"meta"]];
         self.dataArray = [HFOpenChannelSheetModel mj_objectArrayWithKeyValuesArray:[dict hfv_objectForKey_Safe:@"record"]];

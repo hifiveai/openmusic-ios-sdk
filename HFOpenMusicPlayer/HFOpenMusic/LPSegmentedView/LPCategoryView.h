@@ -16,7 +16,11 @@ static const CGFloat LPCategoryViewDefaultHeight = 50.0;
 
 @interface LPCategoryView : UIView
 @property (nonatomic, strong, readonly) UICollectionView *collectionView;
+
+/// 下划线
 @property (nonatomic, strong, readonly) UIView *underline;
+
+/// 分割线
 @property (nonatomic, strong, readonly) UIView *separator;
 @property (nonatomic, strong) UIFont *titleNomalFont;
 @property (nonatomic, strong) UIFont *titleSelectedFont;

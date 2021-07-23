@@ -50,7 +50,7 @@
         _segmentVC.categoryView.height = KScale(50);
         _segmentVC.categoryView.leftAndRightMargin = KScale(55);
         _segmentVC.categoryView.rightMargin = KScale(35);
-        
+        _segmentVC.automaticallyAdjustsScrollViewInsets = NO;
     }
     return _segmentVC;
 }
@@ -60,6 +60,7 @@
         _backButton.backgroundColor = KColorHex(0x282828);
         [_backButton setImage:[HFVKitUtils bundleImageWithName:@"navigation_back"] forState:UIControlStateNormal];
         [_backButton addTarget:self action:@selector(dismissSegmentView) forControlEvents:UIControlEventTouchUpInside];
+      
     }
     return _backButton;
 }
@@ -108,6 +109,18 @@
     __weak typeof(self) weakSelf = self;
     [[HFOpenApiManager shared] channelWithSuccess:^(id  _Nullable response) {
         weakSelf.dataArray = [HFOpenChannelModel mj_objectArrayWithKeyValuesArray:response];
+        for (HFOpenChannelModel *model in weakSelf.dataArray) {
+            [weakSelf.titleArray addObject:model.groupName];
+            HFOpenRadioListViewController *listVC = HFOpenRadioListViewController.new;
+            listVC.groupId = model.groupId;
+            [weakSelf.controllerArray addObject:listVC];
+        }
+        for (HFOpenChannelModel *model in weakSelf.dataArray) {
+            [weakSelf.titleArray addObject:model.groupName];
+            HFOpenRadioListViewController *listVC = HFOpenRadioListViewController.new;
+            listVC.groupId = model.groupId;
+            [weakSelf.controllerArray addObject:listVC];
+        }
         for (HFOpenChannelModel *model in weakSelf.dataArray) {
             [weakSelf.titleArray addObject:model.groupName];
             HFOpenRadioListViewController *listVC = HFOpenRadioListViewController.new;

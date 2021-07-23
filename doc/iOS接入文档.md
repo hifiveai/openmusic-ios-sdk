@@ -45,7 +45,7 @@ pod 'SVProgressHUD'
   执行pod install ,再次打开.xcworkspace工程。
 - 在TARGETS->Build Settings->Other Linker Flags中添加-ObjC。
 - 在TARGETS->Build Settings->Architctures->Excluded Architctures,添加Any iOS Simulator SDK，设置为arm64。
-- 使用时引入头文件 `#import <HFOpenMusicPlayer/HFOpenMusicPlayer.h>`
+- 使用时引入头文件 `#import "HFOpenMusicPlayer.h"
 ## 二、接口说明
 
 <font color='#FF0000'>SDK有五种场景接入方式，开发者可以选其中一种方式接入。</font>

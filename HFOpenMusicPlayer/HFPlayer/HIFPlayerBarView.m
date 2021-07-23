@@ -19,8 +19,7 @@
 @property(nonatomic ,assign)BOOL  showBar;
 @property(nonatomic ,strong)UIButton  *headImgBtn;
 @property(nonatomic ,strong)UILabel   *titleLabel;
-@property(nonatomic ,strong)UIButton  *accompanyBtn;
-@property(nonatomic ,strong)UIButton  *wordBtn;
+
 @property(nonatomic ,strong)UIButton  *previousBtn;
 @property(nonatomic ,strong)UIButton  *playBtn;
 @property(nonatomic ,strong)UIButton  *nextBtn;
@@ -140,8 +139,7 @@
     self.layer.cornerRadius = KScale(25);
     [self addSubview:self.headImgBtn];
     [self addSubview:self.titleLabel];
-    [self addSubview:self.accompanyBtn];
-    [self addSubview:self.wordBtn];
+ 
     [self addSubview:self.previousBtn];
     [self addSubview:self.loadingImgView];
     [self addSubview:self.downloadLabel];
@@ -298,15 +296,7 @@
     [UIView animateWithDuration:0.5 delay:0.2 options:UIViewAnimationOptionLayoutSubviews animations:^{
         for (int i=0; i<self.subviews.count; i++ ) {
             UIView *view = self.subviews[i];
-            if (i!=0 && i!=self.subviews.count-1) {
-                if (i == 2 && !self.accompanyBtn.isEnabled) {
-                    view.alpha = 0.45;
-                } else if (i == 3 && !self.wordBtn.isEnabled) {
-                    view.alpha = 0.45;
-                } else {
-                    view.alpha = 1;
-                }
-            }
+            view.alpha = 1;
         }
         [self.superview layoutIfNeeded];
     } completion:nil];
@@ -369,17 +359,7 @@
     }
 }
 
-//歌词 开/关
--(void)wordBtnClick:(UIButton *)sender {
-    //sender.selected YES:打开歌词  NO:关闭歌词
-    sender.selected = !sender.selected;
-    if (sender.selected) {
-        [sender setBackgroundColor:[UIColor whiteColor]];
-    } else {
-        [sender setBackgroundColor:[UIColor clearColor]];
-    }
-    
-}
+
 
 //上一首
 -(void)previousBtnClick:(UIButton *)sender {
@@ -584,43 +564,7 @@
     return _titleLabel;
 }
 
--(UIButton *)accompanyBtn {
-    if (!_accompanyBtn) {
-        _accompanyBtn = [[UIButton alloc] init];
-        _accompanyBtn.layer.borderWidth = KScale(1);
-        _accompanyBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
-        [_accompanyBtn addTarget:self action:@selector(accompanyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_accompanyBtn setTitle:@"原声" forState:UIControlStateNormal];
-        [_accompanyBtn setTitle:@"伴奏" forState:UIControlStateSelected];
-        _accompanyBtn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:KScale(10)];
-        [_accompanyBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        _accompanyBtn.layer.cornerRadius = KScale(5);
-        _accompanyBtn.enabled = false;
-        _accompanyBtn.alpha = self.shrinkBtn.selected?0:0.45;
-        _accompanyBtn.alpha = 0;
-    }
-    return _accompanyBtn;;
-}
 
--(UIButton *)wordBtn {
-    if (!_wordBtn) {
-        _wordBtn = [[UIButton alloc] init];
-        [_wordBtn.titleLabel setFont:[UIFont fontWithName:@"PingFangSC-Medium" size:KScale(10)]];
-        [_wordBtn setTitle:@"词" forState:UIControlStateNormal];
-        //[_wordBtn setTitleColor:KColorHex(0xD34747) forState:UIControlStateNormal];
-        [_wordBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        _wordBtn.layer.borderWidth = KScale(1);
-        _wordBtn.layer.cornerRadius = KScale(5);
-        _wordBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
-        [_wordBtn setBackgroundColor:[UIColor clearColor]];
-        _wordBtn.selected = YES;
-        _wordBtn.enabled = false;
-        _wordBtn.alpha = self.shrinkBtn.selected?0:0.45;
-        _wordBtn.alpha = 0;
-        [_wordBtn addTarget:self action:@selector(wordBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _wordBtn;
-}
 
 -(UIButton *)previousBtn {
     if (!_previousBtn) {
@@ -750,24 +694,11 @@
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headImgBtn.mas_right).offset(KScale(10));
-        make.top.equalTo(self).offset(KScale(5));
+        make.centerY.equalTo(self);
         make.right.equalTo(self.previousBtn.mas_left);
         make.height.mas_equalTo(KScale(16));
     }];
     
-    [self.accompanyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.headImgBtn.mas_right).offset(KScale(10));
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(KScale(5));
-        make.bottom.equalTo(self).offset(-KScale(7.5));
-        make.width.mas_equalTo(KScale(32));
-    }];
-    
-    [self.wordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.accompanyBtn.mas_right).offset(KScale(15));
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(KScale(5));
-        make.bottom.equalTo(self).offset(-KScale(7.5));
-        make.width.mas_equalTo(KScale(20));
-    }];
     
     [self.shrinkBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);

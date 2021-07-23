@@ -6,12 +6,15 @@
 //
 
 #import "ViewController.h"
-#import <HFOpenMusicPlayer/HFOpenMusicPlayer.h>
+#import "HFOpenMusicPlayer.h"
+#import <Masonry/Masonry.h>
 
 @interface ViewController () <HFOpenMusicDelegate ,HFPlayerStatusProtocol>
 @property(nonatomic ,strong)HFOpenMusicPlayer                       *playerListView;
 @property(nonatomic ,strong)HFPlayer                                *playerView;
 @property(nonatomic ,strong)HFOpenMusic                             *listView;
+
+@property (nonatomic, strong) UIButton *registBtn;
 
 @end
 
@@ -24,35 +27,38 @@
     [self.view addSubview:imageView];
     
     UIButton *testBtn = [[UIButton alloc] init];
-    testBtn.frame = CGRectMake(200, 300, 50, 50);
-    testBtn.backgroundColor = UIColor.greenColor;
-    [self.view addSubview:testBtn];
-    [testBtn addTarget:self action:@selector(testBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
-    switch (_uiType) {
-        case 0:
-        {
-            [self configUiType0];
-        }
-            break;
-        case 1:
-        {
-            [self configUiType1];
-        }
-            break;
-        case 2:
-        {
-            [self configUiType2];
-        }
-            break;
-        default:
-            break;
-    }
+    [testBtn setTitle:@"注册HIFIVE音乐" forState:UIControlStateNormal];
+    [testBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal] ;
+    [self.view addSubview:testBtn];
+    [testBtn setBackgroundColor:UIColor.whiteColor];
+    [testBtn makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.equalTo(self.view);
+        
+    }];
+    [testBtn addTarget:self action:@selector(testBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    self.registBtn = testBtn;
+    
+    self.networkAbilityEable = true;
+    self.cacheEnable =true;
+    self.bufferCacheSize =500;
+    self.topLimit = 0;
+    self.bottomLimit = 0;
+   
+ 
+  
 }
 
 -(void)testBtnClick {
-    NSLog(@"123click");
     
+ [[HFOpenApiManager shared] registerAppWithAppId:@"3faeec81030444e98acf6af9ba32752a" serverCode:@"59b1aff189b3474398" clientId:@"hifive-testdemo" version:@"V4.0.1" success:^(id  _Nullable response) {
+     NSLog(@"注册成功");
+     [self configUiType0];
+     self.registBtn.hidden = true;
+ } fail:^(NSError * _Nullable error) {
+     NSLog(@"注册失败");
+     [self showAlert:error.localizedDescription];
+ }];
 }
 
 //播放器+列表
@@ -63,40 +69,13 @@
     config.bufferCacheSize = self.bufferCacheSize;
     config.panTopLimit = self.topLimit;
     config.panBottomLimit = self.bottomLimit;
-    HFOpenMusicPlayer *playerListView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
+    HFOpenMusicPlayer *playerView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
     //显示
-    [playerListView addMusicPlayerView];
-    _playerListView = playerListView;
+    [playerView addMusicPlayerView];
+    _playerListView = playerView;
+    [playerView.listView showMusicSegmentView];
 }
 
-//播放器
--(void)configUiType1 {
-    HFPlayerConfiguration *config = [HFPlayerConfiguration defaultConfiguration];
-    config.networkAbilityEable = self.networkAbilityEable;
-    config.cacheEnable = self.cacheEnable;
-    config.bufferCacheSize = self.bufferCacheSize;
-    config.panTopLimit = self.topLimit;
-    config.panBottomLimit = self.bottomLimit;
-    //https://img.zhugexuetang.com/lleXB2SNF5UFp1LfNpPI0hsyQjNs
-    //http://music.163.com/song/media/outer/url?id=64634.mp3
-    //ijkio:cache:ffio:
-    config.urlString = @"http://music.163.com/song/media/outer/url?id=64634.mp3";
-    config.songName = @"一丝不挂";
-    HFPlayer *playerView = [[HFPlayer alloc] initWithConfiguration:config];
-    playerView.delegate = self;
-    [playerView addPlayerView];
-    _playerView = playerView;
-    //开始播放
-    [_playerView play];
-}
-
-//列表
--(void)configUiType2 {
-    HFOpenMusic *listView = [[HFOpenMusic alloc] initMusicListViewWithListenType:self.musicType showControlbtn:true];
-    listView.delegate = self;
-    [listView addMusicListView];
-    _listView = listView;
-}
 
 -(void)showAlert:(NSString *)message {
     UIAlertController *alertVC = [[UIAlertController alloc] init];

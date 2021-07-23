@@ -14,9 +14,7 @@
 @property(nonatomic ,assign)NSUInteger                                   bufferCacheSize;
 @property(nonatomic ,assign)NSUInteger                                   topLimit;
 @property(nonatomic ,assign)NSUInteger                                   bottomLimit;
-@property(nonatomic ,assign)NSUInteger                                   musicType;
 
 
-@property(nonatomic ,assign)NSUInteger                                    uiType;
 @end
 

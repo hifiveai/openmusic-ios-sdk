@@ -19,10 +19,13 @@
     if (!_myTableView) {
         _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
         _myTableView.showsVerticalScrollIndicator = NO;
-        _myTableView.backgroundColor = UIColor.whiteColor;
+   
         _myTableView.tableFooterView = UIView.new;
         _myTableView.mj_header = self.mjHeaderView;
         _myTableView.mj_footer = self.mjFooterView;
+        _myTableView.separatorInset = UIEdgeInsetsMake(0, KScale(15), 0, 0);
+        _myTableView.separatorColor = [UIColor.whiteColor colorWithAlphaComponent:0.1];
+        _myTableView.backgroundColor = KColorHex(0x282828);
     }
     return  _myTableView;
 }
