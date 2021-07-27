@@ -93,9 +93,9 @@ static NSInteger pageSize = 10;
 
 //MARK: - 网络请求
 -(void)refreshAction {
-    [self.dataArray removeAllObjects];
-    [self.myCollectionView reloadData];
+   
     self.page = 1;
+    [self.myCollectionView.mj_footer setState:MJRefreshStateIdle];
     [self requestData];
 }
 -(void)loadMoreAction {
@@ -104,33 +104,46 @@ static NSInteger pageSize = 10;
 }
 
 -(void)requestData {
-    //__weak typeof(self) weakSelf = self;
-    [[HFOpenApiManager shared] channelSheetWithGroupId:self.groupId language:nil recoNum:nil page:@"1" pageSize:[NSString stringWithFormat:@"%lu",(unsigned long)pageSize] success:^(id  _Nullable response) {
+    
+    NSString *page =[NSString stringWithFormat:@"%d",(int)self.page];
+    [[HFOpenApiManager shared] channelSheetWithGroupId:self.groupId language:nil recoNum:nil page:page pageSize:[NSString stringWithFormat:@"%lu",(unsigned long)pageSize] success:^(id  _Nullable response) {
         [self endRefresh];
        
         NSDictionary *dict = response;
         HFOpenMetaModel *metaModel = [HFOpenMetaModel mj_objectWithKeyValues:[dict hfv_objectForKey_Safe:@"meta"]];
-        self.dataArray = [HFOpenChannelSheetModel mj_objectArrayWithKeyValuesArray:[dict hfv_objectForKey_Safe:@"record"]];
-        [self.myCollectionView reloadData];
-        if (self.dataArray && self.dataArray.count>0) {
-            for (HFOpenChannelSheetModel *model in self.dataArray) {
+        NSArray *arry = [HFOpenChannelSheetModel mj_objectArrayWithKeyValuesArray:[dict hfv_objectForKey_Safe:@"record"]];
+        
+        
+    
+        if (arry.count>0) {
+            for (HFOpenChannelSheetModel *model in arry) {
                 NSArray *tags = model.tag;
-                NSMutableArray *tagModels = [NSMutableArray arrayWithCapacity:0];
+                NSMutableArray *tagModels = [NSMutableArray new];
                 for (NSDictionary *dic in tags) {
                     HFOpenChannelSheetTagModel *tagModel = [HFOpenChannelSheetTagModel mj_objectWithKeyValues: dic];
                     [tagModels addObject:tagModel];
                 }
                 model.tag = [tagModels copy];
             }
-            
-            if (metaModel.currentPage*pageSize >= metaModel.totalCount) {
-                self.myCollectionView.mj_footer = nil;
-            }else {
-                self.myCollectionView.mj_footer = self.mjFooterView;
+            if (self.page == 1) {
+                self.dataArray = [arry mutableCopy];
+            }else{
+                [self.dataArray addObjectsFromArray:arry];
             }
+           
+            if ( self.dataArray.count >= metaModel.totalCount) {
+
+                [self.myCollectionView.mj_footer endRefreshingWithNoMoreData];
+            }
+            if (self.page == 1) {
             [self hiddenNoDataView];
+            }
+            [self.myCollectionView reloadData];
         } else {
-            [self showNoDataView];
+            if (self.page == 1) {
+                [self showNoDataView];
+            }
+            
         }
     } fail:^(NSError * _Nullable error) {
         [self endRefresh];

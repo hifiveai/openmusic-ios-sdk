@@ -65,7 +65,8 @@
 
 #pragma mark - UI
 -(void)configUI {
-    self.contentView.backgroundColor = KColorHex(0x282828);
+    self.backgroundColor = KColorHex(0x282828);
+   
     [self.contentView addSubview:self.nameLabel];
     [self.contentView addSubview:self.detailLabel];
 //    [self.contentView addSubview:self.likeButton];

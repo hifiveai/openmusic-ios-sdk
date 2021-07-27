@@ -117,6 +117,8 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(HFV_ONE_PIXEL);
     }];
+    
+ 
 }
 
 - (LPCategoryCollectionCell *)getCell:(NSUInteger)index {
@@ -267,6 +269,7 @@ static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"Segmen
     [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(leftAndRightMargin);
     }];
+    [self setupMoveLineDefaultLocation];
 }
 - (void)setRightMargin:(CGFloat)rightMargin {
     _rightMargin = rightMargin;

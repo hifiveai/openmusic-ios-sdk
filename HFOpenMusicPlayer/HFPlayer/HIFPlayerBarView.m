@@ -81,6 +81,7 @@
     }
     _titleLabel.text = config.songName;
     if (![HFVKitUtils isBlankString:config.imageUrlString]) {
+       
         [_headImgBtn yy_setImageWithURL:[NSURL URLWithString:config.imageUrlString] forState:UIControlStateNormal placeholder:[HFVKitUtils bundleImageWithName:@"player_defaultHeader"]];
     } else {
         [_headImgBtn setImage:[HFVKitUtils bundleImageWithName:@"player_defaultHeader"] forState:UIControlStateNormal];
@@ -138,6 +139,7 @@
     self.layer.backgroundColor = [[[UIColor blackColor] colorWithAlphaComponent:0.5] CGColor];
     self.layer.cornerRadius = KScale(25);
     [self addSubview:self.headImgBtn];
+    self.headImgBtn.layer.cornerRadius = KScale(25);
     [self addSubview:self.titleLabel];
  
     [self addSubview:self.previousBtn];
@@ -549,6 +551,7 @@
         _headImgBtn = [[UIButton alloc] init];
         [_headImgBtn setBackgroundImage:[HFVKitUtils bundleImageWithName:@"player_defaultHeader"] forState:UIControlStateNormal];
         _headImgBtn.clipsToBounds = YES;
+        _headImgBtn.imageView.contentMode = UIViewContentModeScaleToFill;
         [_headImgBtn addTarget:self action:@selector(headImgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _headImgBtn;
@@ -688,9 +691,13 @@
     
     [self.headImgBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.bottom.equalTo(self);
-        make.width.equalTo(self.mas_height);
+        make.width.equalTo( self.mas_height);
     }];
-    self.headImgBtn.layer.cornerRadius = KScale(25);
+    
+    [self.headImgBtn.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.headImgBtn);
+    }];
+    
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headImgBtn.mas_right).offset(KScale(10));

@@ -12,13 +12,11 @@ static const CGFloat LPCategoryViewDefaultHeight = 50.0;
 
 @interface LPCategoryCollectionCell : UICollectionViewCell
 @property (nonatomic, readonly, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIView *underline;
 @end;
 
 @interface LPCategoryView : UIView
 @property (nonatomic, strong, readonly) UICollectionView *collectionView;
-
-/// 下划线
-@property (nonatomic, strong, readonly) UIView *underline;
 
 /// 分割线
 @property (nonatomic, strong, readonly) UIView *separator;
