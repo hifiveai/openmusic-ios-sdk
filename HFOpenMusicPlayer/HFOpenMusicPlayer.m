@@ -34,7 +34,7 @@
         _config = config;
         HFPlayerConfiguration *playerConfig = [self changeToPlayerConfig:config];
         HFPlayer *player = [[HFPlayer alloc] initWithConfiguration:playerConfig];
-        player.frame = CGRectMake(0, KScreenHeight-KScale(500), KScreenWidth, KScale(50));
+        player.frame = CGRectMake(0, KScreenHeight-KScale(500), KScreenWidth, ceil(KScale(50)) );
         _player = player;
         _player.delegate = self;
         [self addSubview:player];

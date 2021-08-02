@@ -137,9 +137,9 @@
 
 -(void)configUI {
     self.layer.backgroundColor = [[[UIColor blackColor] colorWithAlphaComponent:0.5] CGColor];
-    self.layer.cornerRadius = KScale(25);
+    self.layer.cornerRadius = ceil(KScale(25)) ;
     [self addSubview:self.headImgBtn];
-    self.headImgBtn.layer.cornerRadius = KScale(25);
+    self.headImgBtn.layer.cornerRadius = ceil(KScale(25)) ;
     [self addSubview:self.titleLabel];
  
     [self addSubview:self.previousBtn];
