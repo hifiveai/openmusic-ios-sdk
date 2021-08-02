@@ -1,6 +1,6 @@
 # 《播放器UI》接口文档
 [TOC]
-## 初始化SDK
+## 初始化
 ```objc
 -(instancetype)initWithConfiguration:(HFPlayerConfiguration *)config;
 ```

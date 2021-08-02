@@ -1,83 +1,114 @@
 
 
-# iOS SDK 接入指南
-
-**修订记录** 
-
-|    日期    | 版本 | 说明       |  作者  |
-| :--------: | :--: | ---------- | :----: |
-| 2021-04-13 | 4.1.1  | 初版 | 郭亮 |
 
 
+##一. 项目说明
+####该项目是接入了 HIFIVE API的客户端Demo,包括播放器,播放列表等相关UI.
 
-[TOC]
-## 一、SDK集成
-### 系统支持
+项目具体代码在HFOpenMusicPlayer文件夹下,接入的Demo名称是HFOpenMusicPlayerDemo.
 
-iOS9.0以上
 
-### 运行环境
+- 工程系统库依赖:
+   1. libc++.tbd
+   2. libbz2.1.0.tbd
 
-建议使用Xcode10.0以上版本进行编译。
-
-### 集成SDK
-
-目前仅提供静态库接入方案，手动集成：
-- 下载解压并拖拽HFOpenMusicPlayer.framework文件到Xcode工程内(请勾选`Copy items if needed`选项)
-
-- 拖拽IJKMediaFramework.framework文件到Xcode工程内(请勾选`Copy items if needed`选项)
-
-- 在 Xcode 中，选择：项目 `TARGETS` -> `General` -> `Frameworks`,`Libraries,and Embedded Content` 中，确保 HFOpenMusicPlayer.framework和IJKMediaFramework.framework，Embed 设置为 `Do Not Embed`。
-
-- 添加资源文件，将HFOpenMusic.bundle文件和HFPlayer.bundle文件拖拽到Xcode工程内(请勾选`Copy items if needed`选项)。
-
-- 在 Xcode 中，选择：`TARGETS` -> `BuildPhases` -> `Link Binary With Libraries`,添加如下依赖库：
-   libc++.tbd
-   libbz2.1.0.tbd
-
-- 用pod导入依赖的第三方库，创建或修改Podfile文件，添加  
+- 依赖的第三方库:
 pod 'MJExtension'
 pod 'Masonry'
 pod 'YYWebImage'
 pod 'MJRefresh'
 pod 'FLAnimatedImage'
 pod 'SVProgressHUD'
-  执行pod install ,再次打开.xcworkspace工程。
-- 在TARGETS->Build Settings->Other Linker Flags中添加-ObjC。
-- 在TARGETS->Build Settings->Architctures->Excluded Architctures,添加Any iOS Simulator SDK，设置为arm64。
-- 使用时引入头文件 `#import "HFOpenMusicPlayer.h"
+
+2. 运行项目
+执行pod install ,打开.xcworkspace工程。
+
 ## 二、接口说明
 
-<font color='#FF0000'>SDK有五种场景接入方式，开发者可以选其中一种方式接入。</font>
 
-### 接入方式一（带播放器UI和音乐列表UI）
-如下图例子：
-![Alt text](https://k3-images-test.oss-cn-beijing.aliyuncs.com/M2.png)
-[接口文档](./sub/播放器和音乐列表接入文档.html?target="_blank")
+#### 初始化
 
-### 接入方式二（只有播放器UI）
-如下图例子：
-![Alt text](https://k3-images-test.oss-cn-beijing.aliyuncs.com/M3.png)
-[接口文档](./sub/播放器UI接入文档.html)
+调用如下API进行初始化操作，clientId为用户唯一标识（公司自有的用户ID），请在获取到用户ID之后调用
 
-### 接入方式三（只有音乐列表UI）
-如下图例子：
-![Alt text](https://k3-images-test.oss-cn-beijing.aliyuncs.com/M4.png)
-[接口文档](./sub/音乐列表UI接入文档.html)
+```objc 
 
-### 接入方式四（只有全api接口，无UI）
-[接口文档](./sub/通用api接入文档.html)
+    [[HFOpenApiManager shared] registerAppWithAppId:@"appId" serverCode:@"serverCode" clientId:@"clientId" version:@"version" success:^(id  _Nullable response) {
+        //注册成功
+    } fail:^(NSError * _Nullable error) {
+        //注册失败
+    }];
 
-### 接入方式五（只有播放器api接口，无UI）
-[接口文档](./sub/播放器api接入文档.html)
+```
+| 参数 | 必填 | 描述 |
+|---|---|---|
+| appId | 是 | 开放平台申请appId |
+| serverCode | 是 | 开放平台申请serverCode |
+| clientId | 是 | 用户唯一标识（公司自有的用户ID） |
+| version | 是 | 操作的 API 的版本，如：V4.1.1 |
+
+
+**音乐授权类型**
+
+| 名称                  | 值      |     
+| --------------------- | ------- | 
+| BGM音乐播放           | TYPE_TRAFFIC |    
+| 音视频作品BGM音乐播放 | TYPE_UGC     |     
+| K歌音乐播放           | KTYPE_K      |      
+
+**配置**
+
+- 创建默认配置
+```objc
+HFOpenMusicPlayerConfiguration *config = [HFOpenMusicPlayerConfiguration defaultConfiguration];
+```
+| 配置项 | 描述 | 默认值 | 类型 |
+|---|---|---|---|
+| autoNext | 自动播放下一首 | 默认开启 | BOOL |
+| panTopLimit | 播放器视图可拖拽范围，距离顶部距离 | 0 | NSUInteger |
+| panBottomLimit | 播放器视图可拖拽范围，距离底部距离 | 0 | NSUInteger |
+| cacheEnable | 是否允许客户端缓存 | 默认关闭 | BOOL |
+| bufferCacheSize | 缓冲区大小 | 默认270 (单位kb)，最小配置270kb | NSUInteger |
+| repeatPlay | 是否允许重复播放 | 默认关闭 | BOOL |
+| networkAbilityEable | 是否开启网络监测,断线重连播放 | 默认开启 | BOOL |
+| rate | 播放速率 | 默认1.0 | float |
+
+
+```objc
+//获取默认配置
+HFOpenMusicPlayerConfiguration *config = [HFOpenMusicPlayerConfiguration defaultConfiguration];
+//用户可通过自己需求在默认配置上进行个性化配置
+config.networkAbilityEable = true;
+config.cacheEnable = true;
+config.bufferCacheSize = 350;
+config.panTopLimit = 100;
+config.panBottomLimit = 50;
+```
+#### 展示视图
+```objc
+-(void)addMusicPlayerView;
+```
+
+
+```objc
+HFOpenMusicPlayer *playerView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
+//显示播放器
+[playerView addMusicPlayerView];
+//显示播放列表
+[playerView.listView showMusicSegmentView];
+```
+
+####更多接口
+可查看DOC文件夹里面的文档
+
+
 
 ## 三、API状态码
 
-SDK错误码
+错误码
 
 | 错误码 | 错误描述 | 解决方案 |
 |----------|:--------|:-------- |
-| HFVSDK_CODE_NoRegister | 未初始化SDK | 初始化 |
+| HFVSDK_CODE_NoRegister | 未初始化 | 初始化 |
 | HFVSDK_CODE_NoLogin | 未登录 | 登录 |
 | HFVSDK_CODE_NoParameter | 参数不全 | 必选参数缺失 |
 | HFVSDK_CODE_ParameterError | 参数字符格式错误 | 检查上传参数 |

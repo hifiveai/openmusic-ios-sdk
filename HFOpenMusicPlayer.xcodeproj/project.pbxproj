@@ -212,18 +212,6 @@
 		CA16E679262D5BE5007DEAE6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA20D2BA261CD31C00DBB34F /* bkg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bkg.jpg; sourceTree = "<group>"; };
 		CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HFOpenMusic.bundle; sourceTree = "<group>"; };
-		CA317F292631759A00DE5974 /* iOS接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "iOS接入文档.html"; sourceTree = "<group>"; };
-		CA317F2A2631759A00DE5974 /* iOS接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS接入文档.md"; sourceTree = "<group>"; };
-		CA317F2C2631759B00DE5974 /* 通用api接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "通用api接入文档.html"; sourceTree = "<group>"; };
-		CA317F2D2631759B00DE5974 /* 播放器和音乐列表接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器和音乐列表接入文档.html"; sourceTree = "<group>"; };
-		CA317F2E2631759B00DE5974 /* 播放器UI接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器UI接入文档.md"; sourceTree = "<group>"; };
-		CA317F2F2631759B00DE5974 /* 音乐列表UI接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "音乐列表UI接入文档.md"; sourceTree = "<group>"; };
-		CA317F302631759B00DE5974 /* 播放器和音乐列表接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器和音乐列表接入文档.md"; sourceTree = "<group>"; };
-		CA317F312631759B00DE5974 /* 播放器UI接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器UI接入文档.html"; sourceTree = "<group>"; };
-		CA317F322631759B00DE5974 /* 播放器api接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "播放器api接入文档.md"; sourceTree = "<group>"; };
-		CA317F332631759B00DE5974 /* 通用api接入文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "通用api接入文档.md"; sourceTree = "<group>"; };
-		CA317F342631759B00DE5974 /* 播放器api接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "播放器api接入文档.html"; sourceTree = "<group>"; };
-		CA317F352631759B00DE5974 /* 音乐列表UI接入文档.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "音乐列表UI接入文档.html"; sourceTree = "<group>"; };
 		CA3DBEAC261C76CB008A8A42 /* HFOpenMusicPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HFOpenMusicPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3DBEAE261C76CB008A8A42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -267,6 +255,7 @@
 				3CAA749426A9076F00262B86 /* HFOpenEnumHeader.h */,
 				3CAA74D626A9077000262B86 /* PrefixHeader.pch */,
 				3CAA74D726A9077000262B86 /* IJKMediaFramework.framework */,
+				CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */,
 				3CAA749526A9076F00262B86 /* HFOpenMusic */,
 				3CAA748526A9076F00262B86 /* HFPlayer */,
 				3CAA74C926A9077000262B86 /* HFOpenApi */,
@@ -532,39 +521,11 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CA317F282631748B00DE5974 /* doc */ = {
-			isa = PBXGroup;
-			children = (
-				CA317F292631759A00DE5974 /* iOS接入文档.html */,
-				CA317F2A2631759A00DE5974 /* iOS接入文档.md */,
-				CA317F2B2631759B00DE5974 /* sub */,
-			);
-			path = doc;
-			sourceTree = "<group>";
-		};
-		CA317F2B2631759B00DE5974 /* sub */ = {
-			isa = PBXGroup;
-			children = (
-				CA317F2C2631759B00DE5974 /* 通用api接入文档.html */,
-				CA317F2D2631759B00DE5974 /* 播放器和音乐列表接入文档.html */,
-				CA317F2E2631759B00DE5974 /* 播放器UI接入文档.md */,
-				CA317F2F2631759B00DE5974 /* 音乐列表UI接入文档.md */,
-				CA317F302631759B00DE5974 /* 播放器和音乐列表接入文档.md */,
-				CA317F312631759B00DE5974 /* 播放器UI接入文档.html */,
-				CA317F322631759B00DE5974 /* 播放器api接入文档.md */,
-				CA317F332631759B00DE5974 /* 通用api接入文档.md */,
-				CA317F342631759B00DE5974 /* 播放器api接入文档.html */,
-				CA317F352631759B00DE5974 /* 音乐列表UI接入文档.html */,
-			);
-			path = sub;
-			sourceTree = "<group>";
-		};
 		CA3DBE92261C768F008A8A42 = {
 			isa = PBXGroup;
 			children = (
 				3CAA748426A9076F00262B86 /* HFOpenMusicPlayer */,
 				CA3DBEAD261C76CB008A8A42 /* HFOpenMusicPlayerDemo */,
-				CA317F282631748B00DE5974 /* doc */,
 				CA3DBE9D261C768F008A8A42 /* Products */,
 				CA3DBED1261C79E1008A8A42 /* Frameworks */,
 				BB44E0BFAD16A5726879EEBA /* Pods */,
@@ -585,7 +546,6 @@
 				CA20D2BA261CD31C00DBB34F /* bkg.jpg */,
 				CAC7A9AA261D5D130082FCA3 /* selected.png */,
 				CAC7A9AB261D5D130082FCA3 /* normol.png */,
-				CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */,
 				CA3DBEAE261C76CB008A8A42 /* AppDelegate.h */,
 				CA3DBEAF261C76CB008A8A42 /* AppDelegate.m */,
 				CA3DBEB1261C76CB008A8A42 /* SceneDelegate.h */,

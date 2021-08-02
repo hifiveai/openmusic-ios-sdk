@@ -1,9 +1,9 @@
 # 《通用API》接口文档
 [TOC]
 
-## SDK初始化
+## 初始化
 
-导入`#import <HFOpenApi/HFOpenApi.h>`,调用如下API进行SDK初始化操作，clientId为用户唯一标识（公司自有的用户ID），请在获取到用户ID之后调用
+导入`#import HFOpenApi.h`，clientId为用户唯一标识（公司自有的用户ID），请在获取到用户ID之后调用
 
 ```objc 
     [[HFOpenApiManager shared] registerAppWithAppId:@"appId" serverCode:@"serverCode" clientId:@"clientId" version:@"version" success:^(id  _Nullable response) {
@@ -12,7 +12,7 @@
         //注册失败
     }];
 ```
-- 请求参数
+
 | 参数 | 必填 | 描述 |
 |---|---|---|
 | appId | 是 | 开放平台申请appId |
@@ -49,7 +49,7 @@
 
 ```
 
-- 请求参数
+
 | 参数 | 必填 | 描述 |
 |---|---|---|
 | success | 否 | 成功 |
@@ -69,7 +69,7 @@
 
 ```
 
-- 请求参数
+
 | 参数 | 必填 | 描述 | 可选值 |
 |---|---|---|---|
 | groupId | 否 | 电台id | - |
@@ -93,7 +93,6 @@
 
 ```
 
-- 请求参数
 | 参数 | 必填 | 描述 | 可选值 |
 |---|---|---|---|
 | sheetId | 是 | 歌单id | - |
@@ -125,7 +124,6 @@
 
 ```
 
-- 请求参数
 | 参数 | 必填 | 描述 | 可选值 |
 |---|---|---|---|
 | tagIds | 否 | 标签Id，多个Id以“,”拼接 | - |
@@ -153,7 +151,7 @@
 
 ```
 
-- 请求参数
+
 | 参数 | 必填 | 描述 |
 |---|---|---|
 | success | 否 | 成功 |
@@ -179,7 +177,7 @@
                         fail:(void (^_Nullable)(NSError * _Nullable error))fail;
 
 ```
-- 请求参数
+
 | 参数           | 必填 | 描述                                        | 可选值             | 示例                   |      |
 | -------------- | ---- | ------------------------------------------- | ------------------ | ---------------------- | ---- |
 | nickname       | 否   | 昵称                                        | -                  | -                      |      |
