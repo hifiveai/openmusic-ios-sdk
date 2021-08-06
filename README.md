@@ -14,7 +14,8 @@
 - 播放器依赖库(可选择下载):
 
 下载地址:[IJKMediaFramework](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/ios/IJKMediaFramework)
-放入HFOpenMusicPlayer/IJKMediaFramework.framework/文件夹 
+
+并放入HFOpenMusicPlayer/IJKMediaFramework.framework/文件夹 
 
 或自行下载播放器依赖库源码 [ijkplayer](https://github.com/Bilibili/ijkplayer)
 
