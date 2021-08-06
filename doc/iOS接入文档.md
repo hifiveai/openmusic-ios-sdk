@@ -1,9 +1,8 @@
+### 一. 项目说明
 
+该项目是接入了 HIFIVE API的客户端Demo,包括播放器,播放列表等相关UI.
 
-
-
-###一. 项目说明
-####该项目是接入了 HIFIVE API的客户端Demo,包括播放器,播放列表等相关UI.
+##### 1. 配置依赖库
 
 项目具体代码在HFOpenMusicPlayer文件夹下,接入的Demo名称是HFOpenMusicPlayerDemo.
 
@@ -11,8 +10,17 @@
 - 工程系统库依赖:
    1. libc++.tbd
    2. libbz2.1.0.tbd
+ 
+- 播放器依赖库(可选择下载):
+
+下载地址:[IJKMediaFramework](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/ios/IJKMediaFramework)
+
+并放入HFOpenMusicPlayer/IJKMediaFramework.framework/文件夹 
+
+或自行下载播放器依赖库源码 [ijkplayer](https://github.com/Bilibili/ijkplayer)
 
 - 依赖的第三方库:
+
 pod 'MJExtension'
 pod 'Masonry'
 pod 'YYWebImage'
@@ -20,13 +28,14 @@ pod 'MJRefresh'
 pod 'FLAnimatedImage'
 pod 'SVProgressHUD'
 
-2. 运行项目
+##### 2. 运行项目
+
 执行pod install ,打开.xcworkspace工程。
 
 ### 二、接口说明
 
 
-1. 初始化
+##### 1. 初始化
 
     调用如下API进行初始化操作，clientId为用户唯一标识（公司自有的用户ID），请在获取到用户ID之后调用
 
@@ -47,7 +56,7 @@ pod 'SVProgressHUD'
     | version | 是 | 操作的 API 的版本，如：V4.1.1 |
 
 
-2. 音乐授权类型
+##### 2. 音乐授权类型
 
     | 名称                  | 值      |     
     | --------------------- | ------- | 
@@ -55,7 +64,7 @@ pod 'SVProgressHUD'
     | 音视频作品BGM音乐播放 | TYPE_UGC     |     
     | K歌音乐播放           | KTYPE_K      |      
 
-3. 配置
+##### 3. 配置
 
 - 创建默认配置
     ```objc
@@ -83,7 +92,7 @@ pod 'SVProgressHUD'
     config.panTopLimit = 100;
     config.panBottomLimit = 50;
     ```
-4. 展示视图
+##### 4. 展示视图
     ```objc
     -(void)addMusicPlayerView;
     ```
@@ -97,9 +106,8 @@ pod 'SVProgressHUD'
     [playerView.listView showMusicSegmentView];
     ```
 
-4. 更多接口
+##### 5. 更多接口
     可查看DOC文件夹里面的文档
-
 
 
 ### 三、API状态码
