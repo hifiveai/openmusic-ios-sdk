@@ -2,7 +2,7 @@
 
 #### 该项目是接入了 HIFIVE API的客户端Demo,包括播放器,播放列表等相关UI.
 
-1. 配置依赖库
+##### 1. 配置依赖库
 
 项目具体代码在HFOpenMusicPlayer文件夹下,接入的Demo名称是HFOpenMusicPlayerDemo.
 
@@ -28,7 +28,7 @@ pod 'MJRefresh'
 pod 'FLAnimatedImage'
 pod 'SVProgressHUD'
 
-2. 运行项目
+##### 2. 运行项目
 
 执行pod install ,打开.xcworkspace工程。
 
