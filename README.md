@@ -35,7 +35,7 @@ pod 'SVProgressHUD'
 ### 二、接口说明
 
 
-1. 初始化
+##### 1. 初始化
 
     调用如下API进行初始化操作，clientId为用户唯一标识（公司自有的用户ID），请在获取到用户ID之后调用
 
@@ -56,7 +56,7 @@ pod 'SVProgressHUD'
     | version | 是 | 操作的 API 的版本，如：V4.1.1 |
 
 
-2. 音乐授权类型
+##### 2. 音乐授权类型
 
     | 名称                  | 值      |     
     | --------------------- | ------- | 
@@ -64,7 +64,7 @@ pod 'SVProgressHUD'
     | 音视频作品BGM音乐播放 | TYPE_UGC     |     
     | K歌音乐播放           | KTYPE_K      |      
 
-3. 配置
+##### 3. 配置
 
 - 创建默认配置
     ```objc
@@ -92,7 +92,7 @@ pod 'SVProgressHUD'
     config.panTopLimit = 100;
     config.panBottomLimit = 50;
     ```
-4. 展示视图
+##### 4. 展示视图
     ```objc
     -(void)addMusicPlayerView;
     ```
@@ -106,9 +106,8 @@ pod 'SVProgressHUD'
     [playerView.listView showMusicSegmentView];
     ```
 
-4. 更多接口
+##### 5. 更多接口
     可查看DOC文件夹里面的文档
-
 
 
 ### 三、API状态码
