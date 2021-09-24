@@ -33,7 +33,13 @@
     if (!_myCollectionView) {
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        
         _myCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) collectionViewLayout:layout];
+        if (@available(iOS 11.0, *)) {
+            _myCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            // Fallback on earlier versions
+        }
         _myCollectionView.backgroundColor = UIColor.whiteColor;
         _myCollectionView.mj_header = self.mjHeaderView;
         _myCollectionView.mj_footer = self.mjFooterView;

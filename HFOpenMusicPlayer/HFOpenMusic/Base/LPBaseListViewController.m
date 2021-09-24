@@ -19,7 +19,11 @@
     if (!_myTableView) {
         _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
         _myTableView.showsVerticalScrollIndicator = NO;
-   
+        if (@available(iOS 11.0, *)) {
+            _myTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            // Fallback on earlier versions
+        }
         _myTableView.tableFooterView = UIView.new;
         _myTableView.mj_header = self.mjHeaderView;
         _myTableView.mj_footer = self.mjFooterView;

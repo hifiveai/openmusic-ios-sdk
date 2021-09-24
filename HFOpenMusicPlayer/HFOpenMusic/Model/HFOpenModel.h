@@ -138,6 +138,20 @@
 
 @end
 
+@interface HFOpenMusicDetailInfoSubModel : NSObject
+
+/// 歌曲
+@property(nonatomic ,copy)NSString *path;
+/// 波形图路径
+@property(nonatomic ,copy)NSString *wavePath;
+/// 相对父歌的开始时间
+@property(nonatomic ,copy)NSString *startTime;
+/// 相对父歌结束时间
+@property(nonatomic ,copy)NSString *endTime;
+/// 版本名称
+@property(nonatomic ,copy)NSString *versionName;
+@end
+
 @interface HFOpenMusicDetailInfoModel : NSObject
 
 @property(nonatomic ,copy)NSString *musicId;
@@ -146,5 +160,13 @@
 @property(nonatomic ,copy)NSString *fileSize;
 @property(nonatomic ,copy)NSString *waveUrl;
 
+
+/// 动态歌词
+@property(nonatomic ,copy)NSString *dynamicLyricUrl;
+
+/// 静态歌词
+@property(nonatomic ,copy)NSString *staticLyricUrl;
+
+@property (nonatomic, strong) NSArray<HFOpenMusicDetailInfoSubModel *> *subVersions;
 @end
 

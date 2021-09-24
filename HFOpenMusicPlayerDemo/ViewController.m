@@ -45,7 +45,14 @@
     
  [[HFOpenApiManager shared] registerAppWithAppId:@"3faeec81030444e98acf6af9ba32752a" serverCode:@"59b1aff189b3474398" clientId:@"hifive-testdemo" version:@"V4.1.2" success:^(id  _Nullable response) {
      NSLog(@"注册成功");
-     [self configUiType0];
+     //静默登录
+     [[HFOpenApiManager shared] baseLoginWithNickname:@"风车车" gender:nil birthday:nil location:nil education:nil profession:nil isOrganization:false reserve:nil favoriteSinger:nil favoriteGenre:nil success:^(id  _Nullable response) {
+         NSLog(@"登录成功");
+         [self configUiType0];
+     } fail:^(NSError * _Nullable error) {
+         NSLog(@"!!!");
+     }];
+    
      
  } fail:^(NSError * _Nullable error) {
      NSLog(@"注册失败");
@@ -61,14 +68,71 @@
     config.bufferCacheSize = self.bufferCacheSize;
     config.panTopLimit = self.topLimit;
     config.panBottomLimit = self.bottomLimit;
-    HFOpenMusicPlayer *playerView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
+    HFOpenMusicPlayer *playerView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_K config:config];
     //显示
     [playerView addMusicPlayerView];
     _playerListView = playerView;
     [playerView.listView showMusicSegmentView];
+   
     
 }
 
+//创建会员歌单  ,获取会员歌单,增加会员歌曲,获取歌曲,移除歌曲/清除歌曲,获取歌曲,删除歌单
+- (void)testApi{
+    HFOpenApiManager*m =   [HFOpenApiManager shared];
+    //创建会员歌单
+    [m createMemberWithSheetName:@"两只老虎爱跳舞7" success:^(id  _Nullable response) {
+        NSLog(@"createMemberWithSheetName--%@",response);
+        //获取会员歌单
+        [m fetchMemberSheetListWithMemberOutId:@"2333" page:nil pageSize:nil success:^(id  _Nullable response) {
+            //获取sheetId
+            NSLog(@"fetchMemberSheetListWithMemberOutId--%@",response);
+            //增加会员歌曲,
+            NSString *sheetId = @"37460";
+            [m addSheetMusicWithSheetId:sheetId musicId:@"CD4390C52C51" success:^(id  _Nullable response) {
+                NSLog(@"addSheetMusicWithSheetId--%@",response);
+                //获取歌曲
+                [m fetchMemberSheetMusicWithSheetId:sheetId page:nil pageSize:nil success:^(id  _Nullable response) {
+                    NSLog(@"fetchMemberSheetMusicWithSheetId--%@",response);
+                    
+                    //移除歌曲
+                    [m clearSheetMusicWithSheetId:sheetId success:^(id  _Nullable response) {
+            
+//                    [m removeSheetMusicWithSheetId:sheetId musicId:@"2F0864DEC7" success:^(id  _Nullable response) {
+                        NSLog(@"removeSheetMusicWithSheetId--%@",response);
+                        //获取歌曲
+                        [m fetchMemberSheetMusicWithSheetId:sheetId page:nil pageSize:nil success:^(id  _Nullable response) {
+                            NSLog(@"fetchMemberSheetMusicWithSheetId--%@",response);
+                            //删除歌单
+                            [m deleteMemberWithSheetId:sheetId success:^(id  _Nullable response) {
+                                NSLog(@"deleteMemberWithSheetId--%@",response);
+                            } fail:^(NSError * _Nullable error) {
+                                NSLog(@"🪲deleteMemberWithSheetId--%@",error);
+                            }];
+                        } fail:^(NSError * _Nullable error) {
+                            NSLog(@"🪲fetchMemberSheetMusicWithSheetId--%@",error);
+                        }];
+                    } fail:^(NSError * _Nullable error) {
+                        NSLog(@"🪲removeSheetMusicWithSheetId--%@",error);
+                    }];
+                    
+                  
+                } fail:^(NSError * _Nullable error) {
+                    NSLog(@"🪲fetchMemberSheetMusicWithSheetId--%@",error);
+                }];
+            } fail:^(NSError * _Nullable error) {
+                NSLog(@"🪲addSheetMusicWithSheetId--%@",error);
+            }];
+        } fail:^(NSError * _Nullable error) {
+            NSLog(@"🪲fetchMemberSheetListWithMemberOutId--%@",error);
+        }];
+        
+        
+        
+    } fail:^(NSError * _Nullable error) {
+        NSLog(@"🪲createMemberWithSheetName--%@",error);
+    }];
+}
 
 -(void)showAlert:(NSString *)message {
     UIAlertController *alertVC = [[UIAlertController alloc] init];

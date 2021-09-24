@@ -176,7 +176,7 @@
 #ifdef DEBUG
                     HFLog(@"\n⬇️⬇️⬇️⬇️\n%@\n⬆️⬆️⬆️⬆️\n",[dic description]);
 #endif
-                    if (code == 10200) {
+                    if (code == 10200 || code == 200) {
                         if (success) {
                             success(data);
                         }
