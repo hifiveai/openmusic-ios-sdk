@@ -77,63 +77,6 @@
     
 }
 
-//创建会员歌单  ,获取会员歌单,增加会员歌曲,获取歌曲,移除歌曲/清除歌曲,获取歌曲,删除歌单
-- (void)testApi{
-    HFOpenApiManager*m =   [HFOpenApiManager shared];
-    //创建会员歌单
-    [m createMemberWithSheetName:@"两只老虎爱跳舞7" success:^(id  _Nullable response) {
-        NSLog(@"createMemberWithSheetName--%@",response);
-        //获取会员歌单
-        [m fetchMemberSheetListWithMemberOutId:@"2333" page:nil pageSize:nil success:^(id  _Nullable response) {
-            //获取sheetId
-            NSLog(@"fetchMemberSheetListWithMemberOutId--%@",response);
-            //增加会员歌曲,
-            NSString *sheetId = @"37460";
-            [m addSheetMusicWithSheetId:sheetId musicId:@"CD4390C52C51" success:^(id  _Nullable response) {
-                NSLog(@"addSheetMusicWithSheetId--%@",response);
-                //获取歌曲
-                [m fetchMemberSheetMusicWithSheetId:sheetId page:nil pageSize:nil success:^(id  _Nullable response) {
-                    NSLog(@"fetchMemberSheetMusicWithSheetId--%@",response);
-                    
-                    //移除歌曲
-                    [m clearSheetMusicWithSheetId:sheetId success:^(id  _Nullable response) {
-            
-//                    [m removeSheetMusicWithSheetId:sheetId musicId:@"2F0864DEC7" success:^(id  _Nullable response) {
-                        NSLog(@"removeSheetMusicWithSheetId--%@",response);
-                        //获取歌曲
-                        [m fetchMemberSheetMusicWithSheetId:sheetId page:nil pageSize:nil success:^(id  _Nullable response) {
-                            NSLog(@"fetchMemberSheetMusicWithSheetId--%@",response);
-                            //删除歌单
-                            [m deleteMemberWithSheetId:sheetId success:^(id  _Nullable response) {
-                                NSLog(@"deleteMemberWithSheetId--%@",response);
-                            } fail:^(NSError * _Nullable error) {
-                                NSLog(@"🪲deleteMemberWithSheetId--%@",error);
-                            }];
-                        } fail:^(NSError * _Nullable error) {
-                            NSLog(@"🪲fetchMemberSheetMusicWithSheetId--%@",error);
-                        }];
-                    } fail:^(NSError * _Nullable error) {
-                        NSLog(@"🪲removeSheetMusicWithSheetId--%@",error);
-                    }];
-                    
-                  
-                } fail:^(NSError * _Nullable error) {
-                    NSLog(@"🪲fetchMemberSheetMusicWithSheetId--%@",error);
-                }];
-            } fail:^(NSError * _Nullable error) {
-                NSLog(@"🪲addSheetMusicWithSheetId--%@",error);
-            }];
-        } fail:^(NSError * _Nullable error) {
-            NSLog(@"🪲fetchMemberSheetListWithMemberOutId--%@",error);
-        }];
-        
-        
-        
-    } fail:^(NSError * _Nullable error) {
-        NSLog(@"🪲createMemberWithSheetName--%@",error);
-    }];
-}
-
 -(void)showAlert:(NSString *)message {
     UIAlertController *alertVC = [[UIAlertController alloc] init];
     alertVC.title = @"提示";
@@ -169,5 +112,7 @@
         [self.listView removeFromSuperview];
     }
 }
+
+
 
 @end

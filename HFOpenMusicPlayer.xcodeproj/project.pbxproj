@@ -3,10 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3CD8F61C26FDA4020006C46E /* ProductOpenApi */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3CD8F61D26FDA4030006C46E /* Build configuration list for PBXAggregateTarget "ProductOpenApi" */;
+			buildPhases = (
+				3CD8F62026FDA40A0006C46E /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = ProductOpenApi;
+			productName = ProductOpenApi;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		3C51A6A726FDA72000F099CF /* HFOpenAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C51A69C26FDA72000F099CF /* HFOpenAction.h */; };
+		3C51A6A826FDA72000F099CF /* HFOpenApiManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C51A69D26FDA72000F099CF /* HFOpenApiManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C51A6A926FDA72000F099CF /* HFVNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C51A69E26FDA72000F099CF /* HFVNetWork.m */; };
+		3C51A6AA26FDA72000F099CF /* HFVLibInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C51A6A026FDA72000F099CF /* HFVLibInfo.m */; };
+		3C51A6AB26FDA72000F099CF /* HFVLibUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C51A6A126FDA72000F099CF /* HFVLibUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C51A6AC26FDA72000F099CF /* HFVLibInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C51A6A226FDA72000F099CF /* HFVLibInfo.h */; };
+		3C51A6AD26FDA72000F099CF /* HFVLibUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C51A6A326FDA72000F099CF /* HFVLibUtils.m */; };
+		3C51A6AE26FDA72000F099CF /* HFOpenApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C51A6A426FDA72000F099CF /* HFOpenApiManager.m */; };
+		3C51A6AF26FDA72000F099CF /* HFOpenAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C51A6A526FDA72000F099CF /* HFOpenAction.m */; };
+		3C51A6B026FDA72000F099CF /* HFVNetWork.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C51A6A626FDA72000F099CF /* HFVNetWork.h */; };
+		3C51A6B326FDAA0B00F099CF /* HFOpenApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD8F5F926FD7ECE0006C46E /* HFOpenApi.framework */; platformFilter = ios; };
 		3CAA750526A9077000262B86 /* HIFPlayerBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA748626A9076F00262B86 /* HIFPlayerBarView.m */; };
 		3CAA750626A9077000262B86 /* HFPlayerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA748726A9076F00262B86 /* HFPlayerConfiguration.m */; };
 		3CAA750726A9077000262B86 /* HFVSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA748826A9076F00262B86 /* HFVSlider.m */; };
@@ -36,11 +61,6 @@
 		3CAA751F26A9077000262B86 /* LPBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74C526A9077000262B86 /* LPBaseCollectionViewController.m */; };
 		3CAA752026A9077000262B86 /* LPBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74C626A9077000262B86 /* LPBaseListViewController.m */; };
 		3CAA752126A9077000262B86 /* HFOpenMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74C826A9077000262B86 /* HFOpenMusicPlayer.m */; };
-		3CAA752226A9077000262B86 /* HFVNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74CC26A9077000262B86 /* HFVNetWork.m */; };
-		3CAA752326A9077000262B86 /* HFVLibInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74CE26A9077000262B86 /* HFVLibInfo.m */; };
-		3CAA752426A9077000262B86 /* HFVLibUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74D126A9077000262B86 /* HFVLibUtils.m */; };
-		3CAA752526A9077000262B86 /* HFOpenApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74D226A9077000262B86 /* HFOpenApiManager.m */; };
-		3CAA752626A9077000262B86 /* HFOpenAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74D326A9077000262B86 /* HFOpenAction.m */; };
 		3CAA752726A9077000262B86 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CAA74D726A9077000262B86 /* IJKMediaFramework.framework */; };
 		3CAA752826A9077000262B86 /* HFPlayerApiConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74DA26A9077000262B86 /* HFPlayerApiConfiguration.m */; };
 		3CAA752926A9077000262B86 /* HFPlayerCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA74DC26A9077000262B86 /* HFPlayerCacheManager.m */; };
@@ -60,6 +80,8 @@
 		3CAA753826A9077000262B86 /* LPMJGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA750126A9077000262B86 /* LPMJGifFooter.m */; };
 		3CAA753926A9077000262B86 /* HFVProgressHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA750226A9077000262B86 /* HFVProgressHud.m */; };
 		3CAA753A26A9077000262B86 /* HFVKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA750326A9077000262B86 /* HFVKitUtils.m */; };
+		3CD8F5FD26FD7ECE0006C46E /* HFOpenApi.docc in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8F5FC26FD7ECE0006C46E /* HFOpenApi.docc */; };
+		3CD8F5FE26FD7ECE0006C46E /* HFOpenApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CD8F5FB26FD7ECE0006C46E /* HFOpenApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CEF4603DA56346C73506AC4 /* Pods_HFOpenMusicPlayerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF1B8BCC77AA7B096DFF84B /* Pods_HFOpenMusicPlayerDemo.framework */; };
 		CA16E670262D5B80007DEAE6 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E66F262D5B80007DEAE6 /* libc++.tbd */; };
 		CA16E674262D5B8D007DEAE6 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA16E673262D5B8D007DEAE6 /* libbz2.1.0.tbd */; };
@@ -76,6 +98,16 @@
 		CAC7A9AD261D5D130082FCA3 /* normol.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC7A9AB261D5D130082FCA3 /* normol.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3C51A6B526FDAA0B00F099CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA3DBE93261C768F008A8A42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CD8F5F826FD7ECE0006C46E;
+			remoteInfo = HFOpenApi;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0166652064B6D723C3EDA077 /* Pods-HFOpenMusicPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayerDemo.release.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		0DF1B8BCC77AA7B096DFF84B /* Pods_HFOpenMusicPlayerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HFOpenMusicPlayerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +115,16 @@
 		1CD1EE15EC7425335ADADACB /* Pods-HFOpenMusicPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		26F3B65D61AC56491084840D /* Pods_HFOpenMusicPlayerDemo_HFOpenMusicPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HFOpenMusicPlayerDemo_HFOpenMusicPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FB654BC226E80F87966249 /* Pods-HFOpenMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayer.debug.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayer/Pods-HFOpenMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		3C51A69C26FDA72000F099CF /* HFOpenAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenAction.h; sourceTree = "<group>"; };
+		3C51A69D26FDA72000F099CF /* HFOpenApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenApiManager.h; sourceTree = "<group>"; };
+		3C51A69E26FDA72000F099CF /* HFVNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVNetWork.m; sourceTree = "<group>"; };
+		3C51A6A026FDA72000F099CF /* HFVLibInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVLibInfo.m; sourceTree = "<group>"; };
+		3C51A6A126FDA72000F099CF /* HFVLibUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVLibUtils.h; sourceTree = "<group>"; };
+		3C51A6A226FDA72000F099CF /* HFVLibInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVLibInfo.h; sourceTree = "<group>"; };
+		3C51A6A326FDA72000F099CF /* HFVLibUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVLibUtils.m; sourceTree = "<group>"; };
+		3C51A6A426FDA72000F099CF /* HFOpenApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenApiManager.m; sourceTree = "<group>"; };
+		3C51A6A526FDA72000F099CF /* HFOpenAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenAction.m; sourceTree = "<group>"; };
+		3C51A6A626FDA72000F099CF /* HFVNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVNetWork.h; sourceTree = "<group>"; };
 		3CAA748626A9076F00262B86 /* HIFPlayerBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIFPlayerBarView.m; sourceTree = "<group>"; };
 		3CAA748726A9076F00262B86 /* HFPlayerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPlayerConfiguration.m; sourceTree = "<group>"; };
 		3CAA748826A9076F00262B86 /* HFVSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVSlider.m; sourceTree = "<group>"; };
@@ -141,16 +183,6 @@
 		3CAA74C626A9077000262B86 /* LPBaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPBaseListViewController.m; sourceTree = "<group>"; };
 		3CAA74C726A9077000262B86 /* LPBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPBaseCollectionViewController.h; sourceTree = "<group>"; };
 		3CAA74C826A9077000262B86 /* HFOpenMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenMusicPlayer.m; sourceTree = "<group>"; };
-		3CAA74CA26A9077000262B86 /* HFOpenAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenAction.h; sourceTree = "<group>"; };
-		3CAA74CB26A9077000262B86 /* HFOpenApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenApiManager.h; sourceTree = "<group>"; };
-		3CAA74CC26A9077000262B86 /* HFVNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVNetWork.m; sourceTree = "<group>"; };
-		3CAA74CE26A9077000262B86 /* HFVLibInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVLibInfo.m; sourceTree = "<group>"; };
-		3CAA74CF26A9077000262B86 /* HFVLibUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVLibUtils.h; sourceTree = "<group>"; };
-		3CAA74D026A9077000262B86 /* HFVLibInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVLibInfo.h; sourceTree = "<group>"; };
-		3CAA74D126A9077000262B86 /* HFVLibUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVLibUtils.m; sourceTree = "<group>"; };
-		3CAA74D226A9077000262B86 /* HFOpenApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenApiManager.m; sourceTree = "<group>"; };
-		3CAA74D326A9077000262B86 /* HFOpenAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFOpenAction.m; sourceTree = "<group>"; };
-		3CAA74D426A9077000262B86 /* HFVNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVNetWork.h; sourceTree = "<group>"; };
 		3CAA74D526A9077000262B86 /* HFOpenMusicPlayerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFOpenMusicPlayerConfiguration.h; sourceTree = "<group>"; };
 		3CAA74D626A9077000262B86 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3CAA74D726A9077000262B86 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
@@ -192,6 +224,9 @@
 		3CAA750226A9077000262B86 /* HFVProgressHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVProgressHud.m; sourceTree = "<group>"; };
 		3CAA750326A9077000262B86 /* HFVKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFVKitUtils.m; sourceTree = "<group>"; };
 		3CAA750426A9077000262B86 /* HFVGlobalTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFVGlobalTool.h; sourceTree = "<group>"; };
+		3CD8F5F926FD7ECE0006C46E /* HFOpenApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HFOpenApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CD8F5FB26FD7ECE0006C46E /* HFOpenApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFOpenApi.h; sourceTree = "<group>"; };
+		3CD8F5FC26FD7ECE0006C46E /* HFOpenApi.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HFOpenApi.docc; sourceTree = "<group>"; };
 		4EF0A07139B2F53DBC5FAF90 /* Pods-HFOpenMusicPlayer-HFOpenMusicPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayer-HFOpenMusicPlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayer-HFOpenMusicPlayerDemo/Pods-HFOpenMusicPlayer-HFOpenMusicPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		84B557DBF8DA9F6B84934169 /* Pods-HFOpenMusicPlayerDemo-HFOpenMusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFOpenMusicPlayerDemo-HFOpenMusicPlayer.release.xcconfig"; path = "Target Support Files/Pods-HFOpenMusicPlayerDemo-HFOpenMusicPlayer/Pods-HFOpenMusicPlayerDemo-HFOpenMusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		CA16E651262D5AA4007DEAE6 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -231,11 +266,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3CD8F5F626FD7ECE0006C46E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA3DBEA9261C76CB008A8A42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CA16E674262D5B8D007DEAE6 /* libbz2.1.0.tbd in Frameworks */,
+				3C51A6B326FDAA0B00F099CF /* HFOpenApi.framework in Frameworks */,
 				CA16E670262D5B80007DEAE6 /* libc++.tbd in Frameworks */,
 				4CEF4603DA56346C73506AC4 /* Pods_HFOpenMusicPlayerDemo.framework in Frameworks */,
 				3CAA752726A9077000262B86 /* IJKMediaFramework.framework in Frameworks */,
@@ -245,6 +288,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C51A69B26FDA72000F099CF /* HFOpenApi */ = {
+			isa = PBXGroup;
+			children = (
+				3C51A69C26FDA72000F099CF /* HFOpenAction.h */,
+				3C51A69D26FDA72000F099CF /* HFOpenApiManager.h */,
+				3C51A69E26FDA72000F099CF /* HFVNetWork.m */,
+				3C51A69F26FDA72000F099CF /* Utils */,
+				3C51A6A426FDA72000F099CF /* HFOpenApiManager.m */,
+				3C51A6A526FDA72000F099CF /* HFOpenAction.m */,
+				3C51A6A626FDA72000F099CF /* HFVNetWork.h */,
+			);
+			path = HFOpenApi;
+			sourceTree = "<group>";
+		};
+		3C51A69F26FDA72000F099CF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3C51A6A026FDA72000F099CF /* HFVLibInfo.m */,
+				3C51A6A126FDA72000F099CF /* HFVLibUtils.h */,
+				3C51A6A226FDA72000F099CF /* HFVLibInfo.h */,
+				3C51A6A326FDA72000F099CF /* HFVLibUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		3CAA748426A9076F00262B86 /* HFOpenMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +326,6 @@
 				CA20D2BB261CD31D00DBB34F /* HFOpenMusic.bundle */,
 				3CAA749526A9076F00262B86 /* HFOpenMusic */,
 				3CAA748526A9076F00262B86 /* HFPlayer */,
-				3CAA74C926A9077000262B86 /* HFOpenApi */,
 				3CAA74D926A9077000262B86 /* HFPlayerApi */,
 				3CAA74E726A9077000262B86 /* Tool */,
 			);
@@ -398,31 +465,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		3CAA74C926A9077000262B86 /* HFOpenApi */ = {
-			isa = PBXGroup;
-			children = (
-				3CAA74CA26A9077000262B86 /* HFOpenAction.h */,
-				3CAA74CB26A9077000262B86 /* HFOpenApiManager.h */,
-				3CAA74CC26A9077000262B86 /* HFVNetWork.m */,
-				3CAA74CD26A9077000262B86 /* Utils */,
-				3CAA74D226A9077000262B86 /* HFOpenApiManager.m */,
-				3CAA74D326A9077000262B86 /* HFOpenAction.m */,
-				3CAA74D426A9077000262B86 /* HFVNetWork.h */,
-			);
-			path = HFOpenApi;
-			sourceTree = "<group>";
-		};
-		3CAA74CD26A9077000262B86 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				3CAA74CE26A9077000262B86 /* HFVLibInfo.m */,
-				3CAA74CF26A9077000262B86 /* HFVLibUtils.h */,
-				3CAA74D026A9077000262B86 /* HFVLibInfo.h */,
-				3CAA74D126A9077000262B86 /* HFVLibUtils.m */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		3CAA74D926A9077000262B86 /* HFPlayerApi */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +548,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		3CD8F5FA26FD7ECE0006C46E /* HFOpenApi */ = {
+			isa = PBXGroup;
+			children = (
+				3C51A69B26FDA72000F099CF /* HFOpenApi */,
+				3CD8F5FB26FD7ECE0006C46E /* HFOpenApi.h */,
+				3CD8F5FC26FD7ECE0006C46E /* HFOpenApi.docc */,
+			);
+			path = HFOpenApi;
+			sourceTree = "<group>";
+		};
 		BB44E0BFAD16A5726879EEBA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +578,7 @@
 			children = (
 				3CAA748426A9076F00262B86 /* HFOpenMusicPlayer */,
 				CA3DBEAD261C76CB008A8A42 /* HFOpenMusicPlayerDemo */,
+				3CD8F5FA26FD7ECE0006C46E /* HFOpenApi */,
 				CA3DBE9D261C768F008A8A42 /* Products */,
 				CA3DBED1261C79E1008A8A42 /* Frameworks */,
 				BB44E0BFAD16A5726879EEBA /* Pods */,
@@ -536,6 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				CA3DBEAC261C76CB008A8A42 /* HFOpenMusicPlayerDemo.app */,
+				3CD8F5F926FD7ECE0006C46E /* HFOpenApi.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -588,7 +642,41 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3CD8F5F426FD7ECE0006C46E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C51A6B026FDA72000F099CF /* HFVNetWork.h in Headers */,
+				3C51A6A826FDA72000F099CF /* HFOpenApiManager.h in Headers */,
+				3C51A6AB26FDA72000F099CF /* HFVLibUtils.h in Headers */,
+				3C51A6AC26FDA72000F099CF /* HFVLibInfo.h in Headers */,
+				3C51A6A726FDA72000F099CF /* HFOpenAction.h in Headers */,
+				3CD8F5FE26FD7ECE0006C46E /* HFOpenApi.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		3CD8F5F826FD7ECE0006C46E /* HFOpenApi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CD8F60126FD7ECE0006C46E /* Build configuration list for PBXNativeTarget "HFOpenApi" */;
+			buildPhases = (
+				3CD8F5F426FD7ECE0006C46E /* Headers */,
+				3CD8F5F526FD7ECE0006C46E /* Sources */,
+				3CD8F5F626FD7ECE0006C46E /* Frameworks */,
+				3CD8F5F726FD7ECE0006C46E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HFOpenApi;
+			productName = HFOpenApi;
+			productReference = 3CD8F5F926FD7ECE0006C46E /* HFOpenApi.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		CA3DBEAB261C76CB008A8A42 /* HFOpenMusicPlayerDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA3DBEC2261C76CF008A8A42 /* Build configuration list for PBXNativeTarget "HFOpenMusicPlayerDemo" */;
@@ -602,6 +690,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3C51A6B626FDAA0B00F099CF /* PBXTargetDependency */,
 			);
 			name = HFOpenMusicPlayerDemo;
 			productName = HFOpenMusicPlayerDemo;
@@ -616,6 +705,12 @@
 			attributes = {
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
+					3CD8F5F826FD7ECE0006C46E = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					3CD8F61C26FDA4020006C46E = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					CA3DBEAB261C76CB008A8A42 = {
 						CreatedOnToolsVersion = 12.1;
 					};
@@ -635,11 +730,20 @@
 			projectRoot = "";
 			targets = (
 				CA3DBEAB261C76CB008A8A42 /* HFOpenMusicPlayerDemo */,
+				3CD8F5F826FD7ECE0006C46E /* HFOpenApi */,
+				3CD8F61C26FDA4020006C46E /* ProductOpenApi */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3CD8F5F726FD7ECE0006C46E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA3DBEAA261C76CB008A8A42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -657,6 +761,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3CD8F62026FDA40A0006C46E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=\"HFOpenApi\"\n\nCONFIGURATION=\"Release\"\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nOUTPUT_DIR=${SRCROOT}/HFOpenApiSDK\n# Working dir will be deleted after the framework creation.\nWORK_DIR=build\nDEVICE_DIR=${WORK_DIR}/${CONFIGURATION}-iphoneos\nSIMULATOR_DIR=${WORK_DIR}/${CONFIGURATION}-iphonesimulator\n\n\n# Clean and Building both architectures.\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\n\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"${FMK_NAME}\" -sdk iphonesimulator  build\n\n# Cleaning the oldest.\nif [ -d \"${OUTPUT_DIR}\" ]\nthen\nrm -rf \"${OUTPUT_DIR}\"\nfi\nmkdir -p \"${OUTPUT_DIR}\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\n\nxcodebuild -create-xcframework \\\n        -framework \"${DEVICE_DIR}/${FMK_NAME}.framework\" \\\n        -framework \"${SIMULATOR_DIR}/${FMK_NAME}.framework\" \\\n        -output \"${OUTPUT_DIR}/${FMK_NAME}.xcframework\"\n\nrm -r \"${WORK_DIR}\"\n\n\nopen \"${OUTPUT_DIR}\"\n\n";
+		};
 		56997FE20649A541ACA8AE13 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -699,11 +820,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3CD8F5F526FD7ECE0006C46E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C51A6AD26FDA72000F099CF /* HFVLibUtils.m in Sources */,
+				3CD8F5FD26FD7ECE0006C46E /* HFOpenApi.docc in Sources */,
+				3C51A6AE26FDA72000F099CF /* HFOpenApiManager.m in Sources */,
+				3C51A6AA26FDA72000F099CF /* HFVLibInfo.m in Sources */,
+				3C51A6A926FDA72000F099CF /* HFVNetWork.m in Sources */,
+				3C51A6AF26FDA72000F099CF /* HFOpenAction.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA3DBEA8261C76CB008A8A42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CAA752626A9077000262B86 /* HFOpenAction.m in Sources */,
 				3CAA752126A9077000262B86 /* HFOpenMusicPlayer.m in Sources */,
 				3CAA750B26A9077000262B86 /* LPCategoryView.m in Sources */,
 				3CAA752F26A9077000262B86 /* NSDictionary+SafeAccess.m in Sources */,
@@ -739,17 +872,13 @@
 				3CAA752E26A9077000262B86 /* NSMutableArray+SafeAccess.m in Sources */,
 				CA3DBEB0261C76CB008A8A42 /* AppDelegate.m in Sources */,
 				CA3DBEC1261C76CF008A8A42 /* main.m in Sources */,
-				3CAA752226A9077000262B86 /* HFVNetWork.m in Sources */,
 				3CAA750826A9077000262B86 /* HFPlayer.m in Sources */,
 				3CAA752926A9077000262B86 /* HFPlayerCacheManager.m in Sources */,
-				3CAA752426A9077000262B86 /* HFVLibUtils.m in Sources */,
-				3CAA752326A9077000262B86 /* HFVLibInfo.m in Sources */,
 				3CAA751426A9077000262B86 /* HFOpenSearchResultCell.m in Sources */,
 				CA3DBEB3261C76CB008A8A42 /* SceneDelegate.m in Sources */,
 				3CAA750526A9077000262B86 /* HIFPlayerBarView.m in Sources */,
 				3CAA751526A9077000262B86 /* LPSearchHistoryView.m in Sources */,
 				3CAA753926A9077000262B86 /* HFVProgressHud.m in Sources */,
-				3CAA752526A9077000262B86 /* HFOpenApiManager.m in Sources */,
 				3CAA751726A9077000262B86 /* HFOpenSeachViewController.m in Sources */,
 				3CAA753026A9077000262B86 /* NSMutableDictionary+SafeAccess.m in Sources */,
 				3CAA751A26A9077000262B86 /* HFOpenMusicSegmentView.m in Sources */,
@@ -763,6 +892,15 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C51A6B626FDAA0B00F099CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 3CD8F5F826FD7ECE0006C46E /* HFOpenApi */;
+			targetProxy = 3C51A6B526FDAA0B00F099CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CA3DBEB7261C76CB008A8A42 /* Main.storyboard */ = {
@@ -784,6 +922,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3CD8F5FF26FD7ECE0006C46E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = N24P8B6R5C;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Kane.HFOpenApi;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3CD8F60026FD7ECE0006C46E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = N24P8B6R5C;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Kane.HFOpenApi;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3CD8F61E26FDA4030006C46E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N24P8B6R5C;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3CD8F61F26FDA4030006C46E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N24P8B6R5C;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CA3DBEA2261C768F008A8A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1043,6 +1261,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3CD8F60126FD7ECE0006C46E /* Build configuration list for PBXNativeTarget "HFOpenApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CD8F5FF26FD7ECE0006C46E /* Debug */,
+				3CD8F60026FD7ECE0006C46E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CD8F61D26FDA4030006C46E /* Build configuration list for PBXAggregateTarget "ProductOpenApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CD8F61E26FDA4030006C46E /* Debug */,
+				3CD8F61F26FDA4030006C46E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CA3DBE96261C768F008A8A42 /* Build configuration list for PBXProject "HFOpenMusicPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

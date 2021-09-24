@@ -22,10 +22,9 @@
 #define KNotification_needMoreData @"KNotification_needMoreData"
 
 #define MAS_SHORTHAND   // 写在masonry前面
+#import <HFOpenApi/HFOpenApi.h>
 #import "HFOpenModel.h"
-#import "HFOpenApiManager.h"
 #import "HFVNetWork.h"
-#import "HFVLibUtils.h"
 #import "FLAnimatedImage.h"
 #import "FLAnimatedImageView.h"
 #import "HFPlayerModel.h"
