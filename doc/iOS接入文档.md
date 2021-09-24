@@ -47,14 +47,28 @@ pod 'SVProgressHUD'
     | version | 是 | 操作的 API 的版本，如：V4.1.1 |
 
 
-2. 音乐授权类型
-
-    | 名称                  | 值      |     
-    | --------------------- | ------- | 
-    | BGM音乐播放           | TYPE_TRAFFIC |    
-    | 音视频作品BGM音乐播放 | TYPE_UGC     |     
-    | K歌音乐播放           | KTYPE_K      |      
-
+2. 登录    
+    登录后才可以操作,用户名必填
+    ```objc
+     [[HFOpenApiManager shared] baseLoginWithNickname:@"userName" gender:nil birthday:nil location:nil education:nil profession:nil isOrganization:false reserve:nil favoriteSinger:nil favoriteGenre:nil success:^(id  _Nullable response) {
+         NSLog(@"登录成功");
+         [self configUiType0];
+     } fail:^(NSError * _Nullable error) {
+         NSLog(@"!!!");
+     }];
+    ```
+    | 配置项 | 描述 | 默认值 | 类型 |
+    |---|---|---|---|
+    | Nickname | 昵称| 无,必填 | String |
+    | Gender | 性别 | 0 | String |
+    | Birthday | 出生日期，10位秒级时间戳 | nil | String |
+    | Location | 经纬度信息，纬度在前 | nil | String |
+    | Education | 所受教育水平 | nil | String |
+    | Profession | 职业 | 默认关闭 | String |
+    | IsOrganization | 是否属于组织机构类型用户 (to B) | false| String |
+    | Reserve | json字符串，保留字段用于扩展用户其他信息 | nil | String |
+    | FavoriteSinger | 喜欢的歌手名，多个用英文逗号拼接 | nil | String |
+    | FavoriteGenre | 喜欢的音乐流派Id，多个用英文逗号拼接 | nil | String |
 3. 配置
 
 - 创建默认配置
@@ -84,10 +98,17 @@ pod 'SVProgressHUD'
     config.panBottomLimit = 50;
     ```
 4. 展示视图
+   使用 HFOpenMusicPlayer 类
     ```objc
-    -(void)addMusicPlayerView;
+    -(instancetype _Nonnull )initWithListenType:(HFOpenMusicListenType)type config:(HFOpenMusicPlayerConfiguration *_Nonnull)config;
     ```
+    音乐授权类型
 
+    | 名称                  | 值      |     
+    | --------------------- | ------- | 
+    | BGM音乐播放           | TYPE_TRAFFIC |    
+    | 音视频作品BGM音乐播放 | TYPE_UGC     |     
+    | K歌音乐播放           | KTYPE_K      |    
 
     ```objc
     HFOpenMusicPlayer *playerView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
@@ -97,7 +118,7 @@ pod 'SVProgressHUD'
     [playerView.listView showMusicSegmentView];
     ```
 
-4. 更多接口
+5. 更多接口
     可查看DOC文件夹里面的文档
 
 
