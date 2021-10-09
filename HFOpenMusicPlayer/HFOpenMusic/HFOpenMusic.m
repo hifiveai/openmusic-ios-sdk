@@ -45,12 +45,7 @@
 }
 
 -(void)configUI {
-    //静默登录
-    [[HFOpenApiManager shared] baseLoginWithNickname:nil gender:nil birthday:nil location:nil education:nil profession:nil isOrganization:false reserve:nil favoriteSinger:nil favoriteGenre:nil success:^(id  _Nullable response) {
-        
-    } fail:^(NSError * _Nullable error) {
-        
-    }];
+  
     //440
     self.frame = CGRectMake(0,0,KScreenWidth,KScreenHeight);
     

@@ -66,7 +66,7 @@
     const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];
     const char *cData = [string cStringUsingEncoding:NSASCIIStringEncoding];
     if (!cData) {
-        *error = HFVMusicError(HFVSDK_CODE_ParameterError, @"特殊字符不能完成签名");
+        *error = HFVMusicError(20503, @"特殊字符不能完成签名");
         return nil;
     }
 
@@ -175,7 +175,7 @@
 + (NSDictionary *)urlEncodeWithDIctionary:(NSDictionary *)dict {
     NSMutableDictionary *encodeDict = [NSMutableDictionary dictionary];
     for (NSString *key in dict.allKeys) {
-        NSString *value = [NSString stringWithFormat:@"%@",[dict hfv_objectForKey_Safe:key]];
+        NSString *value = [NSString stringWithFormat:@"%@",[dict objectForKey:key]];
         
         NSString * charaters = @"?!@#$^&=%*+,:;'\"`<>()[]{}/\\| ";
         NSCharacterSet * set = [[NSCharacterSet characterSetWithCharactersInString:charaters] invertedSet];
@@ -185,8 +185,10 @@
         }else {
             urlEncodeValue = [value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         }
-        
-        [encodeDict hfv_setObject_Safe:urlEncodeValue forKey:key];
+        if (urlEncodeValue) {
+            [encodeDict setObject:urlEncodeValue forKey:key];
+        }
+      
     }
     return [encodeDict copy];
 }

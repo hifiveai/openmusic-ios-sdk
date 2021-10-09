@@ -45,7 +45,14 @@
     
  [[HFOpenApiManager shared] registerAppWithAppId:@"3faeec81030444e98acf6af9ba32752a" serverCode:@"59b1aff189b3474398" clientId:@"hifive-testdemo" version:@"V4.1.2" success:^(id  _Nullable response) {
      NSLog(@"注册成功");
-     [self configUiType0];
+     //静默登录
+     [[HFOpenApiManager shared] baseLoginWithNickname:@"风车车" gender:nil birthday:nil location:nil education:nil profession:nil isOrganization:false reserve:nil favoriteSinger:nil favoriteGenre:nil success:^(id  _Nullable response) {
+         NSLog(@"登录成功");
+         [self configUiType0];
+     } fail:^(NSError * _Nullable error) {
+         NSLog(@"!!!");
+     }];
+    
      
  } fail:^(NSError * _Nullable error) {
      NSLog(@"注册失败");
@@ -61,14 +68,14 @@
     config.bufferCacheSize = self.bufferCacheSize;
     config.panTopLimit = self.topLimit;
     config.panBottomLimit = self.bottomLimit;
-    HFOpenMusicPlayer *playerView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
+    HFOpenMusicPlayer *playerView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_K config:config];
     //显示
     [playerView addMusicPlayerView];
     _playerListView = playerView;
     [playerView.listView showMusicSegmentView];
+   
     
 }
-
 
 -(void)showAlert:(NSString *)message {
     UIAlertController *alertVC = [[UIAlertController alloc] init];
@@ -105,5 +112,7 @@
         [self.listView removeFromSuperview];
     }
 }
+
+
 
 @end

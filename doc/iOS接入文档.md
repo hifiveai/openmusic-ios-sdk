@@ -32,7 +32,11 @@ pod 'SVProgressHUD'
 
     ```objc 
 
-    [[HFOpenApiManager shared] registerAppWithAppId:@"appId" serverCode:@"serverCode" clientId:@"clientId" version:@"version" success:^(id  _Nullable response) {
+    [[HFOpenApiManager shared] registerAppWithAppId:@"appId" 
+    serverCode:@"serverCode" 
+    clientId:@"clientId" 
+    version:@"version" 
+    success:^(id  _Nullable response) {
         //注册成功
     } fail:^(NSError * _Nullable error) {
         //注册失败
@@ -47,14 +51,86 @@ pod 'SVProgressHUD'
     | version | 是 | 操作的 API 的版本，如：V4.1.1 |
 
 
-2. 音乐授权类型
+2. 登录    
+    登录后才可以操作,用户名必填
+    ```objc
+     [[HFOpenApiManager shared] baseLoginWithNickname:@"userName" 
+        gender:nil 
+        birthday:nil 
+        location:nil 
+        education:nil 
+        profession:nil 
+        isOrganization:false 
+        reserve:nil 
+        favoriteSinger:nil 
+        favoriteGenre:nil 
+     success:^(id  _Nullable response) {
+         NSLog(@"登录成功");
+         [self configUiType0];
+     } fail:^(NSError * _Nullable error) {
+         NSLog(@"!!!");
+     }];
+    ```
+    
+| 参数           | 必填 | 描述                                        | 可选值             | 示例                   |      |
+| -------------- | ---- | ------------------------------------------- | ------------------ | ---------------------- | ---- |
+| nickname       | 是   | 昵称                                        | -                  | -                      |      |
+| gender         | 否   | 性别，默认0                                 | 0:未知,1:男,2:女   | -                      |      |
+| birthday       | 否   | 出生日期，10位秒级时间戳                    | -                  | 1594639058             |      |
+| location       | 否   | 经纬度信息，纬度在前                        | -                  | 30.779164,103.94547    |      |
+| education      | 否   | 所受教育水平                                | 详见[教育水平定义] | 0                      |      |
+| profession     | 否   | 职业                                        | 详见[用户职业定义] | 0                      |      |
+| isOrganization | 否   | 是否属于组织机构类型用户（to B），默认false | true/false         | false                  |      |
+| reserve        | 否   | json字符串，保留字段用于扩展用户其他信息    | -                  | {"language":"English"} |      |
+| favoriteSinger | 否   | 喜欢的歌手名，多个用英文逗号隔开            | -                  | Queen,The Beatles      |      |
+| favoriteGenre  | 否   | 喜欢的音乐流派Id，多个用英文逗号拼接        | -                  | 7,8,10                 |      |
+| success | 否 | 成功 | - | - | |
+| fail | 否 | 失败 | - | - | |
 
-    | 名称                  | 值      |     
-    | --------------------- | ------- | 
-    | BGM音乐播放           | TYPE_TRAFFIC |    
-    | 音视频作品BGM音乐播放 | TYPE_UGC     |     
-    | K歌音乐播放           | KTYPE_K      |      
+**教育水平定义**
 
+| 名称       | 枚举值 | 说明   |      |
+| ---------- | ------ | ------ | ---- |
+| 未采集     | 0      | 默认值 |      |
+| 小学       | 1      | -      |      |
+| 初中       | 2      | -      |      |
+| 高中       | 3      | -      |      |
+| 大学       | 4      | -      |      |
+| 硕士及以上 | 5      | -      |      |
+
+**用户职业定义**
+
+| 名称                                             | 枚举值 | 说明   |      |
+| ------------------------------------------------ | ------ | ------ | ---- |
+| 未采集                                           | 0      | 默认值 |      |
+| 政府部门/企事业/公司管理人员                     | 1      | -      |      |
+| 私营业主                                         | 2      | -      |      |
+| 专业技术人员（教师、医生、工程技术人员、作家等） | 3      | -      |      |
+| 企业/公司职员                                    | 4      | -      |      |
+| 党政机关事业单位员工                             | 5      | -      |      |
+| 第三产业服务人员                                 | 6      | -      |      |
+| 学生                                             | 7      | -      |      |
+| 军人                                             | 8      | -      |      |
+| 失业、自由工作者、离退休人员                     | 9      | -      |      |
+| 其他                                             | 10     | -      |      |
+
+**音乐流派定义**
+
+| 名称   | 枚举值 | 说明   |      |
+| ------ | ------ | ------ | ---- |
+| 未采集 | 0      | 默认值 |      |
+| 中国风 | 1      | -      |      |
+| 拉丁   | 2      | -      |      |
+| 嘻哈   | 3      | -      |      |
+| 爵士   | 4      | -      |      |
+| 乡村   | 5      | -      |      |
+| 流行   | 6      | -      |      |
+| 布鲁斯 | 7      | -      |      |
+| 民谣   | 8      | -      |      |
+| 摇滚   | 9      | -      |      |
+| 轻音乐 | 10     | -      |      |
+| 管弦乐 | 11     | -      |      |
+| 电子   | 12     | -      |      |
 3. 配置
 
 - 创建默认配置
@@ -84,10 +160,17 @@ pod 'SVProgressHUD'
     config.panBottomLimit = 50;
     ```
 4. 展示视图
+   使用 HFOpenMusicPlayer 类
     ```objc
-    -(void)addMusicPlayerView;
+    -(instancetype _Nonnull )initWithListenType:(HFOpenMusicListenType)type config:(HFOpenMusicPlayerConfiguration *_Nonnull)config;
     ```
+    音乐授权类型
 
+    | 名称                  | 值      |     
+    | --------------------- | ------- | 
+    | BGM音乐播放           | TYPE_TRAFFIC |    
+    | 音视频作品BGM音乐播放 | TYPE_UGC     |     
+    | K歌音乐播放           | KTYPE_K      |    
 
     ```objc
     HFOpenMusicPlayer *playerView = [[HFOpenMusicPlayer alloc] initWithListenType:TYPE_TRAFFIC config:config];
@@ -97,7 +180,7 @@ pod 'SVProgressHUD'
     [playerView.listView showMusicSegmentView];
     ```
 
-4. 更多接口
+5. 更多接口
     可查看DOC文件夹里面的文档
 
 

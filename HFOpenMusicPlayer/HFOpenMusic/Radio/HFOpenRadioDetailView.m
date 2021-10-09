@@ -66,21 +66,17 @@
         _myTableView.separatorInset = UIEdgeInsetsMake(0, KScale(15), 0, 0);
         _myTableView.separatorColor = [UIColor.whiteColor colorWithAlphaComponent:0.1];
         _myTableView.backgroundColor = KColorHex(0x282828);
-//        _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        //_myTableView.backgroundColor = UIColor.greenColor;
         _myTableView.mj_header = self.mjHeaderView;
         _myTableView.mj_footer = self.mjFooterView;
         _myTableView.tableFooterView = UIView.new;
-        if (@available(iOS 13.0, *)) {
-            _myTableView.automaticallyAdjustsScrollIndicatorInsets = false;
-        } else {
+        
             if (@available(iOS 11.0, *)) {
-                [_myTableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-            } else {
-                // Fallback on earlier versions
-            }
-        }
-      //  _myTableView.contentInset = UIEdgeInsetsMake(0, 0, -34, 0);
+                        _myTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+                    } else {
+                        // Fallback on earlier versions
+                    }
+        
+
     }
     return _myTableView;
 }
