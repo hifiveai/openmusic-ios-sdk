@@ -44,7 +44,7 @@ python端: https://github.com/hifiveai/openmusic-python-sdk
 
 ## 查看接口文档
 
-[SDK接入文档](/doc/iOS接入文档.md)
+[SDK接入文档](/API.md)
 
 [API接入文档](https://open.hifiveai.com/api)
 

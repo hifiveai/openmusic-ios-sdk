@@ -3,6 +3,7 @@
 
 
 ###一. 项目说明
+
 ####该项目是接入了 HIFIVE API的客户端Demo,包括播放器,播放列表等相关UI.
 
 项目具体代码在HFOpenMusicPlayer文件夹下,接入的Demo名称是HFOpenMusicPlayerDemo.
