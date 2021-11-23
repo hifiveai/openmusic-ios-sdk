@@ -195,8 +195,8 @@ static HFOpenApiManager *manager = nil;
     [params hfv_setObject_Safe:durationTo forKey:@"DurationTo"];
     [params hfv_setObject_Safe:keyword forKey:@"Keyword"];
     [params hfv_setObject_Safe:language forKey:@"Language"];
-    [params hfv_setObject_Safe:language forKey:@"SearchFiled"];
-    [params hfv_setObject_Safe:language forKey:@"SearchSmart"];
+    [params hfv_setObject_Safe:searchFiled forKey:@"SearchFiled"];
+    [params hfv_setObject_Safe:searchSmart forKey:@"SearchSmart"];
     [params hfv_setObject_Safe:page forKey:@"Page"];
     [params hfv_setObject_Safe:pageSize forKey:@"PageSize"];
     
